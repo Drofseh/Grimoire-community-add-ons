@@ -1,0 +1,131 @@
+$schema: ../../schema/addon.schema.json
+id: pathbuilder-2e
+name: Pathbuilder 2e
+kind: character-importer
+version: 1.0.0
+description: >-
+  Pathfinder 2e characters from Pathbuilder 2e. In Pathbuilder choose Menu →
+  Export → Export JSON, open the link it gives you, save the page as a .json
+  file, and upload that. Builds the character on the pathfinder-2e sheet.
+homepage: https://pathbuilder2e.com
+author: hunter-read
+attribution: Pathbuilder 2e by Redrazors (pathbuilder2e.com)
+grimoire_min_version: 1.8.1
+
+importer:
+  sheet: pathfinder-2e
+  # Pathbuilder's export is plain JSON, so it is recognised by its contents.
+  #
+  # There is no `url` block: pathbuilder2e.com answers anything that is not a
+  # browser with a Cloudflare challenge, so Grimoire cannot fetch the Export
+  # JSON link itself. The player opens it in their browser and uploads the file.
+  detect:
+    - $.build.abilities
+    - $.build.proficiencies
+
+  name: $.build.name
+
+  # Hit points, AC, speed and the class's proficiencies in armour are left to
+  # the sheet, which works them out from the ancestry, class and Constitution.
+  # The saves and skills Pathbuilder records are imported, because training
+  # picked at later levels is not something the sheet can derive.
+  fields:
+    hero_name: $.build.name
+    level: $.build.level
+    xp: $.build.xp
+    ancestry: $.build.ancestry
+    heritage: $.build.heritage
+    background: $.build.background
+    klass: $.build.class
+    deity:
+      from: $.build.deity
+      values: { "Not set": "" }
+    size: $.build.sizeName
+
+    # Pathbuilder stores ability scores; the sheet stores modifiers.
+    strength: { from: $.build.abilities.str, transform: modifier }
+    dexterity: { from: $.build.abilities.dex, transform: modifier }
+    constitution: { from: $.build.abilities.con, transform: modifier }
+    intelligence: { from: $.build.abilities.int, transform: modifier }
+    wisdom: { from: $.build.abilities.wis, transform: modifier }
+    charisma: { from: $.build.abilities.cha, transform: modifier }
+    key_ability:
+      from: $.build.keyability
+      values:
+        str: strength
+        dex: dexterity
+        con: constitution
+        int: intelligence
+        wis: wisdom
+        cha: charisma
+
+    # Proficiency ranks are the same numbers on both sides: 0, 2, 4, 6, 8.
+    perception_prof: $.build.proficiencies.perception
+    fortitude_prof: $.build.proficiencies.fortitude
+    reflex_prof: $.build.proficiencies.reflex
+    will_prof: $.build.proficiencies.will
+    class_dc_prof: $.build.proficiencies.classDC
+
+    # `proficiencies` mixes skills with saves and weapon groups; only names
+    # that are one of the sheet's skills survive.
+    skills_trained:
+      from: $.build.proficiencies[?(@ == 2)]
+      keys: true
+      transform: titlecase
+    skills_expert:
+      from: $.build.proficiencies[?(@ == 4)]
+      keys: true
+      transform: titlecase
+    skills_master:
+      from: $.build.proficiencies[?(@ == 6)]
+      keys: true
+      transform: titlecase
+    skills_legendary:
+      from: $.build.proficiencies[?(@ == 8)]
+      keys: true
+      transform: titlecase
+    lore_1_name: $.build.lores[0][0]
+    lore_1_prof: $.build.lores[0][1]
+    lore_2_name: $.build.lores[1][0]
+    lore_2_prof: $.build.lores[1][1]
+
+    languages:
+      from: $.build.languages
+      join: ", "
+
+    # Each feat is [name, choice, type, level, ...]. The heritage is listed
+    # among them, but it has a field of its own.
+    feats: $.build.feats[?(@[2] != 'Heritage')][0]
+    spells:
+      - $.build.spellCasters[*].spells[*].list[*]
+      - $.build.focus..focusCantrips[*]
+      - $.build.focus..focusSpells[*]
+
+    spell_tradition:
+      from: $.build.spellCasters[0].magicTradition
+      transform: titlecase
+    spell_prof: $.build.spellCasters[0].proficiency
+    focus_max: $.build.focusPoints
+
+    # Damage is the weapon's die and type; striking runes and bonuses are the
+    # player's to add, as Pathbuilder does not export the worked total.
+    strikes:
+      from: $.build.weapons[*]
+      columns:
+        name: "@.display"
+        bonus: { from: "@.attack", transform: signed }
+        damage: { template: "{@.die} {@.damageType}" }
+    equipment:
+      - from: $.build.armor[*]
+        columns:
+          name: "@.display"
+          qty: "@.qty"
+      - from: $.build.equipment[*]
+        columns:
+          name: "@[0]"
+          qty: "@[1]"
+
+    copper: $.build.money.cp
+    silver: $.build.money.sp
+    gold: $.build.money.gp
+    platinum: $.build.money.pp

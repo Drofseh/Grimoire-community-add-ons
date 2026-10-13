@@ -7,23 +7,26 @@ a hero is built from in *Draw Steel: Heroes*:
 | --- | --- | --- |
 | `class.json` | 9 | Stamina, recoveries, heroic resource, primary characteristics, skill choices, level 1 features |
 | `subclass.json` | 25 | Each class's subclasses and their level 1 features |
-| `ancestry.json` | 9 | Size, speed, ancestry points, signature traits |
-| `trait.json` | 67 | Signature and purchased ancestry traits, with their point cost |
+| `ancestry.json` | 12 | Size, speed, ancestry points, signature traits |
+| `trait.json` | 89 | Signature and purchased ancestry traits, with their point cost |
 | `culture.json` | 16 | The three skill choices an environment, organisation and upbringing give |
 | `career.json` | 18 | Skill choices, perks and languages, and inciting incidents |
-| `kit.json` | 25 | Stamina, speed, stability, damage and distance bonuses, and kit abilities |
+| `kit.json` | 25 | Stamina, speed, stability, damage (also tier by tier) and distance bonuses, and kit abilities |
 | `domain.json` | 12 | Domains for censors and conduits |
 | `perk.json` | 47 | Perks, by type |
 | `title.json` | 62 | Titles, by echelon |
 | `complication.json` | 100 | Complications, benefit and drawback |
-| `ability.json` | 553 | Every ability, with cost, keywords, distance, target and power-roll tiers |
+| `ability.json` | 559 | Every ability, with cost, keywords, distance, target and power-roll tiers |
 | `feature.json` | 717 | Class, subclass and domain features, levels 1 to 10 |
 
 ## Where it comes from
 
 [Forge Steel](https://forgesteel.net/) models Draw Steel as data. The pack is built
-from its **core sourcebook only** - the one book covered by the Draw Steel Creator
-License - by two scripts in [`scripts/forgesteel/`](../../scripts/forgesteel/):
+from *Draw Steel: Heroes* only - the one book covered by the Draw Steel Creator
+License - by two scripts in [`scripts/forgesteel/`](../../scripts/forgesteel/). Forge
+Steel splits that book in two: the rules in its `core` sourcebook, and the default
+setting in `orden`, which holds three of the twelve ancestries (hakaan, memonek, time
+raider). The dump takes all of `core` and just those ancestries from `orden`:
 
 ```bash
 # inside a Forge Steel checkout, after npm ci

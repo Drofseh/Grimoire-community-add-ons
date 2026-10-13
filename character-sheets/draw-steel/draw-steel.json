@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "draw-steel",
   "name": "Draw Steel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system": "Draw Steel",
   "description": "A hero sheet for MCDM's Draw Steel: characteristics, stamina and recoveries, the heroic resource, and abilities with their power-roll tiers. Picking an ancestry, culture, career, class or kit fills in what it gives; every value can still be set by hand.",
   "author": "hunter-read",
@@ -321,6 +321,30 @@
         "ranged_damage": {
           "type": "text",
           "label": "Ranged Damage Bonus"
+        },
+        "melee_damage_1": {
+          "type": "number",
+          "label": "Melee Damage Bonus, Tier 1"
+        },
+        "melee_damage_2": {
+          "type": "number",
+          "label": "Melee Damage Bonus, Tier 2"
+        },
+        "melee_damage_3": {
+          "type": "number",
+          "label": "Melee Damage Bonus, Tier 3"
+        },
+        "ranged_damage_1": {
+          "type": "number",
+          "label": "Ranged Damage Bonus, Tier 1"
+        },
+        "ranged_damage_2": {
+          "type": "number",
+          "label": "Ranged Damage Bonus, Tier 2"
+        },
+        "ranged_damage_3": {
+          "type": "number",
+          "label": "Ranged Damage Bonus, Tier 3"
         },
         "melee_distance": {
           "type": "number",
@@ -1196,65 +1220,80 @@
         }
       ]
     },
+    "kit_2": {
+      "type": "content_ref",
+      "label": "Second kit (Field Arsenal)",
+      "content_type": "kit",
+      "on_pick": [
+        {
+          "grant": "abilities",
+          "from": "ability_ids",
+          "names": "ability_names",
+          "carry": {
+            "origin": "name"
+          }
+        }
+      ]
+    },
     "kit_weapon": {
       "type": "text",
       "label": "Kit weapon / implement",
-      "default_from": "ref(kit, 'weapon')"
+      "default_from": "ref(kit_2, 'weapon') == '' or ref(kit_2, 'weapon') == ref(kit, 'weapon') ? ref(kit, 'weapon') : (ref(kit, 'weapon') == '' ? ref(kit_2, 'weapon') : concat(ref(kit, 'weapon'), ', ', ref(kit_2, 'weapon')))"
     },
     "kit_armor": {
       "type": "text",
       "label": "Kit armor / ward",
-      "default_from": "ref(kit, 'armor')"
+      "default_from": "ref(kit_2, 'armor') == '' or ref(kit_2, 'armor') == ref(kit, 'armor') ? ref(kit, 'armor') : (ref(kit, 'armor') == '' ? ref(kit_2, 'armor') : concat(ref(kit, 'armor'), ', ', ref(kit_2, 'armor')))"
     },
     "kit_speed": {
       "type": "number",
       "label": "Kit speed bonus",
       "default": 0,
-      "default_from": "0 + ref(kit, 'speed')"
+      "default_from": "max(0 + ref(kit, 'speed'), 0 + ref(kit_2, 'speed'))"
     },
     "kit_disengage": {
       "type": "number",
       "label": "Kit disengage bonus",
       "default": 0,
-      "default_from": "0 + ref(kit, 'disengage')"
+      "default_from": "max(0 + ref(kit, 'disengage'), 0 + ref(kit_2, 'disengage'))"
     },
     "kit_stamina": {
       "type": "number",
       "label": "Kit stamina bonus (per echelon)",
       "default": 0,
-      "default_from": "0 + ref(kit, 'stamina')"
+      "default_from": "max(0 + ref(kit, 'stamina'), 0 + ref(kit_2, 'stamina'))"
     },
     "kit_stability": {
       "type": "number",
       "label": "Kit stability bonus",
       "default": 0,
-      "default_from": "0 + ref(kit, 'stability')"
+      "default_from": "max(0 + ref(kit, 'stability'), 0 + ref(kit_2, 'stability'))"
     },
     "melee_distance_bonus": {
       "type": "number",
       "label": "Melee Distance Bonus",
       "min": 0,
       "default": 0,
-      "default_from": "0 + ref(kit, 'melee_distance')"
+      "default_from": "max(0 + ref(kit, 'melee_distance'), 0 + ref(kit_2, 'melee_distance'))"
     },
     "ranged_distance_bonus": {
       "type": "number",
       "label": "Ranged Distance Bonus",
       "min": 0,
       "default": 0,
-      "default_from": "0 + ref(kit, 'ranged_distance')"
+      "default_from": "max(0 + ref(kit, 'ranged_distance'), 0 + ref(kit_2, 'ranged_distance'))"
     },
     "melee_damage_bonus": {
       "type": "text",
       "label": "Melee Damage Bonus",
       "placeholder": "+0/+0/+0",
-      "default_from": "ref(kit, 'melee_damage')"
+      "default_from": "ref(kit_2, 'melee_damage_1') == '' ? ref(kit, 'melee_damage') : concat('+', max(ref(kit, 'melee_damage_1'), ref(kit_2, 'melee_damage_1')), '/+', max(ref(kit, 'melee_damage_2'), ref(kit_2, 'melee_damage_2')), '/+', max(ref(kit, 'melee_damage_3'), ref(kit_2, 'melee_damage_3')))"
     },
     "ranged_damage_bonus": {
       "type": "text",
       "label": "Ranged Damage Bonus",
       "placeholder": "+0/+0/+0",
-      "default_from": "ref(kit, 'ranged_damage')"
+      "default_from": "ref(kit_2, 'ranged_damage_1') == '' ? ref(kit, 'ranged_damage') : concat('+', max(ref(kit, 'ranged_damage_1'), ref(kit_2, 'ranged_damage_1')), '/+', max(ref(kit, 'ranged_damage_2'), ref(kit_2, 'ranged_damage_2')), '/+', max(ref(kit, 'ranged_damage_3'), ref(kit_2, 'ranged_damage_3')))"
     },
     "kit_effects": {
       "type": "textarea",

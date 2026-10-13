@@ -11,6 +11,7 @@ plugins as those land.
 | Directory | What lives there |
 | --- | --- |
 | [`scrapers/`](scrapers/) | Metadata scrapers — look a game system up on an external source and pre-fill its fields |
+| [`importers/`](importers/) | Character importers — read a character built in another tool onto one of the character sheets here |
 | [`templates/`](templates/) | Note templates — ready-made starting points for campaign wiki pages |
 | [`themes/`](themes/) | Themes — colour schemes a user installs for their own account |
 | [`character-sheets/`](character-sheets/) | Character sheets — schema-driven sheets a user installs for their own account |
@@ -55,6 +56,21 @@ See [`docs/scripts.md`](docs/scripts.md) for the security model.
 | [RPGGeek (System)](scrapers/rpggeek-system/) | game system | Yes¹ | System metadata from [rpggeek.com](https://rpggeek.com) — requires `rpggeek` |
 
 ¹ Requires a free BGG API token — see the scraper README for setup.
+
+### Character importers
+
+Used from **Characters → Import a character**. One that only reads uploaded
+files with YAML, like both of these, can be installed by any user for their own
+account right there; one that fetches links or runs a script is installed by an
+admin under **Settings → Add-ons**. See
+[Writing a character importer](docs/character-importers.md).
+
+| Importer | Reads | Builds on | Scripts? |
+| --- | --- | --- | --- |
+| [Forge Steel](importers/forge-steel/) | `.ds-hero` files from [Forge Steel](https://forgesteel.net) | [`draw-steel`](character-sheets/draw-steel/) | No |
+| [Pathbuilder 2e](importers/pathbuilder-2e/) | Export JSON from [Pathbuilder 2e](https://pathbuilder2e.com), saved as a file | [`pathfinder-2e`](character-sheets/pathfinder-2e/) | No |
+| [D&D Beyond](importers/dndbeyond/) | A publicly shared character's link on [D&D Beyond](https://www.dndbeyond.com), or its JSON saved as a file | [`dnd-5e-2024`](character-sheets/dnd-5e-2024/) | Yes |
+| [DiceCloud v1](importers/dicecloud-v1/) | A character's link on [DiceCloud v1](https://v1.dicecloud.com) - private ones with your API key - or its API JSON saved as a file | [`dnd-5e-2024`](character-sheets/dnd-5e-2024/) | Yes |
 
 ### Note templates
 

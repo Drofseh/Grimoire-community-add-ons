@@ -92,6 +92,11 @@ single JSON object on **stdout**. Anything on stderr is logged for the user.
 }
 ```
 
+A character importer's script gets one more action, `import`, described in
+[`character-importers.md`](character-importers.md#scripts). Its request can
+carry `inputs` the user typed, and its error can carry `needs_input` to ask for
+them - see [Inputs](character-importers.md#inputs).
+
 Report failure with an `error` key; Grimoire surfaces it to the user rather than
 treating it as a crash:
 

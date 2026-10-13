@@ -1,0 +1,35 @@
+$schema: ../../schema/addon.schema.json
+id: dndbeyond
+name: D&D Beyond
+kind: character-importer
+version: 1.0.0
+description: >-
+  D&D 5e characters from D&D Beyond: paste a character's link, or upload a
+  saved copy of its JSON. The character must be shared publicly. Builds the
+  character on the dnd-5e-2024 sheet.
+homepage: https://www.dndbeyond.com
+author: ianfhunter
+attribution: D&D Beyond (dndbeyond.com). Not affiliated with or endorsed by D&D Beyond or Wizards of the Coast.
+grimoire_min_version: 1.8.1
+
+# Ability scores are sums of a roll, bonuses and modifiers, and proficiencies
+# need sorting into skills, saves, armour and tools - arithmetic YAML does not
+# do. The script makes no request of its own except for the portrait.
+script:
+  entry: dndbeyond.py
+  timeout: 60
+
+importer:
+  sheet: dnd-5e-2024
+  # A saved copy of the character JSON; `readonlyUrl` and `classes` are
+  # D&D Beyond's own keys.
+  extensions: [.json]
+  detect:
+    - $.readonlyUrl
+    - $.classes
+  url:
+    # /characters/123, a share link (/characters/123/AbCd), or one under a
+    # profile (/profile/name/characters/123).
+    pattern: 'dndbeyond\.com/(?:profile/[^/]+/)?characters/(\d+)'
+    fetch: https://www.dndbeyond.com/character/{identity}/json
+    hint: https://www.dndbeyond.com/characters/93643159

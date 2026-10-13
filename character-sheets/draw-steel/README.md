@@ -46,6 +46,7 @@ fill the sheet in:
 | Class | Adds its level 1 features and asks for its skills; sets stamina, recoveries, the heroic resource's name, and 2 in its primary characteristics |
 | Subclass | Adds its level 1 features |
 | Kit | Adds its abilities; fills in its weapon and armor and its stamina (per echelon), speed, stability, disengage, distance and damage bonuses, each editable and added to your totals |
+| Second kit | For a tactician's Field Arsenal: adds its abilities too, adds its weapon and armor to the first kit's, and each bonus - damage tier by tier - becomes the higher of the two kits' |
 
 Maximum stamina is the class's starting stamina, plus its per-level stamina for
 each level after the first, plus the kit's stamina for each echelon. Purchased
