@@ -69,6 +69,11 @@
   color: var(--gold);
 }
 
+/* What a skill marked ½ adds, under the full bonus. */
+.proficiency-half {
+  text-align: center;
+}
+
 .hint {
   margin: 0;
   color: var(--text-muted);

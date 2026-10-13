@@ -26,12 +26,13 @@
       "description": "Semantic version. Bump on every change so installs can detect updates."
     },
     "kind": {
-      "enum": ["scraper"]
+      "enum": ["scraper", "character-importer"],
+      "description": "'scraper' fills in game system or book metadata; 'character-importer' reads characters from another tool. See docs/format.md and docs/character-importers.md."
     },
     "target": {
-      "enum": ["game-system", "book"],
+      "enum": ["game-system", "book", "character"],
       "default": "game-system",
-      "description": "Which Grimoire entity this add-on populates. Determines which map fields are valid."
+      "description": "Which Grimoire entity this add-on populates. Determines which map fields are valid. A character importer's target is always 'character' and may be omitted."
     },
     "description": {
       "type": "string"
@@ -269,6 +270,9 @@
           "$ref": "#/$defs/mapping"
         }
       }
+    },
+    "importer": {
+      "$ref": "#/$defs/importer"
     }
   },
   "anyOf": [
@@ -277,6 +281,9 @@
     },
     {
       "required": ["script"]
+    },
+    {
+      "required": ["importer"]
     }
   ],
   "$defs": {
@@ -318,6 +325,308 @@
           "minItems": 1
         }
       ]
+    },
+    "importerTransform": {
+      "description": "A named transform, or a list applied in order. Importers may also use 'modifier' (an ability score as its modifier) and 'signed' (a number with its sign).",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/importerTransformName"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/importerTransformName"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "importerTransformName": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/transformName"
+        },
+        {
+          "enum": ["modifier", "signed"]
+        }
+      ]
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^\\s*[$@]",
+      "maxLength": 500,
+      "description": "A JSONPath: '$' for the document root, '@' for the current item. See docs/character-importers.md#paths."
+    },
+    "importerValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How to read one value: exactly one of 'from', 'template' or 'value'.",
+      "properties": {
+        "from": {
+          "description": "A path, or several whose results are concatenated.",
+          "oneOf": [
+            {
+              "$ref": "#/$defs/path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "template": {
+          "type": "string",
+          "description": "Text with {$.path} or {@.path} placeholders."
+        },
+        "value": {
+          "description": "A constant."
+        },
+        "transform": {
+          "$ref": "#/$defs/importerTransform"
+        },
+        "values": {
+          "type": "object",
+          "description": "A lookup from the source's vocabulary to the sheet's. A value with no entry passes through."
+        },
+        "keys": {
+          "type": "boolean",
+          "default": false,
+          "description": "Yield the member names a path selects rather than their values."
+        },
+        "join": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "Join every value into one string, dropping repeats."
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["from"]
+        },
+        {
+          "required": ["template"]
+        },
+        {
+          "required": ["value"]
+        }
+      ]
+    },
+    "importerValueOrPath": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "$ref": "#/$defs/importerValue"
+        }
+      ]
+    },
+    "importerField": {
+      "description": "One sheet field's mapping: a path, a mapping object, or a list of them whose values are concatenated.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "$ref": "#/$defs/importerFieldObject"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/path"
+              },
+              {
+                "$ref": "#/$defs/importerFieldObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "importerFieldObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/importerValue/properties/from"
+        },
+        "template": {
+          "type": "string"
+        },
+        "value": {},
+        "transform": {
+          "$ref": "#/$defs/importerTransform"
+        },
+        "values": {
+          "type": "object"
+        },
+        "keys": {
+          "type": "boolean"
+        },
+        "join": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^\\s*@",
+          "description": "Catalog fields over objects: the path to each object's name. Defaults to '@.name'."
+        },
+        "description": {
+          "type": "string",
+          "pattern": "^\\s*@",
+          "description": "Catalog fields over objects: the path to each object's description, kept when nothing installed matches."
+        },
+        "match": {
+          "type": "object",
+          "description": "Catalog fields: properties an installed entry must also have to count as a match.",
+          "additionalProperties": {
+            "$ref": "#/$defs/importerValueOrPath"
+          }
+        },
+        "columns": {
+          "type": "object",
+          "description": "List fields: each column key mapped to a path relative to each row.",
+          "additionalProperties": {
+            "$ref": "#/$defs/importerValueOrPath"
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["from"]
+        },
+        {
+          "required": ["template"]
+        },
+        {
+          "required": ["value"]
+        }
+      ]
+    },
+    "importer": {
+      "type": "object",
+      "description": "Character importers only: what they read, and how it maps onto a sheet. See docs/character-importers.md.",
+      "required": ["sheet"],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": ["extensions"]
+        },
+        {
+          "required": ["detect"]
+        },
+        {
+          "required": ["url"]
+        }
+      ],
+      "properties": {
+        "sheet": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$",
+          "description": "The id of the character sheet the result is built on."
+        },
+        "extensions": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "pattern": "^\\.[a-z0-9][a-z0-9._-]{0,30}$"
+          },
+          "description": "File types this importer reads, lowercase with the dot."
+        },
+        "detect": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/path"
+          },
+          "description": "Paths that must all select something for a file to be recognised."
+        },
+        "url": {
+          "type": "object",
+          "required": ["pattern"],
+          "additionalProperties": false,
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "A regex that recognises a pasted link and captures the character's id in its one group."
+            },
+            "fetch": {
+              "type": "string",
+              "pattern": "^https?://.*\\{identity\\}",
+              "description": "The JSON endpoint to read the character from. Required unless the importer has a script."
+            },
+            "hint": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "An example link, shown as the paste box's placeholder."
+            },
+            "user_agent": {
+              "type": "string"
+            }
+          }
+        },
+        "name": {
+          "$ref": "#/$defs/importerValueOrPath"
+        },
+        "portrait": {
+          "$ref": "#/$defs/importerValueOrPath"
+        },
+        "fields": {
+          "type": "object",
+          "description": "Sheet field name to mapping.",
+          "additionalProperties": {
+            "$ref": "#/$defs/importerField"
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "maxItems": 5,
+          "description": "Fields the import dialog shows - an API key, say. The values go to the importer's script for that one import and are never stored. Needs a script.",
+          "items": {
+            "type": "object",
+            "required": ["key", "label"],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,39}$"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "help": {
+                "type": "string",
+                "maxLength": 300
+              },
+              "secret": {
+                "type": "boolean",
+                "default": false,
+                "description": "Show a password field rather than a text field."
+              },
+              "required": {
+                "type": "boolean",
+                "default": false,
+                "description": "Ask for it before the script runs. Leave false for something only some imports need, and ask for it from the script with needs_input."
+              },
+              "when": {
+                "enum": ["always", "file", "link"],
+                "default": "always",
+                "description": "Which kind of import it belongs to."
+              }
+            }
+          }
+        }
+      }
     },
     "transformName": {
       "enum": [

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate this repo's contents and regenerate its four index files.
 
-  index.json            add-ons (scrapers) — installed by an admin
+  index.json            add-ons (scrapers, character importers) — installed by an admin
   templates/index.json  note templates — browsed and downloaded by a GM
   themes/index.json     colour themes — installed per user
   character-sheets/index.json  character sheets — installed per user
@@ -37,7 +37,7 @@ except ImportError:
     sys.exit("jsonschema is required: pip install jsonschema")
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-ADDON_DIRS = ("scrapers", "plugins")
+ADDON_DIRS = ("scrapers", "importers", "plugins")
 TEMPLATE_DIR = ROOT / "templates"
 THEME_DIR = ROOT / "themes"
 INDEX_PATH = ROOT / "index.json"
@@ -146,7 +146,9 @@ def build() -> tuple[dict, list[str]]:
             "id": data["id"],
             "name": data["name"],
             "kind": data["kind"],
-            "target": data.get("target", "game-system"),
+            "target": data.get(
+                "target", "character" if data["kind"] == "character-importer" else "game-system"
+            ),
             "version": data["version"],
             "path": rel,
             "requires_script": "script" in data,
@@ -155,6 +157,15 @@ def build() -> tuple[dict, list[str]]:
         for optional in ("description", "homepage", "author", "grimoire_min_version"):
             if optional in data:
                 entry[optional] = data[optional]
+
+        if data["kind"] == "character-importer":
+            importer = data.get("importer") or {}
+            entry["sheet"] = importer.get("sheet", "")
+            # Reads uploaded files with YAML alone, so any user may install it
+            # for themselves. A script or a `url` (the server fetching from
+            # somewhere) needs an admin. Grimoire checks this again on the
+            # manifest it downloads; here it only decides what is offered.
+            entry["user_installable"] = "script" not in data and "url" not in importer
 
         if "script" in data:
             script_path = manifest_path.parent / data["script"]["entry"]

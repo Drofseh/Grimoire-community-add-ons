@@ -1,0 +1,201 @@
+$schema: ../../schema/addon.schema.json
+id: forge-steel
+name: Forge Steel
+kind: character-importer
+version: 1.0.0
+description: >-
+  Draw Steel heroes built in Forge Steel, from the .ds-hero file its Export
+  button saves. Builds the character on the draw-steel sheet.
+homepage: https://forgesteel.net
+author: hunter-read
+attribution: Forge Steel by Andy Aiken (github.com/andyaiken/forgesteel)
+grimoire_min_version: 1.9.0
+
+importer:
+  sheet: draw-steel
+  # Forge Steel saves .ds-hero; a hero someone renamed to .json is still
+  # recognised, because both must also pass `detect`.
+  extensions: [.ds-hero, .json]
+  detect:
+    - $.class.featuresByLevel
+    - $.state
+
+  name: $.name
+  # Forge Steel keeps an uploaded portrait inline as a data URL.
+  portrait: $.picture
+
+  # A .ds-hero file carries the whole of every option the hero could have
+  # taken, with the choices marked. So the paths below read only what is in
+  # play: class and subclass features up to the hero's level
+  # (`featuresByLevel[?(@.level <= $.class.level)]`), the selected subclass
+  # (`subclasses[?(@.selected)]`), and each choice's `data.selected`.
+  #
+  # Stamina, recoveries, speed and the like are left to the sheet, which works
+  # them out from the class, kit and ancestry; setting them here would freeze
+  # them at today's values.
+  fields:
+    hero_name: $.name
+    level: $.class.level
+    xp: $.state.xp
+
+    # Objects rather than names, so a pick the installed content lacks - an
+    # ancestry from a later book - keeps Forge Steel's description.
+    ancestry:
+      from: $.ancestry
+      description: "@.description"
+    culture:
+      from: $.culture
+      description: "@.description"
+    culture_environment: $.culture.environment.name
+    culture_organization: $.culture.organization.name
+    culture_upbringing: $.culture.upbringing.name
+    career:
+      from: $.career
+      description: "@.description"
+    inciting_incident:
+      from:
+        - $.career.incitingIncidents.selected.name
+        - $.career.incitingIncidents.selected.description
+      join: "\n\n"
+    complication:
+      from: $.complication
+      description: "@.description"
+
+    klass: $.class.name
+    subclass:
+      from: $.class.subclasses[?(@.selected)]
+      match:
+        class: $.class.name
+    kit:
+      from:
+        - $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[0]
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[0]
+    # A tactician's Field Arsenal takes two kits.
+    kit_2:
+      from:
+        - $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[1]
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[1]
+
+    might: $.class.characteristics[?(@.characteristic == 'Might')].value
+    agility: $.class.characteristics[?(@.characteristic == 'Agility')].value
+    reason: $.class.characteristics[?(@.characteristic == 'Reason')].value
+    intuition: $.class.characteristics[?(@.characteristic == 'Intuition')].value
+    presence: $.class.characteristics[?(@.characteristic == 'Presence')].value
+
+    stamina_temp: $.state.staminaTemp
+    recoveries_used: $.state.recoveriesUsed
+    surges: $.state.surges
+    victories: $.state.victories
+    renown: $.state.renown
+    wealth: $.state.wealth
+    # Forge Steel records how each condition ends; the sheet keeps end-of-turn
+    # and save-ends conditions apart, and anything else - one that lasts until
+    # removed, or a custom condition - goes on the free-text line.
+    conditions: $.state.conditions[?(@.ends == 'End of turn')].type
+    conditions_save: $.state.conditions[?(@.ends == 'Save ends')].type
+    condition_1_name:
+      from:
+        - $.state.conditions[?(@.ends == 'Until removed' && @.type != 'Custom Condition' && @.type != 'Quick Condition')].type
+        - $.state.conditions[?(@.type == 'Custom Condition' || @.type == 'Quick Condition')].text
+      join: ", "
+
+    skills:
+      from:
+        - $['ancestry', 'culture', 'career', 'complication', 'features']..[?(@.type == 'Skill Choice')].data.selected[*]
+        - $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Skill Choice')].data.selected[*]
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Skill Choice')].data.selected[*]
+        - $['ancestry', 'career', 'complication'].features[?(@.type == 'Skill')].data.skill
+        - $.class.featuresByLevel[?(@.level <= $.class.level)].features[?(@.type == 'Skill')].data.skill
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)].features[?(@.type == 'Skill')].data.skill
+
+    # Not `$..`: an ancestry's typical culture is in the file too, and its
+    # language only counts when that is the culture the hero took.
+    languages:
+      from:
+        - $.ancestry.features..[?(@.type == 'Language Choice')].data.selected[*]
+        - $['culture', 'career', 'complication', 'features']..[?(@.type == 'Language Choice')].data.selected[*]
+        - $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Language Choice')].data.selected[*]
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Language Choice')].data.selected[*]
+      join: ", "
+
+    ancestry_traits:
+      from:
+        - $.ancestry.features[?(@.type != 'Choice')]
+        - $.ancestry.features[?(@.type == 'Choice')].data.selected[*]
+      description: "@.description"
+      match:
+        ancestry: $.ancestry.name
+
+    # Every Draw Steel class has a feature called "Skills" or "Language", told
+    # apart in the content pack by `origin`. Bonuses (Stamina, Recoveries) are
+    # already in the sheet's arithmetic, and Ability features are abilities.
+    # A choice's selected option - a talent's ward, a fury's aspect - is a
+    # feature of its own, carried over with Forge Steel's text.
+    features:
+      - from:
+          - $.class.featuresByLevel[?(@.level <= $.class.level)].features[?(@.type != 'Bonus' && @.type != 'Ability')]
+          - $.class.featuresByLevel[?(@.level <= $.class.level)].features[?(@.type == 'Choice')].data.selected[*]
+        description: "@.description"
+        match:
+          origin: $.class.name
+      - from: $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)].features[?(@.type != 'Bonus' && @.type != 'Ability')]
+        description: "@.description"
+        match:
+          origin:
+            template: "{$.class.name} ({$.class.subclasses[?(@.selected)].name})"
+
+    abilities:
+      from:
+        - $.class.abilities[?(@.id in $..selectedIDs)]
+        - $.class.featuresByLevel[?(@.level <= $.class.level)].features[?(@.type == 'Ability')].data.ability
+        - $.class.subclasses[?(@.selected)].abilities[?(@.id in $..selectedIDs)]
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)].features[?(@.type == 'Ability')].data.ability
+        - $['ancestry', 'career', 'complication'].features[?(@.type == 'Ability')].data.ability
+        # A kit's signature ability - both kits' for a tactician's Field
+        # Arsenal.
+        - $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[*].features[?(@.type == 'Ability')].data.ability
+        - $.class.subclasses[?(@.selected)].featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Kit')].data.selected[*].features[?(@.type == 'Ability')].data.ability
+      description: "@.description"
+
+    domains:
+      from: $.class.featuresByLevel[?(@.level <= $.class.level)]..[?(@.type == 'Domain')].data.selected[*]
+    perks:
+      from: $..[?(@.type == 'Perk')].data.selected[*]
+      description: "@.description"
+    titles:
+      from: $.state.titles[*]
+      description: "@.description"
+
+    projects:
+      from: $.state.projects[*]
+      columns:
+        name: "@.name"
+        characteristic: "@.characteristic[0]"
+        points: "@.progress.points"
+        goal: "@.goal"
+
+    # Items sort into the sheet's lists by Forge Steel's item type. Artifacts
+    # have no list of their own and sit with trinkets; imbued gear levels up
+    # like a leveled treasure. Forge Steel does not store an item's level.
+    trinkets:
+      from: $.state.inventory[?(@.type == 'Trinket (1st echelon)' || @.type == 'Trinket (2nd echelon)' || @.type == 'Trinket (3rd echelon)' || @.type == 'Trinket (4th echelon)' || @.type == 'Artifact')]
+      columns:
+        name: "@.name"
+        notes: "@.type"
+    leveled_treasures:
+      from: $.state.inventory[?(@.type == 'Leveled Armor' || @.type == 'Leveled Implement' || @.type == 'Leveled Weapon' || @.type == 'Leveled Item' || @.type == 'Imbued Armor' || @.type == 'Imbued Implement' || @.type == 'Imbued Weapon')]
+      columns:
+        name: "@.name"
+        notes: "@.type"
+    consumables:
+      from: $.state.inventory[?(@.type == 'Consumable (1st echelon)' || @.type == 'Consumable (2nd echelon)' || @.type == 'Consumable (3rd echelon)' || @.type == 'Consumable (4th echelon)')]
+      columns:
+        name: "@.name"
+        qty: "@.count"
+
+    # The free-text inventory box has no home of its own on the sheet.
+    notes:
+      from:
+        - $.state.notes
+        - $.state.inventoryText
+      join: "\n\n"

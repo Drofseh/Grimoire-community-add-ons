@@ -601,5 +601,203 @@
   "signature": false,
   "description": "As a maneuver, you place a magic sigil on a creature within 10 squares of you. When you place a sigil, you can decide where it appears on the creature’s body, and whether the sigil is visible to only you or to all creatures.\n\nYou always know the direction to the exact location of a creature who bears one of your sigils and is on the same world. You can have an active number of sigils equal to your level, and can remove a sigil from a creature at will (no action required). If you already have the maximum number of sigils activated and you place a new one, your oldest sigil disappears with no other effect.\n\nA magic sigil you placed on a creature explodes with energy.\n\nYou gain the Detonate Sigil ability.",
   "ability_ids": "revenant-detonate-sigil"
+ },
+ {
+  "_id": "hakaan-big",
+  "name": "Big!",
+  "ancestry": "Hakaan",
+  "cost": 0,
+  "signature": true,
+  "description": "Your size is 1L.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "hakaan-all-is-a-feather",
+  "name": "All Is A Feather",
+  "ancestry": "Hakaan",
+  "cost": 1,
+  "signature": false,
+  "description": "Edge on tests (when lifting and hauling heavy objects).",
+  "ability_ids": ""
+ },
+ {
+  "_id": "hakaan-forceful",
+  "name": "Forceful",
+  "ancestry": "Hakaan",
+  "cost": 1,
+  "signature": false,
+  "description": "Whenever you force move a creature or object, the forced movement distance gains a +1 bonus.\n\n+1 Forced Movement: Push\n\n+1 Forced Movement: Pull\n\n+1 Forced Movement: Slide",
+  "ability_ids": ""
+ },
+ {
+  "_id": "hakaan-stand-tough",
+  "name": "Stand Tough",
+  "ancestry": "Hakaan",
+  "cost": 1,
+  "signature": false,
+  "description": "Your body is made to withstand the blows of your enemies.\n\n+1 to resist potencies.\n\nEdge on tests using Might (when resisting environmental effects or a creature’s traits or abilities).",
+  "ability_ids": ""
+ },
+ {
+  "_id": "hakaan-great-fortitude",
+  "name": "Great Fortitude",
+  "ancestry": "Hakaan",
+  "cost": 2,
+  "signature": false,
+  "description": "Your hearty constitution prevents you from losing strength.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "hakaan-doomsight",
+  "name": "Doomsight",
+  "ancestry": "Hakaan",
+  "cost": 2,
+  "signature": false,
+  "description": "Working with your Director, you can predetermine an encounter in which you will die. When that encounter begins, you become doomed. While doomed, you automatically obtain a tier 3 outcome on tests and ability rolls, and you don’t die no matter how low your Stamina falls. You then die immediately at the end of the encounter, and can’t be returned to life by any means.\n\nIf you don’t predetermine your death encounter, you can choose to become doomed while you are dying with the Director’s approval (no action required). Doing so should be reserved for encounters in which you are dying as a result of suitable heroism, such as making a last stand against a boss or saving civilians, or when the consequences of your actions have finally caught up to you — not because you’re playing a one-shot and have nothing to lose, Hacaarl.\n\nAdditionally, when your Stamina reaches the negative of your winded value and you are not doomed, you turn to rubble instead of experiencing death. You are unaware of your surroundings in this state, and you can’t regain Stamina or have this effect undone in any way. After 12 hours, you regain Stamina equal to your Recovery value.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-fall-lightly",
+  "name": "Fall Lightly",
+  "ancestry": "Memonek",
+  "cost": 0,
+  "signature": true,
+  "description": "Your silicone body is low in density. Whenever you fall, you reduce the distance of the fall by 2 squares.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-lightweight",
+  "name": "Lightweight",
+  "ancestry": "Memonek",
+  "cost": 0,
+  "signature": true,
+  "description": "Your body is light for a creature of your height. Whenever another creature attempts to force move you, you treat your size as one size smaller than it is.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-i-am-law",
+  "name": "I Am Law",
+  "ancestry": "Memonek",
+  "cost": 1,
+  "signature": false,
+  "description": "Your lawful nature and quick reflexes mean you give no quarter to creatures trying to get past you. Enemies can’t move through your space unless you allow them to do so.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-systematic-mind",
+  "name": "Systematic Mind",
+  "ancestry": "Memonek",
+  "cost": 1,
+  "signature": false,
+  "description": "You treat any language you don’t know as if you know a related language.\n\nEdge on tests (when parsing schematics, maps, and other systematic documents that aren’t inherently chaotic).",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-unphased",
+  "name": "Unphased",
+  "ancestry": "Memonek",
+  "cost": 1,
+  "signature": false,
+  "description": "Your ordered mind can’t be caught off guard. You can’t be made surprised.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-useful-emotion",
+  "name": "Useful Emotion",
+  "ancestry": "Memonek",
+  "cost": 1,
+  "signature": false,
+  "description": "Velloparatha - the worldsickness - might hinder, but you know how to turn your pain into something your enemies feel.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-keeper-of-order",
+  "name": "Keeper of Order",
+  "ancestry": "Memonek",
+  "cost": 2,
+  "signature": false,
+  "description": "Your connection to Axiom, the plane of Uttermost Law, allows you to manage chaos around you.\n\nYou gain the Keeper of Order ability.",
+  "ability_ids": "memonek-keeper-of-order-ability"
+ },
+ {
+  "_id": "memonek-lightning-nimbleness",
+  "name": "Lightning Nimbleness",
+  "ancestry": "Memonek",
+  "cost": 2,
+  "signature": false,
+  "description": "You can push your body to move at incredible speeds. Your Speed is 7.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "memonek-nonstop",
+  "name": "Nonstop",
+  "ancestry": "Memonek",
+  "cost": 2,
+  "signature": false,
+  "description": "Your connection to Axiom allows you to regulate your movement.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "time-raider-psychic-scar",
+  "name": "Psychic Scar",
+  "ancestry": "Time Raider",
+  "cost": 0,
+  "signature": true,
+  "description": "Your mind is a formidable layer of defense. You have psychic immunity equal to your level.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "time-raider-beyondsight",
+  "name": "Beyondsight",
+  "ancestry": "Time Raider",
+  "cost": 1,
+  "signature": false,
+  "description": "You adjust your vision to allow you to see through mundane obstructions.\n\nYou gain the Beyondsight ability.",
+  "ability_ids": "time-raider-beyondsight-ability"
+ },
+ {
+  "_id": "time-raider-foresight",
+  "name": "Foresight",
+  "ancestry": "Time Raider",
+  "cost": 1,
+  "signature": false,
+  "description": "Your senses extend past mundane obscuration and the veil of the future alike.\n\nYou automatically know the location of any creature with concealment who isn’t hidden from you within 20, and you negate the usual bane on strikes against such creatures.\n\nYou gain the Foresight ability.",
+  "ability_ids": "time-raider-foresight-ability"
+ },
+ {
+  "_id": "time-raider-four-armed-athletics",
+  "name": "Four-Armed Athletics",
+  "ancestry": "Time Raider",
+  "cost": 1,
+  "signature": false,
+  "description": "Edge on tests using Climb, Gymnastics, Swim (when you can use all your arms in the attempt).",
+  "ability_ids": ""
+ },
+ {
+  "_id": "time-raider-four-armed-martial-arts",
+  "name": "Four-Armed Martial Arts",
+  "ancestry": "Time Raider",
+  "cost": 2,
+  "signature": false,
+  "description": "Your multiple arms let you take on multiple tasks at the same time. Whenever you use the Grab or Knockback maneuver against an adjacent creature, you can target one additional adjacent creature, using the same power roll for both targets. Additionally, you can have up to two creatures grabbed at a time.",
+  "ability_ids": ""
+ },
+ {
+  "_id": "time-raider-psionic-gift",
+  "name": "Psionic Gift",
+  "ancestry": "Time Raider",
+  "cost": 2,
+  "signature": false,
+  "description": "- Concussive Slam: You slam an invisible force down upon the target.\n\nYou gain the Concussive Slam ability.\n- Psionic Bolt: You shoot forth a purple beam of psychic force that grips your target.\n\nYou gain the Psionic Bolt ability.\n- Minor Acceleration: You fill yourself or an ally with a burst of speed.\n\nYou gain the Minor Acceleration ability.",
+  "ability_ids": "time-raider-concussive-slam, time-raider-psionic-bolt, time-raider-minor-acceleration"
+ },
+ {
+  "_id": "time-raider-unstoppable-mind",
+  "name": "Unstoppable Mind",
+  "ancestry": "Time Raider",
+  "cost": 2,
+  "signature": false,
+  "description": "Your mind allows you to maintain your focus in any situation.",
+  "ability_ids": ""
  }
 ]

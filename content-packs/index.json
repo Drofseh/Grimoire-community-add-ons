@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/content-pack-index.schema.json",
   "version": 1,
-  "generated": "2026-10-06T20:44:56+00:00",
+  "generated": "2026-10-13T18:02:19+00:00",
   "packs": [
     {
       "pack_id": "dnd-5e-srd",
@@ -96,20 +96,20 @@
         {
           "name": "_meta.json",
           "path": "content-packs/draw-steel-core/_meta.json",
-          "sha256": "85ce0157668c3f7a78c2a909f86ef18f43b2bac8f88afdb6e7474064c9b79931",
+          "sha256": "599ae2c7d4af1890beaa76e9fa3d76e36527e0c3db35b01062996fb2e6feb4b1",
           "bytes": 966
         },
         {
           "name": "ability.json",
           "path": "content-packs/draw-steel-core/ability.json",
-          "sha256": "1a4e1c760ac9a5ff81495ae0246fe37845ad8508921b0f0e4bc9c81e081f4e39",
-          "bytes": 386803
+          "sha256": "f233f3ad640a62ebc5087b9f6809357f09fa025392f42fcb4f1ecbc8a1c67aef",
+          "bytes": 390210
         },
         {
           "name": "ancestry.json",
           "path": "content-packs/draw-steel-core/ancestry.json",
-          "sha256": "fa9847c862ee4bcee3efe6f0d1b547393079679fca7ca245d917dbdb4bdbda1e",
-          "bytes": 5388
+          "sha256": "6e2026377ce2a4c1c90506fb1eaf76bec807ea8dec5d29b97b92167f0e3725c4",
+          "bytes": 7262
         },
         {
           "name": "career.json",
@@ -150,8 +150,8 @@
         {
           "name": "kit.json",
           "path": "content-packs/draw-steel-core/kit.json",
-          "sha256": "e01c95b95fa6172f64513179348fb5436a208bb2825645f44e9e86163c9663b5",
-          "bytes": 14986
+          "sha256": "96ff29675ad388372139e75df1cc02c62936eb8d7fdbcb154e20b946b372df23",
+          "bytes": 16936
         },
         {
           "name": "perk.json",
@@ -174,11 +174,11 @@
         {
           "name": "trait.json",
           "path": "content-packs/draw-steel-core/trait.json",
-          "sha256": "4a8343de16ff6676cea98188b09f0b59bab0e48085d790ed3282a05e0f913de4",
-          "bytes": 21967
+          "sha256": "770b0c390f1c82597f3d6a2fc497f8517884b11926b9594a62337e64c9db68ab",
+          "bytes": 29937
         }
       ],
-      "entry_count": 1660,
+      "entry_count": 1691,
       "content_types": [
         "ability",
         "ancestry",
@@ -194,7 +194,7 @@
         "title",
         "trait"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Every class, subclass, ancestry and trait, culture, career, kit, domain, perk, title and complication from Draw Steel: Heroes, with each ability's power-roll tiers and each class's features by level. The text is MCDM's, converted from Forge Steel's data for the core book only.",
       "license": "Draw Steel Creator License",
       "license_url": "https://www.mcdmproductions.com/draw-steel-creator-license",

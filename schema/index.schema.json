@@ -22,8 +22,8 @@
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
           "name": { "type": "string" },
-          "kind": { "enum": ["scraper"] },
-          "target": { "enum": ["game-system", "book"] },
+          "kind": { "enum": ["scraper", "character-importer"] },
+          "target": { "enum": ["game-system", "book", "character"] },
           "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
           "description": { "type": "string" },
           "homepage": { "type": "string" },
@@ -39,6 +39,14 @@
           "requires_script": {
             "type": "boolean",
             "description": "True when the add-on ships a Python script. Drives the install-time trust prompt."
+          },
+          "sheet": {
+            "type": "string",
+            "description": "Character importers: the id of the sheet it builds on."
+          },
+          "user_installable": {
+            "type": "boolean",
+            "description": "Character importers: true when it reads files with YAML only - no script, no `url` - so any user may install it for themselves. Grimoire re-checks the downloaded manifest."
           },
           "script_sha256": {
             "type": "string",

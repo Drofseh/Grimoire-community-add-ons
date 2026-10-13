@@ -12,6 +12,11 @@ scrapers/my-source/
 Everything here is validated by [`schema/addon.schema.json`](../schema/addon.schema.json).
 Point your editor at it for completion and inline errors.
 
+This page covers **scrapers**. A character importer is an add-on too, with the
+same identity fields, but it maps a character export onto a sheet rather than a
+catalogue onto Grimoire's metadata - see
+[`character-importers.md`](character-importers.md).
+
 ## Identity
 
 ```yaml

@@ -305,6 +305,12 @@ def main(source: str) -> None:
     def tiers(d: dict | None) -> str:
         return f"+{d['tier1']}/+{d['tier2']}/+{d['tier3']}" if d else ""
 
+    def tier_numbers(d: dict | None, prefix: str) -> dict:
+        # Each tier on its own too, so a sheet with two kits (a tactician's
+        # Field Arsenal) can take the higher bonus tier by tier. Left out when
+        # the kit has no such damage, so the sheet reads it as unset.
+        return {f"{prefix}_{n}": d[f"tier{n}"] for n in (1, 2, 3)} if d else {}
+
     for k in core["kits"]:
         granted = [r for f in k.get("features") or [] for r in add_abilities(f, f"{k['name']} Kit")]
         out["kit"].append({
@@ -312,6 +318,8 @@ def main(source: str) -> None:
             "armor": ", ".join(k.get("armor") or []), "weapon": ", ".join(k.get("weapon") or []),
             "stamina": k.get("stamina", 0), "speed": k.get("speed", 0), "stability": k.get("stability", 0),
             "melee_damage": tiers(k.get("meleeDamage")), "ranged_damage": tiers(k.get("rangedDamage")),
+            **tier_numbers(k.get("meleeDamage"), "melee_damage"),
+            **tier_numbers(k.get("rangedDamage"), "ranged_damage"),
             "melee_distance": k.get("meleeDistance", 0), "ranged_distance": k.get("rangedDistance", 0),
             "disengage": k.get("disengage", 0),
             "ability_ids": ", ".join(r["_id"] for r in granted), "ability_names": names(granted)})
