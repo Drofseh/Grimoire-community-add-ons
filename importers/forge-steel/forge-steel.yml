@@ -9,7 +9,7 @@ description: >-
 homepage: https://forgesteel.net
 author: hunter-read
 attribution: Forge Steel by Andy Aiken (github.com/andyaiken/forgesteel)
-grimoire_min_version: 1.9.0
+grimoire_min_version: 1.8.1
 
 importer:
   sheet: draw-steel

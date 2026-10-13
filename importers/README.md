@@ -11,6 +11,8 @@ a script is installed by an admin, for everyone, under **Settings → Add-ons**.
 | --- | --- | --- |
 | [`forge-steel`](forge-steel/forge-steel.yml) | `.ds-hero` files from Forge Steel's Export | [`draw-steel`](../character-sheets/draw-steel/) |
 | [`pathbuilder-2e`](pathbuilder-2e/pathbuilder-2e.yml) | Pathbuilder 2e's Export JSON, saved as a file | [`pathfinder-2e`](../character-sheets/pathfinder-2e/) |
+| [`dndbeyond`](dndbeyond/dndbeyond.yml) | A publicly shared D&D Beyond character's link, or its JSON (script) | [`dnd-5e-2024`](../character-sheets/dnd-5e-2024/) |
+| [`dicecloud-v1`](dicecloud-v1/dicecloud-v1.yml) | A DiceCloud v1 character's link - a private one with your API key - or its API JSON (script) | [`dnd-5e-2024`](../character-sheets/dnd-5e-2024/) |
 
 An importer is a directory named after its `id`, holding `<id>.yml`:
 

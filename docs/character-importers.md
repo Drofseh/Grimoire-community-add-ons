@@ -25,6 +25,8 @@ before you start:
 | --- | --- | --- |
 | [`pathbuilder-2e`](../importers/pathbuilder-2e/pathbuilder-2e.yml) | A flat JSON export | Look values up (`values`), read member names (`keys`), fill list rows (`columns`) |
 | [`forge-steel`](../importers/forge-steel/forge-steel.yml) | A file that embeds every option with the choices marked | Read only what is in play with filters, and tell same-named content apart (`match`) |
+| [`dndbeyond`](../importers/dndbeyond/dndbeyond.yml) | A link Grimoire fetches (`url.fetch`), handed to a script | Do the arithmetic YAML cannot, and return per-entry values (`per`) |
+| [`dicecloud-v1`](../importers/dicecloud-v1/dicecloud-v1.yml) | A link the script fetches itself, with an optional API key | Ask for a key only when a private sheet needs one (`inputs`, `needs_input`) |
 
 - [The manifest](#the-manifest)
 - [Recognising input](#recognising-input)
@@ -50,7 +52,7 @@ description: Characters from My Builder's JSON export.
 homepage: https://my-builder.example
 author: your-github-name
 attribution: My Builder by Someone (my-builder.example)
-grimoire_min_version: 1.9.0
+grimoire_min_version: 1.8.1
 
 importer:
   sheet: dnd-5e-2024           # the sheet id in character-sheets/
@@ -65,7 +67,7 @@ importer:
 `id`, `name`, `version`, `description`, `homepage`, `author`, `attribution` and
 `grimoire_min_version` mean what they do for a scraper - see
 [`format.md`](format.md#identity). `kind` is `character-importer`; `target` is
-always `character` and can be left out. Set `grimoire_min_version` to `1.9.0`
+always `character` and can be left out. Set `grimoire_min_version` to `1.8.1`
 or later: older Grimoire does not know this kind.
 
 `attribution` credits the tool. Grimoire shows it in the import dialog.
@@ -266,6 +268,22 @@ Each value is read like any other mapping, for each item. When an entry with the
 right name fails the criteria, the item becomes a custom entry rather than
 borrowing the wrong one.
 
+### Per-entry values
+
+Some catalog fields keep a little more for each entry - a piece of equipment's
+quantity, whether a spell is prepared. The sheet declares these as the field's
+`per_entry_fields`; `per` reads them, a path relative to each item:
+
+```yaml
+    spells:
+      from: $.spells[*]
+      per:
+        prepared: "@.isPrepared"
+```
+
+They apply to a matched entry and a custom one alike, and are checked against
+the sheet: a key it does not declare is dropped.
+
 ## List fields
 
 A `list` field's rows are built with `columns`, mapping each column key to a
@@ -327,15 +345,16 @@ make the requests itself. `inputs` holds what the user typed for the importer's
   "fields": {
     "level": 3,
     "skills": ["Climb", "Hide"],
-    "spells": ["Fireball", { "name": "Homebrew Bolt", "description": "Mine." }],
+    "spells": ["Fireball", { "name": "Homebrew Bolt", "description": "Mine.", "per": { "prepared": true } }],
     "equipment": [{ "name": "Rope", "qty": 1 }]
   }
 }
 ```
 
 The same rules apply to the answer: each field is kept according to its type,
-catalog values are matched by name (an object may carry `match`), and
-everything is checked against the sheet. A script that wants a remote portrait
+catalog values are matched by name (an object may carry `match`, and `per`
+for [per-entry values](#per-entry-values)), and everything is checked against
+the sheet. A script that wants a remote portrait
 fetches it and returns a data URL.
 
 ### Inputs

@@ -490,6 +490,13 @@
             "$ref": "#/$defs/importerValueOrPath"
           }
         },
+        "per": {
+          "type": "object",
+          "description": "Catalog fields: the sheet's per-entry values for each item - a quantity, a prepared spell - each mapped to a path relative to the item.",
+          "additionalProperties": {
+            "$ref": "#/$defs/importerValueOrPath"
+          }
+        },
         "columns": {
           "type": "object",
           "description": "List fields: each column key mapped to a path relative to each row.",

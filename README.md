@@ -69,6 +69,8 @@ admin under **Settings → Add-ons**. See
 | --- | --- | --- | --- |
 | [Forge Steel](importers/forge-steel/) | `.ds-hero` files from [Forge Steel](https://forgesteel.net) | [`draw-steel`](character-sheets/draw-steel/) | No |
 | [Pathbuilder 2e](importers/pathbuilder-2e/) | Export JSON from [Pathbuilder 2e](https://pathbuilder2e.com), saved as a file | [`pathfinder-2e`](character-sheets/pathfinder-2e/) | No |
+| [D&D Beyond](importers/dndbeyond/) | A publicly shared character's link on [D&D Beyond](https://www.dndbeyond.com), or its JSON saved as a file | [`dnd-5e-2024`](character-sheets/dnd-5e-2024/) | Yes |
+| [DiceCloud v1](importers/dicecloud-v1/) | A character's link on [DiceCloud v1](https://v1.dicecloud.com) - private ones with your API key - or its API JSON saved as a file | [`dnd-5e-2024`](character-sheets/dnd-5e-2024/) | Yes |
 
 ### Note templates
 

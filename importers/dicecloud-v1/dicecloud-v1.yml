@@ -1,0 +1,41 @@
+$schema: ../../schema/addon.schema.json
+id: dicecloud-v1
+name: DiceCloud v1
+kind: character-importer
+version: 1.0.0
+description: >-
+  D&D 5e characters from DiceCloud v1: paste a character's link, or upload a
+  saved copy of its API JSON. A public sheet needs nothing more; a private one
+  asks for your DiceCloud API key. Builds the character on the dnd-5e-2024
+  sheet.
+homepage: https://v1.dicecloud.com
+author: ianfhunter
+attribution: DiceCloud by Stefan Zermatten (dicecloud.com). Not affiliated with or endorsed by DiceCloud.
+grimoire_min_version: 1.8.1
+
+# DiceCloud stores a character as stacks of effects ("base 15", "add
+# constitutionMod") that have to be worked out, and a public sheet is only
+# readable over the site's own real-time channel - neither is YAML's to do.
+script:
+  entry: dicecloud_v1.py
+  timeout: 90
+
+importer:
+  sheet: dnd-5e-2024
+  # DiceCloud's API JSON: every collection of one character.
+  extensions: [.json]
+  detect:
+    - $.characters[0].hitPoints
+    - $.effects
+  url:
+    # No `fetch`: the script reads the character itself, with the key when
+    # one is given.
+    pattern: 'v1\.dicecloud\.com/character/([A-Za-z0-9]+)'
+    hint: https://v1.dicecloud.com/character/QN748GQ9L24gXbiCW
+  inputs:
+    - key: api_key
+      label: DiceCloud API key
+      help: Only needed for a private character. Find it on DiceCloud under Account → API key. It is used for this import only, and never stored.
+      secret: true
+      when: link
+      required: false

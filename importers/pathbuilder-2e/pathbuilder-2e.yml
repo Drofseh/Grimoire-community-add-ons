@@ -10,7 +10,7 @@ description: >-
 homepage: https://pathbuilder2e.com
 author: hunter-read
 attribution: Pathbuilder 2e by Redrazors (pathbuilder2e.com)
-grimoire_min_version: 1.9.0
+grimoire_min_version: 1.8.1
 
 importer:
   sheet: pathfinder-2e
