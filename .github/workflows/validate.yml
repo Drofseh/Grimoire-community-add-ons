@@ -1,4 +1,4 @@
-name: Validate add-ons, templates, themes, and character sheets
+name: Validate add-ons, templates, themes, character sheets, and skills
 
 on:
   push:
@@ -23,3 +23,10 @@ jobs:
       # what their change produces.
       - name: Validate everything, and check the indexes are current
         run: python3 scripts/build_index.py --check
+
+      # The assistant skills' helper scripts run on users' own machines, so
+      # they carry real tests rather than schema checks alone.
+      - name: Test the assistant skills' scripts
+        run: |
+          pip install pytest pymupdf
+          python3 -m pytest skills/tests -q -p no:cacheprovider

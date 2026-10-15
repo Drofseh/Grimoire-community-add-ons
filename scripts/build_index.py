@@ -7,6 +7,9 @@
   character-sheets/index.json  character sheets — installed per user
   content-packs/index.json     content packs — installed server-wide by an admin
 
+Assistant skills (skills/) have no index - each user installs them into their
+own assistant - but they are validated here too.
+
 Run with --check to verify the committed indexes are up to date (what CI does
 on a PR); run with no arguments to rewrite them.
 
@@ -24,6 +27,7 @@ import datetime as dt
 import hashlib
 import json
 import pathlib
+import re
 import sys
 
 try:
@@ -45,6 +49,8 @@ TEMPLATE_INDEX_PATH = TEMPLATE_DIR / "index.json"
 THEME_INDEX_PATH = THEME_DIR / "index.json"
 SHEET_DIR = ROOT / "character-sheets"
 PACK_DIR = ROOT / "content-packs"
+SKILL_DIR = ROOT / "skills"
+SKILL_DESCRIPTION_MAX = 1024
 SHEET_INDEX_PATH = SHEET_DIR / "index.json"
 PACK_INDEX_PATH = PACK_DIR / "index.json"
 # Optional per-folder metadata (display name), not an add-on itself.
@@ -635,6 +641,50 @@ def build_content_packs() -> tuple[dict, list[str]]:
     return index, errors
 
 
+def check_skills() -> tuple[int, list[str]]:
+    """Validate each assistant skill: SKILL.md frontmatter and compiling scripts.
+
+    A skill directory is any folder under skills/ holding a SKILL.md; others
+    (the shared tests) are skipped.
+    """
+    errors: list[str] = []
+    count = 0
+    if not SKILL_DIR.is_dir():
+        return 0, errors
+    for directory in sorted(p for p in SKILL_DIR.iterdir() if p.is_dir()):
+        manifest = directory / "SKILL.md"
+        if not manifest.is_file():
+            continue
+        count += 1
+        rel = manifest.relative_to(ROOT).as_posix()
+        match = re.match(r"---\n(.*?)\n---\n", manifest.read_text(encoding="utf-8"), re.DOTALL)
+        if not match:
+            errors.append(f"{rel}: no YAML frontmatter")
+            continue
+        try:
+            front = yaml.safe_load(match.group(1)) or {}
+        except yaml.YAMLError as exc:
+            errors.append(f"{rel}: frontmatter is not valid YAML: {exc}")
+            continue
+        if front.get("name") != directory.name:
+            errors.append(f"{rel}: name must be {directory.name!r}, got {front.get('name')!r}")
+        description = front.get("description") or ""
+        if not description.strip():
+            errors.append(f"{rel}: description is missing")
+        elif len(description) > SKILL_DESCRIPTION_MAX:
+            errors.append(
+                f"{rel}: description is {len(description)} characters "
+                f"(max {SKILL_DESCRIPTION_MAX})"
+            )
+        for script in sorted(directory.rglob("*.py")):
+            # Compiled in memory: py_compile would leave __pycache__ in the skill.
+            try:
+                compile(script.read_text(encoding="utf-8"), str(script), "exec")
+            except SyntaxError as exc:
+                errors.append(f"{script.relative_to(ROOT).as_posix()}: line {exc.lineno}: {exc.msg}")
+    return count, errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -649,7 +699,8 @@ def main() -> int:
     theme_index, theme_errors = build_themes()
     sheet_index, sheet_errors = build_sheets()
     pack_index, pack_errors = build_content_packs()
-    errors = errors + template_errors + theme_errors + sheet_errors + pack_errors
+    skill_count, skill_errors = check_skills()
+    errors = errors + template_errors + theme_errors + sheet_errors + pack_errors + skill_errors
     if errors:
         print("Validation failed:")
         for err in errors:
@@ -659,9 +710,10 @@ def main() -> int:
     print(
         f"Validated {len(index['addons'])} add-on(s), "
         f"{len(template_index['templates'])} note template(s), "
-        f"{len(theme_index['themes'])} theme(s), and "
-        f"{len(sheet_index['sheets'])} character sheet(s), and "
-        f"{len(pack_index['packs'])} content pack(s)."
+        f"{len(theme_index['themes'])} theme(s), "
+        f"{len(sheet_index['sheets'])} character sheet(s), "
+        f"{len(pack_index['packs'])} content pack(s), and "
+        f"{skill_count} assistant skill(s)."
     )
 
     targets = [
