@@ -52,7 +52,7 @@ description: Characters from My Builder's JSON export.
 homepage: https://my-builder.example
 author: your-github-name
 attribution: My Builder by Someone (my-builder.example)
-grimoire_min_version: 1.8.1
+grimoire_min_version: 1.9.0
 
 importer:
   sheet: dnd-5e-2024           # the sheet id in character-sheets/
@@ -67,7 +67,7 @@ importer:
 `id`, `name`, `version`, `description`, `homepage`, `author`, `attribution` and
 `grimoire_min_version` mean what they do for a scraper - see
 [`format.md`](format.md#identity). `kind` is `character-importer`; `target` is
-always `character` and can be left out. Set `grimoire_min_version` to `1.8.1`
+always `character` and can be left out. Set `grimoire_min_version` to `1.9.0`
 or later: older Grimoire does not know this kind.
 
 `attribution` credits the tool. Grimoire shows it in the import dialog.

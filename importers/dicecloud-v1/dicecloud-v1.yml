@@ -11,7 +11,7 @@ description: >-
 homepage: https://v1.dicecloud.com
 author: ianfhunter
 attribution: DiceCloud by Stefan Zermatten (dicecloud.com). Not affiliated with or endorsed by DiceCloud.
-grimoire_min_version: 1.8.1
+grimoire_min_version: 1.9.0
 
 # DiceCloud stores a character as stacks of effects ("base 15", "add
 # constitutionMod") that have to be worked out, and a public sheet is only

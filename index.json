@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-13T18:39:18Z",
+  "generated": "2026-10-15T15:09:12Z",
   "addons": [
     {
       "id": "dicecloud-v1",
@@ -10,11 +10,11 @@
       "version": "1.0.0",
       "path": "importers/dicecloud-v1/dicecloud-v1.yml",
       "requires_script": true,
-      "sha256": "fe9a9358b6fcba26c6e9d7fa990240a1aa82dfffa4803967a3b331f0fe607cee",
+      "sha256": "9bdf5330a44f25cea930b6d1d8878af90dad8e5eb842b8ccf46210eb2857a217",
       "description": "D&D 5e characters from DiceCloud v1: paste a character's link, or upload a saved copy of its API JSON. A public sheet needs nothing more; a private one asks for your DiceCloud API key. Builds the character on the dnd-5e-2024 sheet.",
       "homepage": "https://v1.dicecloud.com",
       "author": "ianfhunter",
-      "grimoire_min_version": "1.8.1",
+      "grimoire_min_version": "1.9.0",
       "sheet": "dnd-5e-2024",
       "user_installable": false,
       "script_sha256": "a3265ca7413eb118c03fe9efdf373953302ba15baa3653eaa471526bad6184b0"
@@ -27,11 +27,11 @@
       "version": "1.0.0",
       "path": "importers/dndbeyond/dndbeyond.yml",
       "requires_script": true,
-      "sha256": "06808df1f667e1407349919d6e3b878abf23d9843e1deb05c9bc059d7671efbc",
+      "sha256": "4fd9e0a7c046113fb3a7225583ac70f97854a6b0fb42e39a7700b589590dfa4d",
       "description": "D&D 5e characters from D&D Beyond: paste a character's link, or upload a saved copy of its JSON. The character must be shared publicly. Builds the character on the dnd-5e-2024 sheet.",
       "homepage": "https://www.dndbeyond.com",
       "author": "ianfhunter",
-      "grimoire_min_version": "1.8.1",
+      "grimoire_min_version": "1.9.0",
       "sheet": "dnd-5e-2024",
       "user_installable": false,
       "script_sha256": "7e386071d609eaceb971a5172937d27fe9dc3a8becc7f3869407832bccee0be8"
@@ -72,11 +72,11 @@
       "version": "1.0.0",
       "path": "importers/forge-steel/forge-steel.yml",
       "requires_script": false,
-      "sha256": "499d321f72fa548a9966c7360464cc624aae27c5e9adc52457617a9847e967fa",
+      "sha256": "ee49a8fd540fabc82ba33ea3d859f8a204a089dc61786a032fde1bcbdfa34760",
       "description": "Draw Steel heroes built in Forge Steel, from the .ds-hero file its Export button saves. Builds the character on the draw-steel sheet.",
       "homepage": "https://forgesteel.net",
       "author": "hunter-read",
-      "grimoire_min_version": "1.8.1",
+      "grimoire_min_version": "1.9.0",
       "sheet": "draw-steel",
       "user_installable": true
     },
@@ -111,11 +111,11 @@
       "version": "1.0.0",
       "path": "importers/pathbuilder-2e/pathbuilder-2e.yml",
       "requires_script": false,
-      "sha256": "3d6c2ae4f8b2395caaea226492dc6dad03fec51d317a5106485901c5833efdab",
+      "sha256": "76d61a70f6e74822faab96525373eede6586619323033f14945c259f20092b0e",
       "description": "Pathfinder 2e characters from Pathbuilder 2e. In Pathbuilder choose Menu \u2192 Export \u2192 Export JSON, open the link it gives you, save the page as a .json file, and upload that. Builds the character on the pathfinder-2e sheet.",
       "homepage": "https://pathbuilder2e.com",
       "author": "hunter-read",
-      "grimoire_min_version": "1.8.1",
+      "grimoire_min_version": "1.9.0",
       "sheet": "pathfinder-2e",
       "user_installable": true
     },

@@ -10,7 +10,7 @@ description: >-
 homepage: https://www.dndbeyond.com
 author: ianfhunter
 attribution: D&D Beyond (dndbeyond.com). Not affiliated with or endorsed by D&D Beyond or Wizards of the Coast.
-grimoire_min_version: 1.8.1
+grimoire_min_version: 1.9.0
 
 # Ability scores are sums of a roll, bonuses and modifiers, and proficiencies
 # need sorting into skills, saves, armour and tools - arithmetic YAML does not
