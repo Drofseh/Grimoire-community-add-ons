@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "dnd-5e-2024",
   "name": "D&D 5th Edition (2024)",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "system": "Dungeons & Dragons 5th Edition (2024)",
   "description": "A character sheet for the 2024 revision of D&D 5th Edition, with the SRD 5.2 catalogue of classes and their features, species, backgrounds, feats, spells, equipment and magic items.",
   "author": "hunter-read",
@@ -555,6 +555,7 @@
       "type": "content_ref",
       "label": "Species",
       "content_type": "species",
+      "allow_freeform": true,
       "on_pick": [
         {
           "grant": "species_traits",
@@ -570,6 +571,7 @@
       "type": "content_ref",
       "label": "Background",
       "content_type": "background",
+      "allow_freeform": true,
       "on_pick": [
         {
           "grant": "skill_profs",
@@ -586,6 +588,7 @@
       "type": "content_ref",
       "label": "Class",
       "content_type": "class",
+      "allow_freeform": true,
       "on_pick": [
         {
           "choose": "skill_profs",
