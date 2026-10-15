@@ -5,8 +5,8 @@ the self-hosted TTRPG library manager.
 
 This is the single home for everything the community contributes to Grimoire.
 Today that means **scrapers**, **note templates**, **themes**, **character
-sheets** and the **content packs** they draw from; the layout leaves room for
-plugins as those land.
+sheets**, the **content packs** they draw from, and **assistant skills**; the
+layout leaves room for plugins as those land.
 
 | Directory | What lives there |
 | --- | --- |
@@ -16,6 +16,7 @@ plugins as those land.
 | [`themes/`](themes/) | Themes — colour schemes a user installs for their own account |
 | [`character-sheets/`](character-sheets/) | Character sheets — schema-driven sheets a user installs for their own account |
 | [`content-packs/`](content-packs/) | Content packs — the spells, classes and feats a character sheet draws from, installed server-wide by an admin |
+| [`skills/`](skills/) | Assistant skills — teach Claude Code and other AI assistants to organise, check and describe a Grimoire library, answer rules questions from it, and prep sessions |
 | [`plugins/`](plugins/) | Reserved for future add-on kinds |
 | [`schema/`](schema/) | JSON Schemas that every add-on, template, theme, sheet, pack, and index are validated against |
 | [`docs/`](docs/) | Authoring reference - including the full [character sheet reference](docs/character-sheets.md) |
@@ -137,6 +138,20 @@ Installed server-wide by an admin, then imported into a campaign's ruleset. See
 | [Draw Steel: Heroes](content-packs/draw-steel-core/) | Draw Steel | Draw Steel Creator License |
 | [Pathfinder Player Core](content-packs/pf2e-player-core/) | Pathfinder 2e | ORC |
 
+### Assistant skills
+
+Installed into a user's own AI assistant, not into Grimoire - see
+[`skills/`](skills/). They act through an API key, so they can do no more than
+the person who connected them.
+
+| Skill | What it does |
+| --- | --- |
+| [`grimoire`](skills/grimoire/) | `/grimoire` - connect to a library, organise a pile of unsorted PDFs into it, find broken books, identify and file books, fill in metadata, answer rules questions with page citations, and prep a campaign's next session |
+
+```bash
+npx skills add grimoire-codex/community-add-ons
+```
+
 Note templates are **not add-ons** — nobody installs them into a server. A GM
 browses this catalogue from inside their campaign wiki and downloads a copy into
 that campaign, so they carry none of the trust considerations a scraper does:
@@ -151,7 +166,8 @@ in [`templates/index.json`](templates/index.json).
    [`themes/README.md`](themes/README.md) for themes,
    [`character-sheets/README.md`](character-sheets/README.md) and the
    [character sheet reference](docs/character-sheets.md) for character sheets,
-   and [`content-packs/README.md`](content-packs/README.md) for content packs.
+   [`content-packs/README.md`](content-packs/README.md) for content packs, and
+   [`skills/README.md`](skills/README.md) for assistant skills.
 2. Add your add-on under the right directory, in its own folder named after its
    `id` (e.g. `scrapers/my-source/my-source.yml`,
    `templates/<system>/my-template/my-template.yml`,
