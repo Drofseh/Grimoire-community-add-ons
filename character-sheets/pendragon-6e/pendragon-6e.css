@@ -34,7 +34,7 @@
    (frontend/src/components/characters/characterStyles.js `fieldInput`),
    which beats any ordinary rule, so the size carries `!important` - the
    backend filter allows it, and nothing else here needs it.
-   Text inputs align left; number inputs (type="number") align centre. */
+   Text inputs align left; number inputs align centre. */
 .sheet-pendragon input,
 .sheet-pendragon select,
 .sheet-pendragon textarea {
@@ -59,7 +59,7 @@
 }
 
 /* CompactNumber inputs render as type="text" via Grimoire's CompactNumber
-   component but are always numbers - centre those in these containers. */
+   component but are always numbers - centre those in number-only containers. */
 .sheet-pendragon .char input,
 .sheet-pendragon .gstat input,
 .sheet-pendragon .skill input,
@@ -69,21 +69,31 @@
   text-align: center !important;
 }
 
-/* Text inputs inside number containers - override back to left. */
+/* Text inputs inside number containers - override back to left.
+   .gstat contains both text (names) and number (glory stats) inputs. */
 .sheet-pendragon .gstat input[name="player"],
 .sheet-pendragon .gstat input[name="character_name"],
+.sheet-pendragon .gstat input[name="session_glory"],
 .sheet-pendragon .gstat input[name="warhorse_name"],
-.sheet-pendragon .gstat input[name="best_horse_name"],
+.sheet-pendragon .gstat input[name="warhorse_type"],
 .sheet-pendragon .gstat input[name="squire_name"],
 .sheet-pendragon .gstat input[name="parent1_name"],
-.sheet-pendragon .gstat input[name="parent2_name"] {
+.sheet-pendragon .gstat input[name="parent2_name"],
+.sheet-pendragon .gstat input[name="honor"] {
   text-align: left !important;
 }
+
+/* Text input inside .skill (religion_name) - override back to left. */
 .sheet-pendragon .skill input[name="religion_name"] {
   text-align: left !important;
 }
 
-/* --- shared ---------------------------------------------------------------- */
+/* Text inputs inside .hp-grid (aggravation_damage, deterioration_damage) -
+   hp_current is CompactNumber (centred above). */
+.sheet-pendragon .hp-grid input[name="aggravation_damage"],
+.sheet-pendragon .hp-grid input[name="deterioration_damage"] {
+  text-align: left !important;
+}/* --- shared ---------------------------------------------------------------- */
 
 .box {
   border: 1px solid var(--border);
