@@ -27,14 +27,6 @@
   white-space: pre-line;
 }
 
-/* Every control on the sheet shares the unified text size and weight, so no
-   field - trait values included - can fall back to a smaller app default.
-   The boxes are given enough height that 14px text is never clipped.
-   Grimoire sets 13px on every control as an inline style
-   (frontend/src/components/characters/characterStyles.js `fieldInput`),
-   which beats any ordinary rule, so the size carries `!important` - the
-   backend filter allows it, and nothing else here needs it.
-   Text inputs align left; number inputs align centre. */
 .sheet-pendragon input,
 .sheet-pendragon select,
 .sheet-pendragon textarea {
@@ -68,32 +60,6 @@
 .sheet-pendragon .trait .shield input {
   text-align: center !important;
 }
-
-/* Text inputs inside number containers - override back to left.
-   .gstat contains both text (names) and number (glory stats) inputs. */
-.sheet-pendragon .gstat input[name="player"],
-.sheet-pendragon .gstat input[name="character_name"],
-.sheet-pendragon .gstat input[name="session_glory"],
-.sheet-pendragon .gstat input[name="warhorse_name"],
-.sheet-pendragon .gstat input[name="warhorse_type"],
-.sheet-pendragon .gstat input[name="squire_name"],
-.sheet-pendragon .gstat input[name="parent1_name"],
-.sheet-pendragon .gstat input[name="parent2_name"],
-.sheet-pendragon .gstat input[name="honor"] {
-  text-align: left !important;
-}
-
-/* Text input inside .skill (religion_name) - override back to left. */
-.sheet-pendragon .skill input[name="religion_name"] {
-  text-align: left !important;
-}
-
-/* Text inputs inside .hp-grid (aggravation_damage, deterioration_damage) -
-   hp_current is CompactNumber (centred above). */
-.sheet-pendragon .hp-grid input[name="aggravation_damage"],
-.sheet-pendragon .hp-grid input[name="deterioration_damage"] {
-  text-align: left !important;
-}/* --- shared ---------------------------------------------------------------- */
 
 .box {
   border: 1px solid var(--border);
