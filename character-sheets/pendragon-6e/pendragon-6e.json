@@ -1047,6 +1047,38 @@
       "label": "Equestrian Notes",
       "rows": 3
     },
+    "other_horses": {
+      "type": "list",
+      "label": "Other Horses",
+      "add_label": "Add horse",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "type",
+          "type": "text",
+          "label": "Type",
+          "flex": 2
+        },
+        {
+          "key": "worth",
+          "type": "text",
+          "label": "Worth",
+          "flex": 2
+        },
+        {
+          "key": "move",
+          "type": "number",
+          "label": "Move",
+          "min": 0,
+          "flex": 1
+        }
+      ]
+    },
     "squire_name": {
       "type": "text",
       "label": "Squire Name"
