@@ -219,6 +219,15 @@
   margin-bottom: 4px;
 }
 
+.warhorse-head .gstat {
+  flex: 1;
+}
+
+.warhorse-head input {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
 /* Horses beside squire and passive glory; history beside the rest. */
 .lower-grid {
   display: grid;
