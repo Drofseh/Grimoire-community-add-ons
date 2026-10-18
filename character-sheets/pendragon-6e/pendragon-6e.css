@@ -199,11 +199,24 @@
 }
 
 /* Family: father on the left, mother on the right. */
-.family-grid,
-.passive-glory-grid {
+.family-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+}
+
+/* Passive Glory: three columns. */
+.passive-glory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Warhorse Name and Type side by side. */
+.warhorse-head {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
 }
 
 /* Horses beside squire and passive glory; history beside the rest. */
