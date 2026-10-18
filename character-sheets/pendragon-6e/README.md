@@ -17,9 +17,9 @@ fan-made character sheets and requires this notice, reproduced verbatim in
 > approved by Chaosium Inc. For more information about Chaosium Inc's products,
 > please visit www.chaosium.com.
 
-The sheet may not be sold. It reproduces the structure of an investigator - the
-characteristics, skills and derived values - not the rules text, and includes no
-artwork or logos.
+The sheet may not be sold. It reproduces the structure of a knight - the
+characteristics, traits, passions, skills and derived values - not the rules text,
+and includes no artwork or logos.
 
 ### Why this is within the policy
 

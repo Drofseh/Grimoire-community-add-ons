@@ -2,1083 +2,145 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "pendragon-6e",
   "name": "Pendragon 6th Edition",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system": "Pendragon 6th Edition",
-  "description": "An investigator sheet for Pendragon 6th Edition: eight characteristics and percentile skills with their half and fifth values, hit points, magic points, Sanity and Luck, damage bonus, Build and Move, and the occupation and personal-interest points a new investigator spends.",
+  "description": "A character sheet for Pendragon 6th Edition: SIZ, DEX, STR, CON and APP with derived Knockdown, Weapon and Brawling damage, Movement Rate, Major Wound, Healing Rate, Total Hit Points and Unconscious; the thirteen opposed Traits with Directed Traits; Passions under Fidelitas, Fervor, Adoratio and Civilitas; combat and non-combat skills with checks; armor, attacks, wounds, Glory and Honor; warhorse and riding horses, squire, Passive Glory, holdings, family and year-by-year history.",
   "author": "hunter-read",
   "homepage": "https://www.chaosium.com/fan-material-policy/",
   "license": "Chaosium Fan Material Policy",
   "license_url": "https://www.chaosium.com/fan-material-policy/",
   "attribution": "This character sheet uses trademarks and/or copyrights owned by Chaosium Inc/Moon Design Publications LLC, which are used under Chaosium Inc's Fan Material Policy. We are expressly prohibited from charging you to use or access this content. This character sheet is not published, endorsed, or specifically approved by Chaosium Inc. For more information about Chaosium Inc's products, please visit www.chaosium.com.",
-  "content_types": {
-    "occupation": {
-      "label": "Occupation",
-      "label_plural": "Occupations",
-      "identity_field": "name",
-      "sort_default": [
-        "name"
-      ],
-      "search_fields": [
-        "name",
-        "description"
-      ],
-      "filter_fields": [],
-      "compact_display": "Credit Rating {credit_rating}",
-      "fields": {
-        "name": {
-          "type": "text",
-          "label": "Name"
-        },
-        "credit_rating": {
-          "type": "text",
-          "label": "Credit Rating"
-        },
-        "skill_points": {
-          "type": "text",
-          "label": "Occupation Skill Points"
-        },
-        "occupation_skills": {
-          "type": "multiselect",
-          "label": "Occupation Skills",
-          "options": [
-            "Accounting",
-            "Anthropology",
-            "Appraise",
-            "Archaeology",
-            "Charm",
-            "Climb",
-            "Computer Use",
-            "Credit Rating",
-            "Cthulhu Mythos",
-            "Disguise",
-            "Dodge",
-            "Drive Auto",
-            "Electrical Repair",
-            "Electronics",
-            "Fast Talk",
-            "Fighting (Brawl)",
-            "Firearms (Handgun)",
-            "Firearms (Rifle/Shotgun)",
-            "First Aid",
-            "History",
-            "Intimidate",
-            "Jump",
-            "Language (Own)",
-            "Law",
-            "Library Use",
-            "Listen",
-            "Locksmith",
-            "Mechanical Repair",
-            "Medicine",
-            "Natural World",
-            "Navigate",
-            "Occult",
-            "Operate Heavy Machinery",
-            "Persuade",
-            "Psychoanalysis",
-            "Psychology",
-            "Ride",
-            "Sleight of Hand",
-            "Spot Hidden",
-            "Stealth",
-            "Survival",
-            "Swim",
-            "Throw",
-            "Track"
-          ]
-        },
-        "other_skills": {
-          "type": "text",
-          "label": "Other Occupation Skills"
-        },
-        "contacts": {
-          "type": "text",
-          "label": "Suggested Contacts"
-        },
-        "description": {
-          "type": "textarea",
-          "label": "Description",
-          "rows": 3
-        }
-      }
-    },
-    "weapon": {
-      "label": "Weapon",
-      "label_plural": "Weapons",
-      "identity_field": "name",
-      "sort_default": [
-        "skill",
-        "name"
-      ],
-      "search_fields": [
-        "name"
-      ],
-      "filter_fields": [
-        "skill"
-      ],
-      "compact_display": "{skill} · {damage}",
-      "fields": {
-        "name": {
-          "type": "text",
-          "label": "Name"
-        },
-        "skill": {
-          "type": "text",
-          "label": "Skill"
-        },
-        "damage": {
-          "type": "text",
-          "label": "Damage"
-        },
-        "range": {
-          "type": "text",
-          "label": "Range"
-        },
-        "attacks": {
-          "type": "text",
-          "label": "Attacks"
-        },
-        "ammo": {
-          "type": "text",
-          "label": "Ammo"
-        },
-        "malfunction": {
-          "type": "text",
-          "label": "Malfunction"
-        },
-        "description": {
-          "type": "textarea",
-          "label": "Notes",
-          "rows": 3
-        }
-      }
-    }
-  },
   "fields": {
-    "investigator_name": {
+    "character_name": {
       "type": "text",
-      "label": "Investigator Name"
+      "label": "Character Name"
     },
     "player": {
       "type": "text",
-      "label": "Player"
+      "label": "Player Name"
     },
-    "occupation": {
-      "type": "content_ref",
-      "label": "Occupation",
-      "content_type": "occupation",
-      "on_pick": [
-        {
-          "grant": "occupation_skills",
-          "from": "occupation_skills"
-        }
-      ]
-    },
-    "age": {
-      "type": "number",
-      "label": "Age",
-      "min": 15,
-      "max": 99,
-      "default": 25
-    },
-    "pronouns": {
+    "born": {
       "type": "text",
-      "label": "Pronouns"
+      "label": "Born"
     },
-    "residence": {
+    "born_heir": {
+      "type": "checkbox",
+      "label": "Born heir?"
+    },
+    "homeland": {
       "type": "text",
-      "label": "Residence"
+      "label": "Homeland"
     },
-    "birthplace": {
+    "lord": {
       "type": "text",
-      "label": "Birthplace"
+      "label": "Lord"
     },
-    "strength": {
+    "char_class": {
+      "type": "text",
+      "label": "Class"
+    },
+    "culture": {
+      "type": "text",
+      "label": "Culture"
+    },
+    "religion": {
+      "type": "text",
+      "label": "Religion"
+    },
+    "distinctive_features": {
+      "type": "textarea",
+      "label": "Distinctive Features",
+      "rows": 2
+    },
+    "blazon": {
+      "type": "textarea",
+      "label": "Blazon",
+      "rows": 2
+    },
+    "glory": {
       "type": "number",
-      "label": "Strength",
+      "label": "Glory",
       "min": 0,
-      "max": 99,
-      "default": 50
+      "default": 0
     },
-    "constitution": {
+    "session_glory": {
       "type": "number",
-      "label": "Constitution",
+      "label": "Session Glory",
       "min": 0,
-      "max": 99,
-      "default": 50
+      "default": 0
     },
-    "size": {
+    "honor": {
       "type": "number",
-      "label": "Size",
+      "label": "Honor",
       "min": 0,
-      "max": 99,
-      "default": 50
+      "default": 0
     },
-    "dexterity": {
-      "type": "number",
-      "label": "Dexterity",
-      "min": 0,
-      "max": 99,
-      "default": 50
+    "honor_mark": {
+      "type": "checkbox",
+      "label": "Honor mark"
     },
-    "appearance": {
+    "siz": {
       "type": "number",
-      "label": "Appearance",
-      "min": 0,
-      "max": 99,
-      "default": 50
-    },
-    "intelligence": {
-      "type": "number",
-      "label": "Intelligence",
-      "min": 0,
-      "max": 99,
-      "default": 50
-    },
-    "power": {
-      "type": "number",
-      "label": "Power",
-      "min": 0,
-      "max": 99,
-      "default": 50
-    },
-    "education": {
-      "type": "number",
-      "label": "Education",
-      "min": 0,
-      "max": 99,
-      "default": 50
-    },
-    "hp_max": {
-      "type": "number",
-      "label": "Max Hit Points",
+      "label": "SIZ",
       "min": 0,
       "default": 10,
-      "default_from": "floor((constitution + size) / 10)"
+      "max": 60
+    },
+    "dex": {
+      "type": "number",
+      "label": "DEX",
+      "min": 0,
+      "default": 10,
+      "max": 60
+    },
+    "str": {
+      "type": "number",
+      "label": "STR",
+      "min": 0,
+      "default": 10,
+      "max": 60
+    },
+    "con": {
+      "type": "number",
+      "label": "CON",
+      "min": 0,
+      "default": 10,
+      "max": 60
+    },
+    "app": {
+      "type": "number",
+      "label": "APP",
+      "min": 0,
+      "default": 10,
+      "max": 60
     },
     "hp_current": {
       "type": "number",
-      "label": "Hit Points",
+      "label": "Current Hit Points",
       "min": 0,
-      "default": 10,
-      "default_from": "hp_max"
-    },
-    "major_wound": {
-      "type": "checkbox",
-      "label": "Major Wound"
-    },
-    "dying": {
-      "type": "checkbox",
-      "label": "Dying"
-    },
-    "unconscious": {
-      "type": "checkbox",
-      "label": "Unconscious"
-    },
-    "mp_max": {
-      "type": "number",
-      "label": "Max Magic Points",
-      "min": 0,
-      "default": 10,
-      "default_from": "floor(power / 5)"
-    },
-    "mp_current": {
-      "type": "number",
-      "label": "Magic Points",
-      "min": 0,
-      "default": 10,
-      "default_from": "mp_max"
-    },
-    "sanity_start": {
-      "type": "number",
-      "label": "Starting Sanity",
-      "min": 0,
-      "max": 99,
-      "default": 50,
-      "default_from": "power"
-    },
-    "sanity_current": {
-      "type": "number",
-      "label": "Sanity",
-      "min": 0,
-      "max": 99,
-      "default": 50,
-      "default_from": "sanity_start"
-    },
-    "temporary_insanity": {
-      "type": "checkbox",
-      "label": "Temporary Insanity"
-    },
-    "indefinite_insanity": {
-      "type": "checkbox",
-      "label": "Indefinite Insanity"
-    },
-    "luck": {
-      "type": "number",
-      "label": "Starting Luck",
-      "min": 0,
-      "max": 99,
-      "default": 50
-    },
-    "luck_current": {
-      "type": "number",
-      "label": "Current Luck",
-      "min": 0,
-      "max": 99,
-      "default": 50,
-      "default_from": "luck"
-    },
-    "occupation_skills": {
-      "type": "multiselect",
-      "label": "Occupation Skills",
-      "options": [
-        "Accounting",
-        "Anthropology",
-        "Appraise",
-        "Archaeology",
-        "Charm",
-        "Climb",
-        "Computer Use",
-        "Credit Rating",
-        "Cthulhu Mythos",
-        "Disguise",
-        "Dodge",
-        "Drive Auto",
-        "Electrical Repair",
-        "Electronics",
-        "Fast Talk",
-        "Fighting (Brawl)",
-        "Firearms (Handgun)",
-        "Firearms (Rifle/Shotgun)",
-        "First Aid",
-        "History",
-        "Intimidate",
-        "Jump",
-        "Language (Own)",
-        "Law",
-        "Library Use",
-        "Listen",
-        "Locksmith",
-        "Mechanical Repair",
-        "Medicine",
-        "Natural World",
-        "Navigate",
-        "Occult",
-        "Operate Heavy Machinery",
-        "Persuade",
-        "Psychoanalysis",
-        "Psychology",
-        "Ride",
-        "Sleight of Hand",
-        "Spot Hidden",
-        "Stealth",
-        "Survival",
-        "Swim",
-        "Throw",
-        "Track"
-      ]
-    },
-    "improvement_checks": {
-      "type": "multiselect",
-      "label": "Improvement Checks",
-      "options": [
-        "Accounting",
-        "Anthropology",
-        "Appraise",
-        "Archaeology",
-        "Charm",
-        "Climb",
-        "Computer Use",
-        "Credit Rating",
-        "Cthulhu Mythos",
-        "Disguise",
-        "Dodge",
-        "Drive Auto",
-        "Electrical Repair",
-        "Electronics",
-        "Fast Talk",
-        "Fighting (Brawl)",
-        "Firearms (Handgun)",
-        "Firearms (Rifle/Shotgun)",
-        "First Aid",
-        "History",
-        "Intimidate",
-        "Jump",
-        "Language (Own)",
-        "Law",
-        "Library Use",
-        "Listen",
-        "Locksmith",
-        "Mechanical Repair",
-        "Medicine",
-        "Natural World",
-        "Navigate",
-        "Occult",
-        "Operate Heavy Machinery",
-        "Persuade",
-        "Psychoanalysis",
-        "Psychology",
-        "Ride",
-        "Sleight of Hand",
-        "Spot Hidden",
-        "Stealth",
-        "Survival",
-        "Swim",
-        "Throw",
-        "Track",
-        "art_craft_1",
-        "art_craft_2",
-        "science_1",
-        "science_2",
-        "language_other_1",
-        "language_other_2",
-        "fighting_other",
-        "firearms_other",
-        "pilot",
-        "other_skill_1",
-        "other_skill_2",
-        "other_skill_3"
-      ]
-    },
-    "occupation_points": {
-      "type": "number",
-      "label": "Occupation Skill Points",
-      "min": 0,
-      "default": 200,
-      "default_from": "education * 4"
-    },
-    "creation_done": {
-      "type": "checkbox",
-      "label": "Creation finished - stop checking skill points"
-    },
-    "sk_accounting": {
-      "type": "number",
-      "label": "Accounting",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_anthropology": {
-      "type": "number",
-      "label": "Anthropology",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_appraise": {
-      "type": "number",
-      "label": "Appraise",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_archaeology": {
-      "type": "number",
-      "label": "Archaeology",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_charm": {
-      "type": "number",
-      "label": "Charm",
-      "min": 0,
-      "max": 99,
-      "default": 15
-    },
-    "sk_climb": {
-      "type": "number",
-      "label": "Climb",
-      "min": 0,
-      "max": 99,
       "default": 20
     },
-    "sk_computer_use": {
-      "type": "number",
-      "label": "Computer Use",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_credit_rating": {
-      "type": "number",
-      "label": "Credit Rating",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "sk_cthulhu_mythos": {
-      "type": "number",
-      "label": "Cthulhu Mythos",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "sk_disguise": {
-      "type": "number",
-      "label": "Disguise",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_dodge": {
-      "type": "number",
-      "label": "Dodge",
-      "min": 0,
-      "max": 99,
-      "default": 0,
-      "default_from": "floor(dexterity / 2)"
-    },
-    "sk_drive_auto": {
-      "type": "number",
-      "label": "Drive Auto",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_electrical_repair": {
-      "type": "number",
-      "label": "Electrical Repair",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_electronics": {
-      "type": "number",
-      "label": "Electronics",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_fast_talk": {
-      "type": "number",
-      "label": "Fast Talk",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_fighting_brawl": {
-      "type": "number",
-      "label": "Fighting (Brawl)",
-      "min": 0,
-      "max": 99,
-      "default": 25
-    },
-    "sk_firearms_handgun": {
-      "type": "number",
-      "label": "Firearms (Handgun)",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_firearms_rifle_shotgun": {
-      "type": "number",
-      "label": "Firearms (Rifle/Shotgun)",
-      "min": 0,
-      "max": 99,
-      "default": 25
-    },
-    "sk_first_aid": {
-      "type": "number",
-      "label": "First Aid",
-      "min": 0,
-      "max": 99,
-      "default": 30
-    },
-    "sk_history": {
-      "type": "number",
-      "label": "History",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_intimidate": {
-      "type": "number",
-      "label": "Intimidate",
-      "min": 0,
-      "max": 99,
-      "default": 15
-    },
-    "sk_jump": {
-      "type": "number",
-      "label": "Jump",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_language_own": {
-      "type": "number",
-      "label": "Language (Own)",
-      "min": 0,
-      "max": 99,
-      "default": 0,
-      "default_from": "education"
-    },
-    "sk_law": {
-      "type": "number",
-      "label": "Law",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_library_use": {
-      "type": "number",
-      "label": "Library Use",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_listen": {
-      "type": "number",
-      "label": "Listen",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_locksmith": {
-      "type": "number",
-      "label": "Locksmith",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_mechanical_repair": {
-      "type": "number",
-      "label": "Mechanical Repair",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_medicine": {
-      "type": "number",
-      "label": "Medicine",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_natural_world": {
-      "type": "number",
-      "label": "Natural World",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_navigate": {
-      "type": "number",
-      "label": "Navigate",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_occult": {
-      "type": "number",
-      "label": "Occult",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_operate_heavy_machinery": {
-      "type": "number",
-      "label": "Operate Heavy Machinery",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_persuade": {
-      "type": "number",
-      "label": "Persuade",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_psychoanalysis": {
-      "type": "number",
-      "label": "Psychoanalysis",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "sk_psychology": {
-      "type": "number",
-      "label": "Psychology",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_ride": {
-      "type": "number",
-      "label": "Ride",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "sk_sleight_of_hand": {
-      "type": "number",
-      "label": "Sleight of Hand",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_spot_hidden": {
-      "type": "number",
-      "label": "Spot Hidden",
-      "min": 0,
-      "max": 99,
-      "default": 25
-    },
-    "sk_stealth": {
-      "type": "number",
-      "label": "Stealth",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_survival": {
-      "type": "number",
-      "label": "Survival",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "sk_swim": {
-      "type": "number",
-      "label": "Swim",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_throw": {
-      "type": "number",
-      "label": "Throw",
-      "min": 0,
-      "max": 99,
-      "default": 20
-    },
-    "sk_track": {
-      "type": "number",
-      "label": "Track",
-      "min": 0,
-      "max": 99,
-      "default": 10
-    },
-    "art_craft_1_name": {
-      "type": "text",
-      "label": "Art/Craft speciality",
-      "placeholder": "Art/Craft"
-    },
-    "art_craft_1_base": {
-      "type": "number",
-      "label": "Art/Craft base",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "art_craft_1": {
-      "type": "number",
-      "label": "Art/Craft",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "art_craft_1_occ": {
+    "debilitated": {
       "type": "checkbox",
-      "label": "Art/Craft is an occupation skill"
+      "label": "Debilitated?"
     },
-    "art_craft_2_name": {
+    "aggravation_damage": {
       "type": "text",
-      "label": "Art/Craft speciality",
-      "placeholder": "Art/Craft"
+      "label": "Aggravation Damage"
     },
-    "art_craft_2_base": {
-      "type": "number",
-      "label": "Art/Craft base",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "art_craft_2": {
-      "type": "number",
-      "label": "Art/Craft",
-      "min": 0,
-      "max": 99,
-      "default": 5
-    },
-    "art_craft_2_occ": {
-      "type": "checkbox",
-      "label": "Art/Craft is an occupation skill"
-    },
-    "science_1_name": {
+    "deterioration_damage": {
       "type": "text",
-      "label": "Science speciality",
-      "placeholder": "Science"
+      "label": "Deterioration Damage"
     },
-    "science_1_base": {
-      "type": "number",
-      "label": "Science base",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "science_1": {
-      "type": "number",
-      "label": "Science",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "science_1_occ": {
-      "type": "checkbox",
-      "label": "Science is an occupation skill"
-    },
-    "science_2_name": {
-      "type": "text",
-      "label": "Science speciality",
-      "placeholder": "Science"
-    },
-    "science_2_base": {
-      "type": "number",
-      "label": "Science base",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "science_2": {
-      "type": "number",
-      "label": "Science",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "science_2_occ": {
-      "type": "checkbox",
-      "label": "Science is an occupation skill"
-    },
-    "language_other_1_name": {
-      "type": "text",
-      "label": "Language (Other) speciality",
-      "placeholder": "Language (Other)"
-    },
-    "language_other_1_base": {
-      "type": "number",
-      "label": "Language (Other) base",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "language_other_1": {
-      "type": "number",
-      "label": "Language (Other)",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "language_other_1_occ": {
-      "type": "checkbox",
-      "label": "Language (Other) is an occupation skill"
-    },
-    "language_other_2_name": {
-      "type": "text",
-      "label": "Language (Other) speciality",
-      "placeholder": "Language (Other)"
-    },
-    "language_other_2_base": {
-      "type": "number",
-      "label": "Language (Other) base",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "language_other_2": {
-      "type": "number",
-      "label": "Language (Other)",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "language_other_2_occ": {
-      "type": "checkbox",
-      "label": "Language (Other) is an occupation skill"
-    },
-    "fighting_other_name": {
-      "type": "text",
-      "label": "Fighting speciality",
-      "placeholder": "Fighting"
-    },
-    "fighting_other_base": {
-      "type": "number",
-      "label": "Fighting base",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "fighting_other": {
-      "type": "number",
-      "label": "Fighting",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "fighting_other_occ": {
-      "type": "checkbox",
-      "label": "Fighting is an occupation skill"
-    },
-    "firearms_other_name": {
-      "type": "text",
-      "label": "Firearms speciality",
-      "placeholder": "Firearms"
-    },
-    "firearms_other_base": {
-      "type": "number",
-      "label": "Firearms base",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "firearms_other": {
-      "type": "number",
-      "label": "Firearms",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "firearms_other_occ": {
-      "type": "checkbox",
-      "label": "Firearms is an occupation skill"
-    },
-    "pilot_name": {
-      "type": "text",
-      "label": "Pilot speciality",
-      "placeholder": "Pilot"
-    },
-    "pilot_base": {
-      "type": "number",
-      "label": "Pilot base",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "pilot": {
-      "type": "number",
-      "label": "Pilot",
-      "min": 0,
-      "max": 99,
-      "default": 1
-    },
-    "pilot_occ": {
-      "type": "checkbox",
-      "label": "Pilot is an occupation skill"
-    },
-    "other_skill_1_name": {
-      "type": "text",
-      "label": "Other speciality",
-      "placeholder": "Other"
-    },
-    "other_skill_1_base": {
-      "type": "number",
-      "label": "Other base",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_1": {
-      "type": "number",
-      "label": "Other",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_1_occ": {
-      "type": "checkbox",
-      "label": "Other is an occupation skill"
-    },
-    "other_skill_2_name": {
-      "type": "text",
-      "label": "Other speciality",
-      "placeholder": "Other"
-    },
-    "other_skill_2_base": {
-      "type": "number",
-      "label": "Other base",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_2": {
-      "type": "number",
-      "label": "Other",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_2_occ": {
-      "type": "checkbox",
-      "label": "Other is an occupation skill"
-    },
-    "other_skill_3_name": {
-      "type": "text",
-      "label": "Other speciality",
-      "placeholder": "Other"
-    },
-    "other_skill_3_base": {
-      "type": "number",
-      "label": "Other base",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_3": {
-      "type": "number",
-      "label": "Other",
-      "min": 0,
-      "max": 99,
-      "default": 0
-    },
-    "other_skill_3_occ": {
-      "type": "checkbox",
-      "label": "Other is an occupation skill"
-    },
-    "weapons": {
-      "type": "content_list",
-      "label": "Weapons",
-      "content_type": "weapon",
-      "allow_freeform": true,
-      "per_entry_fields": {
-        "ammo_left": {
-          "type": "number",
-          "label": "Ammo",
-          "min": 0
-        }
-      },
-      "display_columns": [
-        "skill",
-        "damage",
-        "range",
-        "attacks",
-        "ammo",
-        "malfunction"
-      ]
-    },
-    "spending_level": {
-      "type": "text",
-      "label": "Spending Level"
-    },
-    "cash": {
-      "type": "text",
-      "label": "Cash"
-    },
-    "assets": {
-      "type": "textarea",
-      "label": "Assets",
-      "rows": 3
-    },
-    "gear": {
+    "wounds": {
       "type": "list",
-      "label": "Gear & Possessions",
+      "label": "Wounds",
+      "add_label": "Add wound",
       "columns": [
         {
-          "key": "name",
+          "key": "wound",
           "type": "text",
-          "label": "Item",
+          "label": "Wound",
           "flex": 4
         },
         {
@@ -1089,657 +151,1807 @@
         }
       ]
     },
-    "my_story": {
-      "type": "textarea",
-      "label": "My Story",
-      "rows": 6
+    "armor_mail": {
+      "type": "number",
+      "label": "Mail/Plate",
+      "min": 0,
+      "default": 0
     },
-    "personal_description": {
-      "type": "textarea",
-      "label": "Personal Description",
-      "rows": 3
+    "armor_textile": {
+      "type": "number",
+      "label": "Textile",
+      "min": 0,
+      "default": 0
     },
-    "ideology": {
-      "type": "textarea",
-      "label": "Ideology / Beliefs",
-      "rows": 3
+    "armor_helm": {
+      "type": "number",
+      "label": "Helm",
+      "min": 0,
+      "default": 0
     },
-    "significant_people": {
-      "type": "textarea",
-      "label": "Significant People",
-      "rows": 3
+    "armor_shield": {
+      "type": "number",
+      "label": "Shield",
+      "min": 0,
+      "default": 0
     },
-    "meaningful_locations": {
-      "type": "textarea",
-      "label": "Meaningful Locations",
-      "rows": 3
-    },
-    "treasured_possessions": {
-      "type": "textarea",
-      "label": "Treasured Possessions",
-      "rows": 3
-    },
-    "traits": {
-      "type": "textarea",
-      "label": "Traits",
-      "rows": 3
-    },
-    "injuries": {
-      "type": "textarea",
-      "label": "Injuries & Scars",
-      "rows": 3
-    },
-    "phobias": {
-      "type": "textarea",
-      "label": "Phobias & Manias",
-      "rows": 3
-    },
-    "tomes": {
-      "type": "textarea",
-      "label": "Arcane Tomes, Spells & Artifacts",
-      "rows": 3
-    },
-    "encounters": {
-      "type": "textarea",
-      "label": "Encounters with Strange Entities",
-      "rows": 3
-    },
-    "fellow_investigators": {
+    "weapons": {
       "type": "list",
-      "label": "Fellow Investigators",
+      "label": "Attacks",
+      "add_label": "Add attack",
       "columns": [
         {
-          "key": "character",
+          "key": "weapon",
           "type": "text",
-          "label": "Character",
+          "label": "Weapon",
           "flex": 3
         },
         {
-          "key": "player",
+          "key": "value",
+          "type": "number",
+          "label": "Value",
+          "min": 0,
+          "default": 0,
+          "flex": 1
+        },
+        {
+          "key": "damage",
           "type": "text",
-          "label": "Player",
+          "label": "Damage",
           "flex": 2
         }
-      ],
-      "add_label": "Add an investigator"
+      ]
+    },
+    "trait_chaste": {
+      "type": "number",
+      "label": "Chaste",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_lustful": {
+      "type": "number",
+      "label": "Lustful",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_energetic": {
+      "type": "number",
+      "label": "Energetic",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_lazy": {
+      "type": "number",
+      "label": "Lazy",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_forgiving": {
+      "type": "number",
+      "label": "Forgiving",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_vengeful": {
+      "type": "number",
+      "label": "Vengeful",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_generous": {
+      "type": "number",
+      "label": "Generous",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_selfish": {
+      "type": "number",
+      "label": "Selfish",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_honest": {
+      "type": "number",
+      "label": "Honest",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_deceitful": {
+      "type": "number",
+      "label": "Deceitful",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_just": {
+      "type": "number",
+      "label": "Just",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_arbitrary": {
+      "type": "number",
+      "label": "Arbitrary",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_merciful": {
+      "type": "number",
+      "label": "Merciful",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_cruel": {
+      "type": "number",
+      "label": "Cruel",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_modest": {
+      "type": "number",
+      "label": "Modest",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_proud": {
+      "type": "number",
+      "label": "Proud",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_prudent": {
+      "type": "number",
+      "label": "Prudent",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_reckless": {
+      "type": "number",
+      "label": "Reckless",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_spiritual": {
+      "type": "number",
+      "label": "Spiritual",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_worldly": {
+      "type": "number",
+      "label": "Worldly",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_temperate": {
+      "type": "number",
+      "label": "Temperate",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_indulgent": {
+      "type": "number",
+      "label": "Indulgent",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_trusting": {
+      "type": "number",
+      "label": "Trusting",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_suspicious": {
+      "type": "number",
+      "label": "Suspicious",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_valorous": {
+      "type": "number",
+      "label": "Valorous",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "trait_cowardly": {
+      "type": "number",
+      "label": "Cowardly",
+      "min": 0,
+      "default": 10,
+      "max": 20
+    },
+    "directed_1_name": {
+      "type": "text",
+      "label": "Directed Trait name"
+    },
+    "directed_1": {
+      "type": "number",
+      "label": "Directed Trait",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "directed_2_name": {
+      "type": "text",
+      "label": "Directed Trait name"
+    },
+    "directed_2": {
+      "type": "number",
+      "label": "Directed Trait",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "ideal": {
+      "type": "text",
+      "label": "Ideal"
+    },
+    "trait_checks": {
+      "type": "multiselect",
+      "label": "Trait checks",
+      "options": [
+        "Chaste",
+        "Lustful",
+        "Energetic",
+        "Lazy",
+        "Forgiving",
+        "Vengeful",
+        "Generous",
+        "Selfish",
+        "Honest",
+        "Deceitful",
+        "Just",
+        "Arbitrary",
+        "Merciful",
+        "Cruel",
+        "Modest",
+        "Proud",
+        "Prudent",
+        "Reckless",
+        "Spiritual",
+        "Worldly",
+        "Temperate",
+        "Indulgent",
+        "Trusting",
+        "Suspicious",
+        "Valorous",
+        "Cowardly",
+        "Directed Trait 1",
+        "Directed Trait 2"
+      ]
+    },
+    "passion_homage": {
+      "type": "number",
+      "label": "Homage",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_homage_subject": {
+      "type": "text",
+      "label": "Homage subject"
+    },
+    "passion_fealty": {
+      "type": "number",
+      "label": "Fealty",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_fealty_subject": {
+      "type": "text",
+      "label": "Fealty subject"
+    },
+    "passion_love_family": {
+      "type": "number",
+      "label": "Love (Family)",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_devotion": {
+      "type": "number",
+      "label": "Devotion (Deity)",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_hospitality": {
+      "type": "number",
+      "label": "Hospitality",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_station": {
+      "type": "number",
+      "label": "Station",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c1_name": {
+      "type": "text",
+      "label": "Passion 1 name"
+    },
+    "passion_c1_object": {
+      "type": "text",
+      "label": "Passion 1 object"
+    },
+    "passion_c1": {
+      "type": "number",
+      "label": "Passion 1",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c2_name": {
+      "type": "text",
+      "label": "Passion 2 name"
+    },
+    "passion_c2_object": {
+      "type": "text",
+      "label": "Passion 2 object"
+    },
+    "passion_c2": {
+      "type": "number",
+      "label": "Passion 2",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c3_name": {
+      "type": "text",
+      "label": "Passion 3 name"
+    },
+    "passion_c3_object": {
+      "type": "text",
+      "label": "Passion 3 object"
+    },
+    "passion_c3": {
+      "type": "number",
+      "label": "Passion 3",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c4_name": {
+      "type": "text",
+      "label": "Passion 4 name"
+    },
+    "passion_c4_object": {
+      "type": "text",
+      "label": "Passion 4 object"
+    },
+    "passion_c4": {
+      "type": "number",
+      "label": "Passion 4",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c5_name": {
+      "type": "text",
+      "label": "Passion 5 name"
+    },
+    "passion_c5_object": {
+      "type": "text",
+      "label": "Passion 5 object"
+    },
+    "passion_c5": {
+      "type": "number",
+      "label": "Passion 5",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c6_name": {
+      "type": "text",
+      "label": "Passion 6 name"
+    },
+    "passion_c6_object": {
+      "type": "text",
+      "label": "Passion 6 object"
+    },
+    "passion_c6": {
+      "type": "number",
+      "label": "Passion 6",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_c7_name": {
+      "type": "text",
+      "label": "Passion 7 name"
+    },
+    "passion_c7_object": {
+      "type": "text",
+      "label": "Passion 6 object"
+    },
+    "passion_c7": {
+      "type": "number",
+      "label": "Passion 7",
+      "min": 0,
+      "default": 0,
+      "max": 20
+    },
+    "passion_checks": {
+      "type": "multiselect",
+      "label": "Passion checks",
+      "options": [
+        "Homage",
+        "Fealty",
+        "Love (Family)",
+        "Devotion (Deity)",
+        "Hospitality",
+        "Station",
+        "Passion 1",
+        "Passion 2",
+        "Passion 3",
+        "Passion 4",
+        "Passion 5",
+        "Passion 6",
+        "Passion 7"
+      ]
+    },
+    "sk_awareness": {
+      "type": "number",
+      "label": "Awareness",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_chirurgery": {
+      "type": "number",
+      "label": "Chirurgery",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_compose": {
+      "type": "number",
+      "label": "Compose",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_courtesy": {
+      "type": "number",
+      "label": "Courtesy",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_dancing": {
+      "type": "number",
+      "label": "Dancing",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_falconry": {
+      "type": "number",
+      "label": "Falconry",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_fashion": {
+      "type": "number",
+      "label": "Fashion",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_first_aid": {
+      "type": "number",
+      "label": "First Aid",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_flirting": {
+      "type": "number",
+      "label": "Flirting",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_folklore": {
+      "type": "number",
+      "label": "Folklore",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_gaming": {
+      "type": "number",
+      "label": "Gaming",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_hunting": {
+      "type": "number",
+      "label": "Hunting",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_industry": {
+      "type": "number",
+      "label": "Industry",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_intrigue": {
+      "type": "number",
+      "label": "Intrigue",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_literacy": {
+      "type": "number",
+      "label": "Literacy",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_orate": {
+      "type": "number",
+      "label": "Orate",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_play": {
+      "type": "number",
+      "label": "Play (Instrument)",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_recognize": {
+      "type": "number",
+      "label": "Recognize",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_religion_skill": {
+      "type": "number",
+      "label": "Religion",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_singing": {
+      "type": "number",
+      "label": "Singing",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_stewardship": {
+      "type": "number",
+      "label": "Stewardship",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "religion_name": {
+      "type": "text",
+      "label": "Religion speciality"
+    },
+    "sk_extra_1_name": {
+      "type": "text",
+      "label": "Other skill name"
+    },
+    "sk_extra_1": {
+      "type": "number",
+      "label": "Other skill",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_battle": {
+      "type": "number",
+      "label": "Battle",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_horsemanship": {
+      "type": "number",
+      "label": "Horsemanship",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_sword": {
+      "type": "number",
+      "label": "Sword",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_charge": {
+      "type": "number",
+      "label": "Charge",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_spear": {
+      "type": "number",
+      "label": "Spear",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_hafted": {
+      "type": "number",
+      "label": "Hafted",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_hafted_2h": {
+      "type": "number",
+      "label": "2H Hafted",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_brawling": {
+      "type": "number",
+      "label": "Brawling",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_bow": {
+      "type": "number",
+      "label": "Bow",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_crossbow": {
+      "type": "number",
+      "label": "Crossbow",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_thrown": {
+      "type": "number",
+      "label": "Thrown Weapon",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "sk_siegecraft": {
+      "type": "number",
+      "label": "Siegecraft",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "skill_checks": {
+      "type": "multiselect",
+      "label": "Skill checks",
+      "options": [
+        "Awareness",
+        "Chirurgery",
+        "Compose",
+        "Courtesy",
+        "Dancing",
+        "Falconry",
+        "Fashion",
+        "First Aid",
+        "Flirting",
+        "Folklore",
+        "Gaming",
+        "Hunting",
+        "Industry",
+        "Intrigue",
+        "Literacy",
+        "Orate",
+        "Play (Instrument)",
+        "Recognize",
+        "Religion",
+        "Singing",
+        "Stewardship",
+        "Extra 1",
+        "Battle",
+        "Horsemanship",
+        "Sword",
+        "Charge",
+        "Spear",
+        "Hafted",
+        "2H Hafted",
+        "Brawling",
+        "Bow",
+        "Crossbow",
+        "Thrown Weapon",
+        "Siegecraft"
+      ]
+    },
+    "warhorse_name": {
+      "type": "text",
+      "label": "Warhorse Name"
+    },
+    "warhorse_type": {
+      "type": "text",
+      "label": "Warhorse Type"
+    },
+    "warhorse_siz": {
+      "type": "number",
+      "label": "Warhorse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_dex": {
+      "type": "number",
+      "label": "Warhorse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_str": {
+      "type": "number",
+      "label": "Warhorse STR",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_con": {
+      "type": "number",
+      "label": "Warhorse CON",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_armor": {
+      "type": "number",
+      "label": "Warhorse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_move": {
+      "type": "number",
+      "label": "Warhorse Move",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_hp": {
+      "type": "number",
+      "label": "Warhorse HP",
+      "min": 0,
+      "default": 0
+    },
+    "warhorse_damage": {
+      "type": "text",
+      "label": "Warhorse Damage"
+    },
+    "best_horse_name": {
+      "type": "text",
+      "label": "Best Riding Horse name"
+    },
+    "best_horse_type": {
+      "type": "text",
+      "label": "Best Riding Horse type"
+    },
+    "best_horse_worth": {
+      "type": "text",
+      "label": "Best Riding Horse worth"
+    },
+    "best_horse_move": {
+      "type": "number",
+      "label": "Best Riding Horse Move",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_con": {
+      "type": "number",
+      "label": "Best Riding Horse CON",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_hp": {
+      "type": "number",
+      "label": "Best Riding Horse HP",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_type": {
+      "type": "text",
+      "label": "Squire's Horse type"
+    },
+    "squire_horse_worth": {
+      "type": "text",
+      "label": "Squire's Horse worth"
+    },
+    "squire_horse_move": {
+      "type": "number",
+      "label": "Squire's Horse Move",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse1_type": {
+      "type": "text",
+      "label": "Other Horse 1 type"
+    },
+    "other_horse1_worth": {
+      "type": "text",
+      "label": "Other Horse 1 worth"
+    },
+    "other_horse1_move": {
+      "type": "number",
+      "label": "Other Horse 1 Move",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse2_type": {
+      "type": "text",
+      "label": "Other Horse 2 type"
+    },
+    "other_horse2_worth": {
+      "type": "text",
+      "label": "Other Horse 2 worth"
+    },
+    "other_horse2_move": {
+      "type": "number",
+      "label": "Other Horse 2 Move",
+      "min": 0,
+      "default": 0
+    },
+    "joust_wins": {
+      "type": "number",
+      "label": "Jousting Wins",
+      "min": 0,
+      "default": 0
+    },
+    "joust_losses": {
+      "type": "number",
+      "label": "Jousting Losses",
+      "min": 0,
+      "default": 0
+    },
+    "equestrian_notes": {
+      "type": "textarea",
+      "label": "Equestrian Notes",
+      "rows": 3
+    },
+    "squire_name": {
+      "type": "text",
+      "label": "Squire Name"
+    },
+    "squire_age": {
+      "type": "number",
+      "label": "Squire Age",
+      "min": 0,
+      "default": 0
+    },
+    "squire_skill": {
+      "type": "number",
+      "label": "Squire Skill",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "squire_notes": {
+      "type": "textarea",
+      "label": "Squire Notes",
+      "rows": 3
+    },
+    "passive_traits": {
+      "type": "number",
+      "label": "Traits & Passions",
+      "min": 0,
+      "default": 0
+    },
+    "passive_appeal": {
+      "type": "number",
+      "label": "Fair Appeal",
+      "min": 0,
+      "default": 0
+    },
+    "passive_living": {
+      "type": "number",
+      "label": "Standard of Living",
+      "min": 0,
+      "default": 0
+    },
+    "passive_titles": {
+      "type": "number",
+      "label": "Titles",
+      "min": 0,
+      "default": 0
+    },
+    "passive_other": {
+      "type": "number",
+      "label": "Other",
+      "min": 0,
+      "default": 0
+    },
+    "passive_other_note": {
+      "type": "text",
+      "label": "Other Passive Glory note"
+    },
+    "history": {
+      "type": "list",
+      "label": "History & Events",
+      "add_label": "Add year",
+      "columns": [
+        {
+          "key": "year",
+          "type": "text",
+          "label": "Year",
+          "flex": 1
+        },
+        {
+          "key": "event",
+          "type": "text",
+          "label": "Event",
+          "flex": 4
+        },
+        {
+          "key": "living",
+          "type": "text",
+          "label": "Standard of Living",
+          "flex": 2
+        },
+        {
+          "key": "new_glory",
+          "type": "number",
+          "label": "New Glory",
+          "min": 0,
+          "default": 0,
+          "flex": 1
+        },
+        {
+          "key": "total_glory",
+          "type": "number",
+          "label": "Total Glory",
+          "min": 0,
+          "default": 0,
+          "flex": 1
+        }
+      ]
+    },
+    "equipment": {
+      "type": "list",
+      "label": "Equipment",
+      "add_label": "Add item",
+      "columns": [
+        {
+          "key": "item",
+          "type": "text",
+          "label": "Item",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 4
+        }
+      ]
+    },
+    "parent1_name": {
+      "type": "text",
+      "label": "Parent's Name"
+    },
+    "parent1_glory": {
+      "type": "number",
+      "label": "Parent's Glory",
+      "min": 0,
+      "default": 0
+    },
+    "parent2_name": {
+      "type": "text",
+      "label": "Parent's Name"
+    },
+    "parent2_glory": {
+      "type": "number",
+      "label": "Parent's Glory",
+      "min": 0,
+      "default": 0
+    },
+    "family_characteristic": {
+      "type": "text",
+      "label": "Family Characteristic"
+    },
+    "family_notes": {
+      "type": "textarea",
+      "label": "Family Notes",
+      "rows": 3
+    },
+    "siblings": {
+      "type": "list",
+      "label": "Siblings",
+      "add_label": "Add sibling",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "age",
+          "type": "number",
+          "label": "Age",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "klass",
+          "type": "text",
+          "label": "Class",
+          "flex": 2
+        }
+      ]
+    },
+    "holdings": {
+      "type": "textarea",
+      "label": "Holdings",
+      "rows": 6
     },
     "notes": {
       "type": "textarea",
       "label": "Notes",
       "rows": 6
+    },
+    "manor1_manorial_improvements": {
+      "type": "list",
+      "label": "Manorial Improvements",
+      "add_label": "Add manorial improvements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_investments": {
+      "type": "list",
+      "label": "Investments",
+      "add_label": "Add investments",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_enhancements": {
+      "type": "list",
+      "label": "Enhancements",
+      "add_label": "Add enhancements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_notable_features": {
+      "type": "list",
+      "label": "Notable Features",
+      "add_label": "Add notable features",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_defenses": {
+      "type": "list",
+      "label": "Defenses",
+      "add_label": "Add defenses",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_manor_folk": {
+      "type": "list",
+      "label": "Manor Folk",
+      "add_label": "Add manor folk",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_manorial_improvements": {
+      "type": "list",
+      "label": "Manorial Improvements",
+      "add_label": "Add manorial improvements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_investments": {
+      "type": "list",
+      "label": "Investments",
+      "add_label": "Add investments",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_enhancements": {
+      "type": "list",
+      "label": "Enhancements",
+      "add_label": "Add enhancements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_notable_features": {
+      "type": "list",
+      "label": "Notable Features",
+      "add_label": "Add notable features",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_defenses": {
+      "type": "list",
+      "label": "Defenses",
+      "add_label": "Add defenses",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor2_manor_folk": {
+      "type": "list",
+      "label": "Manor Folk",
+      "add_label": "Add manor folk",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_manorial_improvements": {
+      "type": "list",
+      "label": "Manorial Improvements",
+      "add_label": "Add manorial improvements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_investments": {
+      "type": "list",
+      "label": "Investments",
+      "add_label": "Add investments",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_enhancements": {
+      "type": "list",
+      "label": "Enhancements",
+      "add_label": "Add enhancements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_notable_features": {
+      "type": "list",
+      "label": "Notable Features",
+      "add_label": "Add notable features",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_defenses": {
+      "type": "list",
+      "label": "Defenses",
+      "add_label": "Add defenses",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor3_manor_folk": {
+      "type": "list",
+      "label": "Manor Folk",
+      "add_label": "Add manor folk",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_manorial_improvements": {
+      "type": "list",
+      "label": "Manorial Improvements",
+      "add_label": "Add manorial improvements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_investments": {
+      "type": "list",
+      "label": "Investments",
+      "add_label": "Add investments",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_enhancements": {
+      "type": "list",
+      "label": "Enhancements",
+      "add_label": "Add enhancements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_notable_features": {
+      "type": "list",
+      "label": "Notable Features",
+      "add_label": "Add notable features",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_defenses": {
+      "type": "list",
+      "label": "Defenses",
+      "add_label": "Add defenses",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor4_manor_folk": {
+      "type": "list",
+      "label": "Manor Folk",
+      "add_label": "Add manor folk",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_manorial_improvements": {
+      "type": "list",
+      "label": "Manorial Improvements",
+      "add_label": "Add manorial improvements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_investments": {
+      "type": "list",
+      "label": "Investments",
+      "add_label": "Add investments",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_enhancements": {
+      "type": "list",
+      "label": "Enhancements",
+      "add_label": "Add enhancements",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_notable_features": {
+      "type": "list",
+      "label": "Notable Features",
+      "add_label": "Add notable features",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_defenses": {
+      "type": "list",
+      "label": "Defenses",
+      "add_label": "Add defenses",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor5_manor_folk": {
+      "type": "list",
+      "label": "Manor Folk",
+      "add_label": "Add manor folk",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
+    },
+    "manor1_name": {
+      "type": "text",
+      "label": "Manor 1 name"
+    },
+    "manor2_name": {
+      "type": "text",
+      "label": "Manor 2 name"
+    },
+    "manor3_name": {
+      "type": "text",
+      "label": "Manor 3 name"
+    },
+    "manor4_name": {
+      "type": "text",
+      "label": "Manor 4 name"
+    },
+    "manor5_name": {
+      "type": "text",
+      "label": "Manor 5 name"
     }
   },
   "computed": {
-    "strength_half": {
-      "formula": "floor(strength / 2)",
-      "label": "STR half"
-    },
-    "strength_fifth": {
-      "formula": "floor(strength / 5)",
-      "label": "STR fifth"
-    },
-    "constitution_half": {
-      "formula": "floor(constitution / 2)",
-      "label": "CON half"
-    },
-    "constitution_fifth": {
-      "formula": "floor(constitution / 5)",
-      "label": "CON fifth"
-    },
-    "size_half": {
-      "formula": "floor(size / 2)",
-      "label": "SIZ half"
-    },
-    "size_fifth": {
-      "formula": "floor(size / 5)",
-      "label": "SIZ fifth"
-    },
-    "dexterity_half": {
-      "formula": "floor(dexterity / 2)",
-      "label": "DEX half"
-    },
-    "dexterity_fifth": {
-      "formula": "floor(dexterity / 5)",
-      "label": "DEX fifth"
-    },
-    "appearance_half": {
-      "formula": "floor(appearance / 2)",
-      "label": "APP half"
-    },
-    "appearance_fifth": {
-      "formula": "floor(appearance / 5)",
-      "label": "APP fifth"
-    },
-    "intelligence_half": {
-      "formula": "floor(intelligence / 2)",
-      "label": "INT half"
-    },
-    "intelligence_fifth": {
-      "formula": "floor(intelligence / 5)",
-      "label": "INT fifth"
-    },
-    "power_half": {
-      "formula": "floor(power / 2)",
-      "label": "POW half"
-    },
-    "power_fifth": {
-      "formula": "floor(power / 5)",
-      "label": "POW fifth"
-    },
-    "education_half": {
-      "formula": "floor(education / 2)",
-      "label": "EDU half"
-    },
-    "education_fifth": {
-      "formula": "floor(education / 5)",
-      "label": "EDU fifth"
-    },
-    "sk_accounting_half": {
-      "formula": "floor(sk_accounting / 2)",
-      "label": "Accounting half"
-    },
-    "sk_accounting_fifth": {
-      "formula": "floor(sk_accounting / 5)",
-      "label": "Accounting fifth"
-    },
-    "sk_anthropology_half": {
-      "formula": "floor(sk_anthropology / 2)",
-      "label": "Anthropology half"
-    },
-    "sk_anthropology_fifth": {
-      "formula": "floor(sk_anthropology / 5)",
-      "label": "Anthropology fifth"
-    },
-    "sk_appraise_half": {
-      "formula": "floor(sk_appraise / 2)",
-      "label": "Appraise half"
-    },
-    "sk_appraise_fifth": {
-      "formula": "floor(sk_appraise / 5)",
-      "label": "Appraise fifth"
-    },
-    "sk_archaeology_half": {
-      "formula": "floor(sk_archaeology / 2)",
-      "label": "Archaeology half"
-    },
-    "sk_archaeology_fifth": {
-      "formula": "floor(sk_archaeology / 5)",
-      "label": "Archaeology fifth"
-    },
-    "sk_charm_half": {
-      "formula": "floor(sk_charm / 2)",
-      "label": "Charm half"
-    },
-    "sk_charm_fifth": {
-      "formula": "floor(sk_charm / 5)",
-      "label": "Charm fifth"
-    },
-    "sk_climb_half": {
-      "formula": "floor(sk_climb / 2)",
-      "label": "Climb half"
-    },
-    "sk_climb_fifth": {
-      "formula": "floor(sk_climb / 5)",
-      "label": "Climb fifth"
-    },
-    "sk_computer_use_half": {
-      "formula": "floor(sk_computer_use / 2)",
-      "label": "Computer Use half"
-    },
-    "sk_computer_use_fifth": {
-      "formula": "floor(sk_computer_use / 5)",
-      "label": "Computer Use fifth"
-    },
-    "sk_credit_rating_half": {
-      "formula": "floor(sk_credit_rating / 2)",
-      "label": "Credit Rating half"
-    },
-    "sk_credit_rating_fifth": {
-      "formula": "floor(sk_credit_rating / 5)",
-      "label": "Credit Rating fifth"
-    },
-    "sk_cthulhu_mythos_half": {
-      "formula": "floor(sk_cthulhu_mythos / 2)",
-      "label": "Cthulhu Mythos half"
-    },
-    "sk_cthulhu_mythos_fifth": {
-      "formula": "floor(sk_cthulhu_mythos / 5)",
-      "label": "Cthulhu Mythos fifth"
-    },
-    "sk_disguise_half": {
-      "formula": "floor(sk_disguise / 2)",
-      "label": "Disguise half"
-    },
-    "sk_disguise_fifth": {
-      "formula": "floor(sk_disguise / 5)",
-      "label": "Disguise fifth"
-    },
-    "sk_dodge_half": {
-      "formula": "floor(sk_dodge / 2)",
-      "label": "Dodge half"
-    },
-    "sk_dodge_fifth": {
-      "formula": "floor(sk_dodge / 5)",
-      "label": "Dodge fifth"
-    },
-    "sk_drive_auto_half": {
-      "formula": "floor(sk_drive_auto / 2)",
-      "label": "Drive Auto half"
-    },
-    "sk_drive_auto_fifth": {
-      "formula": "floor(sk_drive_auto / 5)",
-      "label": "Drive Auto fifth"
-    },
-    "sk_electrical_repair_half": {
-      "formula": "floor(sk_electrical_repair / 2)",
-      "label": "Electrical Repair half"
-    },
-    "sk_electrical_repair_fifth": {
-      "formula": "floor(sk_electrical_repair / 5)",
-      "label": "Electrical Repair fifth"
-    },
-    "sk_electronics_half": {
-      "formula": "floor(sk_electronics / 2)",
-      "label": "Electronics half"
-    },
-    "sk_electronics_fifth": {
-      "formula": "floor(sk_electronics / 5)",
-      "label": "Electronics fifth"
-    },
-    "sk_fast_talk_half": {
-      "formula": "floor(sk_fast_talk / 2)",
-      "label": "Fast Talk half"
-    },
-    "sk_fast_talk_fifth": {
-      "formula": "floor(sk_fast_talk / 5)",
-      "label": "Fast Talk fifth"
-    },
-    "sk_fighting_brawl_half": {
-      "formula": "floor(sk_fighting_brawl / 2)",
-      "label": "Fighting (Brawl) half"
-    },
-    "sk_fighting_brawl_fifth": {
-      "formula": "floor(sk_fighting_brawl / 5)",
-      "label": "Fighting (Brawl) fifth"
-    },
-    "sk_firearms_handgun_half": {
-      "formula": "floor(sk_firearms_handgun / 2)",
-      "label": "Firearms (Handgun) half"
-    },
-    "sk_firearms_handgun_fifth": {
-      "formula": "floor(sk_firearms_handgun / 5)",
-      "label": "Firearms (Handgun) fifth"
-    },
-    "sk_firearms_rifle_shotgun_half": {
-      "formula": "floor(sk_firearms_rifle_shotgun / 2)",
-      "label": "Firearms (Rifle/Shotgun) half"
-    },
-    "sk_firearms_rifle_shotgun_fifth": {
-      "formula": "floor(sk_firearms_rifle_shotgun / 5)",
-      "label": "Firearms (Rifle/Shotgun) fifth"
-    },
-    "sk_first_aid_half": {
-      "formula": "floor(sk_first_aid / 2)",
-      "label": "First Aid half"
-    },
-    "sk_first_aid_fifth": {
-      "formula": "floor(sk_first_aid / 5)",
-      "label": "First Aid fifth"
-    },
-    "sk_history_half": {
-      "formula": "floor(sk_history / 2)",
-      "label": "History half"
-    },
-    "sk_history_fifth": {
-      "formula": "floor(sk_history / 5)",
-      "label": "History fifth"
-    },
-    "sk_intimidate_half": {
-      "formula": "floor(sk_intimidate / 2)",
-      "label": "Intimidate half"
-    },
-    "sk_intimidate_fifth": {
-      "formula": "floor(sk_intimidate / 5)",
-      "label": "Intimidate fifth"
-    },
-    "sk_jump_half": {
-      "formula": "floor(sk_jump / 2)",
-      "label": "Jump half"
-    },
-    "sk_jump_fifth": {
-      "formula": "floor(sk_jump / 5)",
-      "label": "Jump fifth"
-    },
-    "sk_language_own_half": {
-      "formula": "floor(sk_language_own / 2)",
-      "label": "Language (Own) half"
-    },
-    "sk_language_own_fifth": {
-      "formula": "floor(sk_language_own / 5)",
-      "label": "Language (Own) fifth"
-    },
-    "sk_law_half": {
-      "formula": "floor(sk_law / 2)",
-      "label": "Law half"
-    },
-    "sk_law_fifth": {
-      "formula": "floor(sk_law / 5)",
-      "label": "Law fifth"
-    },
-    "sk_library_use_half": {
-      "formula": "floor(sk_library_use / 2)",
-      "label": "Library Use half"
-    },
-    "sk_library_use_fifth": {
-      "formula": "floor(sk_library_use / 5)",
-      "label": "Library Use fifth"
-    },
-    "sk_listen_half": {
-      "formula": "floor(sk_listen / 2)",
-      "label": "Listen half"
-    },
-    "sk_listen_fifth": {
-      "formula": "floor(sk_listen / 5)",
-      "label": "Listen fifth"
-    },
-    "sk_locksmith_half": {
-      "formula": "floor(sk_locksmith / 2)",
-      "label": "Locksmith half"
-    },
-    "sk_locksmith_fifth": {
-      "formula": "floor(sk_locksmith / 5)",
-      "label": "Locksmith fifth"
-    },
-    "sk_mechanical_repair_half": {
-      "formula": "floor(sk_mechanical_repair / 2)",
-      "label": "Mechanical Repair half"
-    },
-    "sk_mechanical_repair_fifth": {
-      "formula": "floor(sk_mechanical_repair / 5)",
-      "label": "Mechanical Repair fifth"
-    },
-    "sk_medicine_half": {
-      "formula": "floor(sk_medicine / 2)",
-      "label": "Medicine half"
-    },
-    "sk_medicine_fifth": {
-      "formula": "floor(sk_medicine / 5)",
-      "label": "Medicine fifth"
-    },
-    "sk_natural_world_half": {
-      "formula": "floor(sk_natural_world / 2)",
-      "label": "Natural World half"
-    },
-    "sk_natural_world_fifth": {
-      "formula": "floor(sk_natural_world / 5)",
-      "label": "Natural World fifth"
-    },
-    "sk_navigate_half": {
-      "formula": "floor(sk_navigate / 2)",
-      "label": "Navigate half"
-    },
-    "sk_navigate_fifth": {
-      "formula": "floor(sk_navigate / 5)",
-      "label": "Navigate fifth"
-    },
-    "sk_occult_half": {
-      "formula": "floor(sk_occult / 2)",
-      "label": "Occult half"
-    },
-    "sk_occult_fifth": {
-      "formula": "floor(sk_occult / 5)",
-      "label": "Occult fifth"
-    },
-    "sk_operate_heavy_machinery_half": {
-      "formula": "floor(sk_operate_heavy_machinery / 2)",
-      "label": "Operate Heavy Machinery half"
-    },
-    "sk_operate_heavy_machinery_fifth": {
-      "formula": "floor(sk_operate_heavy_machinery / 5)",
-      "label": "Operate Heavy Machinery fifth"
-    },
-    "sk_persuade_half": {
-      "formula": "floor(sk_persuade / 2)",
-      "label": "Persuade half"
-    },
-    "sk_persuade_fifth": {
-      "formula": "floor(sk_persuade / 5)",
-      "label": "Persuade fifth"
-    },
-    "sk_psychoanalysis_half": {
-      "formula": "floor(sk_psychoanalysis / 2)",
-      "label": "Psychoanalysis half"
-    },
-    "sk_psychoanalysis_fifth": {
-      "formula": "floor(sk_psychoanalysis / 5)",
-      "label": "Psychoanalysis fifth"
-    },
-    "sk_psychology_half": {
-      "formula": "floor(sk_psychology / 2)",
-      "label": "Psychology half"
-    },
-    "sk_psychology_fifth": {
-      "formula": "floor(sk_psychology / 5)",
-      "label": "Psychology fifth"
-    },
-    "sk_ride_half": {
-      "formula": "floor(sk_ride / 2)",
-      "label": "Ride half"
-    },
-    "sk_ride_fifth": {
-      "formula": "floor(sk_ride / 5)",
-      "label": "Ride fifth"
-    },
-    "sk_sleight_of_hand_half": {
-      "formula": "floor(sk_sleight_of_hand / 2)",
-      "label": "Sleight of Hand half"
-    },
-    "sk_sleight_of_hand_fifth": {
-      "formula": "floor(sk_sleight_of_hand / 5)",
-      "label": "Sleight of Hand fifth"
-    },
-    "sk_spot_hidden_half": {
-      "formula": "floor(sk_spot_hidden / 2)",
-      "label": "Spot Hidden half"
-    },
-    "sk_spot_hidden_fifth": {
-      "formula": "floor(sk_spot_hidden / 5)",
-      "label": "Spot Hidden fifth"
-    },
-    "sk_stealth_half": {
-      "formula": "floor(sk_stealth / 2)",
-      "label": "Stealth half"
-    },
-    "sk_stealth_fifth": {
-      "formula": "floor(sk_stealth / 5)",
-      "label": "Stealth fifth"
-    },
-    "sk_survival_half": {
-      "formula": "floor(sk_survival / 2)",
-      "label": "Survival half"
-    },
-    "sk_survival_fifth": {
-      "formula": "floor(sk_survival / 5)",
-      "label": "Survival fifth"
-    },
-    "sk_swim_half": {
-      "formula": "floor(sk_swim / 2)",
-      "label": "Swim half"
-    },
-    "sk_swim_fifth": {
-      "formula": "floor(sk_swim / 5)",
-      "label": "Swim fifth"
-    },
-    "sk_throw_half": {
-      "formula": "floor(sk_throw / 2)",
-      "label": "Throw half"
-    },
-    "sk_throw_fifth": {
-      "formula": "floor(sk_throw / 5)",
-      "label": "Throw fifth"
-    },
-    "sk_track_half": {
-      "formula": "floor(sk_track / 2)",
-      "label": "Track half"
-    },
-    "sk_track_fifth": {
-      "formula": "floor(sk_track / 5)",
-      "label": "Track fifth"
-    },
-    "art_craft_1_half": {
-      "formula": "floor(art_craft_1 / 2)",
-      "label": "Art/Craft half"
-    },
-    "art_craft_1_fifth": {
-      "formula": "floor(art_craft_1 / 5)",
-      "label": "Art/Craft fifth"
-    },
-    "art_craft_2_half": {
-      "formula": "floor(art_craft_2 / 2)",
-      "label": "Art/Craft half"
-    },
-    "art_craft_2_fifth": {
-      "formula": "floor(art_craft_2 / 5)",
-      "label": "Art/Craft fifth"
-    },
-    "science_1_half": {
-      "formula": "floor(science_1 / 2)",
-      "label": "Science half"
-    },
-    "science_1_fifth": {
-      "formula": "floor(science_1 / 5)",
-      "label": "Science fifth"
-    },
-    "science_2_half": {
-      "formula": "floor(science_2 / 2)",
-      "label": "Science half"
-    },
-    "science_2_fifth": {
-      "formula": "floor(science_2 / 5)",
-      "label": "Science fifth"
-    },
-    "language_other_1_half": {
-      "formula": "floor(language_other_1 / 2)",
-      "label": "Language (Other) half"
-    },
-    "language_other_1_fifth": {
-      "formula": "floor(language_other_1 / 5)",
-      "label": "Language (Other) fifth"
-    },
-    "language_other_2_half": {
-      "formula": "floor(language_other_2 / 2)",
-      "label": "Language (Other) half"
-    },
-    "language_other_2_fifth": {
-      "formula": "floor(language_other_2 / 5)",
-      "label": "Language (Other) fifth"
-    },
-    "fighting_other_half": {
-      "formula": "floor(fighting_other / 2)",
-      "label": "Fighting half"
-    },
-    "fighting_other_fifth": {
-      "formula": "floor(fighting_other / 5)",
-      "label": "Fighting fifth"
-    },
-    "firearms_other_half": {
-      "formula": "floor(firearms_other / 2)",
-      "label": "Firearms half"
-    },
-    "firearms_other_fifth": {
-      "formula": "floor(firearms_other / 5)",
-      "label": "Firearms fifth"
-    },
-    "pilot_half": {
-      "formula": "floor(pilot / 2)",
-      "label": "Pilot half"
-    },
-    "pilot_fifth": {
-      "formula": "floor(pilot / 5)",
-      "label": "Pilot fifth"
-    },
-    "other_skill_1_half": {
-      "formula": "floor(other_skill_1 / 2)",
-      "label": "Other half"
-    },
-    "other_skill_1_fifth": {
-      "formula": "floor(other_skill_1 / 5)",
-      "label": "Other fifth"
-    },
-    "other_skill_2_half": {
-      "formula": "floor(other_skill_2 / 2)",
-      "label": "Other half"
-    },
-    "other_skill_2_fifth": {
-      "formula": "floor(other_skill_2 / 5)",
-      "label": "Other fifth"
-    },
-    "other_skill_3_half": {
-      "formula": "floor(other_skill_3 / 2)",
-      "label": "Other half"
-    },
-    "other_skill_3_fifth": {
-      "formula": "floor(other_skill_3 / 5)",
-      "label": "Other fifth"
-    },
-    "occupation_points_spent": {
-      "formula": "(contains(occupation_skills, 'Accounting') ? max(0, sk_accounting - 5) : 0) + (contains(occupation_skills, 'Anthropology') ? max(0, sk_anthropology - 1) : 0) + (contains(occupation_skills, 'Appraise') ? max(0, sk_appraise - 5) : 0) + (contains(occupation_skills, 'Archaeology') ? max(0, sk_archaeology - 1) : 0) + (contains(occupation_skills, 'Charm') ? max(0, sk_charm - 15) : 0) + (contains(occupation_skills, 'Climb') ? max(0, sk_climb - 20) : 0) + max(0, sk_credit_rating - 0) + (contains(occupation_skills, 'Disguise') ? max(0, sk_disguise - 5) : 0) + (contains(occupation_skills, 'Dodge') ? max(0, sk_dodge - floor(dexterity / 2)) : 0) + (contains(occupation_skills, 'Drive Auto') ? max(0, sk_drive_auto - 20) : 0) + (contains(occupation_skills, 'Electrical Repair') ? max(0, sk_electrical_repair - 10) : 0) + (contains(occupation_skills, 'Fast Talk') ? max(0, sk_fast_talk - 5) : 0) + (contains(occupation_skills, 'Fighting (Brawl)') ? max(0, sk_fighting_brawl - 25) : 0) + (contains(occupation_skills, 'Firearms (Handgun)') ? max(0, sk_firearms_handgun - 20) : 0) + (contains(occupation_skills, 'Firearms (Rifle/Shotgun)') ? max(0, sk_firearms_rifle_shotgun - 25) : 0) + (contains(occupation_skills, 'First Aid') ? max(0, sk_first_aid - 30) : 0) + (contains(occupation_skills, 'History') ? max(0, sk_history - 5) : 0) + (contains(occupation_skills, 'Intimidate') ? max(0, sk_intimidate - 15) : 0) + (contains(occupation_skills, 'Jump') ? max(0, sk_jump - 20) : 0) + (contains(occupation_skills, 'Language (Own)') ? max(0, sk_language_own - education) : 0) + (contains(occupation_skills, 'Law') ? max(0, sk_law - 5) : 0) + (contains(occupation_skills, 'Library Use') ? max(0, sk_library_use - 20) : 0) + (contains(occupation_skills, 'Listen') ? max(0, sk_listen - 20) : 0) + (contains(occupation_skills, 'Locksmith') ? max(0, sk_locksmith - 1) : 0) + (contains(occupation_skills, 'Mechanical Repair') ? max(0, sk_mechanical_repair - 10) : 0) + (contains(occupation_skills, 'Medicine') ? max(0, sk_medicine - 1) : 0) + (contains(occupation_skills, 'Natural World') ? max(0, sk_natural_world - 10) : 0) + (contains(occupation_skills, 'Navigate') ? max(0, sk_navigate - 10) : 0) + (contains(occupation_skills, 'Occult') ? max(0, sk_occult - 5) : 0) + (contains(occupation_skills, 'Operate Heavy Machinery') ? max(0, sk_operate_heavy_machinery - 1) : 0) + (contains(occupation_skills, 'Persuade') ? max(0, sk_persuade - 10) : 0) + (contains(occupation_skills, 'Psychoanalysis') ? max(0, sk_psychoanalysis - 1) : 0) + (contains(occupation_skills, 'Psychology') ? max(0, sk_psychology - 10) : 0) + (contains(occupation_skills, 'Ride') ? max(0, sk_ride - 5) : 0) + (contains(occupation_skills, 'Sleight of Hand') ? max(0, sk_sleight_of_hand - 10) : 0) + (contains(occupation_skills, 'Spot Hidden') ? max(0, sk_spot_hidden - 25) : 0) + (contains(occupation_skills, 'Stealth') ? max(0, sk_stealth - 20) : 0) + (contains(occupation_skills, 'Survival') ? max(0, sk_survival - 10) : 0) + (contains(occupation_skills, 'Swim') ? max(0, sk_swim - 20) : 0) + (contains(occupation_skills, 'Throw') ? max(0, sk_throw - 20) : 0) + (contains(occupation_skills, 'Track') ? max(0, sk_track - 10) : 0) + (art_craft_1_occ ? max(0, art_craft_1 - art_craft_1_base) : 0) + (art_craft_2_occ ? max(0, art_craft_2 - art_craft_2_base) : 0) + (science_1_occ ? max(0, science_1 - science_1_base) : 0) + (science_2_occ ? max(0, science_2 - science_2_base) : 0) + (language_other_1_occ ? max(0, language_other_1 - language_other_1_base) : 0) + (language_other_2_occ ? max(0, language_other_2 - language_other_2_base) : 0) + (fighting_other_occ ? max(0, fighting_other - fighting_other_base) : 0) + (firearms_other_occ ? max(0, firearms_other - firearms_other_base) : 0) + (pilot_occ ? max(0, pilot - pilot_base) : 0) + (other_skill_1_occ ? max(0, other_skill_1 - other_skill_1_base) : 0) + (other_skill_2_occ ? max(0, other_skill_2 - other_skill_2_base) : 0) + (other_skill_3_occ ? max(0, other_skill_3 - other_skill_3_base) : 0) + (contains(occupation_skills, 'Computer Use') ? max(0, sk_computer_use - 5) : 0) + (contains(occupation_skills, 'Electronics') ? max(0, sk_electronics - 1) : 0)",
-      "label": "Occupation Points Spent"
-    },
-    "personal_points": {
-      "formula": "intelligence * 2",
-      "label": "Personal Interest Points"
-    },
-    "personal_points_spent": {
-      "formula": "(max(0, sk_accounting - 5) + max(0, sk_anthropology - 1) + max(0, sk_appraise - 5) + max(0, sk_archaeology - 1) + max(0, sk_charm - 15) + max(0, sk_climb - 20) + max(0, sk_credit_rating - 0) + max(0, sk_disguise - 5) + max(0, sk_dodge - floor(dexterity / 2)) + max(0, sk_drive_auto - 20) + max(0, sk_electrical_repair - 10) + max(0, sk_fast_talk - 5) + max(0, sk_fighting_brawl - 25) + max(0, sk_firearms_handgun - 20) + max(0, sk_firearms_rifle_shotgun - 25) + max(0, sk_first_aid - 30) + max(0, sk_history - 5) + max(0, sk_intimidate - 15) + max(0, sk_jump - 20) + max(0, sk_language_own - education) + max(0, sk_law - 5) + max(0, sk_library_use - 20) + max(0, sk_listen - 20) + max(0, sk_locksmith - 1) + max(0, sk_mechanical_repair - 10) + max(0, sk_medicine - 1) + max(0, sk_natural_world - 10) + max(0, sk_navigate - 10) + max(0, sk_occult - 5) + max(0, sk_operate_heavy_machinery - 1) + max(0, sk_persuade - 10) + max(0, sk_psychoanalysis - 1) + max(0, sk_psychology - 10) + max(0, sk_ride - 5) + max(0, sk_sleight_of_hand - 10) + max(0, sk_spot_hidden - 25) + max(0, sk_stealth - 20) + max(0, sk_survival - 10) + max(0, sk_swim - 20) + max(0, sk_throw - 20) + max(0, sk_track - 10) + max(0, art_craft_1 - art_craft_1_base) + max(0, art_craft_2 - art_craft_2_base) + max(0, science_1 - science_1_base) + max(0, science_2 - science_2_base) + max(0, language_other_1 - language_other_1_base) + max(0, language_other_2 - language_other_2_base) + max(0, fighting_other - fighting_other_base) + max(0, firearms_other - firearms_other_base) + max(0, pilot - pilot_base) + max(0, other_skill_1 - other_skill_1_base) + max(0, other_skill_2 - other_skill_2_base) + max(0, other_skill_3 - other_skill_3_base) + max(0, sk_computer_use - 5) + max(0, sk_electronics - 1)) - occupation_points_spent",
-      "label": "Personal Interest Points Spent"
-    },
-    "damage_bonus": {
-      "formula": "(strength + size) <= 64 ? '-2' : ((strength + size) <= 84 ? '-1' : ((strength + size) <= 124 ? 'None' : ((strength + size) <= 164 ? '+1D4' : ((strength + size) <= 204 ? '+1D6' : concat('+', floor(((strength + size) - 205) / 80) + 2, 'D6')))))",
-      "label": "Damage Bonus"
-    },
-    "build": {
-      "formula": "(strength + size) <= 64 ? -2 : ((strength + size) <= 84 ? -1 : ((strength + size) <= 124 ? 0 : ((strength + size) <= 164 ? 1 : ((strength + size) <= 204 ? 2 : floor(((strength + size) - 205) / 80) + 3))))",
-      "label": "Build"
-    },
-    "move": {
-      "formula": "((dexterity < size and strength < size) ? 7 : ((dexterity > size and strength > size) ? 9 : 8)) - (age >= 40 ? min(5, floor((age - 30) / 10)) : 0)",
-      "label": "Move Rate"
-    },
-    "sanity_max": {
-      "formula": "99 - sk_cthulhu_mythos",
-      "label": "Maximum Sanity"
-    },
-    "luck_half": {
-      "formula": "floor(luck_current / 2)",
-      "label": "Luck half"
-    },
-    "luck_fifth": {
-      "formula": "floor(luck_current / 5)",
-      "label": "Luck fifth"
-    },
-    "sanity_fifth": {
-      "formula": "floor(sanity_current / 5)",
-      "label": "One-fifth Sanity"
+    "knockdown": {
+      "formula": "siz",
+      "label": "Knockdown"
+    },
+    "weapon_damage": {
+      "formula": "floor((str + siz) / 6)",
+      "label": "Weapon Damage (d6)"
+    },
+    "brawling_damage": {
+      "formula": "floor((str + siz) / 6)",
+      "label": "Brawling Damage"
+    },
+    "movement_rate": {
+      "formula": "floor((str + dex) / 2) + 5",
+      "label": "Movement Rate"
+    },
+    "major_wound": {
+      "formula": "con",
+      "label": "Major Wound"
+    },
+    "healing_rate": {
+      "formula": "floor(con / 5)",
+      "label": "Healing Rate"
+    },
+    "total_hit_points": {
+      "formula": "con + siz",
+      "label": "Total Hit Points"
+    },
+    "unconscious": {
+      "formula": "floor((con + siz) / 4)",
+      "label": "Unconscious"
+    },
+    "total_armor": {
+      "formula": "armor_mail + armor_textile + armor_helm",
+      "label": "Total Armor Protection"
+    },
+    "total_armor_and_shield": {
+      "formula": "armor_mail + armor_textile + armor_helm + armor_shield",
+      "label": "With Shield"
     }
   },
-  "name_field": "investigator_name",
+  "name_field": "character_name",
   "validators": [
     {
-      "rule": "creation_done or occupation_points_spent <= occupation_points",
-      "message": "More occupation skill points spent than the occupation gives."
+      "rule": "hp_current <= total_hit_points",
+      "message": "Current hit points are above Total Hit Points (CON + SIZ).",
+      "field": "hp_current"
     },
     {
-      "rule": "creation_done or personal_points_spent <= personal_points",
-      "message": "More personal interest points spent than INT × 2."
+      "rule": "trait_chaste + trait_lustful == 20",
+      "message": "Chaste + Lustful should total 20.",
+      "field": "trait_chaste"
     },
     {
-      "rule": "sanity_current <= sanity_max",
-      "message": "Sanity is above 99 minus Cthulhu Mythos."
+      "rule": "trait_energetic + trait_lazy == 20",
+      "message": "Energetic + Lazy should total 20.",
+      "field": "trait_energetic"
     },
     {
-      "rule": "hp_current <= hp_max",
-      "message": "Hit points are above the maximum."
+      "rule": "trait_forgiving + trait_vengeful == 20",
+      "message": "Forgiving + Vengeful should total 20.",
+      "field": "trait_forgiving"
+    },
+    {
+      "rule": "trait_generous + trait_selfish == 20",
+      "message": "Generous + Selfish should total 20.",
+      "field": "trait_generous"
+    },
+    {
+      "rule": "trait_honest + trait_deceitful == 20",
+      "message": "Honest + Deceitful should total 20.",
+      "field": "trait_honest"
+    },
+    {
+      "rule": "trait_just + trait_arbitrary == 20",
+      "message": "Just + Arbitrary should total 20.",
+      "field": "trait_just"
+    },
+    {
+      "rule": "trait_merciful + trait_cruel == 20",
+      "message": "Merciful + Cruel should total 20.",
+      "field": "trait_merciful"
+    },
+    {
+      "rule": "trait_modest + trait_proud == 20",
+      "message": "Modest + Proud should total 20.",
+      "field": "trait_modest"
+    },
+    {
+      "rule": "trait_prudent + trait_reckless == 20",
+      "message": "Prudent + Reckless should total 20.",
+      "field": "trait_prudent"
+    },
+    {
+      "rule": "trait_spiritual + trait_worldly == 20",
+      "message": "Spiritual + Worldly should total 20.",
+      "field": "trait_spiritual"
+    },
+    {
+      "rule": "trait_temperate + trait_indulgent == 20",
+      "message": "Temperate + Indulgent should total 20.",
+      "field": "trait_temperate"
+    },
+    {
+      "rule": "trait_trusting + trait_suspicious == 20",
+      "message": "Trusting + Suspicious should total 20.",
+      "field": "trait_trusting"
+    },
+    {
+      "rule": "trait_valorous + trait_cowardly == 20",
+      "message": "Valorous + Cowardly should total 20.",
+      "field": "trait_valorous"
+    },
+    {
+      "rule": "passion_homage + passion_fealty + passion_c1 + passion_c2 <= 40",
+      "message": "Fidelitas passions total more than 40.",
+      "field": "passion_homage"
+    },
+    {
+      "rule": "passion_love_family + passion_c3 + passion_c4 + passion_c5 <= 40",
+      "message": "Fervor passions total more than 40.",
+      "field": "passion_love_family"
+    },
+    {
+      "rule": "passion_devotion + passion_c6 <= 40",
+      "message": "Adoratio passions total more than 40.",
+      "field": "passion_devotion"
+    },
+    {
+      "rule": "passion_hospitality + passion_station + passion_c7 <= 40",
+      "message": "Civilitas passions total more than 40.",
+      "field": "passion_hospitality"
     }
   ],
   "layout_file": "pendragon-6e.html",

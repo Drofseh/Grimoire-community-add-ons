@@ -1,12 +1,16 @@
-/* Pendragon 6th Edition investigator sheet.
+/* Pendragon 6th Edition character sheet.
    The app's own vocabulary - bordered boxes with small uppercase captions -
-   around the content of the modern-era investigator sheet, deliberately not
-   its parchment, fonts or page frame, which are Chaosium's trade dress: characteristics
-   and their half and fifth values in a block, the four pools that run down
-   in play (hit points, Sanity, Luck, magic points), and skills in columns of
-   ruled lines. Every colour is an app token, so a theme restyles the sheet. */
+   around the sheet's content in the printed sheet's arrangement,
+   deliberately not its parchment, fonts or page frame, which are Chaosium's
+   trade dress: name and glory across the top; heraldry and the opposed traits
+   down the left; personal information, characteristics, derived values,
+   wounds, armor and attacks down the middle; passions and skills down the
+   right; horses, squire, passive glory, history, equipment, family, holdings
+   and notes below. Trait values sit in shield-shaped boxes, the same
+   app-styled shield the Cosmere sheet uses for its defenses.
+   Every colour is an app token, so a theme restyles the sheet. */
 
-.sheet-coc {
+.sheet-pendragon {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -21,6 +25,62 @@
 
 .gc-field-readonly > div {
   white-space: pre-line;
+}
+
+/* Every control on the sheet shares the unified text size and weight, so no
+   field - trait values included - can fall back to a smaller app default.
+   The boxes are given enough height that 14px text is never clipped.
+   Grimoire sets 13px on every control as an inline style
+   (frontend/src/components/characters/characterStyles.js `fieldInput`),
+   which beats any ordinary rule, so the size carries `!important` - the
+   backend filter allows it, and nothing else here needs it.
+   Text inputs align left; number inputs (type="number") align centre. */
+.sheet-pendragon input,
+.sheet-pendragon select,
+.sheet-pendragon textarea {
+  font-size: 16px !important;
+  /* font-weight: 600; */
+  line-height: 1.5;
+  min-height: 26px;
+  box-sizing: border-box;
+  text-align: left !important;
+}
+
+/* Grimoire wraps inputs inside .gc-field - target those directly too. */
+.sheet-pendragon .gc-field input,
+.sheet-pendragon .gc-field select,
+.sheet-pendragon .gc-field textarea {
+  text-align: left !important;
+}
+
+/* Regular number inputs render as type="number" - centre them. */
+.sheet-pendragon input[type="number"] {
+  text-align: center !important;
+}
+
+/* CompactNumber inputs render as type="text" via Grimoire's CompactNumber
+   component but are always numbers - centre those in these containers. */
+.sheet-pendragon .char input,
+.sheet-pendragon .gstat input,
+.sheet-pendragon .skill input,
+.sheet-pendragon .armor-grid input,
+.sheet-pendragon .hp-grid input,
+.sheet-pendragon .trait .shield input {
+  text-align: center !important;
+}
+
+/* Text inputs inside number containers - override back to left. */
+.sheet-pendragon .gstat input[name="player"],
+.sheet-pendragon .gstat input[name="character_name"],
+.sheet-pendragon .gstat input[name="warhorse_name"],
+.sheet-pendragon .gstat input[name="best_horse_name"],
+.sheet-pendragon .gstat input[name="squire_name"],
+.sheet-pendragon .gstat input[name="parent1_name"],
+.sheet-pendragon .gstat input[name="parent2_name"] {
+  text-align: left !important;
+}
+.sheet-pendragon .skill input[name="religion_name"] {
+  text-align: left !important;
 }
 
 /* --- shared ---------------------------------------------------------------- */
@@ -39,9 +99,9 @@
 .tiny {
   display: block;
   margin: 0;
-  font-size: 11px;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 16px;
+  /* font-weight: 600; */
+  /* text-transform: uppercase; */
   letter-spacing: 0.07em;
   color: var(--text-muted);
   white-space: nowrap;
@@ -51,16 +111,10 @@
   display: inline;
 }
 
-.box-title {
-  text-align: center;
-  font-weight: 700;
-  color: var(--text-dim);
-}
-
 .box-heading {
   margin: 0;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 16px;
+  /* font-weight: 600; */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
@@ -69,28 +123,20 @@
   padding-bottom: 6px;
 }
 
-.big {
-  display: block;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--gold);
-}
-
-.big.small {
-  font-size: 18px;
-}
-
-.big-input input {
-  font-size: 20px;
-  font-weight: 700;
+.sub-heading {
+  margin: 6px 0 0;
+  font-size: 16px;
+  /* font-weight: 600; */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
 }
 
 .hint {
   margin: 0;
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .opt {
@@ -99,52 +145,11 @@
   gap: 6px;
   cursor: pointer;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 16px;
+  /* font-weight: 600; */
 }
 
-.pair,
-.trio {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2px 8px;
-  align-items: center;
-  text-align: center;
-}
-
-.trio {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-/* A value's half and fifth, as the printed sheet stacks them beside it. */
-.hf {
-  display: inline-grid;
-  grid-template-rows: auto auto;
-  font-size: 11px;
-  line-height: 1.1;
-  color: var(--text-muted);
-  text-align: center;
-}
-
-.hf.center {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  font-size: 12px;
-}
-
-/* --- identity, characteristics and pools ------------------------------------ */
-
-.part-heading {
-  margin: 4px 0 0;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-align: center;
-  color: var(--text-dim);
-}
-
-/* A field on an underline with its caption beneath, as the sheet's header. */
+/* A field on an underline with its caption, as a header line. */
 .line {
   display: flex;
   flex-direction: column;
@@ -158,6 +163,8 @@
   border: none;
   background: transparent;
   padding: 3px 0;
+  font-size: 16px;
+  /* font-weight: 600; */
 }
 
 .id-grid {
@@ -166,61 +173,96 @@
   gap: 8px 16px;
 }
 
-.id-grid .wide input {
-  font-size: 18px;
-  font-weight: 700;
+/* Paired boxes share two equal columns. */
+.id-grid.pairs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.char-block {
+.id-grid .wide input {
+  font-size: 16px;
+  /* font-weight: 600; */
+}
+
+/* Player, Name, Session Glory, Glory and Honor across the top, as the
+   printed sheet's header. Player and Name take the largest shares, and
+   every text field spans the full width of its area. */
+.header {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr) minmax(0, 0.8fr) minmax(0, 0.7fr) minmax(0, 0.7fr);
+  gap: 8px 16px;
+  align-items: stretch;
+}
+
+/* The five labels share one centered line. */
+.header .tiny,
+.header .gstat > span {
+  text-align: center;
+  white-space: nowrap;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Every header text field spans the width of its area. */
+.header .gstat {
+  align-items: stretch;
+}
+
+.header .gstat input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* The printed sheet's three columns: heraldry and traits | identity,
+   characteristics, wounds, armor, attacks | passions and skills. */
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
+  align-items: start;
+}
+
+/* Family: father on the left, mother on the right. */
+.family-grid,
+.passive-glory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Horses beside squire and passive glory; history beside the rest. */
+.lower-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.main-grid .col,
+.lower-grid .col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
 }
 
 .char-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
 }
 
-.char-col {
+.char {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-/* Name, the value, and its half and fifth in their own cells. */
-.char {
-  display: grid;
-  grid-template-columns: 52px minmax(54px, 1fr) 40px 40px;
-  gap: 6px;
+  gap: 4px;
   align-items: center;
 }
 
-.char.head .tiny {
-  text-align: center;
-}
-
 .c-name {
-  display: flex;
-  flex-direction: column;
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--gold);
-  line-height: 1.05;
-}
-
-.c-sub {
-  font-size: 11px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-}
-
-.char input {
-  text-align: center;
-  font-weight: 700;
+  /* font-weight: 600; */
+  font-size: 16px;
+  color: var(--text);
 }
 
 .c-cell,
@@ -230,110 +272,150 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 3px 2px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .c-cell {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--text-dim);
 }
 
-.pools {
+.derived {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.derived li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px;
   gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  /* font-weight: 600; */
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.pool {
+.glory-grid,
+.horse-grid {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 2px 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 12px;
   align-items: center;
 }
 
-.pool-name {
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.pool-cells {
+/* Current HP, Aggravation Damage and Deterioration Damage: one line of
+   labels over one line of inputs, as in Characteristics. */
+.hp-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px 6px;
-  text-align: center;
-}
-
-.pool-cells.three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.pool-cells input {
-  text-align: center;
-}
-
-.hf-line {
-  grid-column: 2;
-  font-size: 11px;
-  color: var(--text-muted);
-  text-align: center;
-}
-
-.status {
-  flex-direction: row;
-  flex-wrap: wrap;
+  gap: 2px 8px;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px 18px;
+  text-align: center;
 }
 
-.status .opt {
-  font-size: 13px;
+.hp-grid input {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.status-item {
+.joust-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.joust-grid input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.equestrian-joust {
+  display: grid;
+  grid-template-columns: minmax(0, 0.2fr) minmax(0, 0.8fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.gstat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 16px;
+  /* font-weight: 600; */
+}
+
+/* The Honor value and its checkbox share one input row, so every label
+   row in the header is a plain span and the inputs all line up. */
+.gstat .honor-input {
   display: flex;
   align-items: center;
+  gap: 6px;
+}
+
+.gstat .honor-input > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.armor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+.total-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px;
   gap: 8px;
-  font-size: 13px;
+  align-items: center;
+  font-size: 16px;
+  /* font-weight: 600; */
 }
 
-.status-item .cell-value {
-  min-width: 40px;
-}
-
-/* --- skills ---------------------------------------------------------------- */
+/* --- skills, traits, passions ------------------------------------------------ */
 
 .skills {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  /* Down each column, then across, as the printed sheet reads: 56 lines in
-     three columns of 19. */
-  grid-template-rows: repeat(19, auto);
-  grid-auto-flow: column;
-  column-gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
 }
 
-/* Improvement box, name, occupation box, value, half and fifth. */
+/* The passion lists keep the same row style in a single column. */
+.skills.single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .skill {
   display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) 18px 52px 22px;
+  grid-template-columns: 18px minmax(0, 1fr) 52px;
   gap: 6px;
   align-items: center;
-  font-size: 12px;
+  font-size: 16px;
+  /* font-weight: 600; */
   padding: 3px 0;
-  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.skill input {
+  font-size: 16px;
+  /* font-weight: 600; */
 }
 
 .s-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.base {
-  color: var(--text-muted);
-  font-size: 11px;
 }
 
 .slot-name {
@@ -343,133 +425,125 @@
   align-items: center;
 }
 
+/* Two textboxes side by side: a passion name and its object. */
+.slot-name.twin {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
 .slot-name input {
-  padding: 2px 4px;
-  font-size: 12px;
+  font-size: 16px !important;
+  /* font-weight: 600; */
 }
 
-.skill input {
-  padding: 2px;
-}
-
-.extras summary {
-  cursor: pointer;
-  color: var(--text-muted);
-  font-size: 12px;
-}
-
-.bases {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px 12px;
-  margin-top: 6px;
-}
-
-.points-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2px 10px;
-  text-align: center;
-  align-items: center;
-}
-
-/* --- combat --------------------------------------------------------------- */
-
-.combat-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 14px;
-  align-items: start;
-}
-
-/* The unarmed line the sheet prints before any weapon. */
-.brawl {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) repeat(3, 44px) minmax(0, 1.2fr) repeat(4, minmax(0, 0.7fr));
-  gap: 3px 6px;
-  align-items: center;
-  font-size: 13px;
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--border);
-}
-
-.w-name {
-  font-weight: 700;
-}
-
-.combat-side {
+.traits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
-.cstat {
+.trait {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 60px;
+  grid-template-columns: 18px 52px minmax(0, 1fr) minmax(0, 1fr) 52px 18px;
   gap: 6px;
   align-items: center;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  /* font-weight: 600; */
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
 }
 
-.cstat.dodge {
-  grid-template-columns: minmax(0, 1fr) 46px 36px 36px;
+.trait .s-name.left {
+  text-align: left;
+  /* font-weight: 600; */
 }
 
-.cell-value.small {
-  font-size: 11px;
-  color: var(--text-dim);
+.trait .s-name.right {
+  text-align: right;
+  /* font-weight: 600; */
 }
 
-.wealth {
-  gap: 10px;
+/* A directed trait: its name takes the left, while its shield and check
+   line up under the right-hand trait column. */
+.trait.directed {
+  grid-template-columns: minmax(0, 1fr) 52px 18px;
 }
 
-/* --- other pages ----------------------------------------------------------- */
-
-.story {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+.trait.directed .s-name {
+  text-align: left;
 }
 
+/* The character's Ideal at the top of the Traits - a label and one
+   full-width text box. */
+.trait.ideal {
+  grid-template-columns: minmax(0, 1fr);
+  text-align: left;
+}
+
+/* Trait values sit in shield-shaped boxes - square shoulders, a rounded
+   point - the same app-styled shield the Cosmere sheet uses for defenses. */
+.trait .shield {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid var(--gold);
+  border-radius: 6px 6px 50% 50% / 6px 6px 38% 38%;
+  background: var(--bg-card);
+}
+
+.trait .shield input {
+  width: 100%;
+  text-align: center;
+  font-size: 16px !important;
+  /* font-weight: 600; */
+  color: var(--text);
+  /* Grimoire draws its own bordered, filled box on every control (inline
+     `fieldInput`), which sits over the shield border - strip it back to
+     plain text so the shield itself is the box. */
+  border: none !important;
+  background: transparent !important;
+}
 
 /* --- narrower screens ------------------------------------------------------ */
 
 @media (max-width: 1200px) {
-  .char-block,
-  .combat-grid {
+  .main-grid,
+  .lower-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .skills {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(28, auto);
   }
 }
 
 @media (max-width: 760px) {
   .id-grid,
-  .bases {
+  .glory-grid,
+  .horse-grid,
+  .armor-grid,
+  .char-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .skills {
-    grid-template-rows: none;
-    grid-auto-flow: row;
-  }
-  .skills,
-  .story,
-  .char-grid,
-  .points-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .brawl {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .id-grid {
+  .id-grid,
+  .id-grid.pairs,
+  .glory-grid,
+  .horse-grid,
+  .joust-grid,
+  .equestrian-joust,
+  .armor-grid,
+  .char-grid,
+  .skills {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .trait {
+    grid-template-columns: 18px 46px minmax(0, 1fr) minmax(0, 1fr) 46px 18px;
+  }
+  .trait.directed {
+    grid-template-columns: minmax(0, 1fr) 46px 18px;
   }
 }
