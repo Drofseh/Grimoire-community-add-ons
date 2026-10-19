@@ -1318,13 +1318,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1337,13 +1349,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
-          "flex": 2
+          "flex": 1.5
+        },
+        {
+          "key": "income",
+          "type": "number",
+          "label": "Income",
+          "flex": 1
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1356,13 +1386,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1375,13 +1417,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1394,13 +1448,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "location",
+          "type": "text",
+          "label": "Location",
           "flex": 2
+        },
+        {
+          "key": "dv",
+          "type": "number",
+          "label": "DV",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1413,13 +1485,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "position",
+          "type": "text",
+          "label": "Position",
           "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 1
+        },
+        {
+          "key": "skill_value",
+          "type": "number",
+          "label": "Skill Value",
+          "flex": 0.5
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
         }
       ]
     },
@@ -1432,13 +1522,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1451,13 +1553,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "income",
+          "type": "number",
+          "label": "Income",
+          "flex": 1
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1470,13 +1590,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1489,13 +1621,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1508,13 +1652,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "location",
+          "type": "text",
+          "label": "Location",
           "flex": 2
+        },
+        {
+          "key": "dv",
+          "type": "number",
+          "label": "DV",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1527,13 +1689,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "position",
+          "type": "text",
+          "label": "Position",
           "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 1
+        },
+        {
+          "key": "skill_value",
+          "type": "number",
+          "label": "Skill Value",
+          "flex": 0.5
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
         }
       ]
     },
@@ -1546,13 +1726,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1565,13 +1757,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "income",
+          "type": "number",
+          "label": "Income",
+          "flex": 0.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1584,13 +1794,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1603,13 +1825,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1622,13 +1856,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "location",
+          "type": "text",
+          "label": "Location",
           "flex": 2
+        },
+        {
+          "key": "dv",
+          "type": "number",
+          "label": "DV",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1641,13 +1893,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "position",
+          "type": "text",
+          "label": "Position",
           "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 1
+        },
+        {
+          "key": "skill_value",
+          "type": "number",
+          "label": "Skill Value",
+          "flex": 0.5
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
         }
       ]
     },
@@ -1660,13 +1930,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1679,13 +1961,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "income",
+          "type": "number",
+          "label": "Income",
+          "flex": 0.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1698,13 +1998,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1717,13 +2029,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1736,13 +2060,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "location",
+          "type": "text",
+          "label": "Location",
           "flex": 2
+        },
+        {
+          "key": "dv",
+          "type": "number",
+          "label": "DV",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1755,13 +2097,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "position",
+          "type": "text",
+          "label": "Position",
           "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 1
+        },
+        {
+          "key": "skill_value",
+          "type": "number",
+          "label": "Skill Value",
+          "flex": 0.5
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
         }
       ]
     },
@@ -1774,13 +2134,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1793,13 +2165,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "income",
+          "type": "number",
+          "label": "Income",
+          "flex": 0.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1812,13 +2202,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "statistic",
+          "type": "text",
+          "label": "Statistic",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1831,13 +2233,25 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "effects",
+          "type": "text",
+          "label": "Effects",
           "flex": 2
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 4
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1850,13 +2264,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "location",
+          "type": "text",
+          "label": "Location",
           "flex": 2
+        },
+        {
+          "key": "dv",
+          "type": "number",
+          "label": "DV",
+          "flex": 1
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
+        },
+        {
+          "key": "damaged",
+          "type": "checkbox",
+          "label": "Damaged?",
+          "flex": 0.5
         }
       ]
     },
@@ -1869,13 +2301,31 @@
           "key": "name",
           "type": "text",
           "label": "Name",
+          "flex": 1.5
+        },
+        {
+          "key": "position",
+          "type": "text",
+          "label": "Position",
           "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 1
+        },
+        {
+          "key": "skill_value",
+          "type": "number",
+          "label": "Skill Value",
+          "flex": 0.5
         },
         {
           "key": "notes",
           "type": "text",
           "label": "Notes",
-          "flex": 6
+          "flex": 3
         }
       ]
     },
