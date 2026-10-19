@@ -966,10 +966,6 @@
       "type": "text",
       "label": "Best Riding Horse type"
     },
-    "best_horse_worth": {
-      "type": "text",
-      "label": "Best Riding Horse worth"
-    },
     "best_horse_move": {
       "type": "number",
       "label": "Best Riding Horse Move",
@@ -987,14 +983,6 @@
       "label": "Best Riding Horse HP",
       "min": 0,
       "default": 0
-    },
-    "squire_horse_type": {
-      "type": "text",
-      "label": "Squire's Horse type"
-    },
-    "squire_horse_worth": {
-      "type": "text",
-      "label": "Squire's Horse worth"
     },
     "squire_horse_move": {
       "type": "number",
@@ -1849,6 +1837,140 @@
     "manor5_name": {
       "type": "text",
       "label": "Manor 5 name"
+    },
+    "best_horse_siz": {
+      "type": "number",
+      "label": "Best Riding Horse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_dex": {
+      "type": "number",
+      "label": "Best Riding Horse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_str": {
+      "type": "number",
+      "label": "Best Riding Horse STR",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_armor": {
+      "type": "number",
+      "label": "Best Riding Horse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "best_horse_damage": {
+      "type": "text",
+      "label": "Best Riding Horse Damage"
+    },
+    "squire_horse_name": {
+      "type": "text",
+      "label": "Squire's Horse Name"
+    },
+    "squire_horse_siz": {
+      "type": "number",
+      "label": "Squire's Horse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_dex": {
+      "type": "number",
+      "label": "Squire's Horse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_str": {
+      "type": "number",
+      "label": "Squire's Horse STR",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_con": {
+      "type": "number",
+      "label": "Squire's Horse CON",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_armor": {
+      "type": "number",
+      "label": "Squire's Horse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_damage": {
+      "type": "text",
+      "label": "Squire's Horse Damage"
+    },
+    "squire_horse_hp": {
+      "type": "number",
+      "label": "Squire's Horse HP",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_siz": {
+      "type": "number",
+      "label": "Other Horse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_dex": {
+      "type": "number",
+      "label": "Other Horse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_str": {
+      "type": "number",
+      "label": "Other Horse STR",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_con": {
+      "type": "number",
+      "label": "Other Horse CON",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_armor": {
+      "type": "number",
+      "label": "Other Horse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_move": {
+      "type": "number",
+      "label": "Other Horse Move",
+      "min": 0,
+      "default": 0
+    },
+    "other_horse_damage": {
+      "type": "text",
+      "label": "Other Horse Damage"
+    },
+    "other_horse_hp": {
+      "type": "number",
+      "label": "Other Horse HP",
+      "min": 0,
+      "default": 0
+    },
+    "squire_horse_type": {
+      "type": "text",
+      "label": "Squire's Horse Type"
+    },
+    "warhorse_worth": {
+      "type": "text",
+      "label": "Warhorse Worth"
+    },
+    "best_horse_worth": {
+      "type": "text",
+      "label": "Best Riding Horse Worth"
+    },
+    "squire_horse_worth": {
+      "type": "text",
+      "label": "Squire's Horse Worth"
     }
   },
   "computed": {
