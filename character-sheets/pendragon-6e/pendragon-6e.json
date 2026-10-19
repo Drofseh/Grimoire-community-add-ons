@@ -1053,15 +1053,57 @@
           "flex": 2
         },
         {
-          "key": "worth",
-          "type": "text",
-          "label": "Worth",
-          "flex": 2
+          "key": "siz",
+          "type": "number",
+          "label": "SIZ",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "dex",
+          "type": "number",
+          "label": "DEX",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "str",
+          "type": "number",
+          "label": "STR",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "con",
+          "type": "number",
+          "label": "CON",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "armor",
+          "type": "number",
+          "label": "Armor",
+          "min": 0,
+          "flex": 1
         },
         {
           "key": "move",
           "type": "number",
           "label": "Move",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "damage",
+          "type": "text",
+          "label": "Damage",
+          "flex": 2
+        },
+        {
+          "key": "hp",
+          "type": "number",
+          "label": "HP",
           "min": 0,
           "flex": 1
         }
