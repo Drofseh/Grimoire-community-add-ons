@@ -57,6 +57,19 @@
       "label": "Blazon",
       "rows": 2
     },
+    "titles": {
+      "type": "list",
+      "label": "Titles",
+      "add_label": "Add title",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": " ",
+          "flex": 1
+        }
+      ]
+    },
     "glory": {
       "type": "number",
       "label": "Glory",
@@ -1053,6 +1066,12 @@
           "flex": 2
         },
         {
+          "key": "type",
+          "type": "text",
+          "label": "Worth",
+          "flex": 1
+        },
+        {
           "key": "siz",
           "type": "number",
           "label": "SIZ",
@@ -1098,7 +1117,7 @@
           "key": "damage",
           "type": "text",
           "label": "Damage",
-          "flex": 2
+          "flex": 1
         },
         {
           "key": "hp",
