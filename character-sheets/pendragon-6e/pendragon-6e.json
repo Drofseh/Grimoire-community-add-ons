@@ -1066,7 +1066,7 @@
           "flex": 2
         },
         {
-          "key": "type",
+          "key": "worth",
           "type": "text",
           "label": "Worth",
           "flex": 1
@@ -2032,6 +2032,46 @@
     "squire_horse_worth": {
       "type": "text",
       "label": "Squire's Horse Worth"
+    },
+    "manor1_county": {
+      "type": "text",
+      "label": "Manor 1 County"
+    },
+    "manor1_hundred": {
+      "type": "text",
+      "label": "Manor 1 Hundred"
+    },
+    "manor2_county": {
+      "type": "text",
+      "label": "Manor 2 County"
+    },
+    "manor2_hundred": {
+      "type": "text",
+      "label": "Manor 2 Hundred"
+    },
+    "manor3_county": {
+      "type": "text",
+      "label": "Manor 3 County"
+    },
+    "manor3_hundred": {
+      "type": "text",
+      "label": "Manor 3 Hundred"
+    },
+    "manor4_county": {
+      "type": "text",
+      "label": "Manor 4 County"
+    },
+    "manor4_hundred": {
+      "type": "text",
+      "label": "Manor 4 Hundred"
+    },
+    "manor5_county": {
+      "type": "text",
+      "label": "Manor 5 County"
+    },
+    "manor5_hundred": {
+      "type": "text",
+      "label": "Manor 5 Hundred"
     }
   },
   "computed": {

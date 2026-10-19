@@ -219,7 +219,15 @@
   margin-bottom: 4px;
 }
 
-.warhorse-head .gstat {
+/* Manor Name and Location side by side in Estates tab */
+.manor-name-wrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.warhorse-head .gstat,
+.manor-name-wrap .gstat {
   flex: 1;
 }
 
