@@ -1,4 +1,4 @@
-name: Validate add-ons, templates, themes, and character sheets
+name: Validate add-ons, templates, themes, character sheets, and skills
 
 on:
   push:
@@ -23,3 +23,49 @@ jobs:
       # what their change produces.
       - name: Validate everything, and check the indexes are current
         run: python3 scripts/build_index.py --check
+
+      # The assistant skills' helper scripts run on users' own machines, so
+      # they carry real tests rather than schema checks alone.
+      - name: Test the assistant skills' scripts
+        run: |
+          pip install pytest pymupdf
+          python3 -m pytest skills/tests -q -p no:cacheprovider
+
+  # The other half of Grimoire's contract tests (grimoire issue #581). Grimoire's
+  # CI checks these add-ons against its own code; this checks a change here
+  # against Grimoire's current main, so an add-on PR that would break once
+  # installed fails here rather than in a user's Grimoire.
+  grimoire-contract:
+    name: Contract tests against Grimoire main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: community-add-ons
+
+      - uses: actions/checkout@v4
+        with:
+          repository: hunter-read/grimoire
+          ref: main
+          path: grimoire
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            grimoire/backend/requirements.txt
+            grimoire/requirements-test.txt
+
+      - name: Install Grimoire's backend
+        run: pip install -r grimoire/backend/requirements.txt -r grimoire/requirements-test.txt
+
+      # Only the tests marked community_addons: the ones that read this repo.
+      # REQUIRE_COMMUNITY_ADDONS fails the run if any skipped because a file
+      # they expect is missing here, rather than passing with them unchecked.
+      - name: Run Grimoire's community add-on contract tests
+        working-directory: grimoire
+        env:
+          COMMUNITY_ADDONS_PATH: ${{ github.workspace }}/community-add-ons
+          REQUIRE_COMMUNITY_ADDONS: "true"
+        run: python -m pytest -m community_addons -q -p no:cacheprovider

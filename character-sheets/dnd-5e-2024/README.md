@@ -20,6 +20,8 @@ layout that follows the shape of the published sheet.
 - **Magic items**, with a warning if more than three are attuned
 - **Attacks**, feats, and a catalogue of classes, species, backgrounds, feats
   and spells
+- **Custom class, species, or background** — type a homebrew name when the
+  catalogue entry is missing (or you prefer not to pick one)
 - **Picking a class** adds its level 1 features
 
 ## With the SRD 5.2 pack
