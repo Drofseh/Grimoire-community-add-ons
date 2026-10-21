@@ -236,6 +236,20 @@
   box-sizing: border-box;
 }
 
+/* Manorial Information - two lines of fields per manor */
+.manor-info-line1,
+.manor-info-line2 {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.manor-info-line1 .gstat,
+.manor-info-line2 .gstat {
+  flex: 1;
+}
+
 /* Horses beside squire and passive glory; history beside the rest. */
 .lower-grid {
   display: grid;

@@ -2522,6 +2522,326 @@
     "manor5_hundred": {
       "type": "text",
       "label": "Manor 5 Hundred"
+    },
+    "manor1_steward": {
+      "type": "text",
+      "label": "Manor 1 Steward"
+    },
+    "manor1_standard_of_living": {
+      "type": "text",
+      "label": "Manor 1 Standard of Living"
+    },
+    "manor1_folklore": {
+      "type": "number",
+      "label": "Manor 1 Folklore",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_station": {
+      "type": "number",
+      "label": "Manor 1 Station",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_privy_funds": {
+      "type": "number",
+      "label": "Manor 1 Privy Funds (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_current_income": {
+      "type": "number",
+      "label": "Manor 1 Current Income (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_assized_rent": {
+      "type": "number",
+      "label": "Manor 1 Assized Rent (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_total_treasure": {
+      "type": "number",
+      "label": "Manor 1 Total Treasure (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_stewardship": {
+      "type": "number",
+      "label": "Manor 1 Stewardship",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_total_dv": {
+      "type": "number",
+      "label": "Manor 1 Total DV",
+      "min": 0,
+      "default": 0
+    },
+    "manor1_fumble": {
+      "type": "checkbox",
+      "label": "Manor 1 Fumble"
+    },
+    "manor1_famine": {
+      "type": "checkbox",
+      "label": "Manor 1 Famine"
+    },
+    "manor2_steward": {
+      "type": "text",
+      "label": "Manor 2 Steward"
+    },
+    "manor2_standard_of_living": {
+      "type": "text",
+      "label": "Manor 2 Standard of Living"
+    },
+    "manor2_folklore": {
+      "type": "number",
+      "label": "Manor 2 Folklore",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_station": {
+      "type": "number",
+      "label": "Manor 2 Station",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_privy_funds": {
+      "type": "number",
+      "label": "Manor 2 Privy Funds (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_current_income": {
+      "type": "number",
+      "label": "Manor 2 Current Income (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_assized_rent": {
+      "type": "number",
+      "label": "Manor 2 Assized Rent (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_total_treasure": {
+      "type": "number",
+      "label": "Manor 2 Total Treasure (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_stewardship": {
+      "type": "number",
+      "label": "Manor 2 Stewardship",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_total_dv": {
+      "type": "number",
+      "label": "Manor 2 Total DV",
+      "min": 0,
+      "default": 0
+    },
+    "manor2_fumble": {
+      "type": "checkbox",
+      "label": "Manor 2 Fumble"
+    },
+    "manor2_famine": {
+      "type": "checkbox",
+      "label": "Manor 2 Famine"
+    },
+    "manor3_steward": {
+      "type": "text",
+      "label": "Manor 3 Steward"
+    },
+    "manor3_standard_of_living": {
+      "type": "text",
+      "label": "Manor 3 Standard of Living"
+    },
+    "manor3_folklore": {
+      "type": "number",
+      "label": "Manor 3 Folklore",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_station": {
+      "type": "number",
+      "label": "Manor 3 Station",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_privy_funds": {
+      "type": "number",
+      "label": "Manor 3 Privy Funds (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_current_income": {
+      "type": "number",
+      "label": "Manor 3 Current Income (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_assized_rent": {
+      "type": "number",
+      "label": "Manor 3 Assized Rent (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_total_treasure": {
+      "type": "number",
+      "label": "Manor 3 Total Treasure (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_stewardship": {
+      "type": "number",
+      "label": "Manor 3 Stewardship",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_total_dv": {
+      "type": "number",
+      "label": "Manor 3 Total DV",
+      "min": 0,
+      "default": 0
+    },
+    "manor3_fumble": {
+      "type": "checkbox",
+      "label": "Manor 3 Fumble"
+    },
+    "manor3_famine": {
+      "type": "checkbox",
+      "label": "Manor 3 Famine"
+    },
+    "manor4_steward": {
+      "type": "text",
+      "label": "Manor 4 Steward"
+    },
+    "manor4_standard_of_living": {
+      "type": "text",
+      "label": "Manor 4 Standard of Living"
+    },
+    "manor4_folklore": {
+      "type": "number",
+      "label": "Manor 4 Folklore",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_station": {
+      "type": "number",
+      "label": "Manor 4 Station",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_privy_funds": {
+      "type": "number",
+      "label": "Manor 4 Privy Funds (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_current_income": {
+      "type": "number",
+      "label": "Manor 4 Current Income (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_assized_rent": {
+      "type": "number",
+      "label": "Manor 4 Assized Rent (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_total_treasure": {
+      "type": "number",
+      "label": "Manor 4 Total Treasure (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_stewardship": {
+      "type": "number",
+      "label": "Manor 4 Stewardship",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_total_dv": {
+      "type": "number",
+      "label": "Manor 4 Total DV",
+      "min": 0,
+      "default": 0
+    },
+    "manor4_fumble": {
+      "type": "checkbox",
+      "label": "Manor 4 Fumble"
+    },
+    "manor4_famine": {
+      "type": "checkbox",
+      "label": "Manor 4 Famine"
+    },
+    "manor5_steward": {
+      "type": "text",
+      "label": "Manor 5 Steward"
+    },
+    "manor5_standard_of_living": {
+      "type": "text",
+      "label": "Manor 5 Standard of Living"
+    },
+    "manor5_folklore": {
+      "type": "number",
+      "label": "Manor 5 Folklore",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_station": {
+      "type": "number",
+      "label": "Manor 5 Station",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_privy_funds": {
+      "type": "number",
+      "label": "Manor 5 Privy Funds (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_current_income": {
+      "type": "number",
+      "label": "Manor 5 Current Income (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_assized_rent": {
+      "type": "number",
+      "label": "Manor 5 Assized Rent (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_total_treasure": {
+      "type": "number",
+      "label": "Manor 5 Total Treasure (\u00a3)",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_stewardship": {
+      "type": "number",
+      "label": "Manor 5 Stewardship",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_total_dv": {
+      "type": "number",
+      "label": "Manor 5 Total DV",
+      "min": 0,
+      "default": 0
+    },
+    "manor5_fumble": {
+      "type": "checkbox",
+      "label": "Manor 5 Fumble"
+    },
+    "manor5_famine": {
+      "type": "checkbox",
+      "label": "Manor 5 Famine"
     }
   },
   "computed": {
