@@ -110,6 +110,7 @@ can use.
 | Sheet | System | Licence | Layout |
 | --- | --- | --- | --- |
 | [D&D 5e (2024)](character-sheets/dnd-5e-2024/) | Dungeons & Dragons 5e | CC BY 4.0 | Custom |
+| [D&D 5e (2014)](character-sheets/dnd-5e-2014/) | Dungeons & Dragons 5e (2014 rules) | CC BY 4.0 | Custom |
 | [Draw Steel](character-sheets/draw-steel/) | Draw Steel | Draw Steel Creator License | Custom |
 | [Pathfinder 2e](character-sheets/pathfinder-2e/) | Pathfinder 2e | ORC | Custom |
 | [Pathfinder 1e](character-sheets/pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom |
@@ -135,6 +136,7 @@ Installed server-wide by an admin, then imported into a campaign's ruleset. See
 | Pack | For sheet | Licence |
 | --- | --- | --- |
 | [D&D 5e SRD 5.2](content-packs/dnd-5e-srd/) | D&D 5e (2024) | CC BY 4.0 |
+| [D&D 5e SRD 5.1](content-packs/dnd-5e-srd-5-1/) | D&D 5e (2014) | CC BY 4.0 |
 | [Draw Steel: Heroes](content-packs/draw-steel-core/) | Draw Steel | Draw Steel Creator License |
 | [Pathfinder Player Core](content-packs/pf2e-player-core/) | Pathfinder 2e | ORC |
 

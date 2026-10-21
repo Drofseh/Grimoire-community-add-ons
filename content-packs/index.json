@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/content-pack-index.schema.json",
   "version": 1,
-  "generated": "2026-10-13T18:39:18+00:00",
+  "generated": "2026-10-21T21:27:20+00:00",
   "packs": [
     {
       "pack_id": "dnd-5e-srd",
@@ -87,6 +87,105 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "attribution": "This work includes material from the System Reference Document 5.2 (\u201cSRD 5.2\u201d) by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.",
       "source_url": "https://www.dndbeyond.com/srd"
+    },
+    {
+      "pack_id": "dnd-5e-srd-5-1",
+      "schema_id": "dnd-5e-2014",
+      "name": "D&D 5e SRD 5.1",
+      "files": [
+        {
+          "name": "_meta.json",
+          "path": "content-packs/dnd-5e-srd-5-1/_meta.json",
+          "sha256": "81593ad9a8f017f5c2dbf6b406a824c2e81dda86e06bd91d254acbfd40f55f1c",
+          "bytes": 950
+        },
+        {
+          "name": "background.json",
+          "path": "content-packs/dnd-5e-srd-5-1/background.json",
+          "sha256": "421282064ae99ec971f99d1bc04bf1984b0633ee7eb7af5c4e4ff6a9a24703fe",
+          "bytes": 4206
+        },
+        {
+          "name": "class.json",
+          "path": "content-packs/dnd-5e-srd-5-1/class.json",
+          "sha256": "0226ed99ff18c32b42bef1175081bfa6d7a6c97a31b3307b63aab21794e2a4c6",
+          "bytes": 16917
+        },
+        {
+          "name": "feat.json",
+          "path": "content-packs/dnd-5e-srd-5-1/feat.json",
+          "sha256": "a1075ab8f4233d151bc0bda5cdfed617863388e8ff7fe367841e1d4f4c17ca32",
+          "bytes": 539
+        },
+        {
+          "name": "feature.json",
+          "path": "content-packs/dnd-5e-srd-5-1/feature.json",
+          "sha256": "1056351825b321f3f8e8ec644933dd9a23b4baf577c713d19b81fd60f162e8ce",
+          "bytes": 134815
+        },
+        {
+          "name": "item.json",
+          "path": "content-packs/dnd-5e-srd-5-1/item.json",
+          "sha256": "cfbf48bd85472fa8163402fa0ea73ebf75b1de632fda62060b4d6e0184c163c3",
+          "bytes": 75466
+        },
+        {
+          "name": "magic_item.json",
+          "path": "content-packs/dnd-5e-srd-5-1/magic_item.json",
+          "sha256": "976802597229dd5f8101c3ba5e3b516977aa63e8b3976cb6d21212a7947c446d",
+          "bytes": 244235
+        },
+        {
+          "name": "race.json",
+          "path": "content-packs/dnd-5e-srd-5-1/race.json",
+          "sha256": "f7f263aa1e877f9566c9b3cc55d4bf515122c88e4f51dde8eab9010eb56c3356",
+          "bytes": 13923
+        },
+        {
+          "name": "spell.json",
+          "path": "content-packs/dnd-5e-srd-5-1/spell.json",
+          "sha256": "4fb4b26ab5b24bda43ed9f4dfeefa1bdf7f6b9d10c3ceac5dcd45cb582710e39",
+          "bytes": 387527
+        },
+        {
+          "name": "subclass.json",
+          "path": "content-packs/dnd-5e-srd-5-1/subclass.json",
+          "sha256": "91b77f8ed10b7f9d199ccb12abd0a5e9d5ea37fbcc8d3773e3934cac8dac529e",
+          "bytes": 5238
+        },
+        {
+          "name": "subrace.json",
+          "path": "content-packs/dnd-5e-srd-5-1/subrace.json",
+          "sha256": "7e2e45f699309bc5f9c04cd70b8273e8b5c269acf55adea18a302d0d17bcb84b",
+          "bytes": 2823
+        },
+        {
+          "name": "trait.json",
+          "path": "content-packs/dnd-5e-srd-5-1/trait.json",
+          "sha256": "dba26475bb4246bc7e182a4cf3f83f1483c8d697a21e184a1d099dd0486415e8",
+          "bytes": 11105
+        }
+      ],
+      "entry_count": 1115,
+      "content_types": [
+        "background",
+        "class",
+        "feat",
+        "feature",
+        "item",
+        "magic_item",
+        "race",
+        "spell",
+        "subclass",
+        "subrace",
+        "trait"
+      ],
+      "version": "1.0.0",
+      "description": "The System Reference Document 5.1 for the 2014 rules, and nothing outside it: the twelve classes with their subclasses and every feature, races and subraces with their traits, the Acolyte, the Grappler feat, all 319 spells, equipment and magic items.",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "This work includes material taken from the System Reference Document 5.1 (\u201cSRD 5.1\u201d) by Wizards of the Coast LLC and available at https://dnd.wizards.com/resources/systems-reference-document. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at https://creativecommons.org/licenses/by/4.0/legalcode.",
+      "source_url": "https://dnd.wizards.com/resources/systems-reference-document"
     },
     {
       "pack_id": "draw-steel-core",

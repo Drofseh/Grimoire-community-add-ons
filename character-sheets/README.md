@@ -12,6 +12,7 @@ every field type, formula function, layout directive, HTML tag and CSS property
 | Sheet | System | Licence | Layout | Content pack |
 | --- | --- | --- | --- | --- |
 | [`dnd-5e-2024`](dnd-5e-2024/) | Dungeons & Dragons 5e (2024) | CC BY 4.0 | Custom | [`dnd-5e-srd`](../content-packs/dnd-5e-srd/) |
+| [`dnd-5e-2014`](dnd-5e-2014/) | Dungeons & Dragons 5e (2014) | CC BY 4.0 | Custom, after the printed 2014 sheet | [`dnd-5e-srd-5-1`](../content-packs/dnd-5e-srd-5-1/) |
 | [`draw-steel`](draw-steel/) | Draw Steel | Draw Steel Creator License | Custom, after the printed sheet | [`draw-steel-core`](../content-packs/draw-steel-core/) |
 | [`pathfinder-2e`](pathfinder-2e/) | Pathfinder 2e | ORC | Custom | [`pf2e-player-core`](../content-packs/pf2e-player-core/) |
 | [`pathfinder-1e`](pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom, after the 2009 sheet | |

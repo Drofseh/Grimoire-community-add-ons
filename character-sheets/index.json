@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-19T21:32:05Z",
+  "generated": "2026-10-21T21:27:20Z",
   "sheets": [
     {
       "id": "basic-fantasy",
@@ -74,6 +74,27 @@
       "license": "Cosmere RPG Fan Content Policy",
       "license_url": "https://www.cosmererpg.com/fan-content-policy",
       "attribution": "This is unofficial fan content, created and shared for non-commercial use. It has not been reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC.",
+      "grimoire_min_version": "1.10.0"
+    },
+    {
+      "id": "dnd-5e-2014",
+      "name": "D&D 5th Edition (2014)",
+      "version": "1.0.0",
+      "path": "character-sheets/dnd-5e-2014/dnd-5e-2014.json",
+      "sha256": "a197cbdb467747165eff9ed53632b2b266ee28dba2bccd36d80de308083fad0a",
+      "custom_layout": true,
+      "field_count": 113,
+      "layout_path": "character-sheets/dnd-5e-2014/dnd-5e-2014.html",
+      "layout_sha256": "3f2e66fd5eeccee3bd82a9936cd6a095eb2bddbbb265787aed0ea3e88d5d948f",
+      "styles_path": "character-sheets/dnd-5e-2014/dnd-5e-2014.css",
+      "styles_sha256": "858b30358b321247454337ad27807e2c59adc5625a02d27aa7a47a8c85387598",
+      "system": "Dungeons & Dragons 5th Edition (2014)",
+      "description": "A character sheet for the original 2014 rules of D&D 5th Edition, laid out after the three-page printed sheet, with the SRD 5.1 catalogue of races, classes and their features, spells, equipment and magic items.",
+      "author": "hunter-read",
+      "homepage": "https://dnd.wizards.com/resources/systems-reference-document",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "This work includes material taken from the System Reference Document 5.1 (\u201cSRD 5.1\u201d) by Wizards of the Coast LLC and available at https://dnd.wizards.com/resources/systems-reference-document. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at https://creativecommons.org/licenses/by/4.0/legalcode.",
       "grimoire_min_version": "1.10.0"
     },
     {
