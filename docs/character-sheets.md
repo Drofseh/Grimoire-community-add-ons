@@ -89,6 +89,7 @@ because formulas refer to fields by name.
 | `list` | Rows of typed columns - an inventory, a weapon table | `columns` (required), `add_label`, `empty_text` |
 | `content_ref` | One picked catalog entry - a class, a species | `content_type` (required), `on_pick`, `allow_freeform`, `per_entry_fields` |
 | `content_list` | Many picked catalog entries - spells, feats | `content_type` (required), `allow_freeform`, `per_entry_fields`, `display_columns`, `add_label`, `empty_text` |
+| `image` | A picture the player uploads - a coat of arms, a ship. Needs Grimoire 1.10.0 | |
 
 **`min` and `max` clamp rather than reject.** A score of 25 on a sheet capped at
 20 saves as 20; refusing to save a whole character over one box would lose the
@@ -97,6 +98,36 @@ player's work.
 **`options`** is a list of plain values (`["Str", "Dex"]`) or objects
 (`[{ "value": "str", "label": "Strength" }]`). A `select` or `multiselect`
 without options is refused.
+
+### Pictures: `image` fields
+
+```json
+"coat_of_arms": { "type": "image", "label": "Coat of Arms" }
+```
+
+An `image` field is a box the player puts a picture in - PNG, JPEG, WebP or
+GIF, up to 5 MB, the same as the character's art. Place it with `<g-field>`
+like any other field; the owner gets add, replace and remove buttons, and
+everyone else sees the picture. The whole picture is shown, letterboxed to fit,
+so an emblem is never cropped. Size the box from the stylesheet through the
+`gc-image` class (it is square by default):
+
+```css
+.heraldry .gc-image { aspect-ratio: 3 / 4; }
+```
+
+Rules that keep it a picture and nothing else:
+
+- It is a field on the character only - not a `list` column, a content type's
+  property or a `per_entry_fields` entry - and takes no `default` or
+  `default_from`.
+- No formula, condition or validator can read it: its value is the stored
+  file's name, which means nothing to a sum.
+- Saving the sheet never sets it; only an upload does. A sheet update that
+  drops the field deletes the picture.
+
+The character's own art is not a field: place it with
+[`<g-portrait>`](#directives).
 
 ### `list` columns
 
@@ -454,6 +485,7 @@ a sibling `<id>.html` file (or name it with `layout_file`). It is real HTML with
 | `<g-option>` | `field`, `value`, `label` | One checkbox for one option of multiselect `field`, so each box can sit where the printed sheet puts it - a proficiency dot beside its skill |
 | `<g-tier>` | `value`, `fields`, `labels`, `titles`, `label` | One dropdown for which rung of a ladder of multiselects holds `value`. `fields` lists the multiselects lowest rung first (`"skill_profs skill_expertise"`); `labels` is the short text shown closed and `titles` the full names in the list, both `\|`-separated, one more than the fields (the first is "none"). Choosing a rung adds `value` to every list up to it and removes it above |
 | `<g-pips>` | `count`, `value`, `label` | `count` boxes - a number, or a field or computed name - with the first `value` ticked, `value` naming a `number` field. Ticking one uses everything up to it. Spell slots, stress, a feature's uses |
+| `<g-portrait>` | `visible_if` | The character's art, large - the header only has room for a thumbnail. Framed the way the player chose (they pick a focus point and zoom when they open it), and opens the art full size when clicked. The owner gets an "Add art" box when there is none; anyone else sees nothing there. A `<figure class="gc-portrait">`, 3:4 and full width by default - size it from the stylesheet, as the D&D 5e sheet does with `aspect-ratio` and `max-height`. Needs Grimoire 1.10.0 |
 
 A layout naming a field or computed value the sheet does not declare is refused
 at install. A field with its own `visible_if` honours it wherever it is drawn,

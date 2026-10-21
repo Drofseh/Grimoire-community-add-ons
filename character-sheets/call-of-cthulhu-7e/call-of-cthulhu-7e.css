@@ -160,6 +160,25 @@
   padding: 3px 0;
 }
 
+/* The printed sheet keeps a photograph of the investigator beside their
+   details; the art sits there, square like the sheet's box. With no art (on a
+   party member's sheet) it draws nothing and the details take the row. */
+.identity {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.identity .id-grid {
+  flex: 1;
+  min-width: 0;
+}
+
+.investigator-portrait {
+  flex: 0 0 120px;
+  aspect-ratio: 1 / 1;
+}
+
 .id-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) minmax(0, 1fr);
@@ -471,5 +490,12 @@
 @media (max-width: 480px) {
   .id-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .identity {
+    flex-direction: column;
+  }
+  .investigator-portrait {
+    flex-basis: auto;
+    width: 160px;
   }
 }

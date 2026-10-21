@@ -85,7 +85,8 @@
               "multiselect",
               "list",
               "content_ref",
-              "content_list"
+              "content_list",
+              "image"
             ]
           },
           "label": {
