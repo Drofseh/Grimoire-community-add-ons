@@ -35,7 +35,7 @@ Seven pages, one for each of the spreadsheet's tabs:
 - **Vehicles** - two, each with its skill check DM (skill + DEX DM + agility),
   speeds and cruising speed and range, armour and hull, systems, traits, weapons
   and stored cargo against its capacity
-- **Spacecraft** - the ship's components, thrust and jump, hull points, crew, and
+- **Spacecraft** - a picture of the ship, the ship's components, thrust and jump, hull points, crew, and
   **power allocation** with what basic systems and each drive require for its
   tonnage; weapons; stored cargo against its hold
 - **Background & Personality** - descriptor opposites, goals, emotions,

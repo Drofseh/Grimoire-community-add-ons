@@ -463,6 +463,13 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* A picture of the ship - wide, like a ship is - shown whole rather than
+   cropped, since a deck plan cut to fit is no longer a deck plan. */
+.ship .gc-image {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
 .ship-head {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

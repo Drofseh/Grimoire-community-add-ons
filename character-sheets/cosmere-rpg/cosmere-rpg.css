@@ -31,6 +31,13 @@
   min-width: 0;
 }
 
+/* The character's art, large beside their appearance - the header only has
+   room for a thumbnail. */
+.appearance-art {
+  aspect-ratio: 3 / 4;
+  max-height: 420px;
+}
+
 .cap {
   display: block;
   font-size: 11px;

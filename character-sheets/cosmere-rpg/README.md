@@ -16,7 +16,7 @@ Two pages, as printed:
   attribute you choose; **lifting capacity** (and carrying capacity),
   **movement**, **recovery die** and **senses range**; conditions and injuries,
   weapons, expertises and talents
-- **Story & Gear** - appearance, armor and equipment, **boxings**, purpose,
+- **Story & Gear** - appearance, with the character's art drawn large, armor and equipment, **boxings**, purpose,
   obstacle, nine **goals** with three progress boxes each, notes and connections
 
 ### The arithmetic
