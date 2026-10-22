@@ -23,9 +23,9 @@
       "type": "text",
       "label": "Born"
     },
-    "born_heir": {
+    "heir": {
       "type": "checkbox",
-      "label": "Born heir?"
+      "label": "Heir?"
     },
     "homeland": {
       "type": "text",
@@ -2842,6 +2842,89 @@
     "manor5_famine": {
       "type": "checkbox",
       "label": "Manor 5 Famine"
+    },
+    "family_records": {
+      "type": "list",
+      "label": "Family Record",
+      "add_label": "Add family member",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "relation",
+          "type": "text",
+          "label": "Relation",
+          "flex": 1.5
+        },
+        {
+          "key": "born",
+          "type": "text",
+          "label": "Born",
+          "flex": 1.5
+        },
+        {
+          "key": "age",
+          "type": "number",
+          "label": "Age",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "profession",
+          "type": "text",
+          "label": "Profession",
+          "flex": 2
+        },
+        {
+          "key": "key_skill",
+          "type": "text",
+          "label": "Key Skill",
+          "flex": 2
+        },
+        {
+          "key": "skill_level",
+          "type": "number",
+          "label": "Skill Level",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "spouse",
+          "type": "text",
+          "label": "Spouse",
+          "flex": 2
+        }
+      ]
+    },
+    "family_events": {
+      "type": "list",
+      "label": "Family Events",
+      "add_label": "Add family event",
+      "columns": [
+        {
+          "key": "year",
+          "type": "number",
+          "label": "Year",
+          "min": 0,
+          "flex": 0.75
+        },
+        {
+          "key": "event",
+          "type": "text",
+          "label": "Event",
+          "flex": 2.5
+        },
+        {
+          "key": "notes",
+          "type": "text",
+          "label": "Notes",
+          "flex": 6
+        }
+      ]
     }
   },
   "computed": {

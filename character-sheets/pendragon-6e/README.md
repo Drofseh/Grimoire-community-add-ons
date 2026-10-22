@@ -36,3 +36,6 @@ The policy also forbids emulating Chaosium's "trade dress, including page
 templates, art styles or fonts". The sheet therefore follows the printed sheet's
 content and order only: no parchment, no page frame, no Chaosium typefaces, and
 no quick-reference rules text.
+
+## Acknowledgements
+Casei Magnus from the King Arthur Pendragon discord server for allowing me to borrow from his Manor Record Sheet.
