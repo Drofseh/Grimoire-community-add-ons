@@ -2,7 +2,7 @@
    The app's own vocabulary - bordered boxes with small uppercase captions -
    around the sheet's content in the printed sheet's arrangement,
    deliberately not its parchment, fonts or page frame, which are Chaosium's
-   trade dress: name and glory across the top; heraldry and the opposed traits
+   trade dress: name and glory across the top; escutcheon and the opposed traits
    down the left; personal information, characteristics, derived values,
    wounds, armor and attacks down the middle; passions and skills down the
    right; horses, squire, passive glory, history, equipment, family, holdings
@@ -196,6 +196,11 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
   align-items: start;
+}
+
+.escutcheon .gc-image {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
 }
 
 /* Family: father on the left, mother on the right. */

@@ -52,6 +52,10 @@
       "label": "Distinctive Features",
       "rows": 2
     },
+    "escutcheon": {
+      "type": "image",
+      "label": "Escutcheon"
+    },
     "blazon": {
       "type": "textarea",
       "label": "Blazon",
