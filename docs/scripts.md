@@ -27,6 +27,9 @@ When it does run, the script is:
 - killed at its `timeout` (default 60s, hard cap 300s);
 - given **no database handle, no session, and no Grimoire internals** — just the
   query and its own directory;
+- started with **credentials removed from its environment** — anything named like
+  a token, secret, password or key — except the variables it declares in
+  `script.env`;
 - limited to one request/response cycle over stdin/stdout.
 
 What this does **not** do: it is process isolation, not a sandbox. A script can
@@ -50,6 +53,23 @@ script:
   entry: my_source.py
   timeout: 60
 ```
+
+If the script needs a value from the server's environment — typically an API
+token the operator registers with the source — name it in `script.env`:
+
+```yaml
+script:
+  entry: my_source.py
+  env:
+    - MY_SOURCE_API_TOKEN
+```
+
+Grimoire removes credentials from the script's environment, so an undeclared
+`MY_SOURCE_API_TOKEN` is simply not there. Declared names must be upper-case and
+cannot be Grimoire's own settings (`SECRET_KEY`, `DATABASE_URL`, `VALKEY_URL`, or
+anything starting `GRIMOIRE_`, `OIDC_` or `ADDON_`). `script.env` needs Grimoire
+1.9.2 or later, so set `grimoire_min_version` to match. Tell users in your README
+which variable to set, and return a clear `{"error": ...}` when it is missing.
 
 Grimoire invokes the script with a single JSON object on **stdin** and expects a
 single JSON object on **stdout**. Anything on stderr is logged for the user.
