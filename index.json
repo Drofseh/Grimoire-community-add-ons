@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-15T15:09:12Z",
+  "generated": "2026-10-23T13:11:24Z",
   "addons": [
     {
       "id": "dicecloud-v1",
@@ -124,16 +124,22 @@
       "name": "RPGGeek",
       "kind": "scraper",
       "target": "book",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "path": "scrapers/rpggeek/rpggeek.yml",
       "requires_script": true,
-      "sha256": "ce7f6e8b985ad34869ec083ebb3a4cfb62496b0e1b9e438541f87f86fc56285e",
+      "sha256": "315468e0947c4b3bc7c1f6d363d9dae255db10e960bb2ce1183d70b989ddb650",
       "description": "Book metadata (title, authors, artists, publisher, genres, year) from RPGGeek.",
       "homepage": "https://rpggeek.com",
       "author": "vandie",
-      "grimoire_min_version": "1.5.5",
+      "grimoire_min_version": "1.9.2",
       "script_sha256": "d17f5e268349ac1f1cca851752f1920af1d4036e6d0330dd79a573898c4ba30c",
       "changelog": [
+        {
+          "version": "1.0.2",
+          "changes": [
+            "Declares BGG_API_TOKEN so Grimoire 1.9.2 and later pass it to the script"
+          ]
+        },
         {
           "version": "1.0.1",
           "changes": [
@@ -153,16 +159,22 @@
       "name": "RPGGeek (System)",
       "kind": "scraper",
       "target": "game-system",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "path": "scrapers/rpggeek-system/rpggeek-system.yml",
       "requires_script": true,
-      "sha256": "ddc73a48b25981fa5a52727d44411d97f2c45a6ac04641e5ebde1235af2e7d74",
+      "sha256": "ec9c7a18b491ca9e69ae6e52397398dd9d1694c62e0dbd975cecfb659c3ddf08",
       "description": "Game-system metadata (publishers, year, genres, dice, system family) from RPGGeek.",
       "homepage": "https://rpggeek.com",
       "author": "vandie",
-      "grimoire_min_version": "1.5.5",
+      "grimoire_min_version": "1.9.2",
       "script_sha256": "46ecc86e21c5628fc0abb1c895655dd9dd2618d7ab52271cf2314e93b543c4af",
       "changelog": [
+        {
+          "version": "1.0.2",
+          "changes": [
+            "Declares BGG_API_TOKEN so Grimoire 1.9.2 and later pass it to the script"
+          ]
+        },
         {
           "version": "1.0.1",
           "changes": [

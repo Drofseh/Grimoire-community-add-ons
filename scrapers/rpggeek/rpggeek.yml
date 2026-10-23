@@ -1,13 +1,13 @@
 id: rpggeek
 name: RPGGeek
-version: 1.0.1
+version: 1.0.2
 kind: scraper
 target: book
 homepage: https://rpggeek.com
 description: Book metadata (title, authors, artists, publisher, genres, year) from RPGGeek.
 author: vandie
 attribution: Data from RPGGeek (rpggeek.com)
-grimoire_min_version: 1.5.5
+grimoire_min_version: 1.9.2
 
 search:
   identity_pattern: 'rpggeek\.com/rpgitem/(\d+)'
@@ -19,3 +19,6 @@ script:
   # Two requests per lookup (search + detail), both against rpggeek.com. 60s is
   # generous; in practice it completes in well under 5s on a healthy connection.
   timeout: 60
+  # The BGG API needs a token; see README.md.
+  env:
+    - BGG_API_TOKEN

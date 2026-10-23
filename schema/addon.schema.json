@@ -95,6 +95,22 @@
           "minimum": 1,
           "maximum": 300,
           "default": 60
+        },
+        "env": {
+          "type": "array",
+          "description": "Environment variables the script reads, such as an API token the server operator sets. Grimoire strips credentials from a script's environment and lets only these through. Grimoire's own settings (SECRET_KEY, DATABASE_URL, VALKEY_URL, GRIMOIRE_*, OIDC_*, ADDON_*) are never passed. Requires Grimoire 1.9.2 or later.",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$",
+            "not": {
+              "anyOf": [
+                {"enum": ["SECRET_KEY", "DATABASE_URL", "VALKEY_URL"]},
+                {"pattern": "^(GRIMOIRE_|OIDC_|ADDON_)"}
+              ]
+            }
+          }
         }
       }
     },
