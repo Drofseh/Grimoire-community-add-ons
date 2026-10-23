@@ -103,7 +103,7 @@
           </section>
           <section class="pill box">
             <span class="pill-value">+<g-value name="proficiency" /></span>
-            <span class="tiny">Proficiency Bonus <span class="half">(half +<g-value name="half_proficiency" />)</span></span>
+            <span class="tiny">Proficiency Bonus<g-if test="len(skill_half_profs) > 0"><span class="half">(half +<g-value name="half_proficiency" />)</span></g-if></span>
           </section>
           <section class="box">
             <ul class="lines">
@@ -168,7 +168,7 @@
           <span class="tiny">Armor Class</span>
           <div class="ac-parts">
             <label class="pip-label"><g-field name="shield" label="" />Shield</label>
-            <span class="tiny">Bonus</span><g-field name="armor_bonus" label="" variant="compact" />
+            <div class="ac-bonus"><span class="tiny">Bonus</span><g-field name="armor_bonus" label="" variant="compact" /></div>
           </div>
         </section>
         <section class="stat box">

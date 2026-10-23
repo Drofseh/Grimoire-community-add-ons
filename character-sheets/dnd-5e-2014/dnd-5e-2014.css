@@ -21,6 +21,11 @@
 
 /* --- shared ---------------------------------------------------------------- */
 
+/* The app draws its inputs with inline styles - a roomy 7px 9px padding meant
+   for a full-width form - and an inline style outranks any stylesheet. So every
+   input rule below that resizes a box says !important; without it a three-digit
+   box kept 18px of padding and showed nothing at all. */
+
 .box {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -90,12 +95,14 @@
   gap: 10px;
 }
 
+/* A banner beside the identity box, centred against it as on the print,
+   rather than a tall box with the name at its foot. */
 .name-box {
-  justify-content: flex-end;
+  align-self: center;
 }
 
 .name-box input {
-  font-size: 18px;
+  font-size: 18px !important;
   font-weight: 700;
 }
 
@@ -103,6 +110,13 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px 12px;
+}
+
+/* An empty picker that takes custom entries adds an "Add custom" button under
+   itself, which pushed Background's caption below Race's and Subrace's. The
+   pencil beside the box does the same thing, so in this row the button goes. */
+.identity > div > .gc-field > div:not([role="dialog"]) > div + button {
+  display: none !important;
 }
 
 /* --- page one -------------------------------------------------------------- */
@@ -126,7 +140,7 @@
 
 .left-top {
   display: grid;
-  grid-template-columns: 136px minmax(0, 1fr);
+  grid-template-columns: 148px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
 }
@@ -194,9 +208,31 @@
 }
 
 .ability-parts input {
-  padding: 2px;
-  font-size: 12px;
+  padding: 2px !important;
+  font-size: 12px !important;
   text-align: center;
+}
+
+/* The link that marks a value filled in from your race, and the reset that
+   replaces it once you change it, sit on the box's corner: beside it they took
+   half of a box this narrow. Box and marker share one grid cell. */
+.ability-parts .gc-field > div {
+  display: grid !important;
+  gap: 0 !important;
+}
+
+.ability-parts .gc-field > div > * {
+  grid-area: 1 / 1;
+}
+
+.ability-parts .gc-field > div > span[role="img"],
+.ability-parts .gc-field > div > button {
+  justify-self: end;
+  align-self: start;
+  margin: -6px -6px 0 0;
+  padding: 1px !important;
+  border-radius: 999px;
+  background: var(--bg-card) !important;
 }
 
 /* Inspiration, proficiency bonus and passive Perception: a value in a round
@@ -218,6 +254,7 @@
 }
 
 .half {
+  margin-left: 4px;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -287,9 +324,14 @@
 
 .stat input {
   text-align: center;
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: 700;
-  padding: 3px;
+  padding: 3px !important;
+}
+
+/* Size is a word, not a number: "Medium" at 20px crowded its box. */
+.stat .gc-field + .tiny + .gc-field input {
+  font-size: 14px !important;
 }
 
 /* The armour class box keeps the printed shield's rounded foot. */
@@ -297,16 +339,29 @@
   border-radius: 10px 10px 40px 40px;
 }
 
+/* Shield on one line, the bonus beneath it with its label on top: side by
+   side in a third of the column they wrapped a letter at a time. */
 .ac-parts {
-  display: grid;
-  grid-template-columns: auto auto 52px;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 4px;
+}
+
+.ac-bonus {
+  display: grid;
+  grid-template-columns: 56px;
+  justify-items: center;
+  gap: 2px;
+}
+
+.ac-bonus .tiny {
+  letter-spacing: 0.03em;
 }
 
 .ac-parts input {
-  font-size: 13px;
-  padding: 2px;
+  font-size: 13px !important;
+  padding: 2px !important;
 }
 
 .hp-max {
@@ -321,10 +376,10 @@
 
 .hp-current input,
 .hp-temp input {
-  font-size: 26px;
+  font-size: 26px !important;
   font-weight: 700;
   text-align: center;
-  padding: 6px;
+  padding: 6px !important;
 }
 
 .dice-row {
@@ -355,7 +410,7 @@
 }
 
 .coins input {
-  padding: 3px;
+  padding: 3px !important;
   text-align: center;
 }
 
@@ -484,7 +539,7 @@
 }
 
 .slot input {
-  padding: 3px;
+  padding: 3px !important;
 }
 
 /* --- narrower screens ------------------------------------------------------ */

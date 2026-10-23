@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-23T13:11:24Z",
+  "generated": "2026-10-23T19:28:09Z",
   "sheets": [
     {
       "id": "basic-fantasy",
@@ -81,13 +81,13 @@
       "name": "D&D 5th Edition (2014)",
       "version": "1.0.0",
       "path": "character-sheets/dnd-5e-2014/dnd-5e-2014.json",
-      "sha256": "a197cbdb467747165eff9ed53632b2b266ee28dba2bccd36d80de308083fad0a",
+      "sha256": "35a181e7c623cf0f88ea94cdae07ee14353167996a4e16e8d7f5e6b76b7bbf37",
       "custom_layout": true,
       "field_count": 113,
       "layout_path": "character-sheets/dnd-5e-2014/dnd-5e-2014.html",
-      "layout_sha256": "3f2e66fd5eeccee3bd82a9936cd6a095eb2bddbbb265787aed0ea3e88d5d948f",
+      "layout_sha256": "199c0bedd9a37b1bf25453a9447ac94e5e1704b40fa2ff5e04473cb172a2ddc3",
       "styles_path": "character-sheets/dnd-5e-2014/dnd-5e-2014.css",
-      "styles_sha256": "858b30358b321247454337ad27807e2c59adc5625a02d27aa7a47a8c85387598",
+      "styles_sha256": "b45231429648e203bdf9aa001debded3e5dc77e3ff53bcd593a717d0f2dd5ce0",
       "system": "Dungeons & Dragons 5th Edition (2014)",
       "description": "A character sheet for the original 2014 rules of D&D 5th Edition, laid out after the three-page printed sheet, with the SRD 5.1 catalogue of races, classes and their features, spells, equipment and magic items.",
       "author": "hunter-read",
