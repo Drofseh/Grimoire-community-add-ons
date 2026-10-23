@@ -1,0 +1,206 @@
+[
+  {
+    "_id": "dragonborn-draconic-ancestry",
+    "name": "Draconic Ancestry",
+    "race": "Dragonborn",
+    "description": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.\n\nDragon - Damage Type - Breath Weapon\nBlack - Acid - 5 by 30 ft. line (Dex. save)\nBlue - Lightning - 5 by 30 ft. line (Dex. save)\nBrass - Fire - 5 by 30 ft. line (Dex. save)\nBronze - Lightning - 5 by 30 ft. line (Dex. save)\nCopper - Acid - 5 by 30 ft. line (Dex. save)\nGold - Fire - 15 ft. cone (Dex. save)\nGreen - Poison - 15 ft. cone (Con. save)\nRed - Fire - 15 ft. cone (Dex. save)\nSilver - Cold - 15 ft. cone (Con. save)\nWhite - Cold - 15 ft. cone (Con. save)"
+  },
+  {
+    "_id": "dragonborn-breath-weapon",
+    "name": "Breath Weapon",
+    "race": "Dragonborn",
+    "description": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level."
+  },
+  {
+    "_id": "dragonborn-damage-resistance",
+    "name": "Damage Resistance",
+    "race": "Dragonborn",
+    "description": "You have resistance to the damage type associated with your draconic ancestry."
+  },
+  {
+    "_id": "dwarf-darkvision",
+    "name": "Darkvision",
+    "race": "Dwarf",
+    "description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "dwarf-dwarven-resilience",
+    "name": "Dwarven Resilience",
+    "race": "Dwarf",
+    "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+  },
+  {
+    "_id": "dwarf-dwarven-combat-training",
+    "name": "Dwarven Combat Training",
+    "race": "Dwarf",
+    "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+  },
+  {
+    "_id": "dwarf-tool-proficiency",
+    "name": "Tool Proficiency",
+    "race": "Dwarf",
+    "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+  },
+  {
+    "_id": "dwarf-stonecunning",
+    "name": "Stonecunning",
+    "race": "Dwarf",
+    "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+  },
+  {
+    "_id": "elf-darkvision",
+    "name": "Darkvision",
+    "race": "Elf",
+    "description": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "elf-keen-senses",
+    "name": "Keen Senses",
+    "race": "Elf",
+    "description": "You have proficiency in the Perception skill."
+  },
+  {
+    "_id": "elf-fey-ancestry",
+    "name": "Fey Ancestry",
+    "race": "Elf",
+    "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+  },
+  {
+    "_id": "elf-trance",
+    "name": "Trance",
+    "race": "Elf",
+    "description": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+  },
+  {
+    "_id": "gnome-darkvision",
+    "name": "Darkvision",
+    "race": "Gnome",
+    "description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "gnome-gnome-cunning",
+    "name": "Gnome Cunning",
+    "race": "Gnome",
+    "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+  },
+  {
+    "_id": "half-elf-darkvision",
+    "name": "Darkvision",
+    "race": "Half-Elf",
+    "description": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "half-elf-fey-ancestry",
+    "name": "Fey Ancestry",
+    "race": "Half-Elf",
+    "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+  },
+  {
+    "_id": "half-elf-skill-versatility",
+    "name": "Skill Versatility",
+    "race": "Half-Elf",
+    "description": "You gain proficiency in two skills of your choice."
+  },
+  {
+    "_id": "half-orc-darkvision",
+    "name": "Darkvision",
+    "race": "Half-Orc",
+    "description": "Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "half-orc-menacing",
+    "name": "Menacing",
+    "race": "Half-Orc",
+    "description": "You gain proficiency in the Intimidation skill."
+  },
+  {
+    "_id": "half-orc-relentless-endurance",
+    "name": "Relentless Endurance",
+    "race": "Half-Orc",
+    "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+  },
+  {
+    "_id": "half-orc-savage-attacks",
+    "name": "Savage Attacks",
+    "race": "Half-Orc",
+    "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+  },
+  {
+    "_id": "halfling-lucky",
+    "name": "Lucky",
+    "race": "Halfling",
+    "description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+  },
+  {
+    "_id": "halfling-brave",
+    "name": "Brave",
+    "race": "Halfling",
+    "description": "You have advantage on saving throws against being frightened."
+  },
+  {
+    "_id": "halfling-halfling-nimbleness",
+    "name": "Halfling Nimbleness",
+    "race": "Halfling",
+    "description": "You can move through the space of any creature that is of a size larger than yours."
+  },
+  {
+    "_id": "high-elf-elf-weapon-training",
+    "name": "Elf Weapon Training",
+    "race": "High Elf",
+    "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+  },
+  {
+    "_id": "high-elf-cantrip",
+    "name": "Cantrip",
+    "race": "High Elf",
+    "description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+  },
+  {
+    "_id": "high-elf-extra-language",
+    "name": "Extra Language",
+    "race": "High Elf",
+    "description": "You can speak, read, and write one extra language of your choice."
+  },
+  {
+    "_id": "hill-dwarf-dwarven-toughness",
+    "name": "Dwarven Toughness",
+    "race": "Hill Dwarf",
+    "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+  },
+  {
+    "_id": "lightfoot-naturally-stealthy",
+    "name": "Naturally Stealthy",
+    "race": "Lightfoot",
+    "description": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+  },
+  {
+    "_id": "rock-gnome-artificers-lore",
+    "name": "Artificer's Lore",
+    "race": "Rock Gnome",
+    "description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+  },
+  {
+    "_id": "rock-gnome-tinker",
+    "name": "Tinker",
+    "race": "Rock Gnome",
+    "description": "You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.\n\nWhen you create a device, choose one of the following options:\n• Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.\n• Fire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.\n• Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed."
+  },
+  {
+    "_id": "tiefling-darkvision",
+    "name": "Darkvision",
+    "race": "Tiefling",
+    "description": "Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+  },
+  {
+    "_id": "tiefling-hellish-resistance",
+    "name": "Hellish Resistance",
+    "race": "Tiefling",
+    "description": "You have resistance to fire damage."
+  },
+  {
+    "_id": "tiefling-infernal-legacy",
+    "name": "Infernal Legacy",
+    "race": "Tiefling",
+    "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+  }
+]

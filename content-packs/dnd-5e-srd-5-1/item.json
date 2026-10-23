@@ -1,0 +1,1891 @@
+[
+  {
+    "_id": "abacus",
+    "name": "Abacus",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 2
+  },
+  {
+    "_id": "acid-vial",
+    "name": "Acid (vial)",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 1,
+    "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage."
+  },
+  {
+    "_id": "alchemists-fire-flask",
+    "name": "Alchemist's fire (flask)",
+    "category": "Adventuring Gear",
+    "cost": "50 GP",
+    "weight": 1,
+    "description": "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's fire as an improvised weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
+  },
+  {
+    "_id": "antitoxin-vial",
+    "name": "Antitoxin (vial)",
+    "category": "Adventuring Gear",
+    "cost": "50 GP",
+    "weight": 0,
+    "description": "A creature that drinks this vial of liquid gains advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs."
+  },
+  {
+    "_id": "backpack",
+    "name": "Backpack",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 5,
+    "description": "Capacity: 1 cubic foot/30 pounds of gear."
+  },
+  {
+    "_id": "ball-bearings-bag-of-1-000",
+    "name": "Ball bearings (bag of 1,000)",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 2,
+    "description": "As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn't need to make the save."
+  },
+  {
+    "_id": "barrel",
+    "name": "Barrel",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 70,
+    "description": "Capacity: 40 gallons liquid, 4 cubic feet solid."
+  },
+  {
+    "_id": "basket",
+    "name": "Basket",
+    "category": "Adventuring Gear",
+    "cost": "4 SP",
+    "weight": 2,
+    "description": "Capacity: 2 cubic feet/40 pounds of gear."
+  },
+  {
+    "_id": "bedroll",
+    "name": "Bedroll",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 7
+  },
+  {
+    "_id": "bell",
+    "name": "Bell",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 0
+  },
+  {
+    "_id": "blanket",
+    "name": "Blanket",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 3
+  },
+  {
+    "_id": "block-and-tackle",
+    "name": "Block and tackle",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 5,
+    "description": "A set of pulleys with a cable threaded through them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift."
+  },
+  {
+    "_id": "book",
+    "name": "Book",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 5,
+    "description": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook (described later in this section)."
+  },
+  {
+    "_id": "bottle-glass",
+    "name": "Bottle, glass",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 2,
+    "description": "Capacity: 1½ pints liquid."
+  },
+  {
+    "_id": "bucket",
+    "name": "Bucket",
+    "category": "Adventuring Gear",
+    "cost": "5 CP",
+    "weight": 2,
+    "description": "Capacity: 3 gallons liquid, 1/2 cubic foot solid."
+  },
+  {
+    "_id": "caltrops-bag-of-20",
+    "name": "Caltrops (bag of 20)",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 2,
+    "description": "As an action, you can spread a bag of caltrops to cover a square area that is 5 feet on a side. Any creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving this turn and take 1 piercing damage. Taking this damage reduces the creature's walking speed by 10 feet until the creature regains at least 1 hit point. A creature moving through the area at half speed doesn't need to make the save."
+  },
+  {
+    "_id": "candle",
+    "name": "Candle",
+    "category": "Adventuring Gear",
+    "cost": "1 CP",
+    "weight": 0,
+    "description": "For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet."
+  },
+  {
+    "_id": "case-crossbow-bolt",
+    "name": "Case, crossbow bolt",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 1,
+    "description": "This wooden case can hold up to twenty crossbow bolts."
+  },
+  {
+    "_id": "case-map-or-scroll",
+    "name": "Case, map or scroll",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 1,
+    "description": "This cylindrical leather case can hold up to ten rolled-up sheets of paper or five rolled-up sheets of parchment."
+  },
+  {
+    "_id": "chain-10-feet",
+    "name": "Chain (10 feet)",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 10,
+    "description": "A chain has 10 hit points. It can be burst with a successful DC 20 Strength check."
+  },
+  {
+    "_id": "chalk-1-piece",
+    "name": "Chalk (1 piece)",
+    "category": "Adventuring Gear",
+    "cost": "1 CP",
+    "weight": 0
+  },
+  {
+    "_id": "chest",
+    "name": "Chest",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 25,
+    "description": "Capacity: 12 cubic feet/300 pounds of gear."
+  },
+  {
+    "_id": "climbers-kit",
+    "name": "Climber's kit",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 12,
+    "description": "A climber's kit includes special pitons, boot tips, gloves, and a harness. You can use the climber's kit as an action to anchor yourself; when you do, you can't fall more than 25 feet from the point where you anchored yourself, and you can't climb more than 25 feet away from that point without undoing the anchor."
+  },
+  {
+    "_id": "clothes-common",
+    "name": "Clothes, common",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 3
+  },
+  {
+    "_id": "clothes-costume",
+    "name": "Clothes, costume",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 4
+  },
+  {
+    "_id": "clothes-fine",
+    "name": "Clothes, fine",
+    "category": "Adventuring Gear",
+    "cost": "15 GP",
+    "weight": 6
+  },
+  {
+    "_id": "clothes-travelers",
+    "name": "Clothes, traveler's",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 4
+  },
+  {
+    "_id": "component-pouch",
+    "name": "Component pouch",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 2,
+    "description": "A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spell's description)."
+  },
+  {
+    "_id": "crowbar",
+    "name": "Crowbar",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 5,
+    "description": "Using a crowbar grants advantage to Strength checks where the crowbar's leverage can be applied."
+  },
+  {
+    "_id": "fishing-tackle",
+    "name": "Fishing tackle",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 4,
+    "description": "This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting."
+  },
+  {
+    "_id": "flask-or-tankard",
+    "name": "Flask or tankard",
+    "category": "Adventuring Gear",
+    "cost": "2 CP",
+    "weight": 1,
+    "description": "Capacity: 1 pint liquid."
+  },
+  {
+    "_id": "grappling-hook",
+    "name": "Grappling hook",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 4
+  },
+  {
+    "_id": "hammer",
+    "name": "Hammer",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 3
+  },
+  {
+    "_id": "hammer-sledge",
+    "name": "Hammer, sledge",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 10
+  },
+  {
+    "_id": "healers-kit",
+    "name": "Healer's kit",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 3,
+    "description": "This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check."
+  },
+  {
+    "_id": "holy-water-flask",
+    "name": "Holy water (flask)",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 1,
+    "description": "As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged attack against a target creature, treating the holy water as an improvised weapon. If the target is a fiend or undead, it takes 2d6 radiant damage. A cleric or paladin may create holy water by performing a special ritual. The ritual takes 1 hour to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st-level spell slot."
+  },
+  {
+    "_id": "hourglass",
+    "name": "Hourglass",
+    "category": "Adventuring Gear",
+    "cost": "25 GP",
+    "weight": 1
+  },
+  {
+    "_id": "hunting-trap",
+    "name": "Hunting trap",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 25,
+    "description": "When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature."
+  },
+  {
+    "_id": "ink-1-ounce-bottle",
+    "name": "Ink (1 ounce bottle)",
+    "category": "Adventuring Gear",
+    "cost": "10 GP",
+    "weight": 0
+  },
+  {
+    "_id": "ink-pen",
+    "name": "Ink pen",
+    "category": "Adventuring Gear",
+    "cost": "2 CP",
+    "weight": 0
+  },
+  {
+    "_id": "jug-or-pitcher",
+    "name": "Jug or pitcher",
+    "category": "Adventuring Gear",
+    "cost": "2 CP",
+    "weight": 4,
+    "description": "Capacity: 1 gallon liquid."
+  },
+  {
+    "_id": "ladder-10-foot",
+    "name": "Ladder (10-foot)",
+    "category": "Adventuring Gear",
+    "cost": "1 SP",
+    "weight": 25
+  },
+  {
+    "_id": "lamp",
+    "name": "Lamp",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 1,
+    "description": "A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+  },
+  {
+    "_id": "lantern-bullseye",
+    "name": "Lantern, bullseye",
+    "category": "Adventuring Gear",
+    "cost": "10 GP",
+    "weight": 2,
+    "description": "A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+  },
+  {
+    "_id": "lantern-hooded",
+    "name": "Lantern, hooded",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 2,
+    "description": "A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius."
+  },
+  {
+    "_id": "lock",
+    "name": "Lock",
+    "category": "Adventuring Gear",
+    "cost": "10 GP",
+    "weight": 1,
+    "description": "A key is provided with the lock. Without the key, a creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Your GM may decide that better locks are available for higher prices."
+  },
+  {
+    "_id": "magnifying-glass",
+    "name": "Magnifying glass",
+    "category": "Adventuring Gear",
+    "cost": "100 GP",
+    "weight": 0,
+    "description": "This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed."
+  },
+  {
+    "_id": "manacles",
+    "name": "Manacles",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 6,
+    "description": "These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves' tools can pick the manacles' lock with a successful DC 15 Dexterity check. Manacles have 15 hit points."
+  },
+  {
+    "_id": "mess-kit",
+    "name": "Mess kit",
+    "category": "Adventuring Gear",
+    "cost": "2 SP",
+    "weight": 1,
+    "description": "This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl."
+  },
+  {
+    "_id": "mirror-steel",
+    "name": "Mirror, steel",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 0.5
+  },
+  {
+    "_id": "oil-flask",
+    "name": "Oil (flask)",
+    "category": "Adventuring Gear",
+    "cost": "1 SP",
+    "weight": 1,
+    "description": "Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature or object, treating the oil as an improvised weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn."
+  },
+  {
+    "_id": "paper-one-sheet",
+    "name": "Paper (one sheet)",
+    "category": "Adventuring Gear",
+    "cost": "2 SP",
+    "weight": 0
+  },
+  {
+    "_id": "parchment-one-sheet",
+    "name": "Parchment (one sheet)",
+    "category": "Adventuring Gear",
+    "cost": "1 SP",
+    "weight": 0
+  },
+  {
+    "_id": "perfume-vial",
+    "name": "Perfume (vial)",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 0
+  },
+  {
+    "_id": "pick-miners",
+    "name": "Pick, miner's",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 10
+  },
+  {
+    "_id": "piton",
+    "name": "Piton",
+    "category": "Adventuring Gear",
+    "cost": "5 CP",
+    "weight": 0.25
+  },
+  {
+    "_id": "poison-basic-vial",
+    "name": "Poison, basic (vial)",
+    "category": "Adventuring Gear",
+    "cost": "100 GP",
+    "weight": 0,
+    "description": "You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the poisoned weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying."
+  },
+  {
+    "_id": "pole-10-foot",
+    "name": "Pole (10-foot)",
+    "category": "Adventuring Gear",
+    "cost": "5 CP",
+    "weight": 7
+  },
+  {
+    "_id": "pot-iron",
+    "name": "Pot, iron",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 10,
+    "description": "Capacity: 1 gallon liquid."
+  },
+  {
+    "_id": "potion-of-healing",
+    "name": "Potion of healing",
+    "category": "Adventuring Gear",
+    "cost": "50 GP",
+    "weight": 0.5,
+    "description": "A character who drinks the magical red fluid in this vial regains 2d4 + 2 hit points. Drinking or administering a potion takes an action."
+  },
+  {
+    "_id": "pouch",
+    "name": "Pouch",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 1,
+    "description": "A cloth or leather pouch can hold up to 20 sling bullets or 50 blowgun needles, among other things. A compartmentalized pouch for holding spell components is called a component pouch (described earlier in this section).\n\nCapacity: 1/5 cubic foot/6 pounds of gear."
+  },
+  {
+    "_id": "quiver",
+    "name": "Quiver",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 1,
+    "description": "A quiver can hold up to 20 arrows."
+  },
+  {
+    "_id": "ram-portable",
+    "name": "Ram, portable",
+    "category": "Adventuring Gear",
+    "cost": "4 GP",
+    "weight": 35,
+    "description": "You can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check."
+  },
+  {
+    "_id": "rations-1-day",
+    "name": "Rations (1 day)",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 2,
+    "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts."
+  },
+  {
+    "_id": "robes",
+    "name": "Robes",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 4
+  },
+  {
+    "_id": "rope-hempen-50-feet",
+    "name": "Rope, hempen (50 feet)",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 10,
+    "description": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+  },
+  {
+    "_id": "rope-silk-50-feet",
+    "name": "Rope, silk (50 feet)",
+    "category": "Adventuring Gear",
+    "cost": "10 GP",
+    "weight": 5,
+    "description": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+  },
+  {
+    "_id": "sack",
+    "name": "Sack",
+    "category": "Adventuring Gear",
+    "cost": "1 CP",
+    "weight": 0.5,
+    "description": "Capacity: 1 cubic foot/30 pounds of gear."
+  },
+  {
+    "_id": "scale-merchants",
+    "name": "Scale, merchant's",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 3,
+    "description": "A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth."
+  },
+  {
+    "_id": "sealing-wax",
+    "name": "Sealing wax",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 0
+  },
+  {
+    "_id": "shovel",
+    "name": "Shovel",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 5
+  },
+  {
+    "_id": "signal-whistle",
+    "name": "Signal whistle",
+    "category": "Adventuring Gear",
+    "cost": "5 CP",
+    "weight": 0
+  },
+  {
+    "_id": "signet-ring",
+    "name": "Signet ring",
+    "category": "Adventuring Gear",
+    "cost": "5 GP",
+    "weight": 0
+  },
+  {
+    "_id": "soap",
+    "name": "Soap",
+    "category": "Adventuring Gear",
+    "cost": "2 CP",
+    "weight": 0
+  },
+  {
+    "_id": "spellbook",
+    "name": "Spellbook",
+    "category": "Adventuring Gear",
+    "cost": "50 GP",
+    "weight": 3,
+    "description": "Essential for wizards, a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells."
+  },
+  {
+    "_id": "spikes-iron-10",
+    "name": "Spikes, iron (10)",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 5
+  },
+  {
+    "_id": "spyglass",
+    "name": "Spyglass",
+    "category": "Adventuring Gear",
+    "cost": "1,000 GP",
+    "weight": 1,
+    "description": "Objects viewed through a spyglass are magnified to twice their size."
+  },
+  {
+    "_id": "tent-two-person",
+    "name": "Tent, two-person",
+    "category": "Adventuring Gear",
+    "cost": "2 GP",
+    "weight": 20,
+    "description": "A simple and portable canvas shelter, a tent sleeps two."
+  },
+  {
+    "_id": "tinderbox",
+    "name": "Tinderbox",
+    "category": "Adventuring Gear",
+    "cost": "5 SP",
+    "weight": 1,
+    "description": "This small container holds flint, fire steel, and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a torch—or anything else with abundant, exposed fuel—takes an action. Lighting any other fire takes 1 minute."
+  },
+  {
+    "_id": "torch",
+    "name": "Torch",
+    "category": "Adventuring Gear",
+    "cost": "1 CP",
+    "weight": 1,
+    "description": "A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage."
+  },
+  {
+    "_id": "vial",
+    "name": "Vial",
+    "category": "Adventuring Gear",
+    "cost": "1 GP",
+    "weight": 0,
+    "description": "Capacity: 4 ounces liquid."
+  },
+  {
+    "_id": "waterskin",
+    "name": "Waterskin",
+    "category": "Adventuring Gear",
+    "cost": "2 SP",
+    "weight": 5,
+    "description": "Capacity: 4 pints liquid."
+  },
+  {
+    "_id": "whetstone",
+    "name": "Whetstone",
+    "category": "Adventuring Gear",
+    "cost": "1 CP",
+    "weight": 1
+  },
+  {
+    "_id": "arrows-20",
+    "name": "Arrows (20)",
+    "category": "Ammunition",
+    "cost": "1 GP",
+    "weight": 1
+  },
+  {
+    "_id": "blowgun-needles-50",
+    "name": "Blowgun needles (50)",
+    "category": "Ammunition",
+    "cost": "1 GP",
+    "weight": 1
+  },
+  {
+    "_id": "crossbow-bolts-20",
+    "name": "Crossbow bolts (20)",
+    "category": "Ammunition",
+    "cost": "1 GP",
+    "weight": 1.5
+  },
+  {
+    "_id": "sling-bullets-20",
+    "name": "Sling bullets (20)",
+    "category": "Ammunition",
+    "cost": "4 CP",
+    "weight": 1.5
+  },
+  {
+    "_id": "crystal",
+    "name": "Crystal",
+    "category": "Arcane Focus",
+    "cost": "10 GP",
+    "weight": 1,
+    "description": "An arcane focus is a special item—an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "_id": "orb",
+    "name": "Orb",
+    "category": "Arcane Focus",
+    "cost": "20 GP",
+    "weight": 3,
+    "description": "An arcane focus is a special item—an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "_id": "rod",
+    "name": "Rod",
+    "category": "Arcane Focus",
+    "cost": "10 GP",
+    "weight": 2,
+    "description": "An arcane focus is a special item—an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "_id": "staff",
+    "name": "Staff",
+    "category": "Arcane Focus",
+    "cost": "5 GP",
+    "weight": 4,
+    "description": "An arcane focus is a special item—an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "_id": "wand",
+    "name": "Wand",
+    "category": "Arcane Focus",
+    "cost": "10 GP",
+    "weight": 1,
+    "description": "An arcane focus is a special item—an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "_id": "alchemists-supplies",
+    "name": "Alchemist's supplies",
+    "category": "Artisan's Tools",
+    "cost": "50 GP",
+    "weight": 8,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "brewers-supplies",
+    "name": "Brewer's supplies",
+    "category": "Artisan's Tools",
+    "cost": "20 GP",
+    "weight": 9,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "calligraphers-supplies",
+    "name": "Calligrapher's supplies",
+    "category": "Artisan's Tools",
+    "cost": "10 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "carpenters-tools",
+    "name": "Carpenter's tools",
+    "category": "Artisan's Tools",
+    "cost": "8 GP",
+    "weight": 6,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "cartographers-tools",
+    "name": "Cartographer's tools",
+    "category": "Artisan's Tools",
+    "cost": "15 GP",
+    "weight": 6,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "cobblers-tools",
+    "name": "Cobbler's tools",
+    "category": "Artisan's Tools",
+    "cost": "5 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "cooks-utensils",
+    "name": "Cook's utensils",
+    "category": "Artisan's Tools",
+    "cost": "1 GP",
+    "weight": 8,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "glassblowers-tools",
+    "name": "Glassblower's tools",
+    "category": "Artisan's Tools",
+    "cost": "30 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "jewelers-tools",
+    "name": "Jeweler's tools",
+    "category": "Artisan's Tools",
+    "cost": "25 GP",
+    "weight": 2,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "leatherworkers-tools",
+    "name": "Leatherworker's tools",
+    "category": "Artisan's Tools",
+    "cost": "5 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "masons-tools",
+    "name": "Mason's tools",
+    "category": "Artisan's Tools",
+    "cost": "10 GP",
+    "weight": 8,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "painters-supplies",
+    "name": "Painter's supplies",
+    "category": "Artisan's Tools",
+    "cost": "10 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "potters-tools",
+    "name": "Potter's tools",
+    "category": "Artisan's Tools",
+    "cost": "10 GP",
+    "weight": 3,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "smiths-tools",
+    "name": "Smith's tools",
+    "category": "Artisan's Tools",
+    "cost": "20 GP",
+    "weight": 8,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "tinkers-tools",
+    "name": "Tinker's tools",
+    "category": "Artisan's Tools",
+    "cost": "50 GP",
+    "weight": 10,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "weavers-tools",
+    "name": "Weaver's tools",
+    "category": "Artisan's Tools",
+    "cost": "1 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "woodcarvers-tools",
+    "name": "Woodcarver's tools",
+    "category": "Artisan's Tools",
+    "cost": "1 GP",
+    "weight": 5,
+    "description": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "_id": "sprig-of-mistletoe",
+    "name": "Sprig of mistletoe",
+    "category": "Druidic Focus",
+    "cost": "1 GP",
+    "weight": 0,
+    "description": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "_id": "totem",
+    "name": "Totem",
+    "category": "Druidic Focus",
+    "cost": "1 GP",
+    "weight": 0,
+    "description": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "_id": "wooden-staff",
+    "name": "Wooden staff",
+    "category": "Druidic Focus",
+    "cost": "5 GP",
+    "weight": 4,
+    "description": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "_id": "yew-wand",
+    "name": "Yew wand",
+    "category": "Druidic Focus",
+    "cost": "10 GP",
+    "weight": 1,
+    "description": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "_id": "burglars-pack",
+    "name": "Burglar's Pack",
+    "category": "Equipment Pack",
+    "cost": "16 GP",
+    "description": "Includes a backpack, a bag of 1,000 ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days rations, a tinderbox, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
+  },
+  {
+    "_id": "diplomats-pack",
+    "name": "Diplomat's Pack",
+    "category": "Equipment Pack",
+    "cost": "39 GP",
+    "description": "Includes a chest, 2 cases for maps and scrolls, a set of fine clothes, a bottle of ink, an ink pen, a lamp, 2 flasks of oil, 5 sheets of paper, a vial of perfume, sealing wax, and soap."
+  },
+  {
+    "_id": "dungeoneers-pack",
+    "name": "Dungeoneer's Pack",
+    "category": "Equipment Pack",
+    "cost": "12 GP",
+    "description": "Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
+  },
+  {
+    "_id": "entertainers-pack",
+    "name": "Entertainer's Pack",
+    "category": "Equipment Pack",
+    "cost": "40 GP",
+    "description": "Includes a backpack, a bedroll, 2 costumes, 5 candles, 5 days of rations, a waterskin, and a disguise kit."
+  },
+  {
+    "_id": "explorers-pack",
+    "name": "Explorer's Pack",
+    "category": "Equipment Pack",
+    "cost": "10 GP",
+    "description": "Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
+  },
+  {
+    "_id": "priests-pack",
+    "name": "Priest's Pack",
+    "category": "Equipment Pack",
+    "cost": "19 GP",
+    "description": "Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin."
+  },
+  {
+    "_id": "scholars-pack",
+    "name": "Scholar's Pack",
+    "category": "Equipment Pack",
+    "cost": "40 GP",
+    "description": "Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, a little bag of sand, and a small knife."
+  },
+  {
+    "_id": "dice-set",
+    "name": "Dice set",
+    "category": "Gaming Set",
+    "cost": "1 SP",
+    "weight": 0,
+    "description": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency."
+  },
+  {
+    "_id": "playing-card-set",
+    "name": "Playing card set",
+    "category": "Gaming Set",
+    "cost": "5 SP",
+    "weight": 0,
+    "description": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency."
+  },
+  {
+    "_id": "chain-mail",
+    "name": "Chain mail",
+    "category": "Heavy Armor",
+    "cost": "75 GP",
+    "armor_class": "16",
+    "strength": 13,
+    "stealth": "Disadvantage",
+    "weight": 55
+  },
+  {
+    "_id": "plate",
+    "name": "Plate",
+    "category": "Heavy Armor",
+    "cost": "1,500 GP",
+    "armor_class": "18",
+    "strength": 15,
+    "stealth": "Disadvantage",
+    "weight": 65
+  },
+  {
+    "_id": "ring-mail",
+    "name": "Ring mail",
+    "category": "Heavy Armor",
+    "cost": "30 GP",
+    "armor_class": "14",
+    "strength": 0,
+    "stealth": "Disadvantage",
+    "weight": 40
+  },
+  {
+    "_id": "splint",
+    "name": "Splint",
+    "category": "Heavy Armor",
+    "cost": "200 GP",
+    "armor_class": "17",
+    "strength": 15,
+    "stealth": "Disadvantage",
+    "weight": 60
+  },
+  {
+    "_id": "amulet",
+    "name": "Amulet",
+    "category": "Holy Symbol",
+    "cost": "5 GP",
+    "weight": 1,
+    "description": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. Appendix PH-B \"Fantasy-Historical Pantheons\" lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "_id": "emblem",
+    "name": "Emblem",
+    "category": "Holy Symbol",
+    "cost": "5 GP",
+    "weight": 0,
+    "description": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. Appendix PH-B \"Fantasy-Historical Pantheons\" lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "_id": "reliquary",
+    "name": "Reliquary",
+    "category": "Holy Symbol",
+    "cost": "5 GP",
+    "weight": 2,
+    "description": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. Appendix PH-B \"Fantasy-Historical Pantheons\" lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "_id": "leather",
+    "name": "Leather",
+    "category": "Light Armor",
+    "cost": "10 GP",
+    "armor_class": "11 + Dex modifier",
+    "strength": 0,
+    "stealth": "",
+    "weight": 10
+  },
+  {
+    "_id": "padded",
+    "name": "Padded",
+    "category": "Light Armor",
+    "cost": "5 GP",
+    "armor_class": "11 + Dex modifier",
+    "strength": 0,
+    "stealth": "Disadvantage",
+    "weight": 8
+  },
+  {
+    "_id": "studded-leather",
+    "name": "Studded leather",
+    "category": "Light Armor",
+    "cost": "45 GP",
+    "armor_class": "12 + Dex modifier",
+    "strength": 0,
+    "stealth": "",
+    "weight": 13
+  },
+  {
+    "_id": "breastplate",
+    "name": "Breastplate",
+    "category": "Medium Armor",
+    "cost": "400 GP",
+    "armor_class": "14 + Dex modifier (max 2)",
+    "strength": 0,
+    "stealth": "",
+    "weight": 20
+  },
+  {
+    "_id": "chain-shirt",
+    "name": "Chain shirt",
+    "category": "Medium Armor",
+    "cost": "50 GP",
+    "armor_class": "13 + Dex modifier (max 2)",
+    "strength": 0,
+    "stealth": "",
+    "weight": 20
+  },
+  {
+    "_id": "half-plate",
+    "name": "Half plate",
+    "category": "Medium Armor",
+    "cost": "750 GP",
+    "armor_class": "15 + Dex modifier (max 2)",
+    "strength": 0,
+    "stealth": "Disadvantage",
+    "weight": 40
+  },
+  {
+    "_id": "hide",
+    "name": "Hide",
+    "category": "Medium Armor",
+    "cost": "10 GP",
+    "armor_class": "12 + Dex modifier (max 2)",
+    "strength": 0,
+    "stealth": "",
+    "weight": 12
+  },
+  {
+    "_id": "scale-mail",
+    "name": "Scale mail",
+    "category": "Medium Armor",
+    "cost": "50 GP",
+    "armor_class": "14 + Dex modifier (max 2)",
+    "strength": 0,
+    "stealth": "Disadvantage",
+    "weight": 45
+  },
+  {
+    "_id": "camel",
+    "name": "Camel",
+    "category": "Mount",
+    "cost": "50 GP",
+    "description": "Speed 50 ft., carrying capacity 480 lb."
+  },
+  {
+    "_id": "donkey-or-mule",
+    "name": "Donkey or mule",
+    "category": "Mount",
+    "cost": "8 GP",
+    "description": "Speed 40 ft., carrying capacity 420 lb."
+  },
+  {
+    "_id": "elephant",
+    "name": "Elephant",
+    "category": "Mount",
+    "cost": "200 GP",
+    "description": "Speed 40 ft., carrying capacity 1,320 lb."
+  },
+  {
+    "_id": "horse-draft",
+    "name": "Horse, draft",
+    "category": "Mount",
+    "cost": "50 GP",
+    "description": "Speed 40 ft., carrying capacity 540 lb."
+  },
+  {
+    "_id": "horse-riding",
+    "name": "Horse, riding",
+    "category": "Mount",
+    "cost": "75 GP",
+    "description": "Speed 60 ft., carrying capacity 480 lb."
+  },
+  {
+    "_id": "mastiff",
+    "name": "Mastiff",
+    "category": "Mount",
+    "cost": "25 GP",
+    "description": "Speed 40 ft., carrying capacity 195 lb."
+  },
+  {
+    "_id": "pony",
+    "name": "Pony",
+    "category": "Mount",
+    "cost": "30 GP",
+    "description": "Speed 40 ft., carrying capacity 225 lb."
+  },
+  {
+    "_id": "warhorse",
+    "name": "Warhorse",
+    "category": "Mount",
+    "cost": "400 GP",
+    "description": "Speed 60 ft., carrying capacity 540 lb."
+  },
+  {
+    "_id": "bagpipes",
+    "name": "Bagpipes",
+    "category": "Musical Instrument",
+    "cost": "30 GP",
+    "weight": 6,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "drum",
+    "name": "Drum",
+    "category": "Musical Instrument",
+    "cost": "6 GP",
+    "weight": 3,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "dulcimer",
+    "name": "Dulcimer",
+    "category": "Musical Instrument",
+    "cost": "25 GP",
+    "weight": 10,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "flute",
+    "name": "Flute",
+    "category": "Musical Instrument",
+    "cost": "2 GP",
+    "weight": 1,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "horn",
+    "name": "Horn",
+    "category": "Musical Instrument",
+    "cost": "3 GP",
+    "weight": 2,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "lute",
+    "name": "Lute",
+    "category": "Musical Instrument",
+    "cost": "35 GP",
+    "weight": 2,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "lyre",
+    "name": "Lyre",
+    "category": "Musical Instrument",
+    "cost": "30 GP",
+    "weight": 2,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "pan-flute",
+    "name": "Pan flute",
+    "category": "Musical Instrument",
+    "cost": "12 GP",
+    "weight": 2,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "shawm",
+    "name": "Shawm",
+    "category": "Musical Instrument",
+    "cost": "2 GP",
+    "weight": 1,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "viol",
+    "name": "Viol",
+    "category": "Musical Instrument",
+    "cost": "30 GP",
+    "weight": 1,
+    "description": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "_id": "assassins-blood",
+    "name": "Assassin's Blood",
+    "category": "Poison",
+    "cost": "150 GP",
+    "weight": 0,
+    "description": "Ingested poison. A creature subjected to this poison must make a DC 10 Constitution saving throw. On a failed save, it takes 6 (1d12) poison damage and is poisoned for 24 hours. On a successful save, the creature takes half damage and isn't poisoned.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save."
+  },
+  {
+    "_id": "burnt-othur-fumes",
+    "name": "Burnt Othur Fumes",
+    "category": "Poison",
+    "cost": "500 GP",
+    "weight": 0,
+    "description": "Inhaled poison. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or take 10 (3d6) poison damage, and must repeat the saving throw at the start of each of its turns. On each successive failed save, the character takes 3 (1d6) poison damage. After three successful saves, the poison ends.\n\nInhaled. These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+  },
+  {
+    "_id": "crawler-mucus",
+    "name": "Crawler Mucus",
+    "category": "Poison",
+    "cost": "200 GP",
+    "weight": 0,
+    "description": "Contact poison. This poison must be harvested from a dead or incapacitated crawler. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. The poisoned creature is paralyzed. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n\nContact. Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects."
+  },
+  {
+    "_id": "drow-poison",
+    "name": "Drow Poison",
+    "category": "Poison",
+    "cost": "200 GP",
+    "weight": 0,
+    "description": "Injury poison. This poison is typically made only by the drow, and only in a place far removed from sunlight. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the creature is also unconscious while poisoned in this way. The creature wakes up if it takes damage or if another creature takes an action to shake it awake.\n\nInjury. Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+  },
+  {
+    "_id": "essence-of-ether",
+    "name": "Essence of Ether",
+    "category": "Poison",
+    "cost": "300 GP",
+    "weight": 0,
+    "description": "Inhaled poison. A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 8 hours. The poisoned creature is unconscious. The creature wakes up if it takes damage or if another creature takes an action to shake it awake.\n\nInhaled. These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+  },
+  {
+    "_id": "malice",
+    "name": "Malice",
+    "category": "Poison",
+    "cost": "250 GP",
+    "weight": 0,
+    "description": "Inhaled poison. A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 1 hour. The poisoned creature is blinded.\n\nInhaled. These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+  },
+  {
+    "_id": "midnight-tears",
+    "name": "Midnight Tears",
+    "category": "Poison",
+    "cost": "1,500 GP",
+    "weight": 0,
+    "description": "Ingested poison. A creature that ingests this poison suffers no effect until the stroke of midnight. If the poison has not been neutralized before then, the creature must succeed on a DC 17 Constitution saving throw, taking 31 (9d6) poison damage on a failed save, or half as much damage on a successful one.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save."
+  },
+  {
+    "_id": "oil-of-taggit",
+    "name": "Oil of Taggit",
+    "category": "Poison",
+    "cost": "400 GP",
+    "weight": 0,
+    "description": "Contact poison. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or become poisoned for 24 hours. The poisoned creature is unconscious. The creature wakes up if it takes damage.\n\nContact. Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects."
+  },
+  {
+    "_id": "pale-tincture",
+    "name": "Pale Tincture",
+    "category": "Poison",
+    "cost": "250 GP",
+    "weight": 0,
+    "description": "Ingested poison. A creature subjected to this poison must succeed on a DC 16 Constitution saving throw or take 3 (1d6) poison damage and become poisoned. The poisoned creature must repeat the saving throw every 24 hours, taking 3 (1d6) poison damage on a failed save. Until this poison ends, the damage the poison deals can't be healed by any means. After seven successful saving throws, the effect ends and the creature can heal normally.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save."
+  },
+  {
+    "_id": "purple-worm-poison",
+    "name": "Purple Worm Poison",
+    "category": "Poison",
+    "cost": "2,000 GP",
+    "weight": 0,
+    "description": "Injury poison. This poison must be harvested from a dead or incapacitated purple worm. A creature subjected to this poison must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.\n\nInjury. Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+  },
+  {
+    "_id": "serpent-venom",
+    "name": "Serpent Venom",
+    "category": "Poison",
+    "cost": "200 GP",
+    "weight": 0,
+    "description": "Injury poison. This poison must be harvested from a dead or incapacitated giant poisonous snake. A creature subjected to this poison must succeed on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.\n\nInjury. Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+  },
+  {
+    "_id": "torpor",
+    "name": "Torpor",
+    "category": "Poison",
+    "cost": "600 GP",
+    "weight": 0,
+    "description": "Ingested poison. A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 4d6 hours. The poisoned creature is incapacitated.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save."
+  },
+  {
+    "_id": "truth-serum",
+    "name": "Truth Serum",
+    "category": "Poison",
+    "cost": "150 GP",
+    "weight": 0,
+    "description": "Ingested poison. A creature subjected to this poison must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. The poisoned creature can't knowingly speak a lie, as if under the effect of a zone of truth spell.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save."
+  },
+  {
+    "_id": "wyvern-poison",
+    "name": "Wyvern Poison",
+    "category": "Poison",
+    "cost": "1,200 GP",
+    "weight": 0,
+    "description": "Injury poison. This poison must be harvested from a dead or incapacitated wyvern. A creature subjected to this poison must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.\n\nInjury. Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+  },
+  {
+    "_id": "shield-equipment",
+    "name": "Shield",
+    "category": "Shield",
+    "cost": "10 GP",
+    "armor_class": "+2",
+    "strength": 0,
+    "stealth": "",
+    "weight": 6
+  },
+  {
+    "_id": "bit-and-bridle",
+    "name": "Bit and bridle",
+    "category": "Tack and Harness",
+    "cost": "2 GP",
+    "weight": 1
+  },
+  {
+    "_id": "feed-per-day",
+    "name": "Feed (per day)",
+    "category": "Tack and Harness",
+    "cost": "5 CP",
+    "weight": 10
+  },
+  {
+    "_id": "saddle-exotic",
+    "name": "Saddle, exotic",
+    "category": "Tack and Harness",
+    "cost": "60 GP",
+    "weight": 40
+  },
+  {
+    "_id": "saddle-military",
+    "name": "Saddle, military",
+    "category": "Tack and Harness",
+    "cost": "20 GP",
+    "weight": 30
+  },
+  {
+    "_id": "saddle-pack",
+    "name": "Saddle, pack",
+    "category": "Tack and Harness",
+    "cost": "5 GP",
+    "weight": 15
+  },
+  {
+    "_id": "saddle-riding",
+    "name": "Saddle, riding",
+    "category": "Tack and Harness",
+    "cost": "10 GP",
+    "weight": 25
+  },
+  {
+    "_id": "saddlebags",
+    "name": "Saddlebags",
+    "category": "Tack and Harness",
+    "cost": "4 GP",
+    "weight": 8
+  },
+  {
+    "_id": "stabling-per-day",
+    "name": "Stabling (per day)",
+    "category": "Tack and Harness",
+    "cost": "5 SP",
+    "weight": 0
+  },
+  {
+    "_id": "disguise-kit",
+    "name": "Disguise kit",
+    "category": "Tool",
+    "cost": "25 GP",
+    "weight": 3,
+    "description": "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
+  },
+  {
+    "_id": "forgery-kit",
+    "name": "Forgery kit",
+    "category": "Tool",
+    "cost": "15 GP",
+    "weight": 5,
+    "description": "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
+  },
+  {
+    "_id": "herbalism-kit",
+    "name": "Herbalism kit",
+    "category": "Tool",
+    "cost": "5 GP",
+    "weight": 3,
+    "description": "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing."
+  },
+  {
+    "_id": "navigators-tools",
+    "name": "Navigator's tools",
+    "category": "Tool",
+    "cost": "25 GP",
+    "weight": 2,
+    "description": "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea."
+  },
+  {
+    "_id": "poisoners-kit",
+    "name": "Poisoner's kit",
+    "category": "Tool",
+    "cost": "50 GP",
+    "weight": 2,
+    "description": "A poisoner's kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons."
+  },
+  {
+    "_id": "thieves-tools",
+    "name": "Thieves' tools",
+    "category": "Tool",
+    "cost": "25 GP",
+    "weight": 1,
+    "description": "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
+  },
+  {
+    "_id": "carriage",
+    "name": "Carriage",
+    "category": "Vehicle",
+    "cost": "100 GP",
+    "weight": 600
+  },
+  {
+    "_id": "cart",
+    "name": "Cart",
+    "category": "Vehicle",
+    "cost": "15 GP",
+    "weight": 200
+  },
+  {
+    "_id": "chariot",
+    "name": "Chariot",
+    "category": "Vehicle",
+    "cost": "250 GP",
+    "weight": 100
+  },
+  {
+    "_id": "galley",
+    "name": "Galley",
+    "category": "Vehicle",
+    "cost": "30,000 GP",
+    "description": "Speed 4 mph"
+  },
+  {
+    "_id": "keelboat",
+    "name": "Keelboat",
+    "category": "Vehicle",
+    "cost": "3,000 GP",
+    "description": "Speed 1 mph"
+  },
+  {
+    "_id": "longship",
+    "name": "Longship",
+    "category": "Vehicle",
+    "cost": "10,000 GP",
+    "description": "Speed 3 mph"
+  },
+  {
+    "_id": "rowboat",
+    "name": "Rowboat",
+    "category": "Vehicle",
+    "cost": "50 GP",
+    "description": "Speed 1½ mph"
+  },
+  {
+    "_id": "sailing-ship",
+    "name": "Sailing ship",
+    "category": "Vehicle",
+    "cost": "10,000 GP",
+    "description": "Speed 2 mph"
+  },
+  {
+    "_id": "sled",
+    "name": "Sled",
+    "category": "Vehicle",
+    "cost": "20 GP",
+    "weight": 300
+  },
+  {
+    "_id": "wagon",
+    "name": "Wagon",
+    "category": "Vehicle",
+    "cost": "35 GP",
+    "weight": 400
+  },
+  {
+    "_id": "warship",
+    "name": "Warship",
+    "category": "Vehicle",
+    "cost": "25,000 GP",
+    "description": "Speed 2½ mph"
+  },
+  {
+    "_id": "battleaxe",
+    "name": "Battleaxe",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "10 GP",
+    "damage": "1d8 slashing",
+    "weight": 4,
+    "properties": "Versatile (1d10)"
+  },
+  {
+    "_id": "blowgun",
+    "name": "Blowgun",
+    "category": "Weapon",
+    "weapon_type": "Martial Ranged Weapon",
+    "cost": "10 GP",
+    "damage": "1 piercing",
+    "weight": 1,
+    "properties": "Ammunition (range 25/100), loading"
+  },
+  {
+    "_id": "club",
+    "name": "Club",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "1 SP",
+    "damage": "1d4 bludgeoning",
+    "weight": 2,
+    "properties": "Light"
+  },
+  {
+    "_id": "crossbow-hand",
+    "name": "Crossbow, hand",
+    "category": "Weapon",
+    "weapon_type": "Martial Ranged Weapon",
+    "cost": "75 GP",
+    "damage": "1d6 piercing",
+    "weight": 3,
+    "properties": "Ammunition (range 30/120), light, loading"
+  },
+  {
+    "_id": "crossbow-heavy",
+    "name": "Crossbow, heavy",
+    "category": "Weapon",
+    "weapon_type": "Martial Ranged Weapon",
+    "cost": "50 GP",
+    "damage": "1d10 piercing",
+    "weight": 18,
+    "properties": "Ammunition (range 100/400), heavy, loading, two-handed"
+  },
+  {
+    "_id": "crossbow-light",
+    "name": "Crossbow, light",
+    "category": "Weapon",
+    "weapon_type": "Simple Ranged Weapon",
+    "cost": "25 GP",
+    "damage": "1d8 piercing",
+    "weight": 5,
+    "properties": "Ammunition (range 80/320), loading, two-handed"
+  },
+  {
+    "_id": "dagger",
+    "name": "Dagger",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "2 GP",
+    "damage": "1d4 piercing",
+    "weight": 1,
+    "properties": "Finesse, light, thrown (range 20/60)"
+  },
+  {
+    "_id": "dart",
+    "name": "Dart",
+    "category": "Weapon",
+    "weapon_type": "Simple Ranged Weapon",
+    "cost": "5 CP",
+    "damage": "1d4 piercing",
+    "weight": 0.25,
+    "properties": "Finesse, thrown (range 20/60)"
+  },
+  {
+    "_id": "flail",
+    "name": "Flail",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "10 GP",
+    "damage": "1d8 bludgeoning",
+    "weight": 2,
+    "properties": ""
+  },
+  {
+    "_id": "glaive",
+    "name": "Glaive",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "20 GP",
+    "damage": "1d10 slashing",
+    "weight": 6,
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "_id": "greataxe",
+    "name": "Greataxe",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "30 GP",
+    "damage": "1d12 slashing",
+    "weight": 7,
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "_id": "greatclub",
+    "name": "Greatclub",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "2 SP",
+    "damage": "1d8 bludgeoning",
+    "weight": 10,
+    "properties": "Two-handed"
+  },
+  {
+    "_id": "greatsword",
+    "name": "Greatsword",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "50 GP",
+    "damage": "2d6 slashing",
+    "weight": 6,
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "_id": "halberd",
+    "name": "Halberd",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "20 GP",
+    "damage": "1d10 slashing",
+    "weight": 6,
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "_id": "handaxe",
+    "name": "Handaxe",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "5 GP",
+    "damage": "1d6 slashing",
+    "weight": 2,
+    "properties": "Light, thrown (range 20/60)"
+  },
+  {
+    "_id": "javelin",
+    "name": "Javelin",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "5 SP",
+    "damage": "1d6 piercing",
+    "weight": 2,
+    "properties": "Thrown (range 30/120)"
+  },
+  {
+    "_id": "lance",
+    "name": "Lance",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "10 GP",
+    "damage": "1d12 piercing",
+    "weight": 6,
+    "properties": "Reach, special",
+    "description": "You have disadvantage when you use a lance to attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren't mounted."
+  },
+  {
+    "_id": "light-hammer",
+    "name": "Light hammer",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "2 GP",
+    "damage": "1d4 bludgeoning",
+    "weight": 2,
+    "properties": "Light, thrown (range 20/60)"
+  },
+  {
+    "_id": "longbow",
+    "name": "Longbow",
+    "category": "Weapon",
+    "weapon_type": "Martial Ranged Weapon",
+    "cost": "50 GP",
+    "damage": "1d8 piercing",
+    "weight": 2,
+    "properties": "Ammunition (range 150/600), heavy, two-handed"
+  },
+  {
+    "_id": "longsword",
+    "name": "Longsword",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "15 GP",
+    "damage": "1d8 slashing",
+    "weight": 3,
+    "properties": "Versatile (1d10)"
+  },
+  {
+    "_id": "mace",
+    "name": "Mace",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "5 GP",
+    "damage": "1d6 bludgeoning",
+    "weight": 4,
+    "properties": ""
+  },
+  {
+    "_id": "maul",
+    "name": "Maul",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "10 GP",
+    "damage": "2d6 bludgeoning",
+    "weight": 10,
+    "properties": "Heavy, two-handed"
+  },
+  {
+    "_id": "morningstar",
+    "name": "Morningstar",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "15 GP",
+    "damage": "1d8 piercing",
+    "weight": 4,
+    "properties": ""
+  },
+  {
+    "_id": "net",
+    "name": "Net",
+    "category": "Weapon",
+    "weapon_type": "Martial Ranged Weapon",
+    "cost": "1 GP",
+    "damage": "",
+    "weight": 3,
+    "properties": "Special, thrown (range 5/15)",
+    "description": "A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on creatures that are formless, or creatures that are Huge or larger. A creature can use its action to make a DC 10 Strength check, freeing itself or another creature within its reach on a success. Dealing 5 slashing damage to the net (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, bonus action, or reaction to attack with a net, you can make only one attack regardless of the number of attacks you can normally make."
+  },
+  {
+    "_id": "pike",
+    "name": "Pike",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "5 GP",
+    "damage": "1d10 piercing",
+    "weight": 18,
+    "properties": "Heavy, reach, two-handed"
+  },
+  {
+    "_id": "quarterstaff",
+    "name": "Quarterstaff",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "2 SP",
+    "damage": "1d6 bludgeoning",
+    "weight": 4,
+    "properties": "Versatile (1d8)"
+  },
+  {
+    "_id": "rapier",
+    "name": "Rapier",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "25 GP",
+    "damage": "1d8 piercing",
+    "weight": 2,
+    "properties": "Finesse"
+  },
+  {
+    "_id": "scimitar",
+    "name": "Scimitar",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "25 GP",
+    "damage": "1d6 slashing",
+    "weight": 3,
+    "properties": "Finesse, light"
+  },
+  {
+    "_id": "shortbow",
+    "name": "Shortbow",
+    "category": "Weapon",
+    "weapon_type": "Simple Ranged Weapon",
+    "cost": "25 GP",
+    "damage": "1d6 piercing",
+    "weight": 2,
+    "properties": "Ammunition (range 80/320), two-handed"
+  },
+  {
+    "_id": "shortsword",
+    "name": "Shortsword",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "10 GP",
+    "damage": "1d6 piercing",
+    "weight": 2,
+    "properties": "Finesse, light"
+  },
+  {
+    "_id": "sickle",
+    "name": "Sickle",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "1 GP",
+    "damage": "1d4 slashing",
+    "weight": 2,
+    "properties": "Light"
+  },
+  {
+    "_id": "sling",
+    "name": "Sling",
+    "category": "Weapon",
+    "weapon_type": "Simple Ranged Weapon",
+    "cost": "1 SP",
+    "damage": "1d4 bludgeoning",
+    "weight": 0,
+    "properties": "Ammunition (range 30/120)"
+  },
+  {
+    "_id": "spear",
+    "name": "Spear",
+    "category": "Weapon",
+    "weapon_type": "Simple Melee Weapon",
+    "cost": "1 GP",
+    "damage": "1d6 piercing",
+    "weight": 3,
+    "properties": "Thrown (range 20/60), versatile (1d8)"
+  },
+  {
+    "_id": "trident",
+    "name": "Trident",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "5 GP",
+    "damage": "1d6 piercing",
+    "weight": 4,
+    "properties": "Thrown (range 20/60), versatile (1d8)"
+  },
+  {
+    "_id": "war-pick",
+    "name": "War pick",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "5 GP",
+    "damage": "1d8 piercing",
+    "weight": 2,
+    "properties": ""
+  },
+  {
+    "_id": "warhammer",
+    "name": "Warhammer",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "15 GP",
+    "damage": "1d8 bludgeoning",
+    "weight": 2,
+    "properties": "Versatile (1d10)"
+  },
+  {
+    "_id": "whip",
+    "name": "Whip",
+    "category": "Weapon",
+    "weapon_type": "Martial Melee Weapon",
+    "cost": "2 GP",
+    "damage": "1d4 slashing",
+    "weight": 3,
+    "properties": "Finesse, reach"
+  }
+]

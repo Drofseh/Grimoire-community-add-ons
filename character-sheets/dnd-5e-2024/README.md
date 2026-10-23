@@ -23,6 +23,8 @@ layout that follows the shape of the published sheet.
 - **Custom class, species, or background** — type a homebrew name when the
   catalogue entry is missing (or you prefer not to pick one)
 - **Picking a class** adds its level 1 features
+- **Your character's art, large** on the Spells & Details page, beside their
+  appearance - framed the way you chose (click it to choose)
 
 ## With the SRD 5.2 pack
 

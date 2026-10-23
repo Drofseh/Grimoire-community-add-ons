@@ -2,7 +2,8 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "traveller-2e",
   "name": "Traveller (Mongoose 2nd Edition)",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "grimoire_min_version": "1.10.0",
   "system": "Traveller (Mongoose 2nd Edition)",
   "description": "A traveller sheet for Mongoose Traveller 2nd Edition, after J. Brannen's character spreadsheet: characteristics with their dice modifiers and UPP, every skill and speciality with its check DM against each characteristic, psionics, weapons with their attack DM, armour, encumbrance, finances and standard of living, vehicles, a spacecraft, background and campaign notes.",
   "author": "hunter-read",
@@ -4318,6 +4319,10 @@
         }
       ],
       "add_label": "Add cargo"
+    },
+    "ship_image": {
+      "type": "image",
+      "label": "Ship"
     },
     "ship_type": {
       "type": "text",

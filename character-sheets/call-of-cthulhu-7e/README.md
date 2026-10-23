@@ -6,7 +6,8 @@ sheet - in Grimoire's own styling, not Chaosium's.
 
 ## What it covers
 
-Three pages: **Investigator**, **Backstory** and **Notes**.
+Three pages: **Investigator**, **Backstory** and **Notes**. The investigator's
+art sits beside their details, where the printed sheet keeps a photograph.
 
 - **Eight characteristics** - STR, CON, SIZ, DEX, APP, INT, POW, EDU - each with
   its half and fifth, for Hard and Extreme rolls

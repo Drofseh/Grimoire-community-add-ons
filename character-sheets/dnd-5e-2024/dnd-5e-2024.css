@@ -353,6 +353,14 @@
   min-width: 0;
 }
 
+/* The character's art, drawn large above their description - the header only
+   has room for a thumbnail. Tall like a portrait, but capped so a wide side
+   column does not turn it into a poster. */
+.appearance-art {
+  aspect-ratio: 3 / 4;
+  max-height: 460px;
+}
+
 .caster-toggle {
   flex-direction: row;
   font-weight: 700;

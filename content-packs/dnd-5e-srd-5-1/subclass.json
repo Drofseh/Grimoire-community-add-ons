@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "path-of-the-berserker",
+    "name": "Path of the Berserker",
+    "class": "Barbarian",
+    "level": 3,
+    "description": "A Barbarian subclass. Features: Frenzy (3rd), Mindless Rage (6th), Intimidating Presence (10th), Retaliation (14th).",
+    "hp_per_level": 0,
+    "feature_ids": "path-of-the-berserker-frenzy",
+    "feature_names": "Frenzy"
+  },
+  {
+    "_id": "college-of-lore",
+    "name": "College of Lore",
+    "class": "Bard",
+    "level": 3,
+    "description": "A Bard subclass. Features: Bonus Proficiencies (3rd), Cutting Words (3rd), Additional Magical Secrets (6th), Peerless Skill (14th).",
+    "hp_per_level": 0,
+    "feature_ids": "college-of-lore-bonus-proficiencies, college-of-lore-cutting-words",
+    "feature_names": "Bonus Proficiencies, Cutting Words"
+  },
+  {
+    "_id": "life-domain",
+    "name": "Life Domain",
+    "class": "Cleric",
+    "level": 1,
+    "description": "A Cleric subclass. Features: Bonus Proficiency (1st), Disciple of Life (1st), Life Domain Spells (1st), Channel Divinity: Preserve Life (2nd), Blessed Healer (6th), Divine Strike (8th), Supreme Healing (17th).",
+    "hp_per_level": 0,
+    "feature_ids": "life-domain-bonus-proficiency, life-domain-disciple-of-life, life-domain-life-domain-spells",
+    "feature_names": "Bonus Proficiency, Disciple of Life, Life Domain Spells"
+  },
+  {
+    "_id": "circle-of-the-land",
+    "name": "Circle of the Land",
+    "class": "Druid",
+    "level": 2,
+    "description": "A Druid subclass. Features: Bonus Cantrip (2nd), Natural Recovery (2nd), Circle Spells (3rd), Land's Stride (6th), Nature's Ward (10th), Nature's Sanctuary (14th).",
+    "hp_per_level": 0,
+    "feature_ids": "circle-of-the-land-bonus-cantrip, circle-of-the-land-natural-recovery",
+    "feature_names": "Bonus Cantrip, Natural Recovery"
+  },
+  {
+    "_id": "champion",
+    "name": "Champion",
+    "class": "Fighter",
+    "level": 3,
+    "description": "A Fighter subclass. Features: Improved Critical (3rd), Remarkable Athlete (7th), Additional Fighting Style (10th), Superior Critical (15th), Survivor (18th).",
+    "hp_per_level": 0,
+    "feature_ids": "champion-improved-critical",
+    "feature_names": "Improved Critical"
+  },
+  {
+    "_id": "way-of-the-open-hand",
+    "name": "Way of the Open Hand",
+    "class": "Monk",
+    "level": 3,
+    "description": "A Monk subclass. Features: Open Hand Technique (3rd), Wholeness of Body (6th), Tranquility (11th), Quivering Palm (17th).",
+    "hp_per_level": 0,
+    "feature_ids": "way-of-the-open-hand-open-hand-technique",
+    "feature_names": "Open Hand Technique"
+  },
+  {
+    "_id": "oath-of-devotion",
+    "name": "Oath of Devotion",
+    "class": "Paladin",
+    "level": 3,
+    "description": "A Paladin subclass. Features: Channel Divinity (3rd), Oath Spells (3rd), Tenets of Devotion (3rd), Aura of Devotion (7th), Purity of Spirit (15th), Holy Nimbus (20th).",
+    "hp_per_level": 0,
+    "feature_ids": "oath-of-devotion-channel-divinity, oath-of-devotion-oath-spells, oath-of-devotion-tenets-of-devotion",
+    "feature_names": "Channel Divinity, Oath Spells, Tenets of Devotion"
+  },
+  {
+    "_id": "hunter",
+    "name": "Hunter",
+    "class": "Ranger",
+    "level": 3,
+    "description": "A Ranger subclass. Features: Hunter's Prey (3rd), Defensive Tactics (7th), Multiattack (11th), Superior Hunter's Defense (15th).",
+    "hp_per_level": 0,
+    "feature_ids": "hunter-hunters-prey",
+    "feature_names": "Hunter's Prey"
+  },
+  {
+    "_id": "thief",
+    "name": "Thief",
+    "class": "Rogue",
+    "level": 3,
+    "description": "A Rogue subclass. Features: Fast Hands (3rd), Second-Story Work (3rd), Supreme Sneak (9th), Use Magic Device (13th), Thief's Reflexes (17th).",
+    "hp_per_level": 0,
+    "feature_ids": "thief-fast-hands, thief-second-story-work",
+    "feature_names": "Fast Hands, Second-Story Work"
+  },
+  {
+    "_id": "draconic-bloodline",
+    "name": "Draconic Bloodline",
+    "class": "Sorcerer",
+    "level": 1,
+    "description": "A Sorcerer subclass. Features: Draconic Resilience (1st), Dragon Ancestor (1st), Elemental Affinity (6th), Dragon Wings (14th), Draconic Presence (18th).",
+    "hp_per_level": 1,
+    "feature_ids": "draconic-bloodline-draconic-resilience, draconic-bloodline-dragon-ancestor",
+    "feature_names": "Draconic Resilience, Dragon Ancestor"
+  },
+  {
+    "_id": "the-fiend",
+    "name": "The Fiend",
+    "class": "Warlock",
+    "level": 1,
+    "description": "A Warlock subclass. Features: Dark One's Blessing (1st), Expanded Spell List (1st), Dark One's Own Luck (6th), Fiendish Resilience (10th), Hurl Through Hell (14th).",
+    "hp_per_level": 0,
+    "feature_ids": "the-fiend-dark-ones-blessing, the-fiend-expanded-spell-list",
+    "feature_names": "Dark One's Blessing, Expanded Spell List"
+  },
+  {
+    "_id": "school-of-evocation",
+    "name": "School of Evocation",
+    "class": "Wizard",
+    "level": 2,
+    "description": "A Wizard subclass. Features: Evocation Savant (2nd), Sculpt Spells (2nd), Potent Cantrip (6th), Empowered Evocation (10th), Overchannel (14th).",
+    "hp_per_level": 0,
+    "feature_ids": "school-of-evocation-evocation-savant, school-of-evocation-sculpt-spells",
+    "feature_names": "Evocation Savant, Sculpt Spells"
+  }
+]

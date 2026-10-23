@@ -7,6 +7,7 @@ a pack supplies the spells.
 | Pack | For sheet | Licence | Entries |
 | --- | --- | --- | --- |
 | [`dnd-5e-srd`](dnd-5e-srd/) | `dnd-5e-2024` | CC BY 4.0 (SRD 5.2) | 1109 |
+| [`dnd-5e-srd-5-1`](dnd-5e-srd-5-1/) | `dnd-5e-2014` | CC BY 4.0 (SRD 5.1) | 1115 |
 | [`draw-steel-core`](draw-steel-core/) | `draw-steel` | Draw Steel Creator License | 1660 |
 | [`pf2e-player-core`](pf2e-player-core/) | `pathfinder-2e` | ORC | 1606 |
 
@@ -196,7 +197,12 @@ not open content. Check each entry against the source document, not against
 memory; an earlier version of this pack got that wrong, and Grimoire's test
 suite now checks the pack against the SRD's lists.
 
-Its spells, class features, equipment and magic items are converted from
+The 2014 pack, `dnd-5e-srd-5-1`, is SRD 5.1 only on the same terms. It is
+converted from Open5e's SRD 5.1 data and then checked against the SRD document
+itself, which wins wherever the two differ - see its
+[README](dnd-5e-srd-5-1/README.md).
+
+The 2024 pack's spells, class features, equipment and magic items are converted from
 [Open5e](https://github.com/open5e/open5e-api)'s SRD 5.2 data by
 `scripts/srd-5e/import_open5e.py`. Open5e expands a generic magic item into a
 copy per weapon or armour; the script folds those back into the one entry the
