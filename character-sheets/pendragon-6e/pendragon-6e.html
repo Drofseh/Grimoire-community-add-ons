@@ -315,7 +315,14 @@
 
       <section class="box">
         <h3 class="box-heading">Holdings</h3>
-        <g-field name="holdings" label="" />
+        <div class="hp-grid">
+          <label class="opt"><g-field name="holdings_manor1_check" label="" />Manor 1</label>
+          <label class="opt"><g-field name="holdings_manor2_check" label="" />Manor 2</label>
+          <label class="opt"><g-field name="holdings_manor3_check" label="" />Manor 3</label>
+          <label class="opt"><g-field name="holdings_manor4_check" label="" />Manor 4</label>
+          <label class="opt"><g-field name="holdings_manor5_check" label="" />Manor 5</label>
+          <label class="opt"><g-field name="holdings_barony_check" label="" />Barony 6</label>
+        </div>
       </section>
 
       <section class="box">
@@ -338,9 +345,22 @@
   </div>
   </g-tab>
 
-  <g-tab title="Estates">
+  <g-tab title="Family Record">
     <section class="box">
-      <h4 class="sub-heading">Manor</h4>
+      <h4 class="sub-heading">Family Record</h4>
+      <g-field name="family_records" label="" />
+    </section>
+  </g-tab>
+
+  <g-tab title="Family Events">
+    <section class="box">
+      <h4 class="sub-heading">Family Events</h4>
+      <g-field name="family_events" label="" />
+    </section>
+  </g-tab>
+
+  <g-tab title="Manor 1">
+    <section class="box">
       <div class="manor-info-line1">
         <div class="gstat"><span class="tiny">Name</span><g-field name="manor1_name" label="" /></div>
         <div class="gstat"><span class="tiny">County</span><g-field name="manor1_county" label="" /></div>
@@ -353,8 +373,8 @@
         <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="manor1_assized_rent" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="manor1_total_treasure" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="manor1_standard_of_living" label="" /></div>
-        <div class="gstat"><span class="tiny">Folklore</span><g-field name="manor1_folklore" label="" variant="compact" /></div>
-        <div class="gstat"><span class="tiny">Station</span><g-field name="manor1_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total DV</span><g-field name="manor1_total_dv" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Stewardship</span><g-field name="manor1_stewardship" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="manor1_fumble" label="" /></div>
@@ -373,9 +393,10 @@
       <h4 class="sub-heading">Manor Folk</h4>
       <g-field name="manor1_manor_folk" label="" />
     </section>
+  </g-tab>
 
+  <g-tab title="Manor 2">
     <section class="box">
-      <h4 class="sub-heading">Manor</h4>
       <div class="manor-info-line1">
         <div class="gstat"><span class="tiny">Name</span><g-field name="manor2_name" label="" /></div>
         <div class="gstat"><span class="tiny">County</span><g-field name="manor2_county" label="" /></div>
@@ -388,8 +409,8 @@
         <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="manor2_assized_rent" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="manor2_total_treasure" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="manor2_standard_of_living" label="" /></div>
-        <div class="gstat"><span class="tiny">Folklore</span><g-field name="manor2_folklore" label="" variant="compact" /></div>
-        <div class="gstat"><span class="tiny">Station</span><g-field name="manor2_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total DV</span><g-field name="manor2_total_dv" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Stewardship</span><g-field name="manor2_stewardship" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="manor2_fumble" label="" /></div>
@@ -408,9 +429,10 @@
       <h4 class="sub-heading">Manor Folk</h4>
       <g-field name="manor2_manor_folk" label="" />
     </section>
+  </g-tab>
 
+  <g-tab title="Manor 3">
     <section class="box">
-      <h4 class="sub-heading">Manor</h4>
       <div class="manor-info-line1">
         <div class="gstat"><span class="tiny">Name</span><g-field name="manor3_name" label="" /></div>
         <div class="gstat"><span class="tiny">County</span><g-field name="manor3_county" label="" /></div>
@@ -423,8 +445,8 @@
         <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="manor3_assized_rent" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="manor3_total_treasure" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="manor3_standard_of_living" label="" /></div>
-        <div class="gstat"><span class="tiny">Folklore</span><g-field name="manor3_folklore" label="" variant="compact" /></div>
-        <div class="gstat"><span class="tiny">Station</span><g-field name="manor3_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total DV</span><g-field name="manor3_total_dv" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Stewardship</span><g-field name="manor3_stewardship" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="manor3_fumble" label="" /></div>
@@ -443,9 +465,10 @@
       <h4 class="sub-heading">Manor Folk</h4>
       <g-field name="manor3_manor_folk" label="" />
     </section>
+  </g-tab>
 
+  <g-tab title="Manor 4">
     <section class="box">
-      <h4 class="sub-heading">Manor</h4>
       <div class="manor-info-line1">
         <div class="gstat"><span class="tiny">Name</span><g-field name="manor4_name" label="" /></div>
         <div class="gstat"><span class="tiny">County</span><g-field name="manor4_county" label="" /></div>
@@ -458,8 +481,8 @@
         <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="manor4_assized_rent" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="manor4_total_treasure" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="manor4_standard_of_living" label="" /></div>
-        <div class="gstat"><span class="tiny">Folklore</span><g-field name="manor4_folklore" label="" variant="compact" /></div>
-        <div class="gstat"><span class="tiny">Station</span><g-field name="manor4_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total DV</span><g-field name="manor4_total_dv" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Stewardship</span><g-field name="manor4_stewardship" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="manor4_fumble" label="" /></div>
@@ -478,9 +501,10 @@
       <h4 class="sub-heading">Manor Folk</h4>
       <g-field name="manor4_manor_folk" label="" />
     </section>
+  </g-tab>
 
+  <g-tab title="Manor 5">
     <section class="box">
-      <h4 class="sub-heading">Manor</h4>
       <div class="manor-info-line1">
         <div class="gstat"><span class="tiny">Name</span><g-field name="manor5_name" label="" /></div>
         <div class="gstat"><span class="tiny">County</span><g-field name="manor5_county" label="" /></div>
@@ -493,8 +517,8 @@
         <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="manor5_assized_rent" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="manor5_total_treasure" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="manor5_standard_of_living" label="" /></div>
-        <div class="gstat"><span class="tiny">Folklore</span><g-field name="manor5_folklore" label="" variant="compact" /></div>
-        <div class="gstat"><span class="tiny">Station</span><g-field name="manor5_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Total DV</span><g-field name="manor5_total_dv" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Stewardship</span><g-field name="manor5_stewardship" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="manor5_fumble" label="" /></div>
@@ -515,17 +539,63 @@
     </section>
   </g-tab>
 
-  <g-tab title="Family Record">
+  <g-tab title="Barony">
     <section class="box">
-      <h4 class="sub-heading">Family Record</h4>
-      <g-field name="family_records" label="" />
-    </section>
-  </g-tab>
-
-  <g-tab title="Family Events">
-    <section class="box">
-      <h4 class="sub-heading">Family Events</h4>
-      <g-field name="family_events" label="" />
+      <div class="manor-info-line1">
+        <div class="gstat"><span class="tiny">Name</span><g-field name="barony_name" label="" /></div>
+        <div class="gstat"><span class="tiny">County</span><g-field name="barony_county" label="" /></div>
+        <div class="gstat"><span class="tiny">Hundred</span><g-field name="barony_hundred" label="" /></div>
+      </div>
+      <ul class="barony-court">
+        <li class="gstat"><span class="tiny">Castellan</span><g-field name="barony_castellan" label="" /></li>
+        <li class="gstat"><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_castellan" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Constable</span><g-field name="barony_constable" label="" /></li>
+        <li class="gstat"><span class="tiny">Horsemanship</span><g-field name="barony_horsemanship" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Dapifer</span><g-field name="barony_dapifer" label="" /></li>
+        <li class="gstat"><span class="tiny">Folklore</span><g-field name="barony_folklore" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Marshall</span><g-field name="barony_marshall" label="" /></li>
+        <li class="gstat"><span class="tiny">Battle</span><g-field name="barony_battle" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Pincerna</span><g-field name="barony_pincerna" label="" /></li>
+        <li class="gstat"><span class="tiny">Courtesy</span><g-field name="barony_courtesy" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Seneschal</span><g-field name="barony_seneschal" label="" /></li>
+        <li class="gstat"><span class="tiny">Stewardship (Seneschal)</span><g-field name="barony_stewardship_seneschal" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Steward</span><g-field name="barony_steward" label="" /></li>
+        <li class="gstat"><span class="tiny">Stewardship (Steward)</span><g-field name="barony_stewardship_steward" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Chaplain</span><g-field name="barony_chaplain" label="" /></li>
+        <li class="gstat"><span class="tiny">Religion</span><g-field name="barony_religion" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Clerk (Position)</span><g-field name="barony_clerk" label="" /></li>
+        <li class="gstat"><span class="tiny">Clerk (Skill)</span><g-field name="barony_clerk_skill" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Engineer</span><g-field name="barony_engineer" label="" /></li>
+        <li class="gstat"><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_engineer" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Lawyer</span><g-field name="barony_lawyer" label="" /></li>
+        <li class="gstat"><span class="tiny">Law</span><g-field name="barony_law" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Physician</span><g-field name="barony_physician" label="" /></li>
+        <li class="gstat"><span class="tiny">First Aid</span><g-field name="barony_firstaid" label="" variant="compact" /></li>
+        <li class="gstat"><span class="tiny">Chirurgery</span><g-field name="barony_chirurgery" label="" variant="compact" /></li>
+      </ul>
+      <div class="manor-info-line2">
+        <div class="gstat"><span class="tiny">Privy Funds (£)</span><g-field name="barony_privy_funds" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Current Income (£)</span><g-field name="barony_current_income" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Assized Rent (£)</span><g-field name="barony_assized_rent" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Total Treasure (£)</span><g-field name="barony_total_treasure" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Standard of Living</span><g-field name="barony_standard_of_living" label="" /></div>
+        <div class="gstat"><span class="tiny">Station</span><g-field name="passion_station" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Total DV</span><g-field name="barony_total_dv" label="" variant="compact" /></div>
+        <div class="gstat"><span class="tiny">Fumble</span><g-field name="barony_fumble" label="" /></div>
+        <div class="gstat"><span class="tiny">Famine</span><g-field name="barony_famine" label="" /></div>
+      </div>
+      <h4 class="sub-heading">Improvements</h4>
+      <g-field name="barony_manorial_improvements" label="" />
+      <h4 class="sub-heading">Investments</h4>
+      <g-field name="barony_investments" label="" />
+      <h4 class="sub-heading">Enhancements</h4>
+      <g-field name="barony_enhancements" label="" />
+      <h4 class="sub-heading">Notable Features</h4>
+      <g-field name="barony_notable_features" label="" />
+      <h4 class="sub-heading">Defenses</h4>
+      <g-field name="barony_defenses" label="" />
+      <h4 class="sub-heading">Manor Folk</h4>
+      <g-field name="barony_manor_folk" label="" />
     </section>
   </g-tab>
 </div>
