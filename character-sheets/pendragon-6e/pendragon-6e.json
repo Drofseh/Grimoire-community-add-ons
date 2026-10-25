@@ -27,6 +27,10 @@
       "type": "checkbox",
       "label": "Heir?"
     },
+    "married": {
+      "type": "checkbox",
+      "label": "Married?"
+    },
     "homeland": {
       "type": "text",
       "label": "Homeland"

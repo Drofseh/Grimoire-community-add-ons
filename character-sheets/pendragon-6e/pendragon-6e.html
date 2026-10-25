@@ -69,8 +69,9 @@
           <div class="gstat">Culture</span><g-field name="culture" label="" /></div>
           <div class="gstat">Religion</span><g-field name="religion" label="" /></div>
         </div>
-        <div class="id-grid">
+        <div class="id-grid pairs">
           <label class="opt"><g-field name="heir" label="" />Heir?</label>
+          <label class="opt"><g-field name="married" label="" />Married?</label>
         </div>
         <div class="gstat"><span>Distinctive Features</span><g-field name="distinctive_features" label="" /></div>
       </section>
@@ -350,6 +351,8 @@
 
       <section class="box">
         <h3 class="box-heading">Family</h3>
+        <div class="gstat"><span>Family Characteristic</span><g-field name="family_characteristic" label="" /></div>
+        <g-field name="children" visible_if = "married" label="Children" />
         <div class="family-grid">
           <div class="col">
             <div class="gstat">Father</span><g-field name="parent1_name" label="" /></div>
@@ -360,9 +363,8 @@
             <div class="gstat"><span>Mother's Glory</span><g-field name="parent2_glory" label="" variant="compact" /></div>
           </div>
         </div>
-        <div class="gstat"><span>Family Characteristic</span><g-field name="family_characteristic" label="" /></div>
         <g-field name="siblings" label="Siblings" />
-        <g-field name="children" label="Children" />
+        <div class="line"><span></span></div>
         <div class="gstat"><span>Notes</span><g-field name="family_notes" label="" /></div>
       </section>
     </div>
