@@ -273,11 +273,18 @@
 }
 
 .main-grid .col,
-.lower-grid .col {
+.lower-grid .col,
+.spouse-skills-grid .col {
   display: flex;
   flex-direction: column;
   gap: 10px;
   min-width: 0;
+}
+
+.spouse-skills-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
 }
 
 .char-grid {
