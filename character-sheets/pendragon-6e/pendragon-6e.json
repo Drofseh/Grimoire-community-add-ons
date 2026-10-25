@@ -3783,6 +3783,49 @@
       "type": "number",
       "label": "Siegecraft",
       "min": 0
+    },
+    "spouse_trait_checks": {
+      "type": "multiselect",
+      "label": "Spouse Trait Checks",
+      "options": [
+        "Chaste",
+        "Lustful",
+        "Energetic",
+        "Lazy",
+        "Forgiving",
+        "Vengeful",
+        "Generous",
+        "Selfish",
+        "Honest",
+        "Deceitful",
+        "Just",
+        "Arbitrary",
+        "Merciful",
+        "Cruel",
+        "Modest",
+        "Proud",
+        "Prudent",
+        "Reckless",
+        "Spiritual",
+        "Worldly",
+        "Temperate",
+        "Indulgent",
+        "Trusting",
+        "Suspicious",
+        "Valorous",
+        "Cowardly",
+        "Directed Trait 1",
+        "Directed Trait 2"
+      ]
+    },
+    "spouse_passion_checks": {
+      "type": "multiselect",
+      "label": "Spouse Passion Checks",
+      "options": [
+        "Passion 1",
+        "Passion 2",
+        "Passion 3"
+      ]
     }
   },
   "computed": {

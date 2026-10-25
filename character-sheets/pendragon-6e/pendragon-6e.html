@@ -389,81 +389,30 @@
           </div>
 
           <h4 class="sub-heading">Traits</h4>
-          <div class="spouse-traits-grid">
-            <div class="trait-row">
-              <div class="gstat"><span>Chaste</span><g-field name="spouse_trait_chaste" label="" variant="compact" /></div>
-              <div class="gstat"><span>Lustful</span><g-field name="spouse_trait_lustful" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Energetic</span><g-field name="spouse_trait_energetic" label="" variant="compact" /></div>
-              <div class="gstat"><span>Lazy</span><g-field name="spouse_trait_lazy" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Forgiving</span><g-field name="spouse_trait_forgiving" label="" variant="compact" /></div>
-              <div class="gstat"><span>Vengeful</span><g-field name="spouse_trait_vengeful" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Generous</span><g-field name="spouse_trait_generous" label="" variant="compact" /></div>
-              <div class="gstat"><span>Selfish</span><g-field name="spouse_trait_selfish" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Honest</span><g-field name="spouse_trait_honest" label="" variant="compact" /></div>
-              <div class="gstat"><span>Deceitful</span><g-field name="spouse_trait_deceitful" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Just</span><g-field name="spouse_trait_just" label="" variant="compact" /></div>
-              <div class="gstat"><span>Arbitrary</span><g-field name="spouse_trait_arbitrary" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Merciful</span><g-field name="spouse_trait_merciful" label="" variant="compact" /></div>
-              <div class="gstat"><span>Cruel</span><g-field name="spouse_trait_cruel" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Modest</span><g-field name="spouse_trait_modest" label="" variant="compact" /></div>
-              <div class="gstat"><span>Proud</span><g-field name="spouse_trait_proud" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Prudent</span><g-field name="spouse_trait_prudent" label="" variant="compact" /></div>
-              <div class="gstat"><span>Reckless</span><g-field name="spouse_trait_reckless" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Spiritual</span><g-field name="spouse_trait_spiritual" label="" variant="compact" /></div>
-              <div class="gstat"><span>Worldly</span><g-field name="spouse_trait_worldly" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Temperate</span><g-field name="spouse_trait_temperate" label="" variant="compact" /></div>
-              <div class="gstat"><span>Indulgent</span><g-field name="spouse_trait_indulgent" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Trusting</span><g-field name="spouse_trait_trusting" label="" variant="compact" /></div>
-              <div class="gstat"><span>Suspicious</span><g-field name="spouse_trait_suspicious" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Valorous</span><g-field name="spouse_trait_valorous" label="" variant="compact" /></div>
-              <div class="gstat"><span>Cowardly</span><g-field name="spouse_trait_cowardly" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Directed Trait 1</span><g-field name="spouse_directed_1_name" label="" /></div>
-              <div class="gstat"><g-field name="spouse_directed_1" label="" variant="compact" /></div>
-            </div>
-            <div class="trait-row">
-              <div class="gstat"><span>Directed Trait 2</span><g-field name="spouse_directed_2_name" label="" /></div>
-              <div class="gstat"><g-field name="spouse_directed_2" label="" variant="compact" /></div>
-            </div>
-          </div>
+          <ul class="traits">
+            <li class="trait"><g-option field="spouse_trait_checks" value="Chaste" label="Check for Chaste" /><span class="shield"><g-field name="spouse_trait_chaste" label="" variant="compact" /></span><span class="s-name left">Chaste</span><span class="s-name right">Lustful</span><span class="shield"><g-field name="spouse_trait_lustful" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Lustful" label="Check for Lustful" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Energetic" label="Check for Energetic" /><span class="shield"><g-field name="spouse_trait_energetic" label="" variant="compact" /></span><span class="s-name left">Energetic</span><span class="s-name right">Lazy</span><span class="shield"><g-field name="spouse_trait_lazy" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Lazy" label="Check for Lazy" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Forgiving" label="Check for Forgiving" /><span class="shield"><g-field name="spouse_trait_forgiving" label="" variant="compact" /></span><span class="s-name left">Forgiving</span><span class="s-name right">Vengeful</span><span class="shield"><g-field name="spouse_trait_vengeful" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Vengeful" label="Check for Vengeful" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Generous" label="Check for Generous" /><span class="shield"><g-field name="spouse_trait_generous" label="" variant="compact" /></span><span class="s-name left">Generous</span><span class="s-name right">Selfish</span><span class="shield"><g-field name="spouse_trait_selfish" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Selfish" label="Check for Selfish" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Honest" label="Check for Honest" /><span class="shield"><g-field name="spouse_trait_honest" label="" variant="compact" /></span><span class="s-name left">Honest</span><span class="s-name right">Deceitful</span><span class="shield"><g-field name="spouse_trait_deceitful" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Deceitful" label="Check for Deceitful" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Just" label="Check for Just" /><span class="shield"><g-field name="spouse_trait_just" label="" variant="compact" /></span><span class="s-name left">Just</span><span class="s-name right">Arbitrary</span><span class="shield"><g-field name="spouse_trait_arbitrary" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Arbitrary" label="Check for Arbitrary" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Merciful" label="Check for Merciful" /><span class="shield"><g-field name="spouse_trait_merciful" label="" variant="compact" /></span><span class="s-name left">Merciful</span><span class="s-name right">Cruel</span><span class="shield"><g-field name="spouse_trait_cruel" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Cruel" label="Check for Cruel" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Modest" label="Check for Modest" /><span class="shield"><g-field name="spouse_trait_modest" label="" variant="compact" /></span><span class="s-name left">Modest</span><span class="s-name right">Proud</span><span class="shield"><g-field name="spouse_trait_proud" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Proud" label="Check for Proud" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Prudent" label="Check for Prudent" /><span class="shield"><g-field name="spouse_trait_prudent" label="" variant="compact" /></span><span class="s-name left">Prudent</span><span class="s-name right">Reckless</span><span class="shield"><g-field name="spouse_trait_reckless" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Reckless" label="Check for Reckless" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Spiritual" label="Check for Spiritual" /><span class="shield"><g-field name="spouse_trait_spiritual" label="" variant="compact" /></span><span class="s-name left">Spiritual</span><span class="s-name right">Worldly</span><span class="shield"><g-field name="spouse_trait_worldly" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Worldly" label="Check for Worldly" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Temperate" label="Check for Temperate" /><span class="shield"><g-field name="spouse_trait_temperate" label="" variant="compact" /></span><span class="s-name left">Temperate</span><span class="s-name right">Indulgent</span><span class="shield"><g-field name="spouse_trait_indulgent" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Indulgent" label="Check for Indulgent" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Trusting" label="Check for Trusting" /><span class="shield"><g-field name="spouse_trait_trusting" label="" variant="compact" /></span><span class="s-name left">Trusting</span><span class="s-name right">Suspicious</span><span class="shield"><g-field name="spouse_trait_suspicious" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Suspicious" label="Check for Suspicious" /></li>
+            <li class="trait"><g-option field="spouse_trait_checks" value="Valorous" label="Check for Valorous" /><span class="shield"><g-field name="spouse_trait_valorous" label="" variant="compact" /></span><span class="s-name left">Valorous</span><span class="s-name right">Cowardly</span><span class="shield"><g-field name="spouse_trait_cowardly" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Cowardly" label="Check for Cowardly" /></li>
+            <li class="trait directed"><span class="s-name slot-name"><span class="tiny inline">Directed Trait</span><g-field name="spouse_directed_1_name" label="" /></span><span class="shield"><g-field name="spouse_directed_1" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Directed Trait 1" label="Check for directed trait 1" /></li>
+            <li class="trait directed"><span class="s-name slot-name"><span class="tiny inline">Directed Trait</span><g-field name="spouse_directed_2_name" label="" /></span><span class="shield"><g-field name="spouse_directed_2" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Directed Trait 2" label="Check for directed trait 2" /></li>
+          </ul>
 
           <h4 class="sub-heading">Passions</h4>
-          <div class="spouse-passions-grid">
-            <div class="gstat"><span>Passion 1</span><g-field name="spouse_passion_1" label="" variant="compact" /></div>
-            <div class="gstat"><span>Name</span><g-field name="spouse_passion_1_name" label="" /></div>
-            <div class="gstat"><span>Object</span><g-field name="spouse_passion_1_object" label="" /></div>
-            <div class="gstat"><span>Passion 2</span><g-field name="spouse_passion_2" label="" variant="compact" /></div>
-            <div class="gstat"><span>Name</span><g-field name="spouse_passion_2_name" label="" /></div>
-            <div class="gstat"><span>Object</span><g-field name="spouse_passion_2_object" label="" /></div>
-            <div class="gstat"><span>Passion 3</span><g-field name="spouse_passion_3" label="" variant="compact" /></div>
-            <div class="gstat"><span>Name</span><g-field name="spouse_passion_3_name" label="" /></div>
-            <div class="gstat"><span>Object</span><g-field name="spouse_passion_3_object" label="" /></div>
-          </div>
+          <ul class="skills single">
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 1" label="Check for passion 1" /><span class="s-name slot-name twin"><g-field name="spouse_passion_1_name" label="" /><g-field name="spouse_passion_1_object" label="" /></span><g-field name="spouse_passion_1" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 2" label="Check for passion 2" /><span class="s-name slot-name twin"><g-field name="spouse_passion_2_name" label="" /><g-field name="spouse_passion_2_object" label="" /></span><g-field name="spouse_passion_2" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 3" label="Check for passion 3" /><span class="s-name slot-name twin"><g-field name="spouse_passion_3_name" label="" /><g-field name="spouse_passion_3_object" label="" /></span><g-field name="spouse_passion_3" label="" variant="compact" /></li>
+          </ul>
 
           <h4 class="sub-heading">Skills — Non-Combat</h4>
           <div class="spouse-skills-grid">
