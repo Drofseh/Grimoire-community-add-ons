@@ -3822,10 +3822,111 @@
       "type": "multiselect",
       "label": "Spouse Passion Checks",
       "options": [
+        "Homage",
+        "Fealty",
         "Passion 1",
         "Passion 2",
-        "Passion 3"
+        "Love (Family)",
+        "Passion 3",
+        "Passion 4",
+        "Passion 5",
+        "Devotion (Deity)",
+        "Passion 6",
+        "Hospitality",
+        "Station",
+        "Passion 7"
       ]
+    },
+    "spouse_passion_4": {
+      "type": "number",
+      "label": "Passion 4",
+      "min": 0
+    },
+    "spouse_passion_4_name": {
+      "type": "text",
+      "label": "Passion 4 name"
+    },
+    "spouse_passion_4_object": {
+      "type": "text",
+      "label": "Passion 4 object"
+    },
+    "spouse_passion_5": {
+      "type": "number",
+      "label": "Passion 5",
+      "min": 0
+    },
+    "spouse_passion_5_name": {
+      "type": "text",
+      "label": "Passion 5 name"
+    },
+    "spouse_passion_5_object": {
+      "type": "text",
+      "label": "Passion 5 object"
+    },
+    "spouse_passion_6": {
+      "type": "number",
+      "label": "Passion 6",
+      "min": 0
+    },
+    "spouse_passion_6_name": {
+      "type": "text",
+      "label": "Passion 6 name"
+    },
+    "spouse_passion_6_object": {
+      "type": "text",
+      "label": "Passion 6 object"
+    },
+    "spouse_passion_7": {
+      "type": "number",
+      "label": "Passion 7",
+      "min": 0
+    },
+    "spouse_passion_7_name": {
+      "type": "text",
+      "label": "Passion 7 name"
+    },
+    "spouse_passion_7_object": {
+      "type": "text",
+      "label": "Passion 7 object"
+    },
+    "spouse_homage_subject": {
+      "type": "text",
+      "label": "Homage subject"
+    },
+    "spouse_homage": {
+      "type": "number",
+      "label": "Homage",
+      "min": 0
+    },
+    "spouse_fealty_subject": {
+      "type": "text",
+      "label": "Fealty subject"
+    },
+    "spouse_fealty": {
+      "type": "number",
+      "label": "Fealty",
+      "min": 0
+    },
+    "spouse_love_family": {
+      "type": "number",
+      "label": "Love (Family)",
+      "min": 0,
+      "max": 20
+    },
+    "spouse_devotion": {
+      "type": "number",
+      "label": "Devotion (Deity)",
+      "min": 0
+    },
+    "spouse_hospitality": {
+      "type": "number",
+      "label": "Hospitality",
+      "min": 0
+    },
+    "spouse_station": {
+      "type": "number",
+      "label": "Station",
+      "min": 0
     }
   },
   "computed": {

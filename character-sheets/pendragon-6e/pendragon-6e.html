@@ -130,6 +130,11 @@
         <h3 class="box-heading">Attacks</h3>
         <g-field name="weapons" label="" />
       </section>
+
+      <section class="box">
+        <h3 class="box-heading">Equipment</h3>
+        <g-field name="equipment" label="" />
+      </section>
     </div>
 
     <div class="col">
@@ -328,11 +333,6 @@
       </section>
 
       <section class="box">
-        <h3 class="box-heading">Equipment</h3>
-        <g-field name="equipment" label="" />
-      </section>
-
-      <section class="box">
         <h3 class="box-heading">Titles</h3>
         <g-field name="titles" label="" />
       </section>
@@ -367,25 +367,27 @@
         <div class="line"><span></span></div>
 
         <section class="box">
-          <h4 class="sub-heading">Spouse</h4>
-          <div class="spouse-grid">
-            <div class="col">
-              <div class="gstat"><span>Name</span><g-field name="spouse_name" label="" /></div>
-              <div class="gstat"><span>Age</span><g-field name="spouse_age" label="" variant="compact" /></div>
-              <div class="gstat"><span>Born</span><g-field name="spouse_born" label="" /></div>
-              <div class="gstat"><span>Homeland</span><g-field name="spouse_homeland" label="" /></div>
-              <div class="gstat"><span>Culture</span><g-field name="spouse_culture" label="" /></div>
-              <div class="gstat"><span>Religion</span><g-field name="spouse_religion" label="" /></div>
-            </div>
-            <div class="col">
-              <div class="char-grid">
-                <div class="char"><span class="c-name">STR</span><g-field name="spouse_str" label="" variant="compact" /></div>
-                <div class="char"><span class="c-name">DEX</span><g-field name="spouse_dex" label="" variant="compact" /></div>
-                <div class="char"><span class="c-name">CON</span><g-field name="spouse_con" label="" variant="compact" /></div>
-                <div class="char"><span class="c-name">SIZ</span><g-field name="spouse_siz" label="" variant="compact" /></div>
-                <div class="char"><span class="c-name">APP</span><g-field name="spouse_app" label="" variant="compact" /></div>
-              </div>
-            </div>
+          <h3 class="box-heading">Spouse</h3>
+          <h4 class="sub-heading">Personal Information</h4>
+          <div class="id-grid pairs">
+            <div class="gstat"><span>Name</span><g-field name="spouse_name" label="" /></div>
+            <div class="gstat"><span>Age</span><g-field name="spouse_age" label="" variant="compact" /></div>
+          </div>
+          <div class="id-grid pairs">
+            <div class="gstat"><span>Born</span><g-field name="spouse_born" label="" /></div>
+            <div class="gstat"><span>Homeland</span><g-field name="spouse_homeland" label="" /></div>
+          </div>
+          <div class="id-grid pairs">
+            <div class="gstat"><span>Culture</span><g-field name="spouse_culture" label="" /></div>
+            <div class="gstat"><span>Religion</span><g-field name="spouse_religion" label="" /></div>
+          </div>
+          <h4 class="sub-heading">Characteristics</h4>
+          <div class="char-grid">
+            <div class="char"><span class="c-name">STR</span><g-field name="spouse_str" label="" variant="compact" /></div>
+            <div class="char"><span class="c-name">DEX</span><g-field name="spouse_dex" label="" variant="compact" /></div>
+            <div class="char"><span class="c-name">CON</span><g-field name="spouse_con" label="" variant="compact" /></div>
+            <div class="char"><span class="c-name">SIZ</span><g-field name="spouse_siz" label="" variant="compact" /></div>
+            <div class="char"><span class="c-name">APP</span><g-field name="spouse_app" label="" variant="compact" /></div>
           </div>
 
           <h4 class="sub-heading">Traits</h4>
@@ -407,11 +409,30 @@
             <li class="trait directed"><span class="s-name slot-name"><span class="tiny inline">Directed Trait</span><g-field name="spouse_directed_2_name" label="" /></span><span class="shield"><g-field name="spouse_directed_2" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Directed Trait 2" label="Check for directed trait 2" /></li>
           </ul>
 
-          <h4 class="sub-heading">Passions</h4>
+          <h4 class="sub-heading">Fidelitas</h4>
           <ul class="skills single">
+            <li class="skill"><g-option field="spouse_passion_checks" value="Homage" label="Check for Homage" /><span class="s-name slot-name"><span class="tiny inline">Homage</span><g-field name="spouse_homage_subject" label="" /></span><g-field name="spouse_homage" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Fealty" label="Check for Fealty" /><span class="s-name slot-name"><span class="tiny inline">Fealty</span><g-field name="spouse_fealty_subject" label="" /></span><g-field name="spouse_fealty" label="" variant="compact" /></li>
             <li class="skill"><g-option field="spouse_passion_checks" value="Passion 1" label="Check for passion 1" /><span class="s-name slot-name twin"><g-field name="spouse_passion_1_name" label="" /><g-field name="spouse_passion_1_object" label="" /></span><g-field name="spouse_passion_1" label="" variant="compact" /></li>
             <li class="skill"><g-option field="spouse_passion_checks" value="Passion 2" label="Check for passion 2" /><span class="s-name slot-name twin"><g-field name="spouse_passion_2_name" label="" /><g-field name="spouse_passion_2_object" label="" /></span><g-field name="spouse_passion_2" label="" variant="compact" /></li>
+          </ul>
+          <h4 class="sub-heading">Fervor</h4>
+          <ul class="skills single">
+            <li class="skill"><g-option field="spouse_passion_checks" value="Love (Family)" label="Check for Love" /><span class="s-name">Love (Family)</span><g-field name="spouse_love_family" label="" variant="compact" /></li>
             <li class="skill"><g-option field="spouse_passion_checks" value="Passion 3" label="Check for passion 3" /><span class="s-name slot-name twin"><g-field name="spouse_passion_3_name" label="" /><g-field name="spouse_passion_3_object" label="" /></span><g-field name="spouse_passion_3" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 4" label="Check for passion 4" /><span class="s-name slot-name twin"><g-field name="spouse_passion_4_name" label="" /><g-field name="spouse_passion_4_object" label="" /></span><g-field name="spouse_passion_4" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 5" label="Check for passion 5" /><span class="s-name slot-name twin"><g-field name="spouse_passion_5_name" label="" /><g-field name="spouse_passion_5_object" label="" /></span><g-field name="spouse_passion_5" label="" variant="compact" /></li>
+          </ul>
+          <h4 class="sub-heading">Adoratio</h4>
+          <ul class="skills single">
+            <li class="skill"><g-option field="spouse_passion_checks" value="Devotion (Deity)" label="Check for Devotion" /><span class="s-name">Devotion (Deity)</span><g-field name="spouse_devotion" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 6" label="Check for passion 6" /><span class="s-name slot-name twin"><g-field name="spouse_passion_6_name" label="" /><g-field name="spouse_passion_6_object" label="" /></span><g-field name="spouse_passion_6" label="" variant="compact" /></li>
+          </ul>
+          <h4 class="sub-heading">Civilitas</h4>
+          <ul class="skills single">
+            <li class="skill"><g-option field="spouse_passion_checks" value="Hospitality" label="Check for Hospitality" /><span class="s-name">Hospitality</span><g-field name="spouse_hospitality" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Station" label="Check for Station" /><span class="s-name">Station</span><g-field name="spouse_station" label="" variant="compact" /></li>
+            <li class="skill"><g-option field="spouse_passion_checks" value="Passion 7" label="Check for passion 7" /><span class="s-name slot-name twin"><g-field name="spouse_passion_7_name" label="" /><g-field name="spouse_passion_7_object" label="" /></span><g-field name="spouse_passion_7" label="" variant="compact" /></li>
           </ul>
 
           <h4 class="sub-heading">Skills — Non-Combat</h4>
