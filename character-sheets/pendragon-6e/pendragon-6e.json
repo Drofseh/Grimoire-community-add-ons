@@ -1001,7 +1001,13 @@
       "min": 0,
       "default": 0
     },
-    "squire_horse_move": {
+    "squire1_horse_move": {
+      "type": "number",
+      "label": "Squire's Horse Move",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_move": {
       "type": "number",
       "label": "Squire's Horse Move",
       "min": 0,
@@ -1132,24 +1138,46 @@
         }
       ]
     },
-    "squire_name": {
+    "squire1_name": {
       "type": "text",
       "label": "Squire Name"
     },
-    "squire_age": {
+    "squire1_age": {
       "type": "number",
       "label": "Squire Age",
       "min": 0,
       "default": 0
     },
-    "squire_skill": {
+    "squire1_skill": {
       "type": "number",
       "label": "Squire Skill",
       "min": 0,
       "default": 0,
       "max": 40
     },
-    "squire_notes": {
+    "squire1_notes": {
+      "type": "textarea",
+      "label": "Squire Notes",
+      "rows": 3
+    },
+    "squire2_name": {
+      "type": "text",
+      "label": "Squire Name"
+    },
+    "squire2_age": {
+      "type": "number",
+      "label": "Squire Age",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_skill": {
+      "type": "number",
+      "label": "Squire Skill",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "squire2_notes": {
       "type": "textarea",
       "label": "Squire Notes",
       "rows": 3
@@ -1281,6 +1309,32 @@
       "type": "list",
       "label": "Siblings",
       "add_label": "Add sibling",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "age",
+          "type": "number",
+          "label": "Age",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "klass",
+          "type": "text",
+          "label": "Class",
+          "flex": 2
+        }
+      ]
+    },
+    "children": {
+      "type": "list",
+      "label": "Children",
+      "add_label": "Add child",
       "columns": [
         {
           "key": "name",
@@ -2608,45 +2662,89 @@
       "type": "text",
       "label": "Best Riding Horse Damage"
     },
-    "squire_horse_name": {
+    "squire1_horse_name": {
       "type": "text",
       "label": "Squire's Horse Name"
     },
-    "squire_horse_siz": {
+    "squire1_horse_siz": {
       "type": "number",
       "label": "Squire's Horse SIZ",
       "min": 0,
       "default": 0
     },
-    "squire_horse_dex": {
+    "squire1_horse_dex": {
       "type": "number",
       "label": "Squire's Horse DEX",
       "min": 0,
       "default": 0
     },
-    "squire_horse_str": {
+    "squire1_horse_str": {
       "type": "number",
       "label": "Squire's Horse STR",
       "min": 0,
       "default": 0
     },
-    "squire_horse_con": {
+    "squire1_horse_con": {
       "type": "number",
       "label": "Squire's Horse CON",
       "min": 0,
       "default": 0
     },
-    "squire_horse_armor": {
+    "squire1_horse_armor": {
       "type": "number",
       "label": "Squire's Horse Armor",
       "min": 0,
       "default": 0
     },
-    "squire_horse_damage": {
+    "squire1_horse_damage": {
       "type": "text",
       "label": "Squire's Horse Damage"
     },
-    "squire_horse_hp": {
+    "squire1_horse_hp": {
+      "type": "number",
+      "label": "Squire's Horse HP",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_name": {
+      "type": "text",
+      "label": "Squire's Horse Name"
+    },
+    "squire2_horse_siz": {
+      "type": "number",
+      "label": "Squire's Horse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_dex": {
+      "type": "number",
+      "label": "Squire's Horse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_str": {
+      "type": "number",
+      "label": "Squire's Horse STR",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_con": {
+      "type": "number",
+      "label": "Squire's Horse CON",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_armor": {
+      "type": "number",
+      "label": "Squire's Horse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "squire2_horse_damage": {
+      "type": "text",
+      "label": "Squire's Horse Damage"
+    },
+    "squire2_horse_hp": {
       "type": "number",
       "label": "Squire's Horse HP",
       "min": 0,
@@ -2698,9 +2796,21 @@
       "min": 0,
       "default": 0
     },
-    "squire_horse_type": {
+    "squire1_horse_type": {
       "type": "text",
       "label": "Squire's Horse Type"
+    },
+    "squire2_horse_type": {
+      "type": "text",
+      "label": "Squire's Horse Type"
+    },
+    "squire1_horse_worth": {
+      "type": "text",
+      "label": "Squire's Horse Worth"
+    },
+    "squire2_horse_worth": {
+      "type": "text",
+      "label": "Squire's Horse Worth"
     },
     "warhorse_worth": {
       "type": "text",
@@ -2709,10 +2819,6 @@
     "best_horse_worth": {
       "type": "text",
       "label": "Best Riding Horse Worth"
-    },
-    "squire_horse_worth": {
-      "type": "text",
-      "label": "Squire's Horse Worth"
     },
     "manor1_county": {
       "type": "text",
