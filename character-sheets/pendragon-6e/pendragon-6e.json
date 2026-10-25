@@ -1050,7 +1050,7 @@
     "equestrian_notes": {
       "type": "textarea",
       "label": "Equestrian Notes",
-      "rows": 3
+      "rows": 4
     },
     "other_horses": {
       "type": "list",
