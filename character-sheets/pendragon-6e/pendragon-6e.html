@@ -312,7 +312,7 @@
         <h3 class="box-heading">Titles</h3>
         <g-field name="titles" label="" />
       </section>
-
+<!--
       <section class="box">
         <h3 class="box-heading">Holdings</h3>
         <div class="hp-grid">
@@ -324,7 +324,7 @@
           <label class="opt"><g-field name="holdings_barony_check" label="" />Barony 6</label>
         </div>
       </section>
-
+-->
       <section class="box">
         <h3 class="box-heading">Family</h3>
         <div class="family-grid">
@@ -546,20 +546,6 @@
         <div class="gstat"><span class="tiny">County</span><g-field name="barony_county" label="" /></div>
         <div class="gstat"><span class="tiny">Hundred</span><g-field name="barony_hundred" label="" /></div>
       </div>
-      <ul class="barony-court">
-          <li class="gstat"><span>Castellan</span><g-field name="barony_castellan" label="" /><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_castellan" label="" variant="compact" /></li>
-          <li class="gstat"><span>Constable</span><g-field name="barony_constable" label="" /><span class="tiny">Horsemanship</span><g-field name="barony_horsemanship" label="" variant="compact" /></li>
-          <li class="gstat"><span>Dapifer</span><g-field name="barony_dapifer" label="" /><span class="tiny">Folklore</span><g-field name="barony_folklore" label="" variant="compact" /></li>
-          <li class="gstat"><span>Marshall</span><g-field name="barony_marshall" label="" /><span class="tiny">Battle</span><g-field name="barony_battle" label="" variant="compact" /></li>
-          <li class="gstat"><span>Pincerna</span><g-field name="barony_pincerna" label="" /><span class="tiny">Courtesy</span><g-field name="barony_courtesy" label="" variant="compact" /></li>
-          <li class="gstat"><span>Seneschal</span><g-field name="barony_seneschal" label="" /><span class="tiny">Stewardship (Seneschal)</span><g-field name="barony_stewardship_seneschal" label="" variant="compact" /></li>
-          <li class="gstat"><span>Steward</span><g-field name="barony_steward" label="" /><span class="tiny">Stewardship (Steward)</span><g-field name="barony_stewardship_steward" label="" variant="compact" /></li>
-          <li class="gstat"><span>Chaplain</span><g-field name="barony_chaplain" label="" /><span class="tiny">Religion</span><g-field name="barony_religion" label="" variant="compact" /></li>
-          <li class="gstat"><span>Clerk</span><g-field name="barony_clerk" label="" /><span class="tiny">Clerk (Skill)</span><g-field name="barony_clerk_skill" label="" variant="compact" /></li>
-          <li class="gstat"><span>Engineer</span><g-field name="barony_engineer" label="" /><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_engineer" label="" variant="compact" /></li>
-          <li class="gstat"><span>Lawyer</span><g-field name="barony_lawyer" label="" /><span class="tiny">Law</span><g-field name="barony_law" label="" variant="compact" /></li>
-          <li class="gstat"><span>Physician</span><g-field name="barony_physician" label="" /><span class="tiny">First Aid</span><g-field name="barony_firstaid" label="" variant="compact" /><span class="tiny">Chirurgery</span><g-field name="barony_chirurgery" label="" variant="compact" /></li>
-      </ul>
       <div class="manor-info-line2">
         <div class="gstat"><span class="tiny">Privy Funds (£)</span><g-field name="barony_privy_funds" label="" variant="compact" /></div>
         <div class="gstat"><span class="tiny">Current Income (£)</span><g-field name="barony_current_income" label="" variant="compact" /></div>
@@ -571,6 +557,27 @@
         <div class="gstat"><span class="tiny">Fumble</span><g-field name="barony_fumble" label="" /></div>
         <div class="gstat"><span class="tiny">Famine</span><g-field name="barony_famine" label="" /></div>
       </div>
+      <h4 class="sub-heading">Court</h4>
+      <ul class="barony-court">
+          <li class="gstat"><span>Castellan</span><g-field name="barony_castellan" label="In charge of the castle." /><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_castellan" label="" variant="compact" /></li>
+          <li class="gstat"><span>Constable</span><g-field name="barony_constable" label="In charge of the stables and cavalry." /><span class="tiny">Horsemanship</span><g-field name="barony_horsemanship" label="" variant="compact" /></li>
+          <li class="gstat"><span>Dapifer</span><g-field name="barony_dapifer" label="In charge of the servants." /><span class="tiny">Folklore</span><g-field name="barony_folklore" label="" variant="compact" /></li>
+          <li class="gstat"><span>Marshall</span><g-field name="barony_marshall" label="In charge of the army." /><span class="tiny">Battle</span><g-field name="barony_battle" label="" variant="compact" /></li>
+      </ul>
+      <div class="line"><span></span></div>
+      <ul class="barony-court">
+          <li class="gstat"><span>Pincerna</span><g-field name="barony_pincerna" label="In charge of seating and service at table." /><span class="tiny">Courtesy</span><g-field name="barony_courtesy" label="" variant="compact" /></li>
+          <li class="gstat"><span>Seneschal</span><g-field name="barony_seneschal" label="In charge of primary estate's food, fields, and flocks." /><span class="tiny">Stewardship</span><g-field name="barony_stewardship_seneschal" label="" variant="compact" /></li>
+          <li class="gstat"><span>Steward</span><g-field name="barony_steward" label="In charge of outlying estate's food, fields, and flocks." /><span class="tiny">Stewardship</span><g-field name="barony_stewardship_steward" label="" variant="compact" /></li>
+          <li class="gstat"><span>Chaplain</span><g-field name="barony_chaplain" label="In charge of giving spiritual advice." /><span class="tiny">Religion</span><g-field name="barony_religion" label="" variant="compact" /></li>
+      </ul>
+      <div class="line"><span></span></div>
+      <ul class="barony-court">
+          <li class="gstat"><span>Clerk</span><g-field name="barony_clerk" label="In charge of accounts and correspondence." /><span class="tiny">Clerk (Skill)</span><g-field name="barony_clerk_skill" label="" variant="compact" /></li>
+          <li class="gstat"><span>Engineer</span><g-field name="barony_engineer" label="In charge of designing and constructing buildings." /><span class="tiny">Siegecraft</span><g-field name="barony_siegecraft_engineer" label="" variant="compact" /></li>
+          <li class="gstat"><span>Lawyer</span><g-field name="barony_lawyer" label="In charge of the ensuring compliance with the law." /><span class="tiny">Law</span><g-field name="barony_law" label="" variant="compact" /></li>
+          <li class="gstat"><span>Physician</span><g-field name="barony_physician" label="In charge of healing the sick." /><span class="tiny">First Aid</span><g-field name="barony_firstaid" label="" variant="compact" /><span class="tiny">Chirurgery</span><g-field name="barony_chirurgery" label="" variant="compact" /></li>
+      </ul>
       <h4 class="sub-heading">Improvements</h4>
       <g-field name="barony_manorial_improvements" label="" />
       <h4 class="sub-heading">Investments</h4>
