@@ -218,7 +218,7 @@
 }
 
 /* Warhorse Name and Type side by side. */
-.warhorse-head {
+.horse-head {
   display: flex;
   gap: 10px;
   margin-bottom: 4px;
@@ -231,12 +231,12 @@
   margin-bottom: 4px;
 }
 
-.warhorse-head .gstat,
+.horse-head .gstat,
 .manor-name-wrap .gstat {
   flex: 1;
 }
 
-.warhorse-head input {
+.horse-head input {
   width: 100% !important;
   box-sizing: border-box;
 }
@@ -290,6 +290,12 @@
 .spouse-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.army-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -355,8 +361,7 @@
   align-items: center;
 }
 
-/* Current HP, Aggravation Damage and Deterioration Damage: one line of
-   labels over one line of inputs, as in Characteristics. */
+/* one line of labels over one line of inputs, as in Characteristics. */
 .hp-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

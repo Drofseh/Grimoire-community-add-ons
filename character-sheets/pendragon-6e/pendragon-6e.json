@@ -1311,7 +1311,6 @@
     },
     "siblings": {
       "type": "list",
-      "label": "Siblings",
       "add_label": "Add sibling",
       "columns": [
         {
@@ -1337,7 +1336,6 @@
     },
     "children": {
       "type": "list",
-      "label": "Children",
       "add_label": "Add child",
       "columns": [
         {
@@ -3378,6 +3376,42 @@
     "barony_famine": {
       "type": "checkbox",
       "label": "Barony Famine"
+    },
+    "barony_army_mounted_sergeants": {
+      "type": "number",
+      "label": "Mounted Sergeants",
+      "min": 0,
+      "default": 0
+    },
+    "barony_army_household_knights": {
+      "type": "number",
+      "label": "Household Knights",
+      "min": 0,
+      "default": 0
+    },
+    "barony_army_vassal_knights": {
+      "type": "number",
+      "label": "Vassal Knights",
+      "min": 0,
+      "default": 0
+    },
+    "barony_army_garrison_soldiers": {
+      "type": "number",
+      "label": "Garrison Soldiers",
+      "min": 0,
+      "default": 0
+    },
+    "barony_army_spearmen": {
+      "type": "number",
+      "label": "Spearmen",
+      "min": 0,
+      "default": 0
+    },
+    "barony_army_archers": {
+      "type": "number",
+      "label": "Archers",
+      "min": 0,
+      "default": 0
     },
     "family_records": {
       "type": "list",
