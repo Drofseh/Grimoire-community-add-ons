@@ -357,10 +357,8 @@
   <g-tab title="Family">
   <div class="lower-grid">
     <div class="col">
-
-      <section class="box">
-        <h3 class="box-heading">Spouse</h3>
-        <h4 class="sub-heading">Personal Information</h4>
+      <g-section title="Spouse" name="spouse" visible_if="married">
+        <h3 class="sub-heading">Personal Information</h3>
         <div class="id-grid pairs">
           <div class="gstat"><span>Name</span><g-field name="spouse_name" label="" /></div>
           <div class="gstat"><span>Homeland</span><g-field name="spouse_homeland" label="" /></div>
@@ -373,7 +371,7 @@
           <div class="gstat"><span>Born</span><g-field name="spouse_born" label="" variant="compact" /></div>
           <div class="gstat"><span>Age</span><g-field name="spouse_age" label="" variant="compact" /></div>
         </div>
-        <h4 class="sub-heading">Characteristics</h4>
+        <h3 class="sub-heading">Characteristics</h3>
         <div class="char-grid">
           <div class="char"><span class="c-name">SIZ</span><g-field name="spouse_siz" label="" variant="compact" /></div>
           <div class="char"><span class="c-name">DEX</span><g-field name="spouse_dex" label="" variant="compact" /></div>
@@ -382,7 +380,7 @@
           <div class="char"><span class="c-name">APP</span><g-field name="spouse_app" label="" variant="compact" /></div>
         </div>
         
-        <h4 class="sub-heading">Traits</h4>
+        <h3 class="sub-heading">Traits</h3>
         <ul class="traits">
           <li class="trait"><g-option field="spouse_trait_checks" value="Chaste" label="Check for Chaste" /><span class="shield"><g-field name="spouse_trait_chaste" label="" variant="compact" /></span><span class="s-name left">Chaste</span><span class="s-name right">Lustful</span><span class="shield"><g-field name="spouse_trait_lustful" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Lustful" label="Check for Lustful" /></li>
           <li class="trait"><g-option field="spouse_trait_checks" value="Energetic" label="Check for Energetic" /><span class="shield"><g-field name="spouse_trait_energetic" label="" variant="compact" /></span><span class="s-name left">Energetic</span><span class="s-name right">Lazy</span><span class="shield"><g-field name="spouse_trait_lazy" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Lazy" label="Check for Lazy" /></li>
@@ -401,7 +399,7 @@
           <li class="trait directed"><span class="s-name slot-name"><span class="tiny inline">Directed Trait</span><g-field name="spouse_directed_2_name" label="" /></span><span class="shield"><g-field name="spouse_directed_2" label="" variant="compact" /></span><g-option field="spouse_trait_checks" value="Directed Trait 2" label="Check for directed trait 2" /></li>
         </ul>
         
-        <h4 class="sub-heading">Passions</h4>
+        <h3 class="sub-heading">Passions</h3>
         <h4 class="sub-heading">Fidelitas</h4>
         <ul class="skills single">
           <li class="skill"><g-option field="spouse_passion_checks" value="Homage" label="Check for Homage" /><span class="s-name slot-name"><span class="tiny inline">Homage</span><g-field name="spouse_homage_subject" label="" /></span><g-field name="spouse_homage" label="" variant="compact" /></li>
@@ -428,7 +426,7 @@
           <li class="skill"><g-option field="spouse_passion_checks" value="Passion 7" label="Check for passion 7" /><span class="s-name slot-name twin"><g-field name="spouse_passion_7_name" label="" /><g-field name="spouse_passion_7_object" label="" /></span><g-field name="spouse_passion_7" label="" variant="compact" /></li>
         </ul>
         
-        <h4 class="sub-heading">Skills — Non-Combat</h4>
+        <h3 class="sub-heading">Skills — Non-Combat</h3>
         <div class="spouse-skills-grid">
           <div class="col">
             <div class="gstat"><span>Compose</span><g-field name="spouse_sk_compose" label="" variant="compact" /></div>
@@ -451,7 +449,7 @@
           </div>
         </div>
         
-        <h4 class="sub-heading">Skills — Combat</h4>
+        <h3 class="sub-heading">Skills — Combat</h3>
         <div class="spouse-skills-grid">
           <div class="col">
             <div class="gstat"><span>Brawling</span><g-field name="spouse_sk_brawling" label="" variant="compact" /></div>
@@ -460,7 +458,7 @@
             <div class="gstat"><span>Siegecraft</span><g-field name="spouse_sk_siegecraft" label="" variant="compact" /></div>
           </div>
         </div>
-      </section>
+      </g-section>
     </div>
 
     <div class="col">
@@ -489,10 +487,9 @@
         <div class="line"><span></span></div>
       </section>
 
-      <section class="box">
-        <h3 class="sub-heading">Children</h3>
+      <g-section title="Children" name="children" visible_if="married">
         <g-field name="children" />
-      </section>
+      </g-section>
 
       <section class="box">
         <h3 class="box-heading">Notes</h3>
