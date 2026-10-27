@@ -753,7 +753,7 @@
     },
     "sk_play": {
       "type": "number",
-      "label": "Play (Instrument)",
+      "label": "Play Instrument",
       "min": 0,
       "default": 0,
       "max": 40
@@ -905,7 +905,7 @@
         "Intrigue",
         "Literacy",
         "Orate",
-        "Play (Instrument)",
+        "Play Instrument",
         "Recognize",
         "Religion",
         "Singing",
@@ -3836,6 +3836,16 @@
       "type": "text",
       "label": "Passion 3 object"
     },
+    "spouse_sk_awareness": {
+      "type": "number",
+      "label": "Awareness",
+      "min": 0
+    },
+    "spouse_sk_chirurgery": {
+      "type": "number",
+      "label": "Chirurgery",
+      "min": 0
+    },
     "spouse_sk_compose": {
       "type": "number",
       "label": "Compose",
@@ -3861,14 +3871,29 @@
       "label": "Fashion",
       "min": 0
     },
+    "spouse_sk_first_aid": {
+      "type": "number",
+      "label": "First Aid",
+      "min": 0
+    },
     "spouse_sk_flirting": {
       "type": "number",
       "label": "Flirting",
       "min": 0
     },
+    "spouse_sk_folklore": {
+      "type": "number",
+      "label": "Folklore",
+      "min": 0
+    },
     "spouse_sk_gaming": {
       "type": "number",
       "label": "Gaming",
+      "min": 0
+    },
+    "spouse_sk_hunting": {
+      "type": "number",
+      "label": "Hunting",
       "min": 0
     },
     "spouse_sk_industry": {
@@ -3911,9 +3936,19 @@
       "label": "Singing",
       "min": 0
     },
+    "spouse_sk_stewardship": {
+      "type": "number",
+      "label": "Stewardship",
+      "min": 0
+    },
     "spouse_sk_brawling": {
       "type": "number",
       "label": "Brawling",
+      "min": 0
+    },
+    "spouse_sk_horsemanship": {
+      "type": "number",
+      "label": "Horsemanship",
       "min": 0
     },
     "spouse_sk_siegecraft": {
