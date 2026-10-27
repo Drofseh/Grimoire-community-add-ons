@@ -16,11 +16,11 @@ every field type, formula function, layout directive, HTML tag and CSS property
 | [`draw-steel`](draw-steel/) | Draw Steel | Draw Steel Creator License | Custom, after the printed sheet | [`draw-steel-core`](../content-packs/draw-steel-core/) |
 | [`pathfinder-2e`](pathfinder-2e/) | Pathfinder 2e | ORC | Custom | [`pf2e-player-core`](../content-packs/pf2e-player-core/) |
 | [`pathfinder-1e`](pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom, after the 2009 sheet | |
-| [`call-of-cthulhu-7e`](call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom | |
+| [`call-of-cthulhu-7e`](call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom, plus a phone layout | |
 | [`traveller-2e`](traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom, after J. Brannen's spreadsheet | |
 | [`cosmere-rpg`](cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom | |
 | [`dungeon-crawler-carl`](dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom, after the printed sheet | |
-| [`cairn`](cairn/) | Cairn | CC BY-SA 4.0 | Default | |
+| [`cairn`](cairn/) | Cairn | CC BY-SA 4.0 | Default, plus a phone layout | |
 | [`basic-fantasy`](basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default | |
 
 The best way to learn the format is to read one of these. `cairn` is the
@@ -62,6 +62,7 @@ That is a working sheet. Everything else is optional and adds to it:
 | Hide a field until it applies | `visible_if` | [`visible_if`](../docs/character-sheets.md#visible_if) |
 | Warn about an illegal build | `validators` | [Validators](../docs/character-sheets.md#validators) |
 | Look like the printed sheet | a custom HTML layout and stylesheet | [Custom HTML layout](../docs/character-sheets.md#custom-html-layout), [Stylesheet](../docs/character-sheets.md#stylesheet) |
+| Read well on a phone | a second, phone-sized layout with more tabs | [Mobile layout](../docs/character-sheets.md#mobile-layout) |
 
 ## Adding a sheet
 
@@ -74,15 +75,18 @@ whether it can follow the printed sheet's look, and what credit it must show.
 ### 2. Make the directory
 
 A sheet is a directory named after its `id`, holding a JSON file of the same
-name. A sheet with a custom layout keeps its HTML and CSS beside it:
+name. A sheet with a custom layout keeps its HTML and CSS beside it, and a
+sheet with a phone layout keeps that beside them:
 
 ```
 character-sheets/
 └── my-game/
-    ├── my-game.json    # required - fields, computed values, content types
-    ├── my-game.html    # optional - the custom layout, as real HTML
-    ├── my-game.css     # optional - its stylesheet, as real CSS
-    └── README.md       # optional, but the right home for licence wording
+    ├── my-game.json          # required - fields, computed values, content types
+    ├── my-game.html          # optional - the custom layout, as real HTML
+    ├── my-game.css           # optional - its stylesheet, as real CSS
+    ├── my-game.mobile.html   # optional - a layout for phones, drawn instead on a narrow screen
+    ├── my-game.mobile.css    # optional - its stylesheet (needs my-game.mobile.html)
+    └── README.md             # optional, but the right home for licence wording
 ```
 
 The `id` is lowercase letters, digits and single `-` or `_`. Characters store
@@ -97,6 +101,8 @@ escaped, which turns a readable layout into one unbroken line of `\"` and `\n`.
 The files are found by convention as `<id>.html` and `<id>.css`, or named
 explicitly with `layout_file` and `styles_file`. Grimoire folds them back into
 one document when the sheet is installed, each verified against its own digest.
+The phone layout works the same way: `<id>.mobile.html` and `<id>.mobile.css`,
+or `mobile_layout_file` and `mobile_styles_file`.
 
 ### 3. Write the fields and formulas
 
@@ -116,15 +122,38 @@ character on it and fill it in.
 Pasting it again replaces your copy, so you can iterate: edit, paste, reload the
 character.
 
-### 5. Build the index
+### 5. Consider a phone layout
+
+On a screen 640px wide or less, and in the mobile app, Grimoire draws a sheet's
+`<id>.mobile.html` instead of its regular layout when it has one. A sheet with
+more than a screenful of content - most custom sheets - reads far better with
+one: the same fields in a single column, split across more tabs (Main, Skills,
+Combat, Gear, Notes...), with controls big enough for a thumb. It uses the same
+tags, directives and CSS as the regular layout. See
+[Mobile layout](../docs/character-sheets.md#mobile-layout) for the guidance,
+and `cairn` and `call-of-cthulhu-7e` for examples.
+
+Checklist for a phone layout:
+
+- Every field and computed value the regular layout shows has a place in it
+- Each tab fits a phone screen with little scrolling, and tab titles are one
+  short word
+- One column first; no table row wider than a phone
+- The stylesheet stands on its own, without the regular `.css`
+- Tried at phone width: paste the sheet with its phone layout and stylesheet in
+  the paste box's **Mobile layout** and **Mobile styles** boxes, then narrow the
+  window to 640px or less (Grimoire versions with phone-layout support)
+
+### 6. Build the index
 
 ```bash
 python3 scripts/build_index.py
 ```
 
 This checks every sheet against the JSON Schema, that its `id` matches its
-directory, that a licensed sheet carries `attribution`, and that its layout and
-stylesheet files exist, then regenerates `character-sheets/index.json`. Commit
+directory, that a licensed sheet carries `attribution`, that its layout and
+stylesheet files exist, and that a phone stylesheet has a phone layout to style,
+then regenerates `character-sheets/index.json`. Commit
 the index with the sheet; CI runs `build_index.py --check` and fails if it is
 stale.
 
@@ -141,7 +170,7 @@ loads every sheet here through the real validator, computes an empty character
 on it, checks its licence and credit, and checks its layout and stylesheet
 files.
 
-### 6. Add a README and open a PR
+### 7. Add a README and open a PR
 
 The sheet's own `README.md` records where its licence wording came from, what
 it covers and anything a maintainer should know. Add the sheet to the table
@@ -150,7 +179,9 @@ then open a PR.
 
 ### Updating a published sheet
 
-Bump `version` on every change and rebuild the index. Never remove or rename a
+Bump `version` on every change and rebuild the index. A sheet with a phone
+layout has two layouts to keep in step: a field added to one belongs in the
+other. Never remove or rename a
 field that characters already store: the character keeps the value, and it
 still travels in an export, but nothing on the sheet shows a field the sheet no
 longer declares - not even **All values**. Adding fields is always safe, and so

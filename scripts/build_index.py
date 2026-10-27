@@ -478,10 +478,28 @@ def build_sheets() -> tuple[dict, list[str]]:
         directory = sheet_path.parent
         layout_file, layout_error = _sidecar(data, directory, "layout_file", ".html")
         styles_file, styles_error = _sidecar(data, directory, "styles_file", ".css")
-        for problem in (layout_error, styles_error):
-            if problem:
-                errors.append(f"{rel}: {problem}")
-        if layout_error or styles_error:
+        # The optional phone layout, drawn instead of the regular one on a
+        # narrow screen: `<id>.mobile.html` and `<id>.mobile.css`, or named with
+        # `mobile_layout_file` / `mobile_styles_file`. It stands on its own, so
+        # a sheet with only a simple JSON `layout` may still ship one.
+        mobile_layout_file, mobile_layout_error = _sidecar(
+            data, directory, "mobile_layout_file", ".mobile.html"
+        )
+        mobile_styles_file, mobile_styles_error = _sidecar(
+            data, directory, "mobile_styles_file", ".mobile.css"
+        )
+        problems = [layout_error, styles_error, mobile_layout_error, mobile_styles_error]
+        # A phone stylesheet with no phone layout styles nothing, and is
+        # almost always a misnamed or forgotten layout file.
+        if mobile_styles_file and not mobile_layout_file and not mobile_layout_error:
+            problems.append(
+                f"mobile stylesheet '{mobile_styles_file.name}' has no mobile layout "
+                f"- add '{data['id']}.mobile.html' or set 'mobile_layout_file'"
+            )
+        problems = [problem for problem in problems if problem]
+        for problem in problems:
+            errors.append(f"{rel}: {problem}")
+        if problems:
             continue
 
         entry = {
@@ -491,14 +509,18 @@ def build_sheets() -> tuple[dict, list[str]]:
             "path": rel,
             "sha256": sha256(sheet_path),
             "custom_layout": bool(data.get("layout_html") or layout_file),
+            "custom_mobile_layout": bool(mobile_layout_file),
             "field_count": len(data["fields"]),
         }
-        if layout_file:
-            entry["layout_path"] = layout_file.relative_to(ROOT).as_posix()
-            entry["layout_sha256"] = sha256(layout_file)
-        if styles_file:
-            entry["styles_path"] = styles_file.relative_to(ROOT).as_posix()
-            entry["styles_sha256"] = sha256(styles_file)
+        for prefix, path in (
+            ("layout", layout_file),
+            ("styles", styles_file),
+            ("mobile_layout", mobile_layout_file),
+            ("mobile_styles", mobile_styles_file),
+        ):
+            if path:
+                entry[f"{prefix}_path"] = path.relative_to(ROOT).as_posix()
+                entry[f"{prefix}_sha256"] = sha256(path)
         for optional in (
             "system", "description", "author", "homepage",
             "license", "license_url", "attribution", "grimoire_min_version",

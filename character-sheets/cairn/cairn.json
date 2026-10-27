@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "cairn",
   "name": "Cairn",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system": "Cairn",
   "description": "A character sheet for Cairn, Yochai Gal's rules-light dark-fantasy adventure game. Three ability scores, no classes, no levels — the whole sheet fits on a card.",
   "author": "hunter-read",

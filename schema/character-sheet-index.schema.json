@@ -108,6 +108,28 @@
             "type": "string",
             "pattern": "^[a-f0-9]{64}$",
             "description": "Digest of the stylesheet, verified on download."
+          },
+          "custom_mobile_layout": {
+            "type": "boolean",
+            "description": "True when the sheet ships a separate phone layout, drawn instead of its regular one on a narrow screen and in the mobile app."
+          },
+          "mobile_layout_path": {
+            "type": "string",
+            "description": "Repo-relative path to the sheet's phone layout (<id>.mobile.html), when it has one."
+          },
+          "mobile_layout_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "Digest of the phone layout file, verified on download."
+          },
+          "mobile_styles_path": {
+            "type": "string",
+            "description": "Repo-relative path to the phone layout's stylesheet (<id>.mobile.css), when it has one."
+          },
+          "mobile_styles_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "Digest of the phone stylesheet, verified on download."
           }
         }
       }
