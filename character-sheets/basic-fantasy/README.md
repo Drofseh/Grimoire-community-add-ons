@@ -6,6 +6,13 @@ Uses the default sectioned layout rather than a custom one — the game is small
 enough not to need the extra design, which is rather the point of having a
 default that works.
 
+On a phone it has its own layout, `basic-fantasy.mobile.html` and
+`basic-fantasy.mobile.css`: five tabs - **Main** (the character, hit points,
+armour class and the six abilities with their bonuses), **Saves**, **Spells**
+(for a Cleric or Magic-User only, as on the desktop sheet), **Gear** (gold,
+equipment and the weight carried against the limit) and **Notes** - so each
+fits the screen.
+
 ## What it covers
 
 - **Four classes** (Cleric, Fighter, Magic-User, Thief) and four races

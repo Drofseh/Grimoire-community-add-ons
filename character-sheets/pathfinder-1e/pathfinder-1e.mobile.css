@@ -1,0 +1,411 @@
+/* Pathfinder Roleplaying Game (first edition) character sheet, on a phone.
+   The desktop sheet's vocabulary - bordered blocks under a gold-ruled banner,
+   small uppercase captions beneath each value, totals in a gold box, every
+   derived line laid out as the terms it is the sum of - in one column, with
+   controls sized for a thumb. Every colour is an app token, so a theme
+   restyles it, and none of it is Paizo's trade dress. It stands alone:
+   nothing here relies on the desktop stylesheet. */
+
+.sheet-pf1-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Seven pages: wrap the page names, and tighten them so they fit as few rows
+   as they can. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. The renderer sizes its controls inline, hence
+   !important. */
+.sheet-pf1-m input,
+.sheet-pf1-m select,
+.sheet-pf1-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-pf1-m input:not([type=checkbox]),
+.sheet-pf1-m select {
+  min-height: 44px;
+}
+
+.sheet-pf1-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.banner {
+  margin: 0;
+  padding: 3px 10px;
+  border-left: 3px solid var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sub {
+  margin: 6px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.cap {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  line-height: 1.15;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.hint b {
+  color: var(--text);
+}
+
+/* A value on its own line with its caption beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.line.big input {
+  font-size: 22px !important;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* A worked-out value in a bordered cell. */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.box.total {
+  border-color: var(--text-dim);
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.tag small {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.pair,
+.trio,
+.quad {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+.trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quad {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sheet-pf1-m .term input,
+.sheet-pf1-m .quad input,
+.sheet-pf1-m .trio input {
+  text-align: center;
+}
+
+/* A total or a term: the value, its caption beneath. */
+.term {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Captions break between words, never inside one. */
+.term .cap {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.readout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px;
+  gap: 12px;
+  align-items: center;
+}
+
+/* --- main ------------------------------------------------------------------ */
+
+.glance {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.glance.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.glance .box.total {
+  font-size: 22px;
+}
+
+/* Name, score, modifier, temporary adjustment, temporary modifier. */
+.abil {
+  display: grid;
+  grid-template-columns: 44px repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  align-items: center;
+}
+
+.abil.head .cap {
+  text-align: center;
+}
+
+.abil input {
+  text-align: center;
+  font-weight: 700;
+  padding: 4px 2px !important;
+}
+
+/* --- combat ---------------------------------------------------------------- */
+
+/* A derived line: its name and total, then each term it is the sum of. */
+.eq-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.terms {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 6px;
+}
+
+.terms.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.terms input {
+  padding: 4px 2px !important;
+}
+
+.iter {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.weapon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.weapon:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.weapon > .line input {
+  font-weight: 700;
+}
+
+.w-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Class-skill box, name with its ability modifier beneath, total, ranks,
+   misc. */
+.skill {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 50px 52px 52px;
+  gap: 4px;
+  align-items: center;
+  padding: 3px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.skill.head {
+  border-top: none;
+  border-bottom: 2px solid var(--text-dim);
+  text-align: center;
+}
+
+.skill.head .cap:nth-child(2) {
+  text-align: left;
+}
+
+/* The whole cell is the checkbox's touch target. */
+.tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.sk-name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+
+.sk-name.slot {
+  gap: 2px;
+}
+
+.sk-name.slot input {
+  padding: 4px 6px !important;
+}
+
+.ab {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.skill .box.total {
+  font-size: 16px;
+}
+
+.skill input {
+  text-align: center;
+  padding: 4px 2px !important;
+}
+
+/* --- gear ------------------------------------------------------------------ */
+
+.totals {
+  padding-top: 8px;
+  border-top: 2px solid var(--text-dim);
+}
+
+/* --- spells ---------------------------------------------------------------- */
+
+/* Level, save DC, per day, bonus, known; the slots to tick on a line of
+   their own beneath. */
+.spell-level {
+  display: grid;
+  grid-template-columns: 32px repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  align-items: center;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.spell-level.head {
+  border-top: none;
+  padding: 0;
+  text-align: center;
+}
+
+.spell-level input {
+  text-align: center;
+  padding: 4px 2px !important;
+}
+
+.lvl {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.slots {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+}
+
+.slots .gc-pips {
+  gap: 10px !important;
+}

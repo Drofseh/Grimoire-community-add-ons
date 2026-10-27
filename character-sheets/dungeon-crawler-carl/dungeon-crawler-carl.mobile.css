@@ -1,0 +1,430 @@
+/* Dungeon Crawler Carl crawler sheet, on a phone.
+   The desktop sheet's vocabulary - boxes with heavy rules, black banner bars
+   in a condensed bold face, a red hotlist banner, the printed sums with their
+   operators, health on a red-to-green bar - in one column, with controls sized
+   for a thumb. Surfaces and ink are app tokens, so a theme restyles it: the
+   banner is the text colour with the card colour on it, which is black on
+   white in a light theme and turns over in a dark one. It stands alone:
+   nothing here relies on the desktop stylesheet. */
+
+.sheet-dcc-m {
+  --rule: var(--text);
+  --dcc-red: #d42a2f;
+  --condensed: "Oswald", "Bebas Neue", "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Seven pages: wrap the page names, and tighten them so they usually fit
+   two rows. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. The renderer sizes its controls inline, hence
+   !important. */
+.sheet-dcc-m input,
+.sheet-dcc-m select,
+.sheet-dcc-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-dcc-m input:not([type=checkbox]),
+.sheet-dcc-m select {
+  min-height: 44px;
+}
+
+.sheet-dcc-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.block {
+  border: 2px solid var(--rule);
+  background: var(--bg-card);
+  padding: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.block > :not(.bar) {
+  margin: 0 10px;
+}
+
+/* The printed sheet's black banner. */
+.bar {
+  margin: 0;
+  padding: 4px 10px;
+  background: var(--rule);
+  color: var(--bg-card);
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bar-sub {
+  font-weight: 400;
+  text-transform: none;
+}
+
+.block.hot .bar {
+  background: var(--dcc-red);
+  color: #ffffff;
+}
+
+.bar .count {
+  color: var(--dcc-red);
+}
+
+.cap {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.cap.left {
+  text-align: left;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cell input {
+  text-align: center;
+  font-weight: 700;
+  padding: 4px 2px !important;
+}
+
+/* A worked-out value in a ruled box, the height of the inputs beside it. */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 2px solid var(--rule);
+  font-weight: 700;
+}
+
+.box.total,
+.total {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dcc-red);
+}
+
+.big-input input {
+  color: var(--gold);
+  font-size: 20px !important;
+}
+
+.pair,
+.quad,
+.five {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+}
+
+.quad {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* A field on a ruled line, its caption above. */
+.line {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-bottom: 2px solid var(--rule);
+}
+
+.line .cap {
+  text-align: left;
+}
+
+.line input {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* A text box drawn straight on the block, as the printed sheet's open boxes. */
+.ruled textarea {
+  border: none !important;
+  background: transparent !important;
+}
+
+.op {
+  align-self: end;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* --- main: health, the sums, stats ----------------------------------------- */
+
+/* Health: ten boxes on the printed sheet's red-to-green strip. */
+.health {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 10px 0;
+  background: linear-gradient(90deg, #d42a2f 0%, #ef7d23 28%, #d6a92a 52%, #8db13a 76%, #2fa84f 100%);
+}
+
+.block > .health:first-child {
+  margin: 0;
+}
+
+.health-label {
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.health-label b {
+  color: #ffffff;
+}
+
+.health .gc-pips {
+  display: grid !important;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  justify-items: center;
+}
+
+/* The percentages sit on a band of the card colour under the strip: text on
+   the gradient's red and green ends falls short of a readable contrast. */
+.health-scale {
+  margin: 2px -10px 0;
+  padding: 2px 0;
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+/* [ DEX Mod ] + [ Buffs ] = [ Total ] */
+.formula {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr) 18px minmax(0, 1fr);
+  gap: 4px;
+  align-items: end;
+}
+
+/* Name, enhanced / unenhanced, and the modifier. */
+.stat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 58px 12px 58px 54px;
+  gap: 6px;
+  align-items: center;
+  padding: 2px 0;
+  border-top: 2px solid var(--rule);
+}
+
+.stat.head {
+  border-top: none;
+  padding: 0;
+}
+
+.stat-name {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-name small {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat input {
+  text-align: center;
+  font-weight: 700;
+  padding: 4px 2px !important;
+}
+
+.slash {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.mod input {
+  border: 2px solid var(--rule) !important;
+  border-radius: 0 !important;
+}
+
+/* --- attacks --------------------------------------------------------------- */
+
+/* "To Hit [Rank] + [Stat Mod] = +3" on one line, damage on the next. */
+.sum {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 14px minmax(0, 1fr) 14px 40px;
+  gap: 4px;
+  align-items: end;
+}
+
+.sum-name {
+  align-self: center;
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sum .op {
+  font-size: 18px;
+}
+
+.sum .total {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- gear ------------------------------------------------------------------ */
+
+.hotlist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hotlist textarea {
+  min-height: 64px;
+  border: 2px solid var(--rule) !important;
+  border-radius: 0 !important;
+}
+
+/* Gear slots: a ruled table, each slot's name in the left of its row. */
+.slot {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  border-bottom: 2px solid var(--rule);
+}
+
+.slot:last-child {
+  border-bottom: none;
+}
+
+.slot input {
+  border: none !important;
+  background: transparent !important;
+}
+
+.slot-name {
+  font-family: var(--condensed);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* --- skills: six columns, wrapped onto three lines ------------------------- */
+
+/* The skills list has six columns, too many for one line on a phone. Its
+   heading row and every row share one shape, so wrapping both the same way
+   keeps each heading over its cell: the name on its own line, rank, stat,
+   check and done on the next, notes and the row buttons last. */
+.skills-list .gc-list > div > div {
+  flex-wrap: wrap !important;
+  row-gap: 4px !important;
+}
+
+.skills-list .gc-list > div > div:not(:first-child) {
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.skills-list .gc-list > div > div > div:nth-child(1) {
+  flex: 1 1 100% !important;
+}
+
+.skills-list .gc-list > div > div > div:nth-child(2),
+.skills-list .gc-list > div > div > div:nth-child(3),
+.skills-list .gc-list > div > div > div:nth-child(4) {
+  flex: 1 1 0 !important;
+}
+
+.skills-list .gc-list > div > div > div:nth-child(6) {
+  flex: 0 0 44px !important;
+  order: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Wide enough to start a line of its own, beside the 84px row buttons. */
+.skills-list .gc-list > div > div > div:nth-child(5) {
+  flex: 1 1 calc(100% - 92px) !important;
+  order: 2;
+}
+
+.skills-list .gc-list > div > div > div:nth-child(7) {
+  order: 3;
+}

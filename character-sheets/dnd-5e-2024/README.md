@@ -3,6 +3,15 @@
 A character sheet for the 2024 revision of D&D 5th Edition, with a custom HTML
 layout that follows the shape of the published sheet.
 
+On a phone the sheet has its own layout, `dnd-5e-2024.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs:
+**Main** (hit points, AC, initiative, speed, proficiency, heroic inspiration,
+hit dice, death saves, and each ability's modifier, score and save - what play
+reaches for), **Skills** (passive Perception and every skill, then each
+ability's base and bonus), **Combat** (weapons, class features, feats, species
+traits and equipment training), **Spells**, **Gear**, **Story** (background,
+species, the other details, portrait, appearance and backstory) and **Notes**.
+
 ## What it covers
 
 - **Abilities** with live modifiers, and saving throws that add proficiency

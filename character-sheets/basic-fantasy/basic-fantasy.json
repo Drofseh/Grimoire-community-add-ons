@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "basic-fantasy",
   "name": "Basic Fantasy RPG",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system": "Basic Fantasy Role-Playing Game",
   "description": "A character sheet for Basic Fantasy RPG: four classes, ascending armour class, and the five saving throws. Uses the default sectioned layout — the game is small enough not to need a custom one.",
   "author": "hunter-read",

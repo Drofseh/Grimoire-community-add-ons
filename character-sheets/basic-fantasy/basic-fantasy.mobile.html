@@ -1,0 +1,100 @@
+<!-- Basic Fantasy RPG, on a phone.
+     The desktop sheet is the default sectioned layout; on a narrow screen the
+     same seven sections become five pages, so each fits without scrolling:
+       Main   - who the character is, hit points, armour class and the six
+                abilities with their bonuses: what play reaches for
+       Saves  - the five saving throws
+       Spells - shown only for a Cleric or Magic-User, as on the desktop sheet
+       Gear   - gold, equipment and the weight carried against the limit
+       Notes -->
+<div class="bfrpg-m">
+<g-tabs>
+
+<g-tab title="Main">
+
+  <section class="box">
+    <div class="line name"><g-field name="hero_name" label="" /><span class="tiny">Character Name</span></div>
+    <div class="pair">
+      <div class="line"><g-field name="klass" label="" /><span class="tiny">Class</span></div>
+      <div class="line"><g-field name="race" label="" /><span class="tiny">Race</span></div>
+    </div>
+    <div class="pair level">
+      <div class="stat"><span class="tiny">Level</span><g-field name="level" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Experience</span><g-field name="xp" label="" variant="compact" /></div>
+    </div>
+    <div class="line"><g-field name="player_name" label="" /><span class="tiny">Player</span></div>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Combat</h3>
+    <div class="trio">
+      <div class="stat big-input"><span class="tiny">HP</span><g-field name="hp_current" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Max HP</span><g-field name="hp_max" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">AC</span><span class="big"><g-value name="armor_class" /></span></div>
+    </div>
+    <div class="pair">
+      <div class="stat"><span class="tiny">Armour AC</span><g-field name="armor_worn" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Movement</span><g-field name="movement" label="" variant="compact" /></div>
+    </div>
+    <label class="opt"><g-field name="shield" label="" />Shield (+1 AC)</label>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Abilities</h3>
+    <div class="abilities">
+      <div class="ability"><span class="a-name">STR</span><g-field name="strength" label="" variant="compact" /><span class="bonus"><g-value name="strength_bonus" /></span></div>
+      <div class="ability"><span class="a-name">DEX</span><g-field name="dexterity" label="" variant="compact" /><span class="bonus"><g-value name="dexterity_bonus" /></span></div>
+      <div class="ability"><span class="a-name">CON</span><g-field name="constitution" label="" variant="compact" /><span class="bonus"><g-value name="constitution_bonus" /></span></div>
+      <div class="ability"><span class="a-name">INT</span><g-field name="intelligence" label="" variant="compact" /><span class="bonus"><g-value name="intelligence_bonus" /></span></div>
+      <div class="ability"><span class="a-name">WIS</span><g-field name="wisdom" label="" variant="compact" /><span class="bonus"><g-value name="wisdom_bonus" /></span></div>
+      <div class="ability"><span class="a-name">CHA</span><g-field name="charisma" label="" variant="compact" /><span class="bonus"><g-value name="charisma_bonus" /></span></div>
+    </div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Saves">
+
+  <section class="box">
+    <h3 class="box-heading">Saving Throws</h3>
+    <div class="save"><span>Death Ray or Poison</span><g-field name="saves_death" label="" variant="compact" /></div>
+    <div class="save"><span>Magic Wands</span><g-field name="saves_wands" label="" variant="compact" /></div>
+    <div class="save"><span>Paralysis or Petrify</span><g-field name="saves_paralysis" label="" variant="compact" /></div>
+    <div class="save"><span>Dragon Breath</span><g-field name="saves_breath" label="" variant="compact" /></div>
+    <div class="save"><span>Spells</span><g-field name="saves_spells" label="" variant="compact" /></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Spells" visible_if="klass == 'Cleric' or klass == 'Magic-User'">
+
+  <section class="box"><h3 class="box-heading">Spells</h3><g-field name="spells_known" label="" /></section>
+
+</g-tab>
+
+<g-tab title="Gear">
+
+  <section class="box">
+    <div class="pair">
+      <div class="stat"><span class="tiny">Gold</span><g-field name="gold" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Carried</span><span class="big"><g-value name="carried_weight" /><small> lb</small></span></div>
+    </div>
+    <div class="readout"><span class="tiny">Encumbered at</span><span><g-value name="encumbered_at" /> lb</span></div>
+    <div class="readout"><span class="tiny">Load</span><g-value name="is_encumbered" /></div>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Equipment</h3>
+    <g-field name="equipment" label="" />
+  </section>
+
+</g-tab>
+
+<g-tab title="Notes">
+
+  <section class="box"><g-field name="notes" label="" /></section>
+
+</g-tab>
+
+</g-tabs>
+</div>

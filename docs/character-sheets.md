@@ -614,7 +614,9 @@ Designing for a phone:
   sideways scrolling; break it into a card per row, or move secondary columns
   to their own line.
 
-`cairn` and `call-of-cthulhu-7e` ship phone layouts to copy from.
+Every sheet in this repository ships a phone layout to copy from: `cairn` is
+the smallest, `call-of-cthulhu-7e` shows a two-page sheet reorganised for a
+phone, and `traveller-2e` turns wide lists into a card per row.
 
 A mobile layout needs no `grimoire_min_version`: a Grimoire release that
 predates them ignores the files and draws the regular layout everywhere.

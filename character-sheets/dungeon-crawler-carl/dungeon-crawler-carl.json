@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "dungeon-crawler-carl",
   "name": "Dungeon Crawler Carl",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "system": "Dungeon Crawler Carl Roleplaying Game",
   "description": "An unofficial crawler sheet for the Dungeon Crawler Carl Roleplaying Game: five stats enhanced and unenhanced, health in tenths, evade and damage resistance totals, mana, buffs and attacks, the hotlist and gear slots, skills, inventory, pet and mount, and sponsors, plus a catalog tab that picks races, classes, deities, skills, spells, gear and achievements from an installed content pack. Structure only - bring the rules from your book. Not affiliated with or endorsed by Renegade Game Studios or Matt Dinniman.",
   "author": "hunter-read",

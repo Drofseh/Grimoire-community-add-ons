@@ -4,6 +4,16 @@ A character sheet for the original 2014 rules of D&D 5th Edition, with a custom
 HTML layout that follows the three pages of the printed sheet: the character,
 their details, and their spellcasting.
 
+On a phone the sheet has its own layout, `dnd-5e-2014.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs:
+**Main** (hit points, hit dice, death saves, armor class, initiative, speed and
+the six abilities with their saving throws - what play reaches for),
+**Skills** (every skill with its proficiency dropdown, then proficiencies and
+languages, then each ability's base, racial and improvement parts),
+**Combat** (attacks, features and traits), **Spells** (casting stats, slots to
+tick off and the spell list), **Gear**, **Story** (identity, portrait,
+appearance, personality, backstory and allies) and **Notes**.
+
 ## What it covers
 
 - **Abilities** built from a base score, the racial increase and later
