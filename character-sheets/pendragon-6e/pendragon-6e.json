@@ -1186,6 +1186,28 @@
       "label": "Squire Notes",
       "rows": 3
     },
+    "squire3_name": {
+      "type": "text",
+      "label": "Squire Name"
+    },
+    "squire3_age": {
+      "type": "number",
+      "label": "Squire Age",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_skill": {
+      "type": "number",
+      "label": "Squire Skill",
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "squire3_notes": {
+      "type": "textarea",
+      "label": "Squire Notes",
+      "rows": 3
+    },
     "passive_traits": {
       "type": "number",
       "label": "Traits & Passions",
@@ -1334,6 +1356,31 @@
         }
       ]
     },
+    "other_relatives": {
+      "type": "list",
+      "add_label": "Add Relative",
+      "columns": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Name",
+          "flex": 2
+        },
+        {
+          "key": "age",
+          "type": "number",
+          "label": "Age",
+          "min": 0,
+          "flex": 1
+        },
+        {
+          "key": "klass",
+          "type": "text",
+          "label": "Class",
+          "flex": 2
+        }
+      ]
+    },
     "children": {
       "type": "list",
       "add_label": "Add child",
@@ -1382,6 +1429,18 @@
     "holdings_barony_check": {
       "type": "checkbox",
       "label": "Barony"
+    },
+    "squire1_check": {
+      "type": "checkbox",
+      "label": "Squire 1"
+    },
+    "squire2_check": {
+      "type": "checkbox",
+      "label": "Squire 2"
+    },
+    "squire3_check": {
+      "type": "checkbox",
+      "label": "Squire 3"
     },
     "notes": {
       "type": "textarea",
@@ -2747,6 +2806,50 @@
       "label": "Squire's Horse Damage"
     },
     "squire2_horse_hp": {
+      "type": "number",
+      "label": "Squire's Horse HP",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_name": {
+      "type": "text",
+      "label": "Squire's Horse Name"
+    },
+    "squire3_horse_siz": {
+      "type": "number",
+      "label": "Squire's Horse SIZ",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_dex": {
+      "type": "number",
+      "label": "Squire's Horse DEX",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_str": {
+      "type": "number",
+      "label": "Squire's Horse STR",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_con": {
+      "type": "number",
+      "label": "Squire's Horse CON",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_armor": {
+      "type": "number",
+      "label": "Squire's Horse Armor",
+      "min": 0,
+      "default": 0
+    },
+    "squire3_horse_damage": {
+      "type": "text",
+      "label": "Squire's Horse Damage"
+    },
+    "squire3_horse_hp": {
       "type": "number",
       "label": "Squire's Horse HP",
       "min": 0,
