@@ -1,0 +1,755 @@
+/* Traveller (Mongoose 2nd Edition) traveller sheet, on a phone.
+   The desktop sheet's vocabulary - sections headed by a solid bar that inverts
+   the app's text and card colours, small uppercase captions, numbers in a
+   monospace face so DMs line up - in one column, with controls sized for a
+   thumb. Every colour is an app token, so a light or dark theme restyles it.
+   It stands alone: nothing here relies on the desktop stylesheet. */
+
+.sheet-trav-m {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text);
+  --num: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Nine pages: wrap the page names, and tighten them so they take as few rows
+   as they can. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gc-field-readonly > div {
+  white-space: pre-line;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-trav-m input,
+.sheet-trav-m select,
+.sheet-trav-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-trav-m input:not([type=checkbox]),
+.sheet-trav-m select {
+  min-height: 44px;
+}
+
+.sheet-trav-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* A compact number box carries a number, so set it like one. */
+.sheet-trav-m input[inputmode=numeric] {
+  font-family: var(--num);
+  text-align: center;
+}
+
+/* --- masthead -------------------------------------------------------------- */
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 8px 12px;
+  background: var(--text);
+  color: var(--bg-card);
+  border-radius: 4px;
+}
+
+.mast-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.mast-upp {
+  font-family: var(--num);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.mast-meta {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+  min-width: 0;
+}
+
+.bar {
+  margin: 0 -12px 2px;
+  padding: 6px 12px;
+  background: var(--text);
+  color: var(--bg-card);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 3px 3px 0 0;
+}
+
+.sub {
+  margin: 6px 0 0;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Captions wrap rather than cut off: a phone column is too narrow for
+   "Opponent Dodge Penalty" on one line. */
+.tiny {
+  display: block;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.hint b {
+  color: var(--text);
+  font-family: var(--num);
+}
+
+.big {
+  display: block;
+  font-family: var(--num);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gold);
+}
+
+.state {
+  font-size: 16px;
+  color: var(--gold);
+}
+
+/* A calculated value in a box the height of the controls beside it. */
+.cell-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--num);
+  font-weight: 600;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+  align-items: end;
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  text-align: center;
+}
+
+.grid.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px 6px;
+  text-align: center;
+}
+
+.grid.center {
+  text-align: center;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.cell.line {
+  margin-bottom: 4px;
+}
+
+.name input {
+  font-size: 19px !important;
+  font-weight: 700;
+}
+
+.stack-cells {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* A checkbox and its caption; the whole row toggles it. */
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* --- main: characteristics, psionics ---------------------------------------- */
+
+.chars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* One card per characteristic: name, total and dice modifier above its base,
+   misc and injury. */
+.char {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px 4px;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.char-abbr {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.char-label {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.char-total {
+  font-family: var(--num);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.char-dm {
+  font-family: var(--num);
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 4px 0;
+}
+
+.char .tiny {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.char input {
+  padding: 4px 2px !important;
+}
+
+.upp {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 2px 0 0;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.upp b,
+.upp-inline {
+  font-family: var(--num);
+  font-size: 20px;
+  letter-spacing: 0.2em;
+}
+
+.psi-talents {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px 52px 44px;
+  gap: 4px 6px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.psi-talents .tiny {
+  text-align: center;
+}
+
+.psi-talents .tiny:first-child {
+  text-align: left;
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Name, level, misc and total on one line; the check DM with each
+   characteristic on the next. */
+.sk {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px 52px 40px;
+  gap: 2px 6px;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.sk.head {
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 3px;
+}
+
+.sk.head .tiny {
+  text-align: center;
+}
+
+.sk.head .tiny:first-child {
+  text-align: left;
+}
+
+.sk.joat {
+  border-bottom: none;
+}
+
+.sk.joat .tiny {
+  text-align: right;
+}
+
+/* A skill with specialities is one group: a heavier rule above, the name in
+   bold, its specialities indented beneath. */
+.sk-group {
+  border-top: 2px solid var(--border);
+}
+
+.sk.parent .sk-name {
+  font-weight: 700;
+}
+
+.sk-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sk-name.spec {
+  padding-left: 12px;
+  color: var(--text-dim);
+}
+
+.sk-name input {
+  padding: 4px 6px !important;
+}
+
+.sk.custom .sk-name.custom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  padding-left: 0;
+}
+
+.sk-cap {
+  text-align: right;
+}
+
+.sk select {
+  padding: 4px 2px !important;
+}
+
+.sk-total {
+  font-family: var(--num);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--gold);
+}
+
+.sk-dm {
+  font-family: var(--num);
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.dms {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  font-family: var(--num);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.dms > span {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+}
+
+.dms small {
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* --- combat ---------------------------------------------------------------- */
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px 8px;
+  align-items: end;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.card:first-of-type {
+  border-top: none;
+  padding-top: 2px;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.span3 {
+  grid-column: span 3;
+}
+
+.attack {
+  text-align: center;
+}
+
+.attack-dms {
+  gap: 4px 12px;
+}
+
+.atk {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.atk .sk-total {
+  flex: 0 0 auto;
+}
+
+/* --- vehicles and spacecraft ----------------------------------------------- */
+
+.vehicle-title input {
+  font-size: 18px !important;
+  font-weight: 700;
+}
+
+.armour-grid {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4px 8px;
+  align-items: center;
+}
+
+.armour-grid .tiny {
+  text-align: center;
+}
+
+.armour-grid > .tiny:nth-child(3n + 1) {
+  text-align: left;
+}
+
+/* A picture of the ship - wide, like a ship is - shown whole rather than
+   cropped, since a deck plan cut to fit is no longer a deck plan. */
+.ship-pic .gc-image {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* A component's name above its entry; a drive's rating or the hold's tons in
+   a narrow column beside it. */
+.comp {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-auto-columns: 84px;
+  gap: 2px 8px;
+  align-items: end;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.power {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px 72px;
+  gap: 4px 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.power .tiny,
+.power .num {
+  text-align: center;
+}
+
+.num {
+  font-family: var(--num);
+}
+
+/* --- profile and persona --------------------------------------------------- */
+
+.descriptors {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+  gap: 4px 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.d-left {
+  text-align: right;
+}
+
+/* Who, alive, their name, then the relationship on its own line. */
+.relation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 8px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.relation > .gc-field,
+.rel-text {
+  grid-column: 1 / -1;
+}
+
+.alive {
+  min-height: 36px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* --- lists as cards -------------------------------------------------------- */
+
+/* A list draws its header and each row as one flex line, which on a phone
+   squeezes eight columns into slivers. Inside a .rows wrapper each line
+   becomes a six-unit grid instead, so a row wraps into a small card; the
+   header wraps the same way, so its captions sit above the cells they name.
+   The row's move and delete buttons take the right of the first line. The
+   renderer lays rows out inline, hence !important. */
+.rows .gc-list > div > div {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-flow: row dense;
+  gap: 6px !important;
+  align-items: center !important;
+}
+
+.rows .gc-list > div > div > div {
+  grid-column: span 6;
+}
+
+.rows .gc-list > div > div:first-child {
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--text);
+}
+
+.rows .gc-list > div > div + div {
+  padding: 4px 0 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Cells by column: [n] is a column's place in the list, and the column after
+   the last is the buttons. */
+.rows.lifepath .gc-list > div > div > div:nth-child(9),
+.rows.armour .gc-list > div > div > div:nth-child(6),
+.rows.augments .gc-list > div > div > div:nth-child(5),
+.rows.items .gc-list > div > div > div:nth-child(7),
+.rows.vweapons .gc-list > div > div > div:nth-child(10),
+.rows.sweapons .gc-list > div > div > div:nth-child(9),
+.rows.people .gc-list > div > div > div:nth-child(6),
+.rows.named .gc-list > div > div > div:nth-child(4),
+.rows.mortgages .gc-list > div > div > div:nth-child(4),
+.rows.traits .gc-list > div > div > div:nth-child(3) {
+  grid-row: 1;
+  grid-column: 5 / -1;
+  justify-self: end;
+  align-self: center;
+}
+
+/* Lifepath: term, career / assignment / survived, commissioned, advanced,
+   rank / events. */
+.rows.lifepath .gc-list > div > div > div:nth-child(1),
+.rows.lifepath .gc-list > div > div > div:nth-child(4),
+.rows.lifepath .gc-list > div > div > div:nth-child(5),
+.rows.lifepath .gc-list > div > div > div:nth-child(6) {
+  grid-column: span 1;
+}
+
+.rows.lifepath .gc-list > div > div > div:nth-child(2),
+.rows.lifepath .gc-list > div > div > div:nth-child(7) {
+  grid-column: span 3;
+}
+
+/* Armour: worn, type / protection, rad, required skill. */
+.rows.armour .gc-list > div > div > div:nth-child(1) {
+  grid-column: span 1;
+}
+
+.rows.armour .gc-list > div > div > div:nth-child(2) {
+  grid-column: span 3;
+}
+
+.rows.armour .gc-list > div > div > div:nth-child(3),
+.rows.armour .gc-list > div > div > div:nth-child(4),
+.rows.armour .gc-list > div > div > div:nth-child(5) {
+  grid-column: span 2;
+}
+
+/* Augments: augment / notes / TL, cost. */
+.rows.augments .gc-list > div > div > div:nth-child(1),
+.rows.augments .gc-list > div > div > div:nth-child(4) {
+  grid-column: span 4;
+}
+
+.rows.augments .gc-list > div > div > div:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Equipment and cargo: quantity, item / notes / TL, mass, cost. */
+.rows.items .gc-list > div > div > div:nth-child(1) {
+  grid-column: span 1;
+}
+
+.rows.items .gc-list > div > div > div:nth-child(2) {
+  grid-column: span 3;
+}
+
+.rows.items .gc-list > div > div > div:nth-child(4),
+.rows.items .gc-list > div > div > div:nth-child(5),
+.rows.items .gc-list > div > div > div:nth-child(6) {
+  grid-column: span 2;
+}
+
+/* Vehicle weapons: weapon / mount, location / range, damage, magazine /
+   magazine cost, traits, fire control. Ship weapons the same, with ammo for
+   magazine and no fire control. */
+.rows.vweapons .gc-list > div > div > div:nth-child(1),
+.rows.sweapons .gc-list > div > div > div:nth-child(1),
+.rows.sweapons .gc-list > div > div > div:nth-child(8) {
+  grid-column: span 4;
+}
+
+.rows.vweapons .gc-list > div > div > div:nth-child(2),
+.rows.vweapons .gc-list > div > div > div:nth-child(3),
+.rows.sweapons .gc-list > div > div > div:nth-child(2),
+.rows.sweapons .gc-list > div > div > div:nth-child(3) {
+  grid-column: span 3;
+}
+
+.rows.vweapons .gc-list > div > div > div:nth-child(n + 4):nth-child(-n + 9),
+.rows.sweapons .gc-list > div > div > div:nth-child(n + 4):nth-child(-n + 7) {
+  grid-column: span 2;
+}
+
+/* Party, connections and NPCs: name / two short details / notes, alive. */
+.rows.people .gc-list > div > div > div:nth-child(1) {
+  grid-column: span 4;
+}
+
+.rows.people .gc-list > div > div > div:nth-child(2),
+.rows.people .gc-list > div > div > div:nth-child(3) {
+  grid-column: span 3;
+}
+
+.rows.people .gc-list > div > div > div:nth-child(4) {
+  grid-column: span 5;
+}
+
+.rows.people .gc-list > div > div > div:nth-child(5) {
+  grid-column: span 1;
+  justify-self: center;
+}
+
+/* Organisations and locations: name / location or UWP, notes. Mortgages:
+   name / owed, monthly payment. Vehicle traits: trait / description. */
+.rows.named .gc-list > div > div > div:nth-child(1),
+.rows.named .gc-list > div > div > div:nth-child(3),
+.rows.mortgages .gc-list > div > div > div:nth-child(1),
+.rows.traits .gc-list > div > div > div:nth-child(1) {
+  grid-column: span 4;
+}
+
+.rows.named .gc-list > div > div > div:nth-child(2) {
+  grid-column: span 2;
+}
+
+.rows.mortgages .gc-list > div > div > div:nth-child(2),
+.rows.mortgages .gc-list > div > div > div:nth-child(3) {
+  grid-column: span 3;
+}

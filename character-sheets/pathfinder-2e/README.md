@@ -21,6 +21,16 @@ Four pages: **Character**, **Feats & Features**, **Spells** and **Gear & Notes**
 - Strikes, conditions, equipment with **bulk** against a `5 + Strength` limit and
   a count of invested items, coins and notes
 
+On a phone the sheet has its own layout, `pathfinder-2e.mobile.html` and
+`.mobile.css`, with the same content in one column across eight tabs:
+**Main** (hit points, dying, wounded and doomed, hero points, armor class,
+Perception, saves, attribute modifiers and conditions - what a turn reaches
+for), **Skills** (every skill with its rank, then the two Lores), **Combat**
+(strikes, class DC and speed, then armor details and proficiencies),
+**Feats**, **Spells** (DC, attack, slots and focus points, then tradition and
+caster level), **Gear**, **Bio** (name, ancestry, class and the rest, level and
+XP) and **Notes**.
+
 ## With the Pathfinder Player Core pack
 
 Install the [`pf2e-player-core`](../../content-packs/pf2e-player-core/) pack and
@@ -43,11 +53,6 @@ marker; type over it and it is yours, and the marker resets it. Nothing needs th
 pack - with no content installed, every field is a plain field and every list
 takes custom entries. Attribute boosts are yours to apply: the sheet records the
 resulting modifiers, and warns if one is above +4 at 1st level.
-
-inst a `5 + Strength` limit, and a count of
-  invested items
-- Catalogues of classes, ancestries, feats and spells, with spell **ranks**
-  rather than levels
 
 Ability fields hold **modifiers**, not scores, which is how PF2e character
 sheets are normally filled in.

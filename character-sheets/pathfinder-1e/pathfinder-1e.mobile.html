@@ -1,0 +1,383 @@
+<!-- Pathfinder Roleplaying Game (first edition) character sheet, on a phone.
+     The same content as the desktop sheet, in one column across seven pages
+     sized for a phone rather than the printed sheet's two:
+       Main    - hit points, the defence totals (AC, touch, flat-footed,
+                 initiative, the three saves), the six abilities and the
+                 conditional modifiers: everything a roll or a hit reaches for
+       Combat  - base attack, melee and ranged, CMB and CMD, the five weapons
+                 and speed, then initiative, AC and the saves written out as
+                 the sums they are
+       Skills  - a row per skill, its ability modifier under its name, then
+                 the ranks spent, which matter only while building
+       Feats   - feats and special abilities
+       Gear    - money, gear and AC items with their totals, then the
+                 carrying capacity Strength allows
+       Spells  - casting ability, a row per spell level with a box per slot to
+                 tick as you cast, then domains and the spell list
+       Bio     - who the character is, languages and experience
+     Original styling, as on the desktop sheet, since Paizo's Community Use
+     Policy asks that fan material not look like theirs. -->
+<div class="sheet-pf1-m">
+<g-tabs>
+
+<g-tab title="Main">
+
+  <section class="block hp">
+    <h3 class="banner">Hit Points</h3>
+    <div class="trio">
+      <div class="line big"><g-field name="hp_current" label="" variant="compact" /><span class="cap">Current HP</span></div>
+      <div class="line"><g-field name="hp_total" label="" variant="compact" /><span class="cap">Total</span></div>
+      <div class="line"><g-field name="nonlethal" label="" variant="compact" /><span class="cap">Nonlethal</span></div>
+    </div>
+    <div class="line"><g-field name="dr" label="" /><span class="cap">Damage Reduction</span></div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Defense</h3>
+    <div class="glance">
+      <div class="term"><span class="box total"><g-value name="ac" /></span><span class="cap">AC</span></div>
+      <div class="term"><span class="box total"><g-value name="touch" /></span><span class="cap">Touch</span></div>
+      <div class="term"><span class="box total"><g-value name="flat_footed" /></span><span class="cap">Flat-Footed</span></div>
+      <div class="term"><span class="box total"><g-value name="initiative" /></span><span class="cap">Initiative</span></div>
+    </div>
+    <div class="glance three">
+      <div class="term"><span class="box total"><g-value name="fort" /></span><span class="cap">Fortitude</span></div>
+      <div class="term"><span class="box total"><g-value name="ref" /></span><span class="cap">Reflex</span></div>
+      <div class="term"><span class="box total"><g-value name="will" /></span><span class="cap">Will</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Abilities</h3>
+    <div class="abil head"><span></span><span class="cap">Score</span><span class="cap">Mod</span><span class="cap">Temp Adj</span><span class="cap">Temp Mod</span></div>
+    <div class="abil"><span class="tag" title="Strength">STR</span><g-field name="str" label="" variant="compact" /><span class="box"><g-value name="str_mod" /></span><g-field name="str_temp" label="" variant="compact" /><span class="box total"><g-value name="str_eff" /></span></div>
+    <div class="abil"><span class="tag" title="Dexterity">DEX</span><g-field name="dex" label="" variant="compact" /><span class="box"><g-value name="dex_mod" /></span><g-field name="dex_temp" label="" variant="compact" /><span class="box total"><g-value name="dex_eff" /></span></div>
+    <div class="abil"><span class="tag" title="Constitution">CON</span><g-field name="con" label="" variant="compact" /><span class="box"><g-value name="con_mod" /></span><g-field name="con_temp" label="" variant="compact" /><span class="box total"><g-value name="con_eff" /></span></div>
+    <div class="abil"><span class="tag" title="Intelligence">INT</span><g-field name="int" label="" variant="compact" /><span class="box"><g-value name="int_mod" /></span><g-field name="int_temp" label="" variant="compact" /><span class="box total"><g-value name="int_eff" /></span></div>
+    <div class="abil"><span class="tag" title="Wisdom">WIS</span><g-field name="wis" label="" variant="compact" /><span class="box"><g-value name="wis_mod" /></span><g-field name="wis_temp" label="" variant="compact" /><span class="box total"><g-value name="wis_eff" /></span></div>
+    <div class="abil"><span class="tag" title="Charisma">CHA</span><g-field name="cha" label="" variant="compact" /><span class="box"><g-value name="cha_mod" /></span><g-field name="cha_temp" label="" variant="compact" /><span class="box total"><g-value name="cha_eff" /></span></div>
+    <p class="hint">The temporary modifier is the one everything else uses.</p>
+  </section>
+
+  <section class="block">
+    <div class="line"><g-field name="conditional_modifiers" label="" /><span class="cap">Conditional Modifiers</span></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Combat">
+
+  <section class="block">
+    <h3 class="banner">Attack</h3>
+    <div class="pair">
+      <div class="line"><g-field name="bab" label="" variant="compact" /><span class="cap">Base Attack Bonus</span><span class="iter"><g-value name="bab_iterative" /></span></div>
+      <div class="line"><g-field name="spell_resistance" label="" variant="compact" /><span class="cap">Spell Resistance</span></div>
+    </div>
+    <div class="pair">
+      <div class="term"><span class="box total"><g-value name="melee_attack" /></span><span class="cap">Melee Attack</span></div>
+      <div class="term"><span class="box total"><g-value name="ranged_attack" /></span><span class="cap">Ranged Attack</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Weapons</h3>
+    <div class="weapon">
+      <div class="line"><g-field name="weapon_1_name" label="" /><span class="cap">Weapon 1</span></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_1_attack" label="" /><span class="cap">Attack</span></div><div class="line"><g-field name="weapon_1_critical" label="" /><span class="cap">Critical</span></div><div class="line"><g-field name="weapon_1_damage" label="" /><span class="cap">Damage</span></div></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_1_type" label="" /><span class="cap">Type</span></div><div class="line"><g-field name="weapon_1_range" label="" /><span class="cap">Range</span></div><div class="line"><g-field name="weapon_1_ammo" label="" /><span class="cap">Ammo</span></div></div>
+    </div>
+    <div class="weapon">
+      <div class="line"><g-field name="weapon_2_name" label="" /><span class="cap">Weapon 2</span></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_2_attack" label="" /><span class="cap">Attack</span></div><div class="line"><g-field name="weapon_2_critical" label="" /><span class="cap">Critical</span></div><div class="line"><g-field name="weapon_2_damage" label="" /><span class="cap">Damage</span></div></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_2_type" label="" /><span class="cap">Type</span></div><div class="line"><g-field name="weapon_2_range" label="" /><span class="cap">Range</span></div><div class="line"><g-field name="weapon_2_ammo" label="" /><span class="cap">Ammo</span></div></div>
+    </div>
+    <div class="weapon">
+      <div class="line"><g-field name="weapon_3_name" label="" /><span class="cap">Weapon 3</span></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_3_attack" label="" /><span class="cap">Attack</span></div><div class="line"><g-field name="weapon_3_critical" label="" /><span class="cap">Critical</span></div><div class="line"><g-field name="weapon_3_damage" label="" /><span class="cap">Damage</span></div></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_3_type" label="" /><span class="cap">Type</span></div><div class="line"><g-field name="weapon_3_range" label="" /><span class="cap">Range</span></div><div class="line"><g-field name="weapon_3_ammo" label="" /><span class="cap">Ammo</span></div></div>
+    </div>
+    <div class="weapon">
+      <div class="line"><g-field name="weapon_4_name" label="" /><span class="cap">Weapon 4</span></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_4_attack" label="" /><span class="cap">Attack</span></div><div class="line"><g-field name="weapon_4_critical" label="" /><span class="cap">Critical</span></div><div class="line"><g-field name="weapon_4_damage" label="" /><span class="cap">Damage</span></div></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_4_type" label="" /><span class="cap">Type</span></div><div class="line"><g-field name="weapon_4_range" label="" /><span class="cap">Range</span></div><div class="line"><g-field name="weapon_4_ammo" label="" /><span class="cap">Ammo</span></div></div>
+    </div>
+    <div class="weapon">
+      <div class="line"><g-field name="weapon_5_name" label="" /><span class="cap">Weapon 5</span></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_5_attack" label="" /><span class="cap">Attack</span></div><div class="line"><g-field name="weapon_5_critical" label="" /><span class="cap">Critical</span></div><div class="line"><g-field name="weapon_5_damage" label="" /><span class="cap">Damage</span></div></div>
+      <div class="w-row"><div class="line"><g-field name="weapon_5_type" label="" /><span class="cap">Type</span></div><div class="line"><g-field name="weapon_5_range" label="" /><span class="cap">Range</span></div><div class="line"><g-field name="weapon_5_ammo" label="" /><span class="cap">Ammo</span></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">CMB<small>Combat Maneuver Bonus</small></span><span class="box total"><g-value name="cmb" /></span></div>
+    <div class="terms">
+      <div class="term"><span class="box"><g-value name="bab" /></span><span class="cap">BAB</span></div><div class="term"><span class="box"><g-value name="str_eff" /></span><span class="cap">Str</span></div><div class="term"><span class="box"><g-value name="special_size_mod" /></span><span class="cap">Size</span></div><div class="term"><g-field name="cmb_misc" label="" variant="compact" /><span class="cap">Misc</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">CMD<small>Combat Maneuver Defense</small></span><span class="box total"><g-value name="cmd" /></span></div>
+    <p class="hint">10 + the terms below.</p>
+    <div class="terms five">
+      <div class="term"><span class="box"><g-value name="bab" /></span><span class="cap">BAB</span></div><div class="term"><span class="box"><g-value name="str_eff" /></span><span class="cap">Str</span></div><div class="term"><span class="box"><g-value name="dex_eff" /></span><span class="cap">Dex</span></div><div class="term"><span class="box"><g-value name="special_size_mod" /></span><span class="cap">Size</span></div><div class="term"><g-field name="cmd_misc" label="" variant="compact" /><span class="cap">Misc</span></div>
+    </div>
+    <div class="line"><g-field name="cmb_modifiers" label="" /><span class="cap">CMB / CMD Modifiers</span></div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Speed</h3>
+    <div class="pair">
+      <div class="line"><g-field name="speed_base" label="" variant="compact" /><span class="cap">Base (ft.) · <g-value name="speed_base_sq" /> sq.</span></div>
+      <div class="line"><g-field name="speed_armor" label="" variant="compact" /><span class="cap">With Armor (ft.) · <g-value name="speed_armor_sq" /> sq.</span></div>
+    </div>
+    <div class="trio">
+      <div class="line"><g-field name="speed_fly" label="" variant="compact" /><span class="cap">Fly</span></div>
+      <div class="line"><g-field name="fly_maneuverability" label="" /><span class="cap">Maneuver.</span></div>
+      <div class="line"><g-field name="speed_swim" label="" variant="compact" /><span class="cap">Swim</span></div>
+      <div class="line"><g-field name="speed_climb" label="" variant="compact" /><span class="cap">Climb</span></div>
+      <div class="line"><g-field name="speed_burrow" label="" variant="compact" /><span class="cap">Burrow</span></div>
+    </div>
+    <div class="line"><g-field name="speed_temp" label="" /><span class="cap">Temp Modifiers</span></div>
+  </section>
+
+  <h4 class="sub">Defense, written out</h4>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">Initiative<small>Modifier</small></span><span class="box total"><g-value name="initiative" /></span></div>
+    <div class="terms">
+      <div class="term"><span class="box"><g-value name="dex_eff" /></span><span class="cap">Dex</span></div><div class="term"><g-field name="init_misc" label="" variant="compact" /><span class="cap">Misc</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">AC<small>Armor Class</small></span><span class="box total"><g-value name="ac" /></span></div>
+    <p class="hint">10 + the terms below.</p>
+    <div class="terms">
+      <div class="term"><g-field name="armor_bonus" label="" variant="compact" /><span class="cap">Armor</span></div><div class="term"><g-field name="shield_bonus" label="" variant="compact" /><span class="cap">Shield</span></div><div class="term"><span class="box"><g-value name="dex_eff" /></span><span class="cap">Dex</span></div><div class="term"><span class="box"><g-value name="size_mod" /></span><span class="cap">Size</span></div>
+      <div class="term"><g-field name="natural_armor" label="" variant="compact" /><span class="cap">Natural</span></div><div class="term"><g-field name="deflection" label="" variant="compact" /><span class="cap">Deflect</span></div><div class="term"><g-field name="ac_misc" label="" variant="compact" /><span class="cap">Misc</span></div>
+    </div>
+    <div class="pair">
+      <div class="term"><span class="box total"><g-value name="touch" /></span><span class="cap">Touch</span></div>
+      <div class="term"><span class="box total"><g-value name="flat_footed" /></span><span class="cap">Flat-Footed</span></div>
+    </div>
+    <div class="line"><g-field name="ac_modifiers" label="" /><span class="cap">AC Modifiers</span></div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">Fortitude<small>Constitution</small></span><span class="box total"><g-value name="fort" /></span></div>
+    <div class="terms five">
+      <div class="term"><g-field name="fort_base" label="" variant="compact" /><span class="cap">Base</span></div><div class="term"><span class="box"><g-value name="fort_ability" /></span><span class="cap">Ability</span></div><div class="term"><g-field name="fort_magic" label="" variant="compact" /><span class="cap">Magic</span></div>
+      <div class="term"><g-field name="fort_misc" label="" variant="compact" /><span class="cap">Misc</span></div><div class="term"><g-field name="fort_temp" label="" variant="compact" /><span class="cap">Temp</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">Reflex<small>Dexterity</small></span><span class="box total"><g-value name="ref" /></span></div>
+    <div class="terms five">
+      <div class="term"><g-field name="ref_base" label="" variant="compact" /><span class="cap">Base</span></div><div class="term"><span class="box"><g-value name="ref_ability" /></span><span class="cap">Ability</span></div><div class="term"><g-field name="ref_magic" label="" variant="compact" /><span class="cap">Magic</span></div>
+      <div class="term"><g-field name="ref_misc" label="" variant="compact" /><span class="cap">Misc</span></div><div class="term"><g-field name="ref_temp" label="" variant="compact" /><span class="cap">Temp</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eq-head"><span class="tag">Will<small>Wisdom</small></span><span class="box total"><g-value name="will" /></span></div>
+    <div class="terms five">
+      <div class="term"><g-field name="will_base" label="" variant="compact" /><span class="cap">Base</span></div><div class="term"><span class="box"><g-value name="will_ability" /></span><span class="cap">Ability</span></div><div class="term"><g-field name="will_magic" label="" variant="compact" /><span class="cap">Magic</span></div>
+      <div class="term"><g-field name="will_misc" label="" variant="compact" /><span class="cap">Misc</span></div><div class="term"><g-field name="will_temp" label="" variant="compact" /><span class="cap">Temp</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="line"><g-field name="save_modifiers" label="" /><span class="cap">Saving Throw Modifiers</span></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Skills">
+
+  <section class="block">
+    <p class="hint">Tick the box for a class skill: with a rank in it, it gains +3. * Trained only. Armor check penalty <b><g-value name="acp" /></b> applies to Str and Dex skills; size (<g-value name="size_step" /> steps from Medium) applies to Fly and Stealth.</p>
+    <div class="skill head"><span class="cap">Cls</span><span class="cap">Skill</span><span class="cap">Total</span><span class="cap">Ranks</span><span class="cap">Misc</span></div>
+    <ul class="skills">
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Acrobatics" label="Acrobatics is a class skill" /></label><span class="sk-name">Acrobatics<span class="ab"><g-value name="sk_acrobatics_ability" /> DEX</span></span><span class="box total"><g-value name="sk_acrobatics" /></span><g-field name="sk_acrobatics_ranks" label="" variant="compact" /><g-field name="sk_acrobatics_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Appraise" label="Appraise is a class skill" /></label><span class="sk-name">Appraise<span class="ab"><g-value name="sk_appraise_ability" /> INT</span></span><span class="box total"><g-value name="sk_appraise" /></span><g-field name="sk_appraise_ranks" label="" variant="compact" /><g-field name="sk_appraise_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Bluff" label="Bluff is a class skill" /></label><span class="sk-name">Bluff<span class="ab"><g-value name="sk_bluff_ability" /> CHA</span></span><span class="box total"><g-value name="sk_bluff" /></span><g-field name="sk_bluff_ranks" label="" variant="compact" /><g-field name="sk_bluff_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Climb" label="Climb is a class skill" /></label><span class="sk-name">Climb<span class="ab"><g-value name="sk_climb_ability" /> STR</span></span><span class="box total"><g-value name="sk_climb" /></span><g-field name="sk_climb_ranks" label="" variant="compact" /><g-field name="sk_climb_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Craft 1" label="Craft 1 is a class skill" /></label><span class="sk-name slot"><span class="cap">Craft</span><g-field name="sk_craft_1_name" label="" /><span class="ab"><g-value name="sk_craft_1_ability" /> INT</span></span><span class="box total"><g-value name="sk_craft_1" /></span><g-field name="sk_craft_1_ranks" label="" variant="compact" /><g-field name="sk_craft_1_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Craft 2" label="Craft 2 is a class skill" /></label><span class="sk-name slot"><span class="cap">Craft</span><g-field name="sk_craft_2_name" label="" /><span class="ab"><g-value name="sk_craft_2_ability" /> INT</span></span><span class="box total"><g-value name="sk_craft_2" /></span><g-field name="sk_craft_2_ranks" label="" variant="compact" /><g-field name="sk_craft_2_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Craft 3" label="Craft 3 is a class skill" /></label><span class="sk-name slot"><span class="cap">Craft</span><g-field name="sk_craft_3_name" label="" /><span class="ab"><g-value name="sk_craft_3_ability" /> INT</span></span><span class="box total"><g-value name="sk_craft_3" /></span><g-field name="sk_craft_3_ranks" label="" variant="compact" /><g-field name="sk_craft_3_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Diplomacy" label="Diplomacy is a class skill" /></label><span class="sk-name">Diplomacy<span class="ab"><g-value name="sk_diplomacy_ability" /> CHA</span></span><span class="box total"><g-value name="sk_diplomacy" /></span><g-field name="sk_diplomacy_ranks" label="" variant="compact" /><g-field name="sk_diplomacy_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Disable Device" label="Disable Device is a class skill" /></label><span class="sk-name">Disable Device*<span class="ab"><g-value name="sk_disable_device_ability" /> DEX</span></span><span class="box total"><g-value name="sk_disable_device" /></span><g-field name="sk_disable_device_ranks" label="" variant="compact" /><g-field name="sk_disable_device_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Disguise" label="Disguise is a class skill" /></label><span class="sk-name">Disguise<span class="ab"><g-value name="sk_disguise_ability" /> CHA</span></span><span class="box total"><g-value name="sk_disguise" /></span><g-field name="sk_disguise_ranks" label="" variant="compact" /><g-field name="sk_disguise_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Escape Artist" label="Escape Artist is a class skill" /></label><span class="sk-name">Escape Artist<span class="ab"><g-value name="sk_escape_artist_ability" /> DEX</span></span><span class="box total"><g-value name="sk_escape_artist" /></span><g-field name="sk_escape_artist_ranks" label="" variant="compact" /><g-field name="sk_escape_artist_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Fly" label="Fly is a class skill" /></label><span class="sk-name">Fly<span class="ab"><g-value name="sk_fly_ability" /> DEX</span></span><span class="box total"><g-value name="sk_fly" /></span><g-field name="sk_fly_ranks" label="" variant="compact" /><g-field name="sk_fly_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Handle Animal" label="Handle Animal is a class skill" /></label><span class="sk-name">Handle Animal*<span class="ab"><g-value name="sk_handle_animal_ability" /> CHA</span></span><span class="box total"><g-value name="sk_handle_animal" /></span><g-field name="sk_handle_animal_ranks" label="" variant="compact" /><g-field name="sk_handle_animal_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Heal" label="Heal is a class skill" /></label><span class="sk-name">Heal<span class="ab"><g-value name="sk_heal_ability" /> WIS</span></span><span class="box total"><g-value name="sk_heal" /></span><g-field name="sk_heal_ranks" label="" variant="compact" /><g-field name="sk_heal_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Intimidate" label="Intimidate is a class skill" /></label><span class="sk-name">Intimidate<span class="ab"><g-value name="sk_intimidate_ability" /> CHA</span></span><span class="box total"><g-value name="sk_intimidate" /></span><g-field name="sk_intimidate_ranks" label="" variant="compact" /><g-field name="sk_intimidate_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (arcana)" label="Knowledge (arcana) is a class skill" /></label><span class="sk-name">Knowledge (arcana)*<span class="ab"><g-value name="sk_knowledge_arcana_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_arcana" /></span><g-field name="sk_knowledge_arcana_ranks" label="" variant="compact" /><g-field name="sk_knowledge_arcana_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (dungeoneering)" label="Knowledge (dungeoneering) is a class skill" /></label><span class="sk-name">Knowledge (dungeoneering)*<span class="ab"><g-value name="sk_knowledge_dungeoneering_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_dungeoneering" /></span><g-field name="sk_knowledge_dungeoneering_ranks" label="" variant="compact" /><g-field name="sk_knowledge_dungeoneering_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (engineering)" label="Knowledge (engineering) is a class skill" /></label><span class="sk-name">Knowledge (engineering)*<span class="ab"><g-value name="sk_knowledge_engineering_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_engineering" /></span><g-field name="sk_knowledge_engineering_ranks" label="" variant="compact" /><g-field name="sk_knowledge_engineering_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (geography)" label="Knowledge (geography) is a class skill" /></label><span class="sk-name">Knowledge (geography)*<span class="ab"><g-value name="sk_knowledge_geography_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_geography" /></span><g-field name="sk_knowledge_geography_ranks" label="" variant="compact" /><g-field name="sk_knowledge_geography_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (history)" label="Knowledge (history) is a class skill" /></label><span class="sk-name">Knowledge (history)*<span class="ab"><g-value name="sk_knowledge_history_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_history" /></span><g-field name="sk_knowledge_history_ranks" label="" variant="compact" /><g-field name="sk_knowledge_history_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (local)" label="Knowledge (local) is a class skill" /></label><span class="sk-name">Knowledge (local)*<span class="ab"><g-value name="sk_knowledge_local_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_local" /></span><g-field name="sk_knowledge_local_ranks" label="" variant="compact" /><g-field name="sk_knowledge_local_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (nature)" label="Knowledge (nature) is a class skill" /></label><span class="sk-name">Knowledge (nature)*<span class="ab"><g-value name="sk_knowledge_nature_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_nature" /></span><g-field name="sk_knowledge_nature_ranks" label="" variant="compact" /><g-field name="sk_knowledge_nature_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (nobility)" label="Knowledge (nobility) is a class skill" /></label><span class="sk-name">Knowledge (nobility)*<span class="ab"><g-value name="sk_knowledge_nobility_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_nobility" /></span><g-field name="sk_knowledge_nobility_ranks" label="" variant="compact" /><g-field name="sk_knowledge_nobility_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (planes)" label="Knowledge (planes) is a class skill" /></label><span class="sk-name">Knowledge (planes)*<span class="ab"><g-value name="sk_knowledge_planes_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_planes" /></span><g-field name="sk_knowledge_planes_ranks" label="" variant="compact" /><g-field name="sk_knowledge_planes_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Knowledge (religion)" label="Knowledge (religion) is a class skill" /></label><span class="sk-name">Knowledge (religion)*<span class="ab"><g-value name="sk_knowledge_religion_ability" /> INT</span></span><span class="box total"><g-value name="sk_knowledge_religion" /></span><g-field name="sk_knowledge_religion_ranks" label="" variant="compact" /><g-field name="sk_knowledge_religion_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Linguistics" label="Linguistics is a class skill" /></label><span class="sk-name">Linguistics*<span class="ab"><g-value name="sk_linguistics_ability" /> INT</span></span><span class="box total"><g-value name="sk_linguistics" /></span><g-field name="sk_linguistics_ranks" label="" variant="compact" /><g-field name="sk_linguistics_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Perception" label="Perception is a class skill" /></label><span class="sk-name">Perception<span class="ab"><g-value name="sk_perception_ability" /> WIS</span></span><span class="box total"><g-value name="sk_perception" /></span><g-field name="sk_perception_ranks" label="" variant="compact" /><g-field name="sk_perception_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Perform 1" label="Perform 1 is a class skill" /></label><span class="sk-name slot"><span class="cap">Perform</span><g-field name="sk_perform_1_name" label="" /><span class="ab"><g-value name="sk_perform_1_ability" /> CHA</span></span><span class="box total"><g-value name="sk_perform_1" /></span><g-field name="sk_perform_1_ranks" label="" variant="compact" /><g-field name="sk_perform_1_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Perform 2" label="Perform 2 is a class skill" /></label><span class="sk-name slot"><span class="cap">Perform</span><g-field name="sk_perform_2_name" label="" /><span class="ab"><g-value name="sk_perform_2_ability" /> CHA</span></span><span class="box total"><g-value name="sk_perform_2" /></span><g-field name="sk_perform_2_ranks" label="" variant="compact" /><g-field name="sk_perform_2_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Profession 1" label="Profession 1 is a class skill" /></label><span class="sk-name slot"><span class="cap">Profession</span><g-field name="sk_profession_1_name" label="" /><span class="ab"><g-value name="sk_profession_1_ability" /> WIS</span></span><span class="box total"><g-value name="sk_profession_1" /></span><g-field name="sk_profession_1_ranks" label="" variant="compact" /><g-field name="sk_profession_1_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Profession 2" label="Profession 2 is a class skill" /></label><span class="sk-name slot"><span class="cap">Profession</span><g-field name="sk_profession_2_name" label="" /><span class="ab"><g-value name="sk_profession_2_ability" /> WIS</span></span><span class="box total"><g-value name="sk_profession_2" /></span><g-field name="sk_profession_2_ranks" label="" variant="compact" /><g-field name="sk_profession_2_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Ride" label="Ride is a class skill" /></label><span class="sk-name">Ride<span class="ab"><g-value name="sk_ride_ability" /> DEX</span></span><span class="box total"><g-value name="sk_ride" /></span><g-field name="sk_ride_ranks" label="" variant="compact" /><g-field name="sk_ride_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Sense Motive" label="Sense Motive is a class skill" /></label><span class="sk-name">Sense Motive<span class="ab"><g-value name="sk_sense_motive_ability" /> WIS</span></span><span class="box total"><g-value name="sk_sense_motive" /></span><g-field name="sk_sense_motive_ranks" label="" variant="compact" /><g-field name="sk_sense_motive_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Sleight of Hand" label="Sleight of Hand is a class skill" /></label><span class="sk-name">Sleight of Hand*<span class="ab"><g-value name="sk_sleight_of_hand_ability" /> DEX</span></span><span class="box total"><g-value name="sk_sleight_of_hand" /></span><g-field name="sk_sleight_of_hand_ranks" label="" variant="compact" /><g-field name="sk_sleight_of_hand_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Spellcraft" label="Spellcraft is a class skill" /></label><span class="sk-name">Spellcraft*<span class="ab"><g-value name="sk_spellcraft_ability" /> INT</span></span><span class="box total"><g-value name="sk_spellcraft" /></span><g-field name="sk_spellcraft_ranks" label="" variant="compact" /><g-field name="sk_spellcraft_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Stealth" label="Stealth is a class skill" /></label><span class="sk-name">Stealth<span class="ab"><g-value name="sk_stealth_ability" /> DEX</span></span><span class="box total"><g-value name="sk_stealth" /></span><g-field name="sk_stealth_ranks" label="" variant="compact" /><g-field name="sk_stealth_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Survival" label="Survival is a class skill" /></label><span class="sk-name">Survival<span class="ab"><g-value name="sk_survival_ability" /> WIS</span></span><span class="box total"><g-value name="sk_survival" /></span><g-field name="sk_survival_ranks" label="" variant="compact" /><g-field name="sk_survival_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Swim" label="Swim is a class skill" /></label><span class="sk-name">Swim<span class="ab"><g-value name="sk_swim_ability" /> STR</span></span><span class="box total"><g-value name="sk_swim" /></span><g-field name="sk_swim_ranks" label="" variant="compact" /><g-field name="sk_swim_misc" label="" variant="compact" /></li>
+      <li class="skill"><label class="tap"><g-option field="class_skills" value="Use Magic Device" label="Use Magic Device is a class skill" /></label><span class="sk-name">Use Magic Device*<span class="ab"><g-value name="sk_use_magic_device_ability" /> CHA</span></span><span class="box total"><g-value name="sk_use_magic_device" /></span><g-field name="sk_use_magic_device_ranks" label="" variant="compact" /><g-field name="sk_use_magic_device_misc" label="" variant="compact" /></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="readout"><span class="cap">Ranks spent</span><span class="box"><g-value name="ranks_spent" /></span></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Feats">
+
+  <section class="block"><h3 class="banner">Feats</h3><g-field name="feats" label="" /></section>
+  <section class="block"><h3 class="banner">Special Abilities</h3><g-field name="special_abilities" label="" /></section>
+
+</g-tab>
+
+<g-tab title="Gear">
+
+  <section class="block">
+    <h3 class="banner">Money</h3>
+    <div class="quad">
+      <div class="line"><g-field name="cp" label="" variant="compact" /><span class="cap">CP</span></div>
+      <div class="line"><g-field name="sp" label="" variant="compact" /><span class="cap">SP</span></div>
+      <div class="line"><g-field name="gp" label="" variant="compact" /><span class="cap">GP</span></div>
+      <div class="line"><g-field name="pp" label="" variant="compact" /><span class="cap">PP</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Gear</h3>
+    <g-field name="gear" label="" />
+    <div class="totals trio">
+      <div class="term"><span class="box"><g-value name="gear_weight" /></span><span class="cap">Gear Weight</span></div>
+      <div class="term"><span class="box total"><g-value name="total_weight" /></span><span class="cap">Total Weight</span></div>
+      <div class="term"><span class="box"><g-value name="load" /></span><span class="cap">Load</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">AC Items</h3>
+    <g-field name="ac_items" label="" />
+    <div class="totals pair">
+      <div class="term"><span class="box"><g-value name="ac_items_bonus" /></span><span class="cap">Bonus</span></div>
+      <div class="term"><span class="box"><g-value name="acp" /></span><span class="cap">Check Penalty</span></div>
+      <div class="term"><span class="box"><g-value name="spell_failure" /></span><span class="cap">Spell Failure %</span></div>
+      <div class="term"><span class="box"><g-value name="ac_items_weight" /></span><span class="cap">Weight</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Carrying Capacity</h3>
+    <div class="pair">
+      <div class="term"><span class="box"><g-value name="light_load" /></span><span class="cap">Light Load</span></div>
+      <div class="term"><span class="box"><g-value name="lift_over_head" /></span><span class="cap">Lift Over Head</span></div>
+      <div class="term"><span class="box"><g-value name="medium_load" /></span><span class="cap">Medium Load</span></div>
+      <div class="term"><span class="box"><g-value name="lift_off_ground" /></span><span class="cap">Lift Off Ground</span></div>
+      <div class="term"><span class="box"><g-value name="heavy_load" /></span><span class="cap">Heavy Load</span></div>
+      <div class="term"><span class="box"><g-value name="drag_push" /></span><span class="cap">Drag or Push</span></div>
+    </div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Spells">
+
+  <section class="block">
+    <div class="pair">
+      <div class="line"><g-field name="casting_ability" label="" /><span class="cap">Spellcasting Ability</span></div>
+      <div class="term"><span class="box"><g-value name="casting_mod" /></span><span class="cap">Modifier</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Spells per Day</h3>
+    <div class="spell-level head"><span class="cap">Lvl</span><span class="cap">Save DC</span><span class="cap">Per Day</span><span class="cap">Bonus</span><span class="cap">Known</span></div>
+    <div class="spell-level"><span class="lvl">0</span><span class="box total"><g-value name="spell_dc_0" /></span><g-field name="spells_per_day_0" label="" variant="compact" /><span class="box">—</span><g-field name="spells_known_0" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_0" value="spells_used_0" label="Level 0 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">1</span><span class="box total"><g-value name="spell_dc_1" /></span><g-field name="spells_per_day_1" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_1" /></span><g-field name="spells_known_1" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_1" value="spells_used_1" label="Level 1 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">2</span><span class="box total"><g-value name="spell_dc_2" /></span><g-field name="spells_per_day_2" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_2" /></span><g-field name="spells_known_2" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_2" value="spells_used_2" label="Level 2 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">3</span><span class="box total"><g-value name="spell_dc_3" /></span><g-field name="spells_per_day_3" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_3" /></span><g-field name="spells_known_3" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_3" value="spells_used_3" label="Level 3 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">4</span><span class="box total"><g-value name="spell_dc_4" /></span><g-field name="spells_per_day_4" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_4" /></span><g-field name="spells_known_4" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_4" value="spells_used_4" label="Level 4 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">5</span><span class="box total"><g-value name="spell_dc_5" /></span><g-field name="spells_per_day_5" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_5" /></span><g-field name="spells_known_5" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_5" value="spells_used_5" label="Level 5 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">6</span><span class="box total"><g-value name="spell_dc_6" /></span><g-field name="spells_per_day_6" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_6" /></span><g-field name="spells_known_6" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_6" value="spells_used_6" label="Level 6 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">7</span><span class="box total"><g-value name="spell_dc_7" /></span><g-field name="spells_per_day_7" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_7" /></span><g-field name="spells_known_7" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_7" value="spells_used_7" label="Level 7 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">8</span><span class="box total"><g-value name="spell_dc_8" /></span><g-field name="spells_per_day_8" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_8" /></span><g-field name="spells_known_8" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_8" value="spells_used_8" label="Level 8 spell cast" /></span></div>
+    <div class="spell-level"><span class="lvl">9</span><span class="box total"><g-value name="spell_dc_9" /></span><g-field name="spells_per_day_9" label="" variant="compact" /><span class="box"><g-value name="bonus_spells_9" /></span><g-field name="spells_known_9" label="" variant="compact" />
+      <span class="slots"><span class="cap">Cast</span><g-pips count="spell_slots_9" value="spells_used_9" label="Level 9 spell cast" /></span></div>
+  </section>
+
+  <section class="block">
+    <div class="line"><g-field name="spell_conditional" label="" /><span class="cap">Conditional Modifiers</span></div>
+    <div class="line"><g-field name="domains" label="" /><span class="cap">Domains / Specialty School</span></div>
+  </section>
+
+  <section class="block"><h3 class="banner">Spells</h3><g-field name="spells" label="" /></section>
+
+</g-tab>
+
+<g-tab title="Bio">
+
+  <section class="block">
+    <div class="line name"><g-field name="hero_name" label="" /><span class="cap">Character Name</span></div>
+    <div class="line"><g-field name="class_level" label="" /><span class="cap">Character Level</span></div>
+    <div class="pair">
+      <div class="line"><g-field name="race" label="" /><span class="cap">Race</span></div>
+      <div class="line"><g-field name="size" label="" /><span class="cap">Size</span></div>
+      <div class="line"><g-field name="alignment" label="" /><span class="cap">Alignment</span></div>
+      <div class="line"><g-field name="deity" label="" /><span class="cap">Deity</span></div>
+      <div class="line"><g-field name="homeland" label="" /><span class="cap">Homeland</span></div>
+      <div class="line"><g-field name="gender" label="" /><span class="cap">Gender</span></div>
+      <div class="line"><g-field name="age" label="" /><span class="cap">Age</span></div>
+      <div class="line"><g-field name="height" label="" /><span class="cap">Height</span></div>
+      <div class="line"><g-field name="weight" label="" /><span class="cap">Weight</span></div>
+      <div class="line"><g-field name="hair" label="" /><span class="cap">Hair</span></div>
+      <div class="line"><g-field name="eyes" label="" /><span class="cap">Eyes</span></div>
+      <div class="line"><g-field name="player" label="" /><span class="cap">Player</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="line"><g-field name="languages" label="" /><span class="cap">Languages</span></div>
+  </section>
+
+  <section class="block">
+    <h3 class="banner">Experience Points</h3>
+    <div class="pair">
+      <div class="line"><g-field name="xp" label="" variant="compact" /><span class="cap">Experience Points</span></div>
+      <div class="line"><g-field name="xp_next" label="" variant="compact" /><span class="cap">Next Level</span></div>
+    </div>
+  </section>
+
+</g-tab>
+
+</g-tabs>
+</div>

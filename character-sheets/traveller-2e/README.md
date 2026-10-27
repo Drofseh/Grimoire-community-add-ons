@@ -44,6 +44,19 @@ Seven pages, one for each of the spreadsheet's tabs:
 - **Campaign Notes** - the party, allies, contacts, rivals and enemies, other
   NPCs, organisations, locations and notes
 
+On a phone the sheet has its own layout, `traveller-2e.mobile.html` and
+`.mobile.css`, written by hand rather than generated, with the same content in
+one column across nine tabs: **Main** (characteristics with their dice
+modifiers and the UPP, radiation, fatigue, disease and psionics - what play
+reaches for), **Skills** (every skill and speciality as a card, its check DMs on
+a line beneath, then custom skills, the study period and the skill-level total),
+**Combat** (initiative and the other combat DMs, a card per weapon, armour and
+augments), **Gear** (equipment, encumbrance and money), **Vehicles**, **Ship**,
+**Profile** (who you are, the homeworld, lifepath, relationships and
+background), **Persona** (personality, goals, emotions and appearance) and
+**Campaign**. Lists with more columns than a phone has room for - the lifepath,
+weapons, cargo, the party and its contacts - lay each row out as a small card.
+
 ### Skill arithmetic
 
 A skill you have not trained uses the **unskilled** penalty: -3, reduced by your

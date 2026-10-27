@@ -1,0 +1,384 @@
+/* Pathfinder 2e character sheet, on a phone.
+   The desktop sheet's vocabulary - bordered boxes with small uppercase
+   captions, gold modifiers, the shield-shaped armor class, skills as ruled
+   lines with a rank dropdown - in one column, with controls sized for a thumb.
+   Every colour is an app token, so a theme restyles it. It stands alone:
+   nothing here relies on the desktop stylesheet. */
+
+.sheet-pf2-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Eight pages: wrap the page names, and tighten them so they take two rows at
+   most. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* An opened feat or spell keeps its paragraphs. */
+.gc-field-readonly > div {
+  white-space: pre-line;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-pf2-m input,
+.sheet-pf2-m select,
+.sheet-pf2-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-pf2-m input:not([type=checkbox]),
+.sheet-pf2-m select {
+  min-height: 44px;
+}
+
+.sheet-pf2-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Hero points, dying and spell slots are rows of boxes: space them for a
+   finger. */
+.gc-pips {
+  gap: 10px !important;
+  align-items: center;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.box-heading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.box-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.tiny {
+  display: block;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.tiny.inline {
+  display: inline;
+  margin-left: 4px;
+}
+
+.count {
+  color: var(--gold);
+  margin-left: 4px;
+}
+
+.big {
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gold);
+}
+
+.big.small {
+  font-size: 20px;
+}
+
+.big-input input {
+  font-size: 22px !important;
+  font-weight: 700;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+/* A caption above its control. */
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cell.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.pair,
+.duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- main: hit points, defenses, saves, attributes, conditions ------------ */
+
+.hp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2px 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.hp-grid input {
+  text-align: center;
+}
+
+.dying {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+
+.hero {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.armour,
+.perception {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* The shield shape of the desktop sheet's armor class. */
+.armour {
+  border-radius: 10px 10px 36px 36px;
+}
+
+.shield {
+  font-size: 13px;
+}
+
+.perception select {
+  width: 100%;
+}
+
+/* The modifier, the save, then its rank. */
+.save-line {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 124px;
+  gap: 8px;
+  align-items: center;
+  padding: 2px 0;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.save-line:first-child {
+  border-top: none;
+}
+
+.c-value {
+  text-align: right;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.big-ish {
+  font-size: 18px;
+}
+
+.attributes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.attr {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.attr-name {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.attr-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.attr input {
+  width: 100%;
+  text-align: center;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+  font-size: 14px;
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+/* The rank dropdown, the modifier, then the skill and its attribute. */
+.line {
+  display: grid;
+  grid-template-columns: 64px 40px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  font-size: 15px;
+  padding: 2px 0;
+  border-top: 1px solid var(--border);
+}
+
+.line:first-child {
+  border-top: none;
+}
+
+.c-tier .gc-tier,
+.c-tier select {
+  width: 100%;
+}
+
+.c-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* A Lore names itself: the name and modifier on one line, its rank, a full
+   dropdown, below. */
+.line.lore {
+  grid-template-columns: minmax(0, 1fr) 40px;
+  padding: 6px 0;
+}
+
+.lore-name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lore-prof {
+  grid-column: 1 / -1;
+}
+
+/* --- spells ---------------------------------------------------------------- */
+
+.caster-toggle {
+  font-weight: 700;
+}
+
+/* The rank, its boxes, then how many it has. */
+.slot {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 60px;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+  border-top: 1px solid var(--border);
+}
+
+.slot:first-child {
+  border-top: none;
+}
+
+.slot input:not([type=checkbox]) {
+  text-align: center;
+}
+
+.slot.focus {
+  margin-top: 4px;
+  border-top: 2px solid var(--border);
+}
+
+/* --- gear ------------------------------------------------------------------ */
+
+.coins {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px 6px;
+  text-align: center;
+}
+
+.coins input {
+  text-align: center;
+}

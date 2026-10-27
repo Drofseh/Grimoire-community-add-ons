@@ -1,0 +1,472 @@
+/* D&D 5e (2024) character sheet, on a phone.
+   The desktop sheet's vocabulary - bordered boxes with small uppercase
+   captions, each ability's modifier in a circle beside its score, saves and
+   skills as ruled lines - in one column, with controls sized for a thumb.
+   Every colour is an app token, so a theme restyles it. It stands alone:
+   nothing here relies on the desktop stylesheet. */
+
+.sheet-5e24-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Seven pages: wrap the page names, and tighten them so they take as few
+   rows as they can. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gc-field-readonly > div {
+  white-space: pre-line;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-5e24-m input,
+.sheet-5e24-m select,
+.sheet-5e24-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-5e24-m input:not([type=checkbox]),
+.sheet-5e24-m select {
+  min-height: 44px;
+}
+
+.sheet-5e24-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.box-heading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.tiny {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.box-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.centre {
+  text-align: center;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.big {
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gold);
+}
+
+.big-input input {
+  font-size: 22px !important;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* A field on an underline with its caption beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+
+.line input,
+.line select {
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* A caption above its box. */
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+  min-width: 0;
+}
+
+.cell input {
+  text-align: center;
+  padding: 4px !important;
+}
+
+.pair,
+.trio {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+.trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.class-level {
+  grid-template-columns: minmax(0, 1fr) 72px;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.opt.small {
+  justify-content: center;
+  font-size: 13px;
+  min-height: 36px;
+}
+
+.opts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+}
+
+/* The whole cell is the checkbox's touch target. */
+.tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.stat {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat input {
+  text-align: center;
+}
+
+/* --- main ------------------------------------------------------------------ */
+
+.vitals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* The printed sheet's shield shape for Armour Class. */
+.armour {
+  border-radius: 10px 10px 36px 36px;
+}
+
+.inspiration {
+  justify-content: center;
+  font-weight: 700;
+}
+
+.death {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 12px;
+  align-items: center;
+}
+
+.pips {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.abilities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ability {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ability-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.ability-core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* The modifier in a circle, the score in a tab beside it: the printed sheet's
+   emphasis, since the modifier is the number actually rolled. */
+.ability-mod {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.mod-value {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.ability-score {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.score-value {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* The save's box with its caption, and the save bonus. */
+.save {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+
+.save-tap {
+  justify-content: flex-start;
+}
+
+.c-value {
+  font-weight: 700;
+  color: var(--gold);
+  text-align: right;
+}
+
+.save .c-value {
+  font-size: 17px;
+  padding-right: 4px;
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.group-name {
+  margin: 6px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The proficiency dropdown, the bonus, the skill. */
+.sline {
+  display: grid;
+  grid-template-columns: 84px 36px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 2px 0;
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+}
+
+.c-tier {
+  display: flex;
+  align-items: center;
+}
+
+.c-tier .gc-tier,
+.c-tier select {
+  width: 100%;
+}
+
+.c-name {
+  overflow-wrap: anywhere;
+}
+
+/* Name, base, bonus and the score they make. */
+.parts {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr) 48px;
+  gap: 6px 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.parts input {
+  text-align: center;
+  padding: 4px !important;
+}
+
+.p-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  text-align: left;
+}
+
+.p-score {
+  font-weight: 700;
+}
+
+/* --- combat ---------------------------------------------------------------- */
+
+.narrow {
+  width: 96px;
+  margin: 0 auto;
+}
+
+.narrow input {
+  text-align: center;
+}
+
+/* --- spells ---------------------------------------------------------------- */
+
+.caster-toggle {
+  flex-direction: row;
+  font-weight: 700;
+}
+
+.casting-stats {
+  text-align: center;
+}
+
+.slots {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label, the boxes to tick, then the total the boxes come from - one level to
+   a row. The total's column also holds the marker that says it follows your
+   class. */
+.slot {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 76px;
+  gap: 8px;
+  align-items: center;
+  min-height: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.slot input:not([type=checkbox]) {
+  text-align: center;
+  padding: 4px !important;
+}
+
+.pact {
+  margin-top: 8px;
+  grid-template-columns: 96px minmax(0, 1fr) 76px;
+}
+
+.pact .tiny {
+  white-space: normal;
+}
+
+/* --- gear ------------------------------------------------------------------ */
+
+.coins {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.coins input {
+  padding: 4px 2px !important;
+}
+
+/* --- story ----------------------------------------------------------------- */
+
+/* The character's art, drawn large above their description. Tall like a
+   portrait, capped as on the desktop sheet. */
+.appearance-art {
+  aspect-ratio: 3 / 4;
+  max-height: 460px;
+}

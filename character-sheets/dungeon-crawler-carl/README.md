@@ -26,6 +26,15 @@ rank), spells (with your rank), gear (worn or not) and achievements. Each pick
 opens the entry's full text. The printed-sheet tabs are unchanged, so a crawler
 can be kept either way, or both.
 
+On a phone the sheet has its own layout, `dungeon-crawler-carl.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs: **Main**
+(health, level and floor, mana, evade and damage resistance, buffs and debuffs,
+and the five stats - what a fight reaches for), **Attacks** (a card per attack),
+**Skills** (skills and racial and class abilities), **Gear** (hotlist, gear
+slots, accessories and inventory), **Allies** (pet, mount and sponsors),
+**Life** (kills, clubs, personal space, deity and the rest of the crawler's
+story, then name, race, class and crawler number) and **Catalog**.
+
 ## Content types
 
 For a content pack written for this sheet (`schema_id: dungeon-crawler-carl`),

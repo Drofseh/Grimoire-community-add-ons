@@ -11,17 +11,17 @@ every field type, formula function, layout directive, HTML tag and CSS property
 
 | Sheet | System | Licence | Layout | Content pack |
 | --- | --- | --- | --- | --- |
-| [`dnd-5e-2024`](dnd-5e-2024/) | Dungeons & Dragons 5e (2024) | CC BY 4.0 | Custom | [`dnd-5e-srd`](../content-packs/dnd-5e-srd/) |
-| [`dnd-5e-2014`](dnd-5e-2014/) | Dungeons & Dragons 5e (2014) | CC BY 4.0 | Custom, after the printed 2014 sheet | [`dnd-5e-srd-5-1`](../content-packs/dnd-5e-srd-5-1/) |
-| [`draw-steel`](draw-steel/) | Draw Steel | Draw Steel Creator License | Custom, after the printed sheet | [`draw-steel-core`](../content-packs/draw-steel-core/) |
-| [`pathfinder-2e`](pathfinder-2e/) | Pathfinder 2e | ORC | Custom | [`pf2e-player-core`](../content-packs/pf2e-player-core/) |
-| [`pathfinder-1e`](pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom, after the 2009 sheet | |
+| [`dnd-5e-2024`](dnd-5e-2024/) | Dungeons & Dragons 5e (2024) | CC BY 4.0 | Custom, plus a phone layout | [`dnd-5e-srd`](../content-packs/dnd-5e-srd/) |
+| [`dnd-5e-2014`](dnd-5e-2014/) | Dungeons & Dragons 5e (2014) | CC BY 4.0 | Custom, after the printed 2014 sheet, plus a phone layout | [`dnd-5e-srd-5-1`](../content-packs/dnd-5e-srd-5-1/) |
+| [`draw-steel`](draw-steel/) | Draw Steel | Draw Steel Creator License | Custom, after the printed sheet, plus a phone layout | [`draw-steel-core`](../content-packs/draw-steel-core/) |
+| [`pathfinder-2e`](pathfinder-2e/) | Pathfinder 2e | ORC | Custom, plus a phone layout | [`pf2e-player-core`](../content-packs/pf2e-player-core/) |
+| [`pathfinder-1e`](pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom, after the 2009 sheet, plus a phone layout | |
 | [`call-of-cthulhu-7e`](call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom, plus a phone layout | |
-| [`traveller-2e`](traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom, after J. Brannen's spreadsheet | |
-| [`cosmere-rpg`](cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom | |
-| [`dungeon-crawler-carl`](dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom, after the printed sheet | |
+| [`traveller-2e`](traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom, after J. Brannen's spreadsheet, plus a phone layout | |
+| [`cosmere-rpg`](cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom, plus a phone layout | |
+| [`dungeon-crawler-carl`](dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom, after the printed sheet, plus a phone layout | |
 | [`cairn`](cairn/) | Cairn | CC BY-SA 4.0 | Default, plus a phone layout | |
-| [`basic-fantasy`](basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default | |
+| [`basic-fantasy`](basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default, plus a phone layout | |
 
 The best way to learn the format is to read one of these. `cairn` is the
 smallest complete sheet; `dnd-5e-2024` uses nearly everything.
@@ -131,7 +131,8 @@ one: the same fields in a single column, split across more tabs (Main, Skills,
 Combat, Gear, Notes...), with controls big enough for a thumb. It uses the same
 tags, directives and CSS as the regular layout. See
 [Mobile layout](../docs/character-sheets.md#mobile-layout) for the guidance,
-and `cairn` and `call-of-cthulhu-7e` for examples.
+and any sheet here for examples - `cairn` is the smallest, `call-of-cthulhu-7e`
+a two-page sheet reorganised for a phone.
 
 Checklist for a phone layout:
 

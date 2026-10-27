@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "pathfinder-1e",
   "name": "Pathfinder 1st Edition",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system": "Pathfinder Roleplaying Game (First Edition)",
   "description": "A character sheet for the first edition of the Pathfinder Roleplaying Game, after the 2009 character sheet: abilities with temporary adjustments, AC with touch and flat-footed, saves, initiative, base attack, CMB and CMD with size, every skill with class-skill, armor check penalty and size applied, carrying capacity and loads, and spell save DCs and bonus spells.",
   "author": "hunter-read",
