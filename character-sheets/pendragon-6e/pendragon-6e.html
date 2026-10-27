@@ -223,7 +223,7 @@
           <li class="skill"><g-option field="skill_checks" value="Fashion" label="Check for Fashion" /><span class="s-name">Fashion</span><g-field name="sk_fashion" label="" variant="compact" /></li>
           <li class="skill"><g-option field="skill_checks" value="Recognize" label="Check for Recognize" /><span class="s-name">Recognize</span><g-field name="sk_recognize" label="" variant="compact" /></li>
           <li class="skill"><g-option field="skill_checks" value="First Aid" label="Check for First Aid" /><span class="s-name">First Aid</span><g-field name="sk_first_aid" label="" variant="compact" /></li>
-          <li class="skill"><g-option field="skill_checks" value="Religion" label="Check for Religion" /><span class="s-name slot-name"><span>Religion</span><g-field name="religion_name" label="" /></span><g-field name="sk_religion_skill" label="" variant="compact" /></li>
+          <li class="skill"><g-option field="skill_checks" value="Religion" label="Check for Religion" /><span class="s-name slot-name"><span>Religion</span><g-field name="religion" label="" /></span><g-field name="sk_religion_skill" label="" variant="compact" /></li>
           <li class="skill"><g-option field="skill_checks" value="Flirting" label="Check for Flirting" /><span class="s-name">Flirting</span><g-field name="sk_flirting" label="" variant="compact" /></li>
           <li class="skill"><g-option field="skill_checks" value="Singing" label="Check for Singing" /><span class="s-name">Singing</span><g-field name="sk_singing" label="" variant="compact" /></li>
           <li class="skill"><g-option field="skill_checks" value="Folklore" label="Check for Folklore" /><span class="s-name">Folklore</span><g-field name="sk_folklore" label="" variant="compact" /></li>
@@ -509,44 +509,37 @@
         </ul>
 
         <h3 class="sub-heading">Non-Combat Skills</h3>
-        <div class="spouse-skills-grid">
-          <div class="col">
-            <div class="gstat"><span>Awareness</span><g-field name="spouse_sk_awareness" label="" variant="compact" /></div>
-            <div class="gstat"><span>Chirurgery</span><g-field name="spouse_sk_chirurgery" label="" variant="compact" /></div>
-            <div class="gstat"><span>Compose</span><g-field name="spouse_sk_compose" label="" variant="compact" /></div>
-            <div class="gstat"><span>Courtesy</span><g-field name="spouse_sk_courtesy" label="" variant="compact" /></div>
-            <div class="gstat"><span>Dancing</span><g-field name="spouse_sk_dancing" label="" variant="compact" /></div>
-            <div class="gstat"><span>Falconry</span><g-field name="spouse_sk_falconry" label="" variant="compact" /></div>
-            <div class="gstat"><span>Fashion</span><g-field name="spouse_sk_fashion" label="" variant="compact" /></div>
-            <div class="gstat"><span>First Aid</span><g-field name="spouse_sk_first_aid" label="" variant="compact" /></div>
-            <div class="gstat"><span>Flirting</span><g-field name="spouse_sk_flirting" label="" variant="compact" /></div>
-            <div class="gstat"><span>Folklore</span><g-field name="spouse_sk_folklore" label="" variant="compact" /></div>
-            <div class="gstat"><span>Gaming</span><g-field name="spouse_sk_gaming" label="" variant="compact" /></div>
-          </div>
-          <div class="col">
-            <div class="gstat"><span>Hunting</span><g-field name="spouse_sk_hunting" label="" variant="compact" /></div>
-            <div class="gstat"><span>Industry</span><g-field name="spouse_sk_industry" label="" variant="compact" /></div>
-            <div class="gstat"><span>Intrigue</span><g-field name="spouse_sk_intrigue" label="" variant="compact" /></div>
-            <div class="gstat"><span>Literacy</span><g-field name="spouse_sk_literacy" label="" variant="compact" /></div>
-            <div class="gstat"><span>Orate</span><g-field name="spouse_sk_orate" label="" variant="compact" /></div>
-            <div class="gstat"><span>Play Instrument</span><g-field name="spouse_sk_play" label="" variant="compact" /></div>
-            <div class="gstat"><span>Recognize</span><g-field name="spouse_sk_recognize" label="" variant="compact" /></div>
-            <div class="gstat"><span>Religion</span><g-field name="spouse_sk_religion_skill" label="" variant="compact" /></div>
-            <div class="gstat"><span>Singing</span><g-field name="spouse_sk_singing" label="" variant="compact" /></div>
-            <div class="gstat"><span>Stewardship</span><g-field name="spouse_sk_stewardship" label="" variant="compact" /></div>
-          </div>
-        </div>
+        <ul class="spouse-skills">
+          <li class="spouse-skill"><span class="spouse-skill-name">Awareness</span><g-field name="spouse_sk_awareness" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Hunting</span><g-field name="spouse_sk_hunting" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Chirurgery</span><g-field name="spouse_sk_chirurgery" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Industry</span><g-field name="spouse_sk_industry" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Compose</span><g-field name="spouse_sk_compose" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Intrigue</span><g-field name="spouse_sk_intrigue" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Courtesy</span><g-field name="spouse_sk_courtesy" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Literacy</span><g-field name="spouse_sk_literacy" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Dancing</span><g-field name="spouse_sk_dancing" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Orate</span><g-field name="spouse_sk_orate" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Falconry</span><g-field name="spouse_sk_falconry" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Play Instrument</span><g-field name="spouse_sk_play" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Fashion</span><g-field name="spouse_sk_fashion" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Recognize</span><g-field name="spouse_sk_recognize" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">First Aid</span><g-field name="spouse_sk_first_aid" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="s-name slot-name"><span>Religion</span><g-field name="spouse_religion" label="" /></span><g-field name="spouse_sk_religion_skill" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Flirting</span><g-field name="spouse_sk_flirting" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Singing</span><g-field name="spouse_sk_singing" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Folklore</span><g-field name="spouse_sk_folklore" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Stewardship</span><g-field name="spouse_sk_stewardship" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Gaming</span><g-field name="spouse_sk_gaming" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="s-name slot-name"><g-field name="spouse_sk_extra_1_name" label="" /></span><g-field name="spouse_sk_extra_1" label="" variant="compact" /></li>
+        </ul>
 
         <h3 class="sub-heading">Combat Skills</h3>
-        <div class="spouse-skills-grid">
-          <div class="col">
-            <div class="gstat"><span>Brawling</span><g-field name="spouse_sk_brawling" label="" variant="compact" /></div>
-            <div class="gstat"><span>Horsemanship</span><g-field name="spouse_sk_horsemanship" label="" variant="compact" /></div>
-          </div>
-          <div class="col">
-            <div class="gstat"><span>Siegecraft</span><g-field name="spouse_sk_siegecraft" label="" variant="compact" /></div>
-          </div>
-        </div>
+        <ul class="spouse-skills">
+          <li class="spouse-skill"><span class="spouse-skill-name">Brawling</span><g-field name="spouse_sk_brawling" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Horsemanship</span><g-field name="spouse_sk_horsemanship" label="" variant="compact" /></li>
+          <li class="spouse-skill"><span class="spouse-skill-name">Siegecraft</span><g-field name="spouse_sk_siegecraft" label="" variant="compact" /></li>
+        </ul>
       </g-section>
     </div>
   </div>

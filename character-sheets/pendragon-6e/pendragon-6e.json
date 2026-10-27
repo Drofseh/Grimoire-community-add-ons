@@ -3624,6 +3624,10 @@
       "type": "text",
       "label": "Religion"
     },
+    "spouse_sk_extra_1_name": {
+      "type": "text",
+      "label": "Other skill name"
+    },
     "spouse_str": {
       "type": "number",
       "label": "STR",
@@ -3839,122 +3843,177 @@
     "spouse_sk_awareness": {
       "type": "number",
       "label": "Awareness",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_chirurgery": {
       "type": "number",
       "label": "Chirurgery",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_compose": {
       "type": "number",
       "label": "Compose",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_courtesy": {
       "type": "number",
       "label": "Courtesy",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_dancing": {
       "type": "number",
       "label": "Dancing",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_falconry": {
       "type": "number",
       "label": "Falconry",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_fashion": {
       "type": "number",
       "label": "Fashion",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_first_aid": {
       "type": "number",
       "label": "First Aid",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_flirting": {
       "type": "number",
       "label": "Flirting",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_folklore": {
       "type": "number",
       "label": "Folklore",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_gaming": {
       "type": "number",
       "label": "Gaming",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_hunting": {
       "type": "number",
       "label": "Hunting",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_industry": {
       "type": "number",
       "label": "Industry",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_intrigue": {
       "type": "number",
       "label": "Intrigue",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_literacy": {
       "type": "number",
       "label": "Literacy",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_orate": {
       "type": "number",
       "label": "Orate",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_play": {
       "type": "number",
       "label": "Play Instrument",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_recognize": {
       "type": "number",
       "label": "Recognize",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_religion_skill": {
       "type": "number",
       "label": "Religion",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_singing": {
       "type": "number",
       "label": "Singing",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_stewardship": {
       "type": "number",
       "label": "Stewardship",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
+    },
+    "spouse_sk_extra_1": {
+      "type": "number",
+      "label": "Other skill",
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_brawling": {
       "type": "number",
       "label": "Brawling",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_horsemanship": {
       "type": "number",
       "label": "Horsemanship",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_sk_siegecraft": {
       "type": "number",
       "label": "Siegecraft",
-      "min": 0
+      "min": 0,
+      "default": 0,
+      "max": 40
     },
     "spouse_trait_checks": {
       "type": "multiselect",

@@ -316,6 +316,40 @@
   gap: 10px;
 }
 
+/* Spouse skills - label and input on the same line */
+.spouse-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 10px;
+}
+
+.spouse-skill {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 20px;
+  align-items: center;
+  font-size: 16px;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spouse-skill-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.spouse-skill input {
+  width: 50px;
+  max-width: 50px;
+  font-size: 16px;
+  text-align: center;
+}
+
 .spouse-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
