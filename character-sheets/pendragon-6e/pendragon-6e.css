@@ -328,7 +328,7 @@
 
 .spouse-skill {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 20px;
   align-items: center;
   font-size: 16px;
@@ -341,6 +341,26 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
+}
+
+/* Spouse skill name slot - for Religion / Extra Skill with embedded name field */
+.spouse-skill-name-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.spouse-skill-name-slot > span:first-child {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.spouse-skill-name-slot input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: 90px !important;
 }
 
 .spouse-skill input {
