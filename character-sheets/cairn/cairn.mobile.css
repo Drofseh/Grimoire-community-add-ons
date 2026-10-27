@@ -1,0 +1,157 @@
+/* Cairn, on a phone. One column of cards in the app's own tokens, so a
+   theme restyles it. Controls are sized for a thumb rather than a cursor. */
+
+.cairn-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Three short page names fit one row; wrap rather than run off the screen. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. The renderer sizes its controls inline, hence
+   !important. */
+.cairn-m input,
+.cairn-m select,
+.cairn-m textarea {
+  font-size: 16px !important;
+}
+
+.cairn-m input:not([type=checkbox]),
+.cairn-m select {
+  min-height: 44px;
+}
+
+.cairn-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.box-heading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.tiny {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+/* A field on an underline with its caption beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+}
+
+.line input {
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.pair,
+.trio {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  text-align: center;
+}
+
+.stat input {
+  font-weight: 700;
+}
+
+.big-input input {
+  color: var(--gold);
+  font-size: 22px !important;
+}
+
+.big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.big small {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.pips {
+  display: flex;
+  justify-content: center;
+}
+
+.pips .gc-pips {
+  gap: 10px !important;
+}
+
+/* A worked-out value with its caption to the left. */
+.readout {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+  text-align: right;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  cursor: pointer;
+}

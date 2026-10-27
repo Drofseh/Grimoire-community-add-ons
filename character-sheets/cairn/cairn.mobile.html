@@ -1,0 +1,65 @@
+<!-- Cairn, on a phone.
+     The desktop sheet is the default sectioned layout; on a narrow screen the
+     same five sections become three pages, so each fits without scrolling:
+     the character and their Hit Protection, what they carry, and notes. HP is
+     drawn twice on purpose - as a number to type and as boxes to tick off, the
+     quicker way to take a hit at the table. -->
+<div class="cairn-m">
+<g-tabs>
+
+<g-tab title="Main">
+
+  <section class="box">
+    <div class="line name"><g-field name="hero_name" label="" /><span class="tiny">Name</span></div>
+    <div class="line"><g-field name="background" label="" /><span class="tiny">Background</span></div>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Abilities</h3>
+    <div class="trio">
+      <div class="stat"><span class="tiny">STR</span><g-field name="strength" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">DEX</span><g-field name="dexterity" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">WIL</span><g-field name="willpower" label="" variant="compact" /></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Hit Protection</h3>
+    <div class="trio">
+      <div class="stat big-input"><span class="tiny">HP</span><g-field name="hp" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Max HP</span><g-field name="hp_max" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Armour</span><g-field name="armor" label="" variant="compact" /></div>
+    </div>
+    <div class="pips"><g-pips count="hp_max" value="hp" label="HP" /></div>
+    <div class="readout"><span class="tiny">At 0 HP</span><g-value name="hp_state" /></div>
+    <div class="readout"><span class="tiny">Damage reduction</span><g-value name="armor_note" /></div>
+    <label class="opt"><g-field name="deprived" label="" />Deprived</label>
+  </section>
+
+</g-tab>
+
+<g-tab title="Gear">
+
+  <section class="box">
+    <div class="pair">
+      <div class="stat"><span class="tiny">Gold</span><g-field name="gold" label="" variant="compact" /></div>
+      <div class="stat"><span class="tiny">Slots used</span><span class="big"><g-value name="slots_used" /><small> / 10</small></span></div>
+    </div>
+    <div class="readout"><span class="tiny">Load</span><g-value name="is_overloaded" /></div>
+  </section>
+
+  <section class="box">
+    <h3 class="box-heading">Inventory</h3>
+    <g-field name="inventory" label="" />
+  </section>
+
+</g-tab>
+
+<g-tab title="Notes">
+
+  <section class="box"><g-field name="notes" label="" /></section>
+
+</g-tab>
+
+</g-tabs>
+</div>

@@ -1,0 +1,342 @@
+/* Call of Cthulhu 7th Edition investigator sheet, on a phone.
+   The desktop sheet's vocabulary - bordered boxes, small uppercase captions,
+   gold characteristic names, half and fifth stacked beside a value - in one
+   column, with controls sized for a thumb. Every colour is an app token, so a
+   theme restyles it, and none of it is Chaosium's trade dress. It stands
+   alone: nothing here relies on the desktop stylesheet. */
+
+.sheet-coc-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Six pages: wrap the page names, and tighten them so they usually fit one
+   row. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gc-field-readonly > div {
+  white-space: pre-line;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-coc-m input,
+.sheet-coc-m select,
+.sheet-coc-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-coc-m input:not([type=checkbox]),
+.sheet-coc-m select {
+  min-height: 44px;
+}
+
+.sheet-coc-m input[type=checkbox] {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.box-heading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.tiny {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.big {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.big-input input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.cell-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* A value's half above its fifth. */
+.hf {
+  display: grid;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.hf.center {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* A field on an underline with its caption beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+
+.line input,
+.line select {
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* --- main: pools, conditions, characteristics ------------------------------ */
+
+.pools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pool.wide {
+  grid-column: 1 / -1;
+}
+
+.pool-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.pool-cells {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 8px;
+  text-align: center;
+}
+
+.pool-cells.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.opts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+  font-size: 14px;
+}
+
+.chars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+/* Name, the value, and its half and fifth. */
+.char {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 26px;
+  gap: 6px;
+  align-items: center;
+}
+
+.char input {
+  font-weight: 700;
+}
+
+.c-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--gold);
+}
+
+.c-sub {
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Improvement box, name, occupation box, value, half and fifth. */
+.skill {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 36px 56px 26px;
+  gap: 4px;
+  align-items: center;
+  padding: 2px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.skill.head {
+  border-top: none;
+  text-align: center;
+}
+
+.skill.head .tiny:nth-child(2) {
+  text-align: left;
+}
+
+/* The whole cell is the checkbox's touch target. */
+.tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.base {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.s-name {
+  overflow-wrap: anywhere;
+}
+
+.skill input {
+  text-align: center;
+  padding: 4px 2px !important;
+}
+
+.slot-name input {
+  text-align: left;
+  padding: 4px 6px !important;
+}
+
+.bases,
+.points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 12px;
+  text-align: center;
+}
+
+.bases {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* --- combat, story --------------------------------------------------------- */
+
+.cstats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  text-align: center;
+}
+
+.brawl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px 8px;
+  text-align: center;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Square like the desktop sheet's photograph. With no art it draws nothing
+   and the name takes the row. */
+.investigator-portrait {
+  flex: 0 0 96px;
+  aspect-ratio: 1 / 1;
+}
+
+.id-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+.id-grid .wide {
+  grid-column: 1 / -1;
+}

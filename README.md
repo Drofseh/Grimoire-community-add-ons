@@ -114,11 +114,11 @@ can use.
 | [Draw Steel](character-sheets/draw-steel/) | Draw Steel | Draw Steel Creator License | Custom |
 | [Pathfinder 2e](character-sheets/pathfinder-2e/) | Pathfinder 2e | ORC | Custom |
 | [Pathfinder 1e](character-sheets/pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom |
-| [Call of Cthulhu 7e](character-sheets/call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom |
+| [Call of Cthulhu 7e](character-sheets/call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom, plus a phone layout |
 | [Traveller](character-sheets/traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom |
 | [Cosmere RPG](character-sheets/cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom |
 | [Dungeon Crawler Carl](character-sheets/dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom |
-| [Cairn](character-sheets/cairn/) | Cairn | CC BY-SA 4.0 | Default |
+| [Cairn](character-sheets/cairn/) | Cairn | CC BY-SA 4.0 | Default, plus a phone layout |
 | [Basic Fantasy](character-sheets/basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default |
 
 A sheet describes its fields, the values derived from them, and how it is drawn
