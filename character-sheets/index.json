@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-25T22:33:15Z",
+  "generated": "2026-10-27T04:05:01Z",
   "sheets": [
     {
       "id": "basic-fantasy",
@@ -156,18 +156,18 @@
     {
       "id": "dungeon-crawler-carl",
       "name": "Dungeon Crawler Carl",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "character-sheets/dungeon-crawler-carl/dungeon-crawler-carl.json",
-      "sha256": "08f0fe0433112befdff896c71a0795889682249b8bc167f8114d1f6ca3c2430c",
+      "sha256": "8834f39a63a7a886a48b458960b6b33415991e5bb009086cfda37fe092c810ce",
       "custom_layout": true,
       "custom_mobile_layout": false,
-      "field_count": 123,
+      "field_count": 130,
       "layout_path": "character-sheets/dungeon-crawler-carl/dungeon-crawler-carl.html",
-      "layout_sha256": "2a3a0649540cd7dc337ce3c8ef2be1f635c41e9c2882fb4df00c41370605190e",
+      "layout_sha256": "cf0b3b9f04306d9df59d485a831a2ed4bfd00345e7f10ccbb337b71066b0c6dc",
       "styles_path": "character-sheets/dungeon-crawler-carl/dungeon-crawler-carl.css",
       "styles_sha256": "0ee56a53175541436965683a258e49c996b124065d028517af9aa55002f00f30",
       "system": "Dungeon Crawler Carl Roleplaying Game",
-      "description": "An unofficial crawler sheet for the Dungeon Crawler Carl Roleplaying Game: five stats enhanced and unenhanced, health in tenths, evade and damage resistance totals, mana, buffs and attacks, the hotlist and gear slots, skills, inventory, pet and mount, and sponsors. Structure only - bring the rules from your book. Not affiliated with or endorsed by Renegade Game Studios or Matt Dinniman.",
+      "description": "An unofficial crawler sheet for the Dungeon Crawler Carl Roleplaying Game: five stats enhanced and unenhanced, health in tenths, evade and damage resistance totals, mana, buffs and attacks, the hotlist and gear slots, skills, inventory, pet and mount, and sponsors, plus a catalog tab that picks races, classes, deities, skills, spells, gear and achievements from an installed content pack. Structure only - bring the rules from your book. Not affiliated with or endorsed by Renegade Game Studios or Matt Dinniman.",
       "author": "hunter-read",
       "homepage": "https://renegadegamestudios.com/dungeon-crawler-carl/"
     },
