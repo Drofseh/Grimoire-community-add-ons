@@ -4158,6 +4158,576 @@
       "type": "number",
       "label": "Station",
       "min": 0
+    },
+    "squire1_str": {
+      "type": "number",
+      "label": "STR",
+      "min": 0
+    },
+    "squire1_dex": {
+      "type": "number",
+      "label": "DEX",
+      "min": 0
+    },
+    "squire1_con": {
+      "type": "number",
+      "label": "CON",
+      "min": 0
+    },
+    "squire1_siz": {
+      "type": "number",
+      "label": "SIZ",
+      "min": 0
+    },
+    "squire1_app": {
+      "type": "number",
+      "label": "APP",
+      "min": 0
+    },
+    "squire2_str": {
+      "type": "number",
+      "label": "STR",
+      "min": 0
+    },
+    "squire2_dex": {
+      "type": "number",
+      "label": "DEX",
+      "min": 0
+    },
+    "squire2_con": {
+      "type": "number",
+      "label": "CON",
+      "min": 0
+    },
+    "squire2_siz": {
+      "type": "number",
+      "label": "SIZ",
+      "min": 0
+    },
+    "squire2_app": {
+      "type": "number",
+      "label": "APP",
+      "min": 0
+    },
+    "squire3_str": {
+      "type": "number",
+      "label": "STR",
+      "min": 0
+    },
+    "squire3_dex": {
+      "type": "number",
+      "label": "DEX",
+      "min": 0
+    },
+    "squire3_con": {
+      "type": "number",
+      "label": "CON",
+      "min": 0
+    },
+    "squire3_siz": {
+      "type": "number",
+      "label": "SIZ",
+      "min": 0
+    },
+    "squire3_app": {
+      "type": "number",
+      "label": "APP",
+      "min": 0
+    },
+    "squire1_sk_awareness": {
+      "type": "number",
+      "label": "Awareness",
+      "min": 0
+    },
+    "squire1_sk_battle": {
+      "type": "number",
+      "label": "Battle",
+      "min": 0
+    },
+    "squire1_sk_bow": {
+      "type": "number",
+      "label": "Bow",
+      "min": 0
+    },
+    "squire1_sk_brawling": {
+      "type": "number",
+      "label": "Brawling",
+      "min": 0
+    },
+    "squire1_sk_charge": {
+      "type": "number",
+      "label": "Charge",
+      "min": 0
+    },
+    "squire1_sk_chirurgery": {
+      "type": "number",
+      "label": "Chirurgery",
+      "min": 0
+    },
+    "squire1_sk_compose": {
+      "type": "number",
+      "label": "Compose",
+      "min": 0
+    },
+    "squire1_sk_courtesy": {
+      "type": "number",
+      "label": "Courtesy",
+      "min": 0
+    },
+    "squire1_sk_crossbow": {
+      "type": "number",
+      "label": "Crossbow",
+      "min": 0
+    },
+    "squire1_sk_dancing": {
+      "type": "number",
+      "label": "Dancing",
+      "min": 0
+    },
+    "squire1_sk_falconry": {
+      "type": "number",
+      "label": "Falconry",
+      "min": 0
+    },
+    "squire1_sk_fashion": {
+      "type": "number",
+      "label": "Fashion",
+      "min": 0
+    },
+    "squire1_sk_first_aid": {
+      "type": "number",
+      "label": "First Aid",
+      "min": 0
+    },
+    "squire1_sk_flirting": {
+      "type": "number",
+      "label": "Flirting",
+      "min": 0
+    },
+    "squire1_sk_folklore": {
+      "type": "number",
+      "label": "Folklore",
+      "min": 0
+    },
+    "squire1_sk_gaming": {
+      "type": "number",
+      "label": "Gaming",
+      "min": 0
+    },
+    "squire1_sk_hafted": {
+      "type": "number",
+      "label": "Hafted",
+      "min": 0
+    },
+    "squire1_sk_hafted_2h": {
+      "type": "number",
+      "label": "2H Hafted",
+      "min": 0
+    },
+    "squire1_sk_horsemanship": {
+      "type": "number",
+      "label": "Horsemanship",
+      "min": 0
+    },
+    "squire1_sk_hunting": {
+      "type": "number",
+      "label": "Hunting",
+      "min": 0
+    },
+    "squire1_sk_industry": {
+      "type": "number",
+      "label": "Industry",
+      "min": 0
+    },
+    "squire1_sk_intrigue": {
+      "type": "number",
+      "label": "Intrigue",
+      "min": 0
+    },
+    "squire1_sk_literacy": {
+      "type": "number",
+      "label": "Literacy",
+      "min": 0
+    },
+    "squire1_sk_orate": {
+      "type": "number",
+      "label": "Orate",
+      "min": 0
+    },
+    "squire1_sk_play": {
+      "type": "number",
+      "label": "Play Instrument",
+      "min": 0
+    },
+    "squire1_sk_recognize": {
+      "type": "number",
+      "label": "Recognize",
+      "min": 0
+    },
+    "squire1_sk_religion_skill": {
+      "type": "number",
+      "label": "Religion",
+      "min": 0
+    },
+    "squire1_sk_siegecraft": {
+      "type": "number",
+      "label": "Siegecraft",
+      "min": 0
+    },
+    "squire1_sk_singing": {
+      "type": "number",
+      "label": "Singing",
+      "min": 0
+    },
+    "squire1_sk_spear": {
+      "type": "number",
+      "label": "Spear",
+      "min": 0
+    },
+    "squire1_sk_stewardship": {
+      "type": "number",
+      "label": "Stewardship",
+      "min": 0
+    },
+    "squire1_sk_sword": {
+      "type": "number",
+      "label": "Sword",
+      "min": 0
+    },
+    "squire1_sk_thrown": {
+      "type": "number",
+      "label": "Thrown Weapon",
+      "min": 0
+    },
+    "squire2_sk_awareness": {
+      "type": "number",
+      "label": "Awareness",
+      "min": 0
+    },
+    "squire2_sk_battle": {
+      "type": "number",
+      "label": "Battle",
+      "min": 0
+    },
+    "squire2_sk_bow": {
+      "type": "number",
+      "label": "Bow",
+      "min": 0
+    },
+    "squire2_sk_brawling": {
+      "type": "number",
+      "label": "Brawling",
+      "min": 0
+    },
+    "squire2_sk_charge": {
+      "type": "number",
+      "label": "Charge",
+      "min": 0
+    },
+    "squire2_sk_chirurgery": {
+      "type": "number",
+      "label": "Chirurgery",
+      "min": 0
+    },
+    "squire2_sk_compose": {
+      "type": "number",
+      "label": "Compose",
+      "min": 0
+    },
+    "squire2_sk_courtesy": {
+      "type": "number",
+      "label": "Courtesy",
+      "min": 0
+    },
+    "squire2_sk_crossbow": {
+      "type": "number",
+      "label": "Crossbow",
+      "min": 0
+    },
+    "squire2_sk_dancing": {
+      "type": "number",
+      "label": "Dancing",
+      "min": 0
+    },
+    "squire2_sk_falconry": {
+      "type": "number",
+      "label": "Falconry",
+      "min": 0
+    },
+    "squire2_sk_fashion": {
+      "type": "number",
+      "label": "Fashion",
+      "min": 0
+    },
+    "squire2_sk_first_aid": {
+      "type": "number",
+      "label": "First Aid",
+      "min": 0
+    },
+    "squire2_sk_flirting": {
+      "type": "number",
+      "label": "Flirting",
+      "min": 0
+    },
+    "squire2_sk_folklore": {
+      "type": "number",
+      "label": "Folklore",
+      "min": 0
+    },
+    "squire2_sk_gaming": {
+      "type": "number",
+      "label": "Gaming",
+      "min": 0
+    },
+    "squire2_sk_hafted": {
+      "type": "number",
+      "label": "Hafted",
+      "min": 0
+    },
+    "squire2_sk_hafted_2h": {
+      "type": "number",
+      "label": "2H Hafted",
+      "min": 0
+    },
+    "squire2_sk_horsemanship": {
+      "type": "number",
+      "label": "Horsemanship",
+      "min": 0
+    },
+    "squire2_sk_hunting": {
+      "type": "number",
+      "label": "Hunting",
+      "min": 0
+    },
+    "squire2_sk_industry": {
+      "type": "number",
+      "label": "Industry",
+      "min": 0
+    },
+    "squire2_sk_intrigue": {
+      "type": "number",
+      "label": "Intrigue",
+      "min": 0
+    },
+    "squire2_sk_literacy": {
+      "type": "number",
+      "label": "Literacy",
+      "min": 0
+    },
+    "squire2_sk_orate": {
+      "type": "number",
+      "label": "Orate",
+      "min": 0
+    },
+    "squire2_sk_play": {
+      "type": "number",
+      "label": "Play Instrument",
+      "min": 0
+    },
+    "squire2_sk_recognize": {
+      "type": "number",
+      "label": "Recognize",
+      "min": 0
+    },
+    "squire2_sk_religion_skill": {
+      "type": "number",
+      "label": "Religion",
+      "min": 0
+    },
+    "squire2_sk_siegecraft": {
+      "type": "number",
+      "label": "Siegecraft",
+      "min": 0
+    },
+    "squire2_sk_singing": {
+      "type": "number",
+      "label": "Singing",
+      "min": 0
+    },
+    "squire2_sk_spear": {
+      "type": "number",
+      "label": "Spear",
+      "min": 0
+    },
+    "squire2_sk_stewardship": {
+      "type": "number",
+      "label": "Stewardship",
+      "min": 0
+    },
+    "squire2_sk_sword": {
+      "type": "number",
+      "label": "Sword",
+      "min": 0
+    },
+    "squire2_sk_thrown": {
+      "type": "number",
+      "label": "Thrown Weapon",
+      "min": 0
+    },
+    "squire3_sk_awareness": {
+      "type": "number",
+      "label": "Awareness",
+      "min": 0
+    },
+    "squire3_sk_battle": {
+      "type": "number",
+      "label": "Battle",
+      "min": 0
+    },
+    "squire3_sk_bow": {
+      "type": "number",
+      "label": "Bow",
+      "min": 0
+    },
+    "squire3_sk_brawling": {
+      "type": "number",
+      "label": "Brawling",
+      "min": 0
+    },
+    "squire3_sk_charge": {
+      "type": "number",
+      "label": "Charge",
+      "min": 0
+    },
+    "squire3_sk_chirurgery": {
+      "type": "number",
+      "label": "Chirurgery",
+      "min": 0
+    },
+    "squire3_sk_compose": {
+      "type": "number",
+      "label": "Compose",
+      "min": 0
+    },
+    "squire3_sk_courtesy": {
+      "type": "number",
+      "label": "Courtesy",
+      "min": 0
+    },
+    "squire3_sk_crossbow": {
+      "type": "number",
+      "label": "Crossbow",
+      "min": 0
+    },
+    "squire3_sk_dancing": {
+      "type": "number",
+      "label": "Dancing",
+      "min": 0
+    },
+    "squire3_sk_falconry": {
+      "type": "number",
+      "label": "Falconry",
+      "min": 0
+    },
+    "squire3_sk_fashion": {
+      "type": "number",
+      "label": "Fashion",
+      "min": 0
+    },
+    "squire3_sk_first_aid": {
+      "type": "number",
+      "label": "First Aid",
+      "min": 0
+    },
+    "squire3_sk_flirting": {
+      "type": "number",
+      "label": "Flirting",
+      "min": 0
+    },
+    "squire3_sk_folklore": {
+      "type": "number",
+      "label": "Folklore",
+      "min": 0
+    },
+    "squire3_sk_gaming": {
+      "type": "number",
+      "label": "Gaming",
+      "min": 0
+    },
+    "squire3_sk_hafted": {
+      "type": "number",
+      "label": "Hafted",
+      "min": 0
+    },
+    "squire3_sk_hafted_2h": {
+      "type": "number",
+      "label": "2H Hafted",
+      "min": 0
+    },
+    "squire3_sk_horsemanship": {
+      "type": "number",
+      "label": "Horsemanship",
+      "min": 0
+    },
+    "squire3_sk_hunting": {
+      "type": "number",
+      "label": "Hunting",
+      "min": 0
+    },
+    "squire3_sk_industry": {
+      "type": "number",
+      "label": "Industry",
+      "min": 0
+    },
+    "squire3_sk_intrigue": {
+      "type": "number",
+      "label": "Intrigue",
+      "min": 0
+    },
+    "squire3_sk_literacy": {
+      "type": "number",
+      "label": "Literacy",
+      "min": 0
+    },
+    "squire3_sk_orate": {
+      "type": "number",
+      "label": "Orate",
+      "min": 0
+    },
+    "squire3_sk_play": {
+      "type": "number",
+      "label": "Play Instrument",
+      "min": 0
+    },
+    "squire3_sk_recognize": {
+      "type": "number",
+      "label": "Recognize",
+      "min": 0
+    },
+    "squire3_sk_religion_skill": {
+      "type": "number",
+      "label": "Religion",
+      "min": 0
+    },
+    "squire3_sk_siegecraft": {
+      "type": "number",
+      "label": "Siegecraft",
+      "min": 0
+    },
+    "squire3_sk_singing": {
+      "type": "number",
+      "label": "Singing",
+      "min": 0
+    },
+    "squire3_sk_spear": {
+      "type": "number",
+      "label": "Spear",
+      "min": 0
+    },
+    "squire3_sk_stewardship": {
+      "type": "number",
+      "label": "Stewardship",
+      "min": 0
+    },
+    "squire3_sk_sword": {
+      "type": "number",
+      "label": "Sword",
+      "min": 0
+    },
+    "squire3_sk_thrown": {
+      "type": "number",
+      "label": "Thrown Weapon",
+      "min": 0
     }
   },
   "computed": {
