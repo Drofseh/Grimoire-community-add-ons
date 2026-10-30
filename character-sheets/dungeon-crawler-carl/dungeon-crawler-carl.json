@@ -2,9 +2,9 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "dungeon-crawler-carl",
   "name": "Dungeon Crawler Carl",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "system": "Dungeon Crawler Carl Roleplaying Game",
-  "description": "An unofficial crawler sheet for the Dungeon Crawler Carl Roleplaying Game: five stats enhanced and unenhanced, health in tenths, evade and damage resistance totals, mana, buffs and attacks, the hotlist and gear slots, skills, inventory, pet and mount, and sponsors. Structure only - bring the rules from your book. Not affiliated with or endorsed by Renegade Game Studios or Matt Dinniman.",
+  "description": "An unofficial crawler sheet for the Dungeon Crawler Carl Roleplaying Game: five stats enhanced and unenhanced, health in tenths, evade and damage resistance totals, mana, buffs and attacks, the hotlist and gear slots, skills, inventory, pet and mount, and sponsors, plus a catalog tab that picks races, classes, deities, skills, spells, gear and achievements from an installed content pack. Structure only - bring the rules from your book. Not affiliated with or endorsed by Renegade Game Studios or Matt Dinniman.",
   "author": "hunter-read",
   "homepage": "https://renegadegamestudios.com/dungeon-crawler-carl/",
   "name_field": "hero_name",
@@ -724,6 +724,112 @@
       "type": "textarea",
       "label": "Sponsor 3",
       "rows": 6
+    },
+    "race_entry": {
+      "type": "content_ref",
+      "label": "Race (catalog)",
+      "content_type": "race",
+      "allow_freeform": true
+    },
+    "class_entry": {
+      "type": "content_ref",
+      "label": "Class (catalog)",
+      "content_type": "class",
+      "allow_freeform": true
+    },
+    "deity_entry": {
+      "type": "content_ref",
+      "label": "Deity (catalog)",
+      "content_type": "deity",
+      "allow_freeform": true
+    },
+    "skill_entries": {
+      "type": "content_list",
+      "label": "Skills (catalog)",
+      "content_type": "skill",
+      "allow_freeform": true,
+      "add_label": "Add a skill",
+      "empty_text": "No skills yet.",
+      "per_entry_fields": {
+        "rank": {
+          "type": "number",
+          "label": "Rank",
+          "min": 0
+        }
+      },
+      "display_columns": [
+        {
+          "key": "kind",
+          "label": "Kind"
+        },
+        {
+          "key": "stat",
+          "label": "Stat"
+        }
+      ]
+    },
+    "spells": {
+      "type": "content_list",
+      "label": "Spells",
+      "content_type": "spell",
+      "allow_freeform": true,
+      "add_label": "Add a spell",
+      "empty_text": "No spells yet.",
+      "per_entry_fields": {
+        "rank": {
+          "type": "number",
+          "label": "Rank",
+          "min": 0
+        }
+      },
+      "display_columns": [
+        {
+          "key": "mana_cost",
+          "label": "Mana"
+        },
+        {
+          "key": "range",
+          "label": "Range"
+        },
+        {
+          "key": "cooldown",
+          "label": "Cooldown"
+        }
+      ]
+    },
+    "gear_entries": {
+      "type": "content_list",
+      "label": "Gear (catalog)",
+      "content_type": "gear",
+      "allow_freeform": true,
+      "add_label": "Add gear",
+      "empty_text": "No gear yet.",
+      "per_entry_fields": {
+        "equipped": {
+          "type": "checkbox",
+          "label": "Worn"
+        }
+      },
+      "display_columns": [
+        {
+          "key": "slot",
+          "label": "Slot"
+        }
+      ]
+    },
+    "achievements": {
+      "type": "content_list",
+      "label": "Achievements",
+      "content_type": "achievement",
+      "allow_freeform": true,
+      "add_label": "Add an achievement",
+      "empty_text": "No achievements yet.",
+      "display_columns": [
+        {
+          "key": "reward",
+          "label": "Reward"
+        }
+      ]
     }
   },
   "computed": {
@@ -777,5 +883,321 @@
       "rule": "accessory_count <= 10",
       "message": "More than ten accessories."
     }
-  ]
+  ],
+  "content_types": {
+    "race": {
+      "label": "Race",
+      "label_plural": "Races",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "description"
+      ],
+      "filter_fields": [
+        "origin"
+      ],
+      "compact_display": "{origin} · {size}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "origin": {
+          "type": "text",
+          "label": "Origin"
+        },
+        "size": {
+          "type": "text",
+          "label": "Size"
+        },
+        "prerequisites": {
+          "type": "text",
+          "label": "Prerequisites"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "class": {
+      "label": "Class",
+      "label_plural": "Classes",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "class_type",
+        "description"
+      ],
+      "filter_fields": [
+        "class_type"
+      ],
+      "compact_display": "{class_type}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "class_type": {
+          "type": "text",
+          "label": "Class Type"
+        },
+        "prerequisites": {
+          "type": "text",
+          "label": "Prerequisites"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "deity": {
+      "label": "Deity",
+      "label_plural": "Deities",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "title",
+        "description"
+      ],
+      "filter_fields": [
+        "signature_stat"
+      ],
+      "compact_display": "{title}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "title": {
+          "type": "text",
+          "label": "Title"
+        },
+        "temple": {
+          "type": "text",
+          "label": "Temple"
+        },
+        "signature_skills": {
+          "type": "text",
+          "label": "Signature Skills"
+        },
+        "signature_stat": {
+          "type": "text",
+          "label": "Signature Stat"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "skill": {
+      "label": "Skill",
+      "label_plural": "Skills",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "keywords",
+        "description"
+      ],
+      "filter_fields": [
+        "kind",
+        "category",
+        "stat"
+      ],
+      "compact_display": "{kind} · {keywords}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "kind": {
+          "type": "text",
+          "label": "Kind"
+        },
+        "category": {
+          "type": "text",
+          "label": "Category"
+        },
+        "keywords": {
+          "type": "text",
+          "label": "Keywords"
+        },
+        "stat": {
+          "type": "text",
+          "label": "Stat"
+        },
+        "ai_favor": {
+          "type": "text",
+          "label": "AI Favor"
+        },
+        "base_damage": {
+          "type": "text",
+          "label": "Base Damage"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "spell": {
+      "label": "Spell",
+      "label_plural": "Spells",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "keywords",
+        "favored",
+        "description"
+      ],
+      "filter_fields": [
+        "favored"
+      ],
+      "compact_display": "{keywords} · Mana {mana_cost} · {range}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "keywords": {
+          "type": "text",
+          "label": "Keywords"
+        },
+        "favored": {
+          "type": "text",
+          "label": "Favored"
+        },
+        "mana_cost": {
+          "type": "text",
+          "label": "Mana Cost"
+        },
+        "range": {
+          "type": "text",
+          "label": "Range"
+        },
+        "duration": {
+          "type": "text",
+          "label": "Duration"
+        },
+        "cooldown": {
+          "type": "text",
+          "label": "Cooldown"
+        },
+        "base_damage": {
+          "type": "text",
+          "label": "Base Damage"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "gear": {
+      "label": "Gear",
+      "label_plural": "Gear",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "description"
+      ],
+      "filter_fields": [
+        "slot",
+        "found_in",
+        "book"
+      ],
+      "compact_display": "{gear_slot} · {found_in}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "slot": {
+          "type": "text",
+          "label": "Slot"
+        },
+        "gear_slot": {
+          "type": "text",
+          "label": "Gear Slot"
+        },
+        "found_in": {
+          "type": "text",
+          "label": "Found In"
+        },
+        "book": {
+          "type": "text",
+          "label": "Book"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    },
+    "achievement": {
+      "label": "Achievement",
+      "label_plural": "Achievements",
+      "identity_field": "name",
+      "sort_default": [
+        "name"
+      ],
+      "search_fields": [
+        "name",
+        "location",
+        "reward",
+        "description"
+      ],
+      "filter_fields": [
+        "floor",
+        "location"
+      ],
+      "compact_display": "{location} · {reward}",
+      "fields": {
+        "name": {
+          "type": "text",
+          "label": "Name"
+        },
+        "location": {
+          "type": "text",
+          "label": "Location"
+        },
+        "floor": {
+          "type": "text",
+          "label": "Floor"
+        },
+        "reward": {
+          "type": "text",
+          "label": "Reward"
+        },
+        "contents": {
+          "type": "text",
+          "label": "Contents"
+        },
+        "description": {
+          "type": "textarea",
+          "label": "Description"
+        }
+      }
+    }
+  }
 }

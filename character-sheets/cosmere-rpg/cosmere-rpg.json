@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "cosmere-rpg",
   "name": "Cosmere RPG",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "grimoire_min_version": "1.10.0",
   "system": "Cosmere Roleplaying Game",
   "description": "A character sheet for Brandon Sanderson's Cosmere Roleplaying Game, after the Mistborn campaign setting sheet: six attributes and the three defenses they make, health, focus and Investiture, the eighteen skills with their ranks and modifiers, lifting capacity, movement, recovery die and senses range, and purpose, obstacle and goals.",

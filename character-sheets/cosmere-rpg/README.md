@@ -19,6 +19,15 @@ Two pages, as printed:
 - **Story & Gear** - appearance, with the character's art drawn large, armor and equipment, **boxings**, purpose,
   obstacle, nine **goals** with three progress boxes each, notes and connections
 
+On a phone the sheet has its own layout, `cosmere-rpg.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs:
+**Main** (health, deflect, focus and Investiture, the three realms with their
+attributes and defenses, and conditions - what play reaches for), **Skills**
+(the eighteen skills by realm and the three additional ones, then attribute
+points and skill ranks), **Combat** (the derived statistics and weapons),
+**Talents** (with expertises), **Gear**, **Story** (identity, art, appearance,
+purpose, obstacle and goals) and **Notes** (with connections).
+
 ### The arithmetic
 
 - **Health** starts at 10 + Strength, then rises 5 a level to level 5, 4 to 10, 3

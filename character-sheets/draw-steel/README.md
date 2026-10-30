@@ -33,6 +33,16 @@ Four pages in the printed sheet's order:
   warning past the three you can carry safely, consumables, and **projects**
   with their assigned hero or follower, characteristic and goal
 
+On a phone the sheet has its own layout, `draw-steel.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs:
+**Main** (stamina, recoveries, the heroic resource and surges,
+characteristics, potency, conditions and victories - what a turn reaches for),
+**Abilities** (the ability cards, then the hero token and turn reference),
+**Class** (kit and its modifiers, class features and domains), **Skills** (the
+five skill lists, then ancestry traits and perks), **Gear** (titles, trinkets,
+leveled treasures, consumables and projects), **Story** (name and picks,
+wealth, renown and XP, culture, career and complication) and **Notes**.
+
 ## With the Draw Steel: Heroes pack
 
 Install the [`draw-steel-core`](../../content-packs/draw-steel-core/) pack and picks

@@ -30,6 +30,13 @@ art sits beside their details, where the printed sheet keeps a photograph.
   Build, Dodge and damage bonus beside them
 - My story, backstory, gear, wealth, fellow investigators and notes
 
+On a phone the sheet has its own layout, `call-of-cthulhu-7e.mobile.html` and
+`.mobile.css`, with the same content in one column across six tabs:
+**Main** (the four pools, conditions and characteristics - what play reaches
+for), **Skills** (every skill line, then specialisation bases and skill points),
+**Combat**, **Gear**, **Story** (the investigator's details, portrait and
+backstory) and **Notes**.
+
 Modern-era skills - Computer Use and Electronics - are on the sheet alongside
 Operate Heavy Machinery, so it serves a 1920s or a modern game.
 

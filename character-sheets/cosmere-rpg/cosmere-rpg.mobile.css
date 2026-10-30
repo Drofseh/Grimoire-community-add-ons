@@ -1,0 +1,392 @@
+/* Cosmere Roleplaying Game character sheet, on a phone.
+   The desktop sheet's vocabulary - plain ruled panels, small uppercase
+   captions, a shield-shaped defense between each realm's attribute pair,
+   skill ranks as boxes to tick - in one column, with controls sized for a
+   thumb. Original styling, as the fan content policy asks; every colour is an
+   app token, so a theme restyles it. It stands alone: nothing here relies on
+   the desktop stylesheet. */
+
+.sheet-cosmere-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+}
+
+/* Seven pages: wrap the page names, and tighten them so they usually fit
+   one row. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-cosmere-m input,
+.sheet-cosmere-m select,
+.sheet-cosmere-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-cosmere-m input:not([type=checkbox]),
+.sheet-cosmere-m select {
+  min-height: 44px;
+}
+
+.sheet-cosmere-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* --- shared ---------------------------------------------------------------- */
+
+.box {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cap {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.cap.dim {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.big-input input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* A field on an underline with its caption beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+
+.line input,
+.line select,
+.line textarea {
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+.id-grid .wide {
+  grid-column: 1 / -1;
+}
+
+/* --- main: pools ----------------------------------------------------------- */
+
+.pools {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pool-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.pool-cells {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 8px;
+  text-align: center;
+}
+
+.pool-cells.three {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 72px;
+}
+
+.pool-cells input {
+  text-align: center;
+  font-weight: 700;
+}
+
+.deflect-box input {
+  border: 2px solid var(--text-dim) !important;
+  border-radius: 8px 8px 4px 4px !important;
+}
+
+/* --- main: realms ---------------------------------------------------------- */
+
+.realms {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg-deep, var(--bg-card));
+  border: 1px solid var(--border);
+}
+
+.realm-title {
+  margin: 0 0 6px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Attribute, the realm's defense, attribute. */
+.realm-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+  gap: 8px;
+  align-items: end;
+}
+
+.attr,
+.defense {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.attr-box {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--text-dim);
+  border-radius: 6px;
+  padding: 4px;
+  background: var(--bg-card);
+}
+
+.attr-box input {
+  text-align: center;
+  font-size: 22px !important;
+  font-weight: 700;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Defense: a shield - square shoulders, a rounded point. */
+.shield {
+  width: 60px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  border-radius: 6px 6px 50% 50% / 6px 6px 38% 38%;
+  background: var(--bg-card);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.skills {
+  gap: 0;
+}
+
+.skills .title {
+  margin-bottom: 4px;
+}
+
+/* The modifier in a box, the skill and its attribute, its ranks as boxes. */
+.skill {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.skills .title + .skill,
+.skills .hint + .custom .skill {
+  border-top: none;
+}
+
+.sk-mod {
+  display: block;
+  text-align: center;
+  border: 2px solid var(--text-dim);
+  border-radius: 6px;
+  padding: 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sk-name {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.sk-attr {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sk-field {
+  min-width: 0;
+}
+
+.skill .gc-pips {
+  gap: 6px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* An additional skill: its name on the row, its attribute on a line below. */
+.custom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+
+.sk-attr-line {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.sk-attr-line .cap {
+  grid-column: 1;
+  font-size: 9px;
+  text-align: center;
+}
+
+.budget {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  text-align: center;
+}
+
+.budget b {
+  display: block;
+  font-size: 18px;
+  color: var(--gold);
+}
+
+/* --- combat ---------------------------------------------------------------- */
+
+.derived {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stat {
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.stat b {
+  font-size: 22px;
+  color: var(--gold);
+}
+
+/* --- gear and story -------------------------------------------------------- */
+
+.boxings {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* The character's art, large beside their appearance - the header only has
+   room for a thumbnail. With no art it draws nothing. */
+.appearance-art {
+  aspect-ratio: 3 / 4;
+  max-height: 360px;
+}
+
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.goal .gc-pips {
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+}

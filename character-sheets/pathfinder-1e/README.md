@@ -20,6 +20,16 @@ Two pages, as printed:
   for each level from your casting ability, with a box per slot to tick as you
   cast
 
+On a phone the sheet has its own layout, `pathfinder-1e.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs:
+**Main** (hit points, AC, touch, flat-footed, initiative and the saves, the six
+abilities and conditional modifiers - what play reaches for), **Combat** (base
+attack, CMB and CMD, weapons and speed, then initiative, AC and the saves
+written out as their sums), **Skills** (a row per skill, then ranks spent),
+**Feats**, **Gear** (money, gear, AC items and carrying capacity), **Spells**
+(a row per spell level with its slots to tick) and **Bio** (identity, languages
+and experience).
+
 ### The arithmetic
 
 - Ability modifiers are (score - 10) / 2, rounded down; derived values use the

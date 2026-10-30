@@ -109,17 +109,17 @@ can use.
 
 | Sheet | System | Licence | Layout |
 | --- | --- | --- | --- |
-| [D&D 5e (2024)](character-sheets/dnd-5e-2024/) | Dungeons & Dragons 5e | CC BY 4.0 | Custom |
-| [D&D 5e (2014)](character-sheets/dnd-5e-2014/) | Dungeons & Dragons 5e (2014 rules) | CC BY 4.0 | Custom |
-| [Draw Steel](character-sheets/draw-steel/) | Draw Steel | Draw Steel Creator License | Custom |
-| [Pathfinder 2e](character-sheets/pathfinder-2e/) | Pathfinder 2e | ORC | Custom |
-| [Pathfinder 1e](character-sheets/pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom |
-| [Call of Cthulhu 7e](character-sheets/call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom |
-| [Traveller](character-sheets/traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom |
-| [Cosmere RPG](character-sheets/cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom |
-| [Dungeon Crawler Carl](character-sheets/dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom |
-| [Cairn](character-sheets/cairn/) | Cairn | CC BY-SA 4.0 | Default |
-| [Basic Fantasy](character-sheets/basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default |
+| [D&D 5e (2024)](character-sheets/dnd-5e-2024/) | Dungeons & Dragons 5e | CC BY 4.0 | Custom, plus a phone layout |
+| [D&D 5e (2014)](character-sheets/dnd-5e-2014/) | Dungeons & Dragons 5e (2014 rules) | CC BY 4.0 | Custom, plus a phone layout |
+| [Draw Steel](character-sheets/draw-steel/) | Draw Steel | Draw Steel Creator License | Custom, plus a phone layout |
+| [Pathfinder 2e](character-sheets/pathfinder-2e/) | Pathfinder 2e | ORC | Custom, plus a phone layout |
+| [Pathfinder 1e](character-sheets/pathfinder-1e/) | Pathfinder 1e | OGL 1.0a | Custom, plus a phone layout |
+| [Call of Cthulhu 7e](character-sheets/call-of-cthulhu-7e/) | Call of Cthulhu 7th Edition | Chaosium Fan Material Policy | Custom, plus a phone layout |
+| [Traveller](character-sheets/traveller-2e/) | Traveller (Mongoose 2nd Edition) | Traveller Fair Use Policy | Custom, plus a phone layout |
+| [Cosmere RPG](character-sheets/cosmere-rpg/) | Cosmere RPG | Cosmere RPG Fan Content Policy | Custom, plus a phone layout |
+| [Dungeon Crawler Carl](character-sheets/dungeon-crawler-carl/) | Dungeon Crawler Carl | - | Custom, plus a phone layout |
+| [Cairn](character-sheets/cairn/) | Cairn | CC BY-SA 4.0 | Default, plus a phone layout |
+| [Basic Fantasy](character-sheets/basic-fantasy/) | Basic Fantasy RPG | CC BY-SA 4.0 | Default, plus a phone layout |
 
 A sheet describes its fields, the values derived from them, and how it is drawn
 - either as simple sections or as a custom HTML layout. Nothing in a sheet

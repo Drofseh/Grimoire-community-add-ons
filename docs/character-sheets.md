@@ -31,6 +31,7 @@ for completion and inline errors.
 - [Simple layout](#simple-layout)
 - [Custom HTML layout](#custom-html-layout)
 - [Stylesheet](#stylesheet)
+- [Mobile layout](#mobile-layout)
 - [Limits](#limits)
 
 ## Top-level keys
@@ -54,6 +55,7 @@ for completion and inline errors.
 | `layout` | | A simple layout of titled sections. See [Simple layout](#simple-layout) |
 | `layout_file` / `layout_html` | | A custom HTML layout, as a sibling file (preferred) or an inline string |
 | `styles_file` / `styles` | | Its stylesheet, as a sibling file (preferred) or an inline string |
+| `mobile_layout_file` / `mobile_styles_file` | | A second layout and stylesheet for phones. Found by convention as `<id>.mobile.html` / `<id>.mobile.css`, so most sheets never set these. See [Mobile layout](#mobile-layout) |
 
 With neither `layout` nor a custom layout, Grimoire lists every field in
 declaration order under one heading - a perfectly good sheet for a rules-light
@@ -556,6 +558,68 @@ device has, since a sheet cannot load one - name a fallback stack.
 The app's theme tokens (`var(--gold)`, `var(--text)`, `var(--bg-card)`,
 `var(--border)`) are in scope, and using them is what lets a sheet follow the
 reader's light or dark theme.
+
+## Mobile layout
+
+A sheet may ship a second layout just for phones: `<id>.mobile.html`, with an
+optional `<id>.mobile.css` beside it. Grimoire draws it instead of the regular
+layout on a screen 640px wide or less in the web app, and always in the mobile
+app, which shows sheets through the same renderer. Without one, a phone gets the
+regular layout, squeezed to fit.
+
+```
+character-sheets/my-game/
+├── my-game.json
+├── my-game.html          # the regular layout
+├── my-game.css
+├── my-game.mobile.html   # optional - drawn on phones instead
+└── my-game.mobile.css    # optional - styles the phone layout
+```
+
+The files are found by convention, or named explicitly with
+`mobile_layout_file` and `mobile_styles_file`, as `layout_file` and
+`styles_file` are. A mobile layout does not need a regular HTML one: a sheet
+with a simple JSON [`layout`](#simple-layout), like `cairn`, can still ship a
+phone layout. A `.mobile.css` with no `.mobile.html` is an error, since there
+would be nothing for it to style.
+
+**It is the same language.** The phone layout takes exactly the same tags,
+attributes and [directives](#directives) as a custom HTML layout, and its
+stylesheet the same [CSS subset](#stylesheet), scoped to the sheet the same way.
+The same [limits](#limits) apply to each file. Write the stylesheet to stand on
+its own rather than relying on the regular `.css` being applied alongside it.
+
+**Nothing may become unreachable on a phone.** Every field and computed value
+the regular layout shows should have a place in the phone one; reorganise, do
+not cut. A value only **All values** can reach is one the layout forgot.
+
+Designing for a phone:
+
+- **Use more tabs.** A printed sheet's two pages become five or six
+  `<g-tab>`s - for example Main, Skills, Combat, Spells, Gear, Notes - so each
+  fits a phone screen with little scrolling. Put what changes in play (hit
+  points, conditions, the scores rolls reach for) on the first tab, and what
+  matters only while building a character (point totals, base values) at the
+  end of a later one. Keep tab titles to one short word, so the row of tabs fits.
+- **One column first.** Stack sections rather than setting them side by side;
+  a two- or three-across grid suits only short things like ability scores or a
+  pair of current/maximum boxes.
+- **Large touch targets.** Aim for 44px-tall controls. Wrap a `<g-option>` or
+  checkbox `<g-field>` in a `<label>` so the whole cell toggles it, and use
+  16px text in inputs - smaller text makes a phone zoom in when a box is tapped.
+  The renderer sizes its controls inline, so resizing them needs `!important`.
+- **`variant="compact"`** for number boxes: no spinner, and a numeric keyboard
+  on a phone.
+- **No wide tables.** A row with more than four or five columns forces
+  sideways scrolling; break it into a card per row, or move secondary columns
+  to their own line.
+
+Every sheet in this repository ships a phone layout to copy from: `cairn` is
+the smallest, `call-of-cthulhu-7e` shows a two-page sheet reorganised for a
+phone, and `traveller-2e` turns wide lists into a card per row.
+
+A mobile layout needs no `grimoire_min_version`: a Grimoire release that
+predates them ignores the files and draws the regular layout everywhere.
 
 ## Limits
 

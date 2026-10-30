@@ -1,0 +1,969 @@
+/* Draw Steel hero sheet, on a phone.
+   The desktop sheet's vocabulary - panels with serif capitals over a rule and
+   its diamond, heavy double-ruled frames for the characteristics and the big
+   trackers, pill-shaped boxes captioned on their edge - in one column, with
+   controls sized for a thumb. No artwork, no logo. Every colour is an app
+   token, so a theme restyles it with the app. It stands alone: nothing here
+   relies on the desktop stylesheet. */
+
+.sheet-ds-m {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+  --frame: var(--text-dim);
+  --serif: "Bitter", "Roboto Slab", "Rockwell", "Iowan Old Style", Georgia, serif;
+}
+
+/* Seven pages: wrap the page names, and tighten them so they fit two rows at
+   most. The renderer styles its tabs inline, hence !important. */
+.gc-tablist {
+  flex-wrap: wrap;
+}
+
+.gc-tablist [role=tab] {
+  padding: 10px 8px !important;
+}
+
+.gc-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* An opened ability or feature keeps its paragraphs. */
+.gc-field-readonly > div {
+  white-space: pre-line;
+}
+
+/* 16px text stops a phone zooming in when a box is tapped; 44px is a
+   comfortable touch target. */
+.sheet-ds-m input,
+.sheet-ds-m select,
+.sheet-ds-m textarea {
+  font-size: 16px !important;
+}
+
+.sheet-ds-m input:not([type=checkbox]),
+.sheet-ds-m select {
+  min-height: 44px;
+}
+
+.sheet-ds-m input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* --- the printed sheet's vocabulary ---------------------------------------- */
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg-card);
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.label {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* The rule under a heading, with its diamond set on it. */
+.rule {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid var(--frame);
+  height: 0;
+  margin: 2px 0 8px;
+}
+
+.rule .gem {
+  margin-top: -9px;
+  padding: 0 4px;
+  background: var(--bg-card);
+  color: var(--frame);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.cap {
+  display: block;
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.count {
+  color: var(--gold);
+  margin-left: 4px;
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.boxes {
+  display: grid;
+  gap: 8px;
+}
+
+.boxes.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.boxes.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* A field on an underline, captioned beneath. */
+.line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--frame);
+  min-width: 0;
+}
+
+.line .cap {
+  text-align: left;
+}
+
+.line input,
+.line select {
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.line.name input {
+  font-family: var(--serif);
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* A pill-shaped box, its caption sitting on its lower edge. */
+.pill-field {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--frame);
+  border-radius: 10px;
+  padding: 2px 10px 0;
+  margin-bottom: 6px;
+}
+
+.pill-cap {
+  align-self: center;
+  margin-bottom: -9px;
+  padding: 0 6px;
+  background: var(--bg-card);
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.pill-cap.top {
+  margin: -11px 0 2px;
+}
+
+.pill-field.area {
+  border-radius: 8px;
+  padding: 6px 10px 8px;
+  margin: 8px 0 0;
+}
+
+.pill-field input,
+.pill-field select,
+.pill-field textarea {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* A small boxed number, captioned beneath. */
+.mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mini input,
+.mini select {
+  width: 100% !important;
+  border: 2px solid var(--frame) !important;
+  border-radius: 6px !important;
+  text-align: center;
+  font-weight: 700;
+  padding: 4px 2px !important;
+}
+
+.mini .cap {
+  font-weight: 700;
+  color: var(--text);
+  white-space: normal;
+  line-height: 1.15;
+}
+
+.mini .value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  border: 2px solid var(--frame);
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* A rounded card with its caption set into the top edge. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 2px solid var(--frame);
+  border-radius: 12px;
+  padding: 0 10px 8px;
+  margin-top: 6px;
+}
+
+.card-cap {
+  align-self: center;
+  margin: -8px 0 0;
+  padding: 0 6px;
+  background: var(--bg-card);
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card input,
+.card textarea {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* The heavy double-ruled frames - stamina's shield, the recoveries ring, the
+   heroic resource, surges and each characteristic. */
+.shield,
+.ring,
+.hex,
+.square,
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px double var(--frame);
+  flex-shrink: 0;
+}
+
+.shield input,
+.hex input,
+.square input,
+.frame input {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 24px !important;
+  font-weight: 700;
+  padding: 0 !important;
+}
+
+/* --- main: stamina --------------------------------------------------------- */
+
+.stamina-body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+/* Square shoulders, a rounded point below. */
+.shield {
+  width: 96px;
+  height: 104px;
+  padding: 0 8px;
+  border-radius: 10px 10px 50% 50% / 10px 10px 45% 45%;
+}
+
+.states {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 2px solid var(--frame);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.state {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 0 6px;
+  align-items: center;
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.state .cap {
+  grid-column: 2;
+  text-align: left;
+}
+
+.gem {
+  color: var(--text-muted);
+}
+
+.gem.on {
+  color: var(--gold);
+}
+
+.condition-now {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-align: center;
+}
+
+.under {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* --- main: recoveries, resource, surges ------------------------------------ */
+
+.recovery-body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.recovery-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ring {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+}
+
+.ring-value {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.gc-pips {
+  gap: 6px !important;
+}
+
+.resource,
+.surges {
+  align-items: center;
+}
+
+.hex,
+.square {
+  width: 80px;
+  height: 80px;
+  padding: 0 6px;
+}
+
+.hex {
+  border-radius: 30%;
+}
+
+.square {
+  border-radius: 6px;
+}
+
+.resource .line {
+  align-self: stretch;
+}
+
+.resource .line input {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.resource .line .cap {
+  text-align: center;
+}
+
+.surge-rules {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+/* --- main: characteristics and potency ------------------------------------- */
+
+.chars {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.char .label {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.frame {
+  width: 100%;
+  max-width: 64px;
+  aspect-ratio: 1;
+  border-radius: 22%;
+}
+
+.characteristics .boxes {
+  margin-top: 6px;
+}
+
+.potencies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pot,
+.tabbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: 2px solid var(--frame);
+  border-radius: 10px 10px 4px 4px;
+  padding: 4px 4px 6px;
+  min-width: 0;
+}
+
+.pot b {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--gold);
+}
+
+.tabbox input {
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* --- main: conditions ------------------------------------------------------ */
+
+.cond-table {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.cond-head {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.cond-head:first-child {
+  text-align: left;
+}
+
+.cond {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 0;
+  font-family: var(--serif);
+  font-size: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.cond input {
+  border: none !important;
+  background: transparent !important;
+  padding: 2px 0 !important;
+}
+
+/* The whole cell is the checkbox's touch target. */
+.tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.footnote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.save-target {
+  width: 56px;
+}
+
+.save-target input {
+  text-align: center;
+  padding: 2px !important;
+}
+
+/* --- main: victories and level --------------------------------------------- */
+
+.victories-level {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.victories .label {
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.track {
+  border: 2px solid var(--frame);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border-left: 3px double var(--frame);
+  padding-left: 12px;
+}
+
+.level-value input {
+  width: 64px !important;
+  font-family: var(--serif);
+  font-size: 28px !important;
+  font-weight: 700;
+  text-align: center;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* --- abilities: the printed sheet's cards, one per row --------------------- */
+
+.abilities table,
+.abilities tbody {
+  display: block;
+}
+
+.abilities thead {
+  display: none;
+}
+
+.abilities tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.abilities tbody > tr {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 6px;
+  border: 2px solid var(--frame) !important;
+  border-radius: 4px 14px 4px 14px;
+  padding: 0 8px 8px;
+}
+
+.abilities tbody > tr > td {
+  display: block;
+  padding: 0 !important;
+  min-width: 0;
+}
+
+/* Name: the action tab across the top. */
+.abilities tbody > tr > td:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  border-bottom: 2px solid var(--frame);
+  margin: 0 0 0 -8px;
+  padding: 6px 8px 4px !important;
+}
+
+.abilities tbody > tr > td:nth-child(1) button {
+  min-height: 36px;
+}
+
+/* Cost: a ring in the top corner. */
+.abilities tbody > tr > td:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 6px;
+  min-width: 36px;
+  min-height: 32px;
+  padding: 0 8px !important;
+  border: 2px solid var(--frame);
+  border-radius: 999px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 12px !important;
+  font-weight: 700;
+  color: var(--text) !important;
+}
+
+/* Action type: the line of the card's category. */
+.abilities tbody > tr > td:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: var(--serif);
+  font-size: 13px !important;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px !important;
+}
+
+/* Target, then distance, as captioned boxes; keywords at the foot. */
+.abilities tbody > tr > td:nth-child(5),
+.abilities tbody > tr > td:nth-child(6) {
+  grid-column: 1 / -1;
+  border: 1.5px solid var(--frame);
+  border-radius: 6px;
+  padding: 4px 8px !important;
+  font-size: 13px !important;
+  text-align: center;
+}
+
+.abilities tbody > tr > td:nth-child(6) {
+  grid-row: 3;
+}
+
+.abilities tbody > tr > td:nth-child(5) {
+  grid-row: 4;
+}
+
+.abilities tbody > tr > td:nth-child(4) {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  border-top: 2px solid var(--frame);
+  margin-top: 4px;
+  padding-top: 4px !important;
+  font-size: 12px !important;
+  text-align: right;
+}
+
+/* Remove sits beneath the cost. */
+.abilities tbody > tr > td:nth-child(7) {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  width: auto !important;
+}
+
+/* An opened card's power roll and effect, beneath it. */
+.abilities tbody > tr:has(> td[colspan]) {
+  display: block;
+  border-radius: 6px;
+  padding: 4px 10px 10px;
+  margin-top: -6px;
+}
+
+/* --- reference ------------------------------------------------------------- */
+
+.ref-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.ref-list b {
+  color: var(--text);
+}
+
+.ref-list.dash {
+  list-style-type: "– ";
+  padding-left: 14px;
+  gap: 2px;
+}
+
+.ref-text {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.ref-head {
+  margin: 6px 0 2px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--frame);
+  padding-bottom: 2px;
+}
+
+/* --- class: kit ------------------------------------------------------------ */
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.kit-tag {
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.equipment .boxes {
+  margin-top: 4px;
+}
+
+.tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tiers .label {
+  text-align: left;
+}
+
+.tier-heads {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.tier-heads span {
+  border: 1px solid var(--frame);
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.tiers input {
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+/* --- skills ---------------------------------------------------------------- */
+
+.skill-group {
+  margin: 8px 0 2px;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--frame);
+  padding-bottom: 2px;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 10px;
+  font-family: var(--serif);
+  font-size: 15px;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+/* --- gear: lists as stacked cards ------------------------------------------ */
+
+/* A list's heading row and each of its rows are flex rows the renderer
+   styles inline. Wrapping them, with the same rule for the heading as for the
+   rows, puts the wide columns on their own line and keeps the headings over
+   the cells they name. */
+.gc-list > div > div {
+  flex-wrap: wrap !important;
+  row-gap: 6px !important;
+}
+
+.gc-list > div > div + div {
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+/* Trinkets: name and the row buttons, then notes beneath. */
+.trinkets .gc-list > div > div > div:nth-child(1) {
+  flex: 1 1 0 !important;
+}
+
+.trinkets .gc-list > div > div > div:nth-child(2) {
+  flex: 1 1 100% !important;
+  order: 5;
+}
+
+/* Leveled treasures: name, level and the row buttons, then notes. */
+.treasures .gc-list > div > div > div:nth-child(1) {
+  flex: 1 1 0 !important;
+}
+
+.treasures .gc-list > div > div > div:nth-child(2) {
+  flex: 0 0 60px !important;
+}
+
+.treasures .gc-list > div > div > div:nth-child(3) {
+  flex: 1 1 100% !important;
+  order: 5;
+}
+
+/* Consumables fit one line: name, a narrow quantity, the row buttons. */
+.consumables .gc-list > div > div > div:nth-child(1) {
+  flex: 1 1 0 !important;
+}
+
+.consumables .gc-list > div > div > div:nth-child(2) {
+  flex: 0 0 60px !important;
+}
+
+/* Projects: name and the row buttons; who is assigned; then characteristic,
+   points and goal. */
+.projects .gc-list > div > div > div:nth-child(1) {
+  flex: 1 1 0 !important;
+  order: 1;
+}
+
+.projects .gc-list > div > div > div:nth-child(6) {
+  order: 2;
+}
+
+.projects .gc-list > div > div > div:nth-child(2) {
+  flex: 1 1 100% !important;
+  order: 3;
+}
+
+.projects .gc-list > div > div > div:nth-child(3) {
+  flex: 1 1 0 !important;
+  order: 4;
+}
+
+.projects .gc-list > div > div > div:nth-child(4),
+.projects .gc-list > div > div > div:nth-child(5) {
+  flex: 0 0 60px !important;
+  order: 5;
+}
+
+.carry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carry-boxes {
+  display: inline-flex;
+  gap: 3px;
+  border: 2px solid var(--frame);
+  border-radius: 8px;
+  padding: 3px 6px;
+}
+
+.carry-box {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  border: 1.5px solid var(--frame);
+  border-radius: 2px;
+}
+
+.carry-box.full {
+  background: var(--gold);
+}
+
+/* --- story ----------------------------------------------------------------- */
+
+.identity {
+  border: 2px solid var(--frame);
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.identity .boxes {
+  margin-top: 4px;
+}

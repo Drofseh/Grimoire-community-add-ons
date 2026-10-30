@@ -7,6 +7,11 @@ Cairn characters have three ability scores, no classes and no levels, so the
 whole sheet fits comfortably in the default sectioned layout — no custom HTML
 needed.
 
+On a phone it has its own layout, `cairn.mobile.html` and `cairn.mobile.css`:
+three tabs - **Main** (name, background, abilities and Hit Protection),
+**Gear** (gold, slots and inventory) and **Notes** - so each fits the screen.
+HP is there both as a number and as boxes to tick off.
+
 ## What it covers
 
 - **Abilities** — Strength, Dexterity, Willpower

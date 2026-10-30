@@ -2,7 +2,7 @@
   "$schema": "../../schema/character-sheet.schema.json",
   "id": "dnd-5e-2014",
   "name": "D&D 5th Edition (2014)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "grimoire_min_version": "1.10.0",
   "system": "Dungeons & Dragons 5th Edition (2014)",
   "description": "A character sheet for the original 2014 rules of D&D 5th Edition, laid out after the three-page printed sheet, with the SRD 5.1 catalogue of races, classes and their features, spells, equipment and magic items.",
@@ -1833,7 +1833,7 @@
       "label": "Strength Score"
     },
     "strength_mod": {
-      "formula": "floor((strength_score - 10) / 2)",
+      "formula": "signed(floor((strength_score - 10) / 2))",
       "label": "STR Modifier"
     },
     "strength_save": {
@@ -1845,7 +1845,7 @@
       "label": "Dexterity Score"
     },
     "dexterity_mod": {
-      "formula": "floor((dexterity_score - 10) / 2)",
+      "formula": "signed(floor((dexterity_score - 10) / 2))",
       "label": "DEX Modifier"
     },
     "dexterity_save": {
@@ -1857,7 +1857,7 @@
       "label": "Constitution Score"
     },
     "constitution_mod": {
-      "formula": "floor((constitution_score - 10) / 2)",
+      "formula": "signed(floor((constitution_score - 10) / 2))",
       "label": "CON Modifier"
     },
     "constitution_save": {
@@ -1869,7 +1869,7 @@
       "label": "Intelligence Score"
     },
     "intelligence_mod": {
-      "formula": "floor((intelligence_score - 10) / 2)",
+      "formula": "signed(floor((intelligence_score - 10) / 2))",
       "label": "INT Modifier"
     },
     "intelligence_save": {
@@ -1881,7 +1881,7 @@
       "label": "Wisdom Score"
     },
     "wisdom_mod": {
-      "formula": "floor((wisdom_score - 10) / 2)",
+      "formula": "signed(floor((wisdom_score - 10) / 2))",
       "label": "WIS Modifier"
     },
     "wisdom_save": {
@@ -1893,7 +1893,7 @@
       "label": "Charisma Score"
     },
     "charisma_mod": {
-      "formula": "floor((charisma_score - 10) / 2)",
+      "formula": "signed(floor((charisma_score - 10) / 2))",
       "label": "CHA Modifier"
     },
     "charisma_save": {
@@ -1985,7 +1985,7 @@
       "label": "Passive Wisdom (Perception)"
     },
     "spell_mod": {
-      "formula": "spell_ability == 'intelligence' ? intelligence_mod : (spell_ability == 'wisdom' ? wisdom_mod : (spell_ability == 'charisma' ? charisma_mod : 0))",
+      "formula": "signed(spell_ability == 'intelligence' ? intelligence_mod : (spell_ability == 'wisdom' ? wisdom_mod : (spell_ability == 'charisma' ? charisma_mod : 0)))",
       "label": "Spellcasting Modifier"
     },
     "spell_save_dc": {

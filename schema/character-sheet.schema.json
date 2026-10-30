@@ -492,6 +492,16 @@
       "maxLength": 255,
       "description": "A sibling .css file holding the stylesheet, instead of inlining it. Defaults to '<id>.css' when that file exists."
     },
+    "mobile_layout_file": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "A sibling .html file holding a second layout for phones, drawn instead of the regular one on a screen 640px wide or less and in the mobile app. Defaults to '<id>.mobile.html' when that file exists. Uses the same tags, attributes and directives as the regular layout, and may exist even when the sheet uses a simple JSON 'layout'."
+    },
+    "mobile_styles_file": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "A sibling .css file styling the phone layout. Defaults to '<id>.mobile.css' when that file exists. Same CSS subset as 'styles_file'; needs a phone layout to style."
+    },
     "name_field": {
       "type": "string",
       "description": "A text field that holds the character's name. It starts as the name given when the character is created, and editing either one updates the other."

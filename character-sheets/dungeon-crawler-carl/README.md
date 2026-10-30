@@ -20,11 +20,42 @@ Five pages, in the printed sheet's order:
   personal space, clubs and societies, and your deity
 - **Abilities & Sponsors** - racial and class abilities and three sponsors
 
+A sixth tab, **Catalog**, is not on the printed sheet. It picks entries from an
+installed content pack: a race, class and deity, and lists of skills (with your
+rank), spells (with your rank), gear (worn or not) and achievements. Each pick
+opens the entry's full text. The printed-sheet tabs are unchanged, so a crawler
+can be kept either way, or both.
+
+On a phone the sheet has its own layout, `dungeon-crawler-carl.mobile.html` and
+`.mobile.css`, with the same content in one column across seven tabs: **Main**
+(health, level and floor, mana, evade and damage resistance, buffs and debuffs,
+and the five stats - what a fight reaches for), **Attacks** (a card per attack),
+**Skills** (skills and racial and class abilities), **Gear** (hotlist, gear
+slots, accessories and inventory), **Allies** (pet, mount and sponsors),
+**Life** (kills, clubs, personal space, deity and the rest of the crawler's
+story, then name, race, class and crawler number) and **Catalog**.
+
+## Content types
+
+For a content pack written for this sheet (`schema_id: dungeon-crawler-carl`),
+one file per type:
+
+| Type | Properties |
+| --- | --- |
+| `race` | `name`, `origin` (Earth or Alien), `size`, `prerequisites`, `description` |
+| `class` | `name`, `class_type`, `prerequisites`, `description` |
+| `deity` | `name`, `title`, `temple`, `signature_skills`, `signature_stat`, `description` |
+| `skill` | `name`, `kind` (Attack, Damage Effect or Utility), `category`, `keywords`, `stat`, `ai_favor`, `base_damage`, `description` |
+| `spell` | `name`, `keywords`, `favored`, `mana_cost`, `range`, `duration`, `cooldown`, `base_damage`, `description` |
+| `gear` | `name`, `slot` (one of the sheet's gear slots), `gear_slot` (as printed), `found_in`, `book`, `description` |
+| `achievement` | `name`, `location`, `floor`, `reward`, `contents`, `description` |
+
 ## Rules not included
 
 The sheet carries the structure of a crawler and the sums the printed sheet
 itself shows; it includes no rules text, stat tables, artwork or logo. Stat
-modifiers are fields you fill in from your book rather than formulas.
+modifiers are fields you fill in from your book rather than formulas. No content
+pack ships with it - the game's text is not openly licensed.
 
 Dungeon Crawler Carl is a trademark of Matt Dinniman LLC; the roleplaying game
 is © Renegade Game Studios. This sheet is not affiliated with, endorsed by, or

@@ -1,0 +1,254 @@
+<!-- Dungeon Crawler Carl crawler sheet, on a phone.
+     The same content as the desktop sheet, in one column across seven pages
+     with one-word names in place of the desktop's long ones:
+       Main     - health in tenths on the red-to-green bar, level and floor,
+                  mana, evade and damage resistance as the printed sums, debuffs
+                  and external buffs, then the five stats: what a fight changes
+       Attacks  - the five attacks, a card each: to hit (rank + stat mod) on one
+                  line, damage (dice + stat mod) on the next, effects below
+       Skills   - skills, then racial and class abilities
+       Gear     - the hotlist, gear slots, accessories and inventory
+       Allies   - pet, mount or vehicle, and the three sponsors
+       Life     - popularity, kills, clubs, personal space, deity, past trauma,
+                  loose ends, regrets and notes, then the crawler's name, race,
+                  pronouns, crawler number and class, set once at the start
+       Catalog  - race, class and deity picks and the catalog lists
+     The black banners, heavy rules and health bar of the desktop sheet, in the
+     app's own colours. No rules text and no logo. -->
+<div class="sheet-dcc-m">
+<g-tabs>
+
+<g-tab title="Main">
+
+  <section class="block">
+    <div class="health"><span class="health-label">Health <b><g-value name="health_pct" /></b></span><g-pips count="10" value="health" label="Health 10%" /><div class="health-scale"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div></div>
+    <div class="quad">
+      <div class="cell"><span class="cap">Level</span><g-field name="level" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">Floor</span><g-field name="floor" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">Max Mana</span><g-field name="mana_max" label="" variant="compact" /></div>
+      <div class="cell big-input"><span class="cap">Mana</span><g-field name="mana" label="" variant="compact" /></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Evade <span class="bar-sub">d20 +</span></h3>
+    <div class="formula">
+      <div class="cell"><span class="cap">DEX Mod</span><span class="box"><g-value name="evade_dex" /></span></div><span class="op">+</span>
+      <div class="cell"><span class="cap">Buffs</span><g-field name="evade_buffs" label="" variant="compact" /></div><span class="op">=</span>
+      <div class="cell"><span class="cap">Total</span><span class="box total"><g-value name="evade_total" /></span></div>
+    </div>
+    <div class="pair">
+      <div class="cell"><span class="cap">Move</span><g-field name="move" label="" /></div>
+      <div class="cell"><span class="cap">Step</span><g-field name="step" label="" /></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Damage Resistance</h3>
+    <div class="formula">
+      <div class="cell"><span class="cap">Armor</span><g-field name="armor" label="" variant="compact" /></div><span class="op">+</span>
+      <div class="cell"><span class="cap">Buffs</span><g-field name="dr_buffs" label="" variant="compact" /></div><span class="op">=</span>
+      <div class="cell"><span class="cap">Total</span><span class="box total"><g-value name="dr_total" /></span></div>
+    </div>
+    <div class="pair">
+      <div class="cell"><span class="cap">AI Favor</span><g-field name="ai_favor" label="" /></div>
+      <div class="cell"><span class="cap">Size</span><g-field name="size" label="" /></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Buffs &amp; Debuffs</h3>
+    <div class="line"><span class="cap">Debuffs</span><g-field name="debuffs" label="" /></div>
+    <span class="cap left">External Buffs (Max 3)</span>
+    <div class="line"><g-field name="external_buff_1" label="" /></div>
+    <div class="line"><g-field name="external_buff_2" label="" /></div>
+    <div class="line"><g-field name="external_buff_3" label="" /></div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Stats</h3>
+    <div class="stat head"><span></span><span class="cap">Enhanced</span><span></span><span class="cap">Unenh.</span><span class="cap">Mod</span></div>
+    <div class="stat"><span class="stat-name">STR<small>Strength</small></span><g-field name="str_enhanced" label="" variant="compact" /><span class="slash">/</span><g-field name="str_unenhanced" label="" variant="compact" /><span class="mod"><g-field name="str_mod" label="" variant="compact" /></span></div>
+    <div class="stat"><span class="stat-name">INT<small>Intelligence</small></span><g-field name="int_enhanced" label="" variant="compact" /><span class="slash">/</span><g-field name="int_unenhanced" label="" variant="compact" /><span class="mod"><g-field name="int_mod" label="" variant="compact" /></span></div>
+    <div class="stat"><span class="stat-name">CON<small>Constitution</small></span><g-field name="con_enhanced" label="" variant="compact" /><span class="slash">/</span><g-field name="con_unenhanced" label="" variant="compact" /><span class="mod"><g-field name="con_mod" label="" variant="compact" /></span></div>
+    <div class="stat"><span class="stat-name">DEX<small>Dexterity</small></span><g-field name="dex_enhanced" label="" variant="compact" /><span class="slash">/</span><g-field name="dex_unenhanced" label="" variant="compact" /><span class="mod"><g-field name="dex_mod" label="" variant="compact" /></span></div>
+    <div class="stat"><span class="stat-name">CHA<small>Charisma</small></span><g-field name="cha_enhanced" label="" variant="compact" /><span class="slash">/</span><g-field name="cha_unenhanced" label="" variant="compact" /><span class="mod"><g-field name="cha_mod" label="" variant="compact" /></span></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Attacks">
+
+  <section class="block attack">
+    <h3 class="bar">Attack 1</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="attack_1_name" label="" /></div>
+    <div class="sum"><span class="sum-name">To Hit</span><div class="cell"><span class="cap">Rank</span><g-field name="attack_1_rank" label="" variant="compact" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_1_hit_mod" label="" variant="compact" /></div><span class="op">=</span><span class="total"><g-value name="attack_1_to_hit" /></span></div>
+    <div class="sum"><span class="sum-name">Damage</span><div class="cell"><span class="cap">Dice</span><g-field name="attack_1_dice" label="" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_1_dmg_mod" label="" variant="compact" /></div><span></span><span></span></div>
+    <div class="line"><span class="cap">Effects</span><g-field name="attack_1_effects" label="" /></div>
+  </section>
+
+  <section class="block attack">
+    <h3 class="bar">Attack 2</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="attack_2_name" label="" /></div>
+    <div class="sum"><span class="sum-name">To Hit</span><div class="cell"><span class="cap">Rank</span><g-field name="attack_2_rank" label="" variant="compact" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_2_hit_mod" label="" variant="compact" /></div><span class="op">=</span><span class="total"><g-value name="attack_2_to_hit" /></span></div>
+    <div class="sum"><span class="sum-name">Damage</span><div class="cell"><span class="cap">Dice</span><g-field name="attack_2_dice" label="" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_2_dmg_mod" label="" variant="compact" /></div><span></span><span></span></div>
+    <div class="line"><span class="cap">Effects</span><g-field name="attack_2_effects" label="" /></div>
+  </section>
+
+  <section class="block attack">
+    <h3 class="bar">Attack 3</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="attack_3_name" label="" /></div>
+    <div class="sum"><span class="sum-name">To Hit</span><div class="cell"><span class="cap">Rank</span><g-field name="attack_3_rank" label="" variant="compact" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_3_hit_mod" label="" variant="compact" /></div><span class="op">=</span><span class="total"><g-value name="attack_3_to_hit" /></span></div>
+    <div class="sum"><span class="sum-name">Damage</span><div class="cell"><span class="cap">Dice</span><g-field name="attack_3_dice" label="" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_3_dmg_mod" label="" variant="compact" /></div><span></span><span></span></div>
+    <div class="line"><span class="cap">Effects</span><g-field name="attack_3_effects" label="" /></div>
+  </section>
+
+  <section class="block attack">
+    <h3 class="bar">Attack 4</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="attack_4_name" label="" /></div>
+    <div class="sum"><span class="sum-name">To Hit</span><div class="cell"><span class="cap">Rank</span><g-field name="attack_4_rank" label="" variant="compact" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_4_hit_mod" label="" variant="compact" /></div><span class="op">=</span><span class="total"><g-value name="attack_4_to_hit" /></span></div>
+    <div class="sum"><span class="sum-name">Damage</span><div class="cell"><span class="cap">Dice</span><g-field name="attack_4_dice" label="" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_4_dmg_mod" label="" variant="compact" /></div><span></span><span></span></div>
+    <div class="line"><span class="cap">Effects</span><g-field name="attack_4_effects" label="" /></div>
+  </section>
+
+  <section class="block attack">
+    <h3 class="bar">Attack 5</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="attack_5_name" label="" /></div>
+    <div class="sum"><span class="sum-name">To Hit</span><div class="cell"><span class="cap">Rank</span><g-field name="attack_5_rank" label="" variant="compact" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_5_hit_mod" label="" variant="compact" /></div><span class="op">=</span><span class="total"><g-value name="attack_5_to_hit" /></span></div>
+    <div class="sum"><span class="sum-name">Damage</span><div class="cell"><span class="cap">Dice</span><g-field name="attack_5_dice" label="" /></div><span class="op">+</span><div class="cell"><span class="cap">Stat Mod</span><g-field name="attack_5_dmg_mod" label="" variant="compact" /></div><span></span><span></span></div>
+    <div class="line"><span class="cap">Effects</span><g-field name="attack_5_effects" label="" /></div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Skills">
+
+  <section class="block">
+    <h3 class="bar">Skills</h3>
+    <div class="skills-list"><g-field name="skills" label="" /></div>
+  </section>
+  <section class="block"><h3 class="bar">Racial Abilities</h3><g-field name="racial_abilities" label="" /></section>
+  <section class="block"><h3 class="bar">Class Abilities</h3><g-field name="class_abilities" label="" /></section>
+
+</g-tab>
+
+<g-tab title="Gear">
+
+  <section class="block hot">
+    <h3 class="bar">Hotlist</h3>
+    <div class="hotlist"><g-field name="hotlist_1" label="" /><g-field name="hotlist_2" label="" /><g-field name="hotlist_3" label="" /><g-field name="hotlist_4" label="" /><g-field name="hotlist_5" label="" /><g-field name="hotlist_6" label="" /><g-field name="hotlist_7" label="" /><g-field name="hotlist_8" label="" /><g-field name="hotlist_9" label="" /><g-field name="hotlist_10" label="" /></div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Gear Slots / Tattoos / Patches</h3>
+    <div class="slot"><span class="slot-name">Head</span><g-field name="gear_head" label="" /></div>
+    <div class="slot"><span class="slot-name">Torso</span><g-field name="gear_torso" label="" /></div>
+    <div class="slot"><span class="slot-name">Arms</span><g-field name="gear_arms" label="" /></div>
+    <div class="slot"><span class="slot-name">Hands</span><g-field name="gear_hands" label="" /></div>
+    <div class="slot"><span class="slot-name">Legs</span><g-field name="gear_legs" label="" /></div>
+    <div class="slot"><span class="slot-name">Feet</span><g-field name="gear_feet" label="" /></div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Accessories (Max 10) <b class="count"><g-value name="accessory_count" /></b></h3>
+    <g-field name="accessories" label="" />
+  </section>
+
+  <section class="block"><h3 class="bar">Inventory</h3><g-field name="inventory" label="" /></section>
+
+</g-tab>
+
+<g-tab title="Allies">
+
+  <section class="block">
+    <h3 class="bar">Pet</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="pet_name" label="" /></div>
+    <div class="health"><span class="health-label">Health <b></b></span><g-pips count="10" value="pet_health" label="Health 10%" /><div class="health-scale"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div></div>
+    <div class="five">
+      <div class="cell"><span class="cap">STR</span><g-field name="pet_str" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">INT</span><g-field name="pet_int" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">CON</span><g-field name="pet_con" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">DEX</span><g-field name="pet_dex" label="" variant="compact" /></div>
+      <div class="cell"><span class="cap">CHA</span><g-field name="pet_cha" label="" variant="compact" /></div>
+    </div>
+    <div class="five">
+      <div class="cell"><span class="cap">Level</span><g-field name="pet_level" label="" /></div>
+      <div class="cell"><span class="cap">DR</span><g-field name="pet_dr" label="" /></div>
+      <div class="cell"><span class="cap">Evade</span><g-field name="pet_evade" label="" /></div>
+      <div class="cell"><span class="cap">Move</span><g-field name="pet_move" label="" /></div>
+      <div class="cell"><span class="cap">Size</span><g-field name="pet_size" label="" /></div>
+    </div>
+    <div class="slot"><span class="slot-name">Attack</span><g-field name="pet_attack_1" label="" /></div>
+    <div class="slot"><span class="slot-name">Attack</span><g-field name="pet_attack_2" label="" /></div>
+    <div class="slot"><span class="slot-name">Special</span><g-field name="pet_special" label="" /></div>
+  </section>
+
+  <section class="block">
+    <h3 class="bar">Mount / Vehicle</h3>
+    <div class="line"><span class="cap">Name</span><g-field name="mount_name" label="" /></div>
+    <div class="health"><span class="health-label">Health <b></b></span><g-pips count="10" value="mount_health" label="Health 10%" /><div class="health-scale"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div></div>
+    <div class="quad">
+      <div class="cell"><span class="cap">Size</span><g-field name="mount_size" label="" /></div>
+      <div class="cell"><span class="cap">Occupants</span><g-field name="mount_occupants" label="" /></div>
+      <div class="cell"><span class="cap">Move</span><g-field name="mount_move" label="" /></div>
+      <div class="cell"><span class="cap">DR</span><g-field name="mount_dr" label="" /></div>
+    </div>
+    <span class="cap left">Accessories</span>
+    <div class="ruled"><g-field name="mount_accessories" label="" /></div>
+  </section>
+
+  <section class="block"><h3 class="bar">Sponsor</h3><div class="ruled"><g-field name="sponsor_1" label="" /></div></section>
+  <section class="block"><h3 class="bar">Sponsor</h3><div class="ruled"><g-field name="sponsor_2" label="" /></div></section>
+  <section class="block"><h3 class="bar">Sponsor</h3><div class="ruled"><g-field name="sponsor_3" label="" /></div></section>
+
+</g-tab>
+
+<g-tab title="Life">
+
+  <section class="block"><h3 class="bar">Popularity</h3><div class="ruled"><g-field name="popularity" label="" /></div></section>
+  <section class="block"><h3 class="bar">Important Things I've Killed</h3><g-field name="kills" label="" /></section>
+  <section class="block"><h3 class="bar">Clubs, Societies, Guilds, etc</h3><g-field name="clubs" label="" /></section>
+
+  <section class="block">
+    <h3 class="bar">Personal Space</h3>
+    <div class="pair">
+      <div class="cell"><span class="cap">Tier</span><g-field name="space_tier" label="" /></div>
+      <div class="cell"><span class="cap">Size</span><g-field name="space_size" label="" /></div>
+    </div>
+    <span class="cap left">Amenities</span>
+    <g-field name="amenities" label="" />
+  </section>
+
+  <section class="block"><h3 class="bar">Deity</h3><div class="ruled"><g-field name="deity" label="" /></div></section>
+  <section class="block"><h3 class="bar">Past Trauma</h3><div class="ruled"><g-field name="past_trauma" label="" /></div></section>
+  <section class="block"><h3 class="bar">Loose Ends</h3><div class="ruled"><g-field name="loose_ends" label="" /></div></section>
+  <section class="block"><h3 class="bar">Regrets</h3><div class="ruled"><g-field name="regrets" label="" /></div></section>
+  <section class="block"><h3 class="bar">Notes</h3><div class="ruled"><g-field name="notes" label="" /></div></section>
+
+  <section class="block">
+    <h3 class="bar">Crawler</h3>
+    <div class="line name"><span class="cap">Name</span><g-field name="hero_name" label="" /></div>
+    <div class="pair">
+      <div class="line"><span class="cap">Race</span><g-field name="race" label="" /></div>
+      <div class="line"><span class="cap">Class</span><g-field name="klass" label="" /></div>
+      <div class="line"><span class="cap">Gender/Pronouns</span><g-field name="pronouns" label="" /></div>
+      <div class="line"><span class="cap">Crawler Number</span><g-field name="crawler_number" label="" /></div>
+    </div>
+  </section>
+
+</g-tab>
+
+<g-tab title="Catalog">
+
+  <section class="block"><h3 class="bar">Race</h3><g-field name="race_entry" label="" /></section>
+  <section class="block"><h3 class="bar">Class</h3><g-field name="class_entry" label="" /></section>
+  <section class="block"><h3 class="bar">Deity</h3><g-field name="deity_entry" label="" /></section>
+  <section class="block"><h3 class="bar">Skills</h3><g-field name="skill_entries" label="" /></section>
+  <section class="block"><h3 class="bar">Spells</h3><g-field name="spells" label="" /></section>
+  <section class="block"><h3 class="bar">Gear &amp; Loot</h3><g-field name="gear_entries" label="" /></section>
+  <section class="block"><h3 class="bar">Achievements</h3><g-field name="achievements" label="" /></section>
+
+</g-tab>
+
+</g-tabs>
+</div>
