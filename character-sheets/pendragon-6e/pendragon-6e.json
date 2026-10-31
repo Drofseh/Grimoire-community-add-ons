@@ -73,7 +73,13 @@
         {
           "key": "name",
           "type": "text",
-          "label": " ",
+          "label": "Title",
+          "flex": 6
+        },
+        {
+          "key": "glory",
+          "type": "text",
+          "label": "Glory",
           "flex": 1
         }
       ]
