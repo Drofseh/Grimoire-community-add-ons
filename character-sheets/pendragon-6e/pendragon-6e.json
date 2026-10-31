@@ -5370,92 +5370,422 @@
     {
       "rule": "hp_current <= total_hit_points",
       "message": "Current hit points are above Total Hit Points (CON + SIZ).",
-      "field": "hp_current"
+      "field": "hp_current",
+      "severity": "error"
     },
     {
       "rule": "trait_chaste + trait_lustful == 20",
       "message": "Chaste + Lustful should total 20.",
-      "field": "trait_chaste"
+      "field": "trait_chaste",
+      "severity": "error"
     },
     {
       "rule": "trait_energetic + trait_lazy == 20",
       "message": "Energetic + Lazy should total 20.",
-      "field": "trait_energetic"
+      "field": "trait_energetic",
+      "severity": "error"
     },
     {
       "rule": "trait_forgiving + trait_vengeful == 20",
       "message": "Forgiving + Vengeful should total 20.",
-      "field": "trait_forgiving"
+      "field": "trait_forgiving",
+      "severity": "error"
     },
     {
       "rule": "trait_generous + trait_selfish == 20",
       "message": "Generous + Selfish should total 20.",
-      "field": "trait_generous"
+      "field": "trait_generous",
+      "severity": "error"
     },
     {
       "rule": "trait_honest + trait_deceitful == 20",
       "message": "Honest + Deceitful should total 20.",
-      "field": "trait_honest"
+      "field": "trait_honest",
+      "severity": "error"
     },
     {
       "rule": "trait_just + trait_arbitrary == 20",
       "message": "Just + Arbitrary should total 20.",
-      "field": "trait_just"
+      "field": "trait_just",
+      "severity": "error"
     },
     {
       "rule": "trait_merciful + trait_cruel == 20",
       "message": "Merciful + Cruel should total 20.",
-      "field": "trait_merciful"
+      "field": "trait_merciful",
+      "severity": "error"
     },
     {
       "rule": "trait_modest + trait_proud == 20",
       "message": "Modest + Proud should total 20.",
-      "field": "trait_modest"
+      "field": "trait_modest",
+      "severity": "error"
     },
     {
       "rule": "trait_prudent + trait_reckless == 20",
       "message": "Prudent + Reckless should total 20.",
-      "field": "trait_prudent"
+      "field": "trait_prudent",
+      "severity": "error"
     },
     {
       "rule": "trait_spiritual + trait_worldly == 20",
       "message": "Spiritual + Worldly should total 20.",
-      "field": "trait_spiritual"
+      "field": "trait_spiritual",
+      "severity": "error"
     },
     {
       "rule": "trait_temperate + trait_indulgent == 20",
       "message": "Temperate + Indulgent should total 20.",
-      "field": "trait_temperate"
+      "field": "trait_temperate",
+      "severity": "error"
     },
     {
       "rule": "trait_trusting + trait_suspicious == 20",
       "message": "Trusting + Suspicious should total 20.",
-      "field": "trait_trusting"
+      "field": "trait_trusting",
+      "severity": "error"
     },
     {
       "rule": "trait_valorous + trait_cowardly == 20",
       "message": "Valorous + Cowardly should total 20.",
-      "field": "trait_valorous"
+      "field": "trait_valorous",
+      "severity": "error"
     },
     {
       "rule": "passion_homage + passion_fealty + passion_c1 + passion_c2 <= 40",
       "message": "Fidelitas passions total more than 40.",
-      "field": "passion_homage"
+      "field": "passion_homage",
+      "severity": "error"
     },
     {
       "rule": "passion_love_family + passion_c3 + passion_c4 + passion_c5 <= 40",
       "message": "Fervor passions total more than 40.",
-      "field": "passion_love_family"
+      "field": "passion_love_family",
+      "severity": "error"
     },
     {
       "rule": "passion_devotion + passion_c6 <= 40",
       "message": "Adoratio passions total more than 40.",
-      "field": "passion_devotion"
+      "field": "passion_devotion",
+      "severity": "error"
     },
     {
       "rule": "passion_hospitality + passion_station + passion_c7 <= 40",
       "message": "Civilitas passions total more than 40.",
-      "field": "passion_hospitality"
+      "field": "passion_hospitality",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_chaste + spouse_trait_lustful == 20",
+      "message": "Chaste + Lustful should total 20.",
+      "field": "spouse_trait_chaste",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_energetic + spouse_trait_lazy == 20",
+      "message": "Energetic + Lazy should total 20.",
+      "field": "spouse_trait_energetic",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_forgiving + spouse_trait_vengeful == 20",
+      "message": "Forgiving + Vengeful should total 20.",
+      "field": "spouse_trait_forgiving",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_generous + spouse_trait_selfish == 20",
+      "message": "Generous + Selfish should total 20.",
+      "field": "spouse_trait_generous",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_honest + spouse_trait_deceitful == 20",
+      "message": "Honest + Deceitful should total 20.",
+      "field": "spouse_trait_honest",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_just + spouse_trait_arbitrary == 20",
+      "message": "Just + Arbitrary should total 20.",
+      "field": "spouse_trait_just",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_merciful + spouse_trait_cruel == 20",
+      "message": "Merciful + Cruel should total 20.",
+      "field": "spouse_trait_merciful",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_modest + spouse_trait_proud == 20",
+      "message": "Modest + Proud should total 20.",
+      "field": "spouse_trait_modest",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_prudent + spouse_trait_reckless == 20",
+      "message": "Prudent + Reckless should total 20.",
+      "field": "spouse_trait_prudent",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_spiritual + spouse_trait_worldly == 20",
+      "message": "Spiritual + Worldly should total 20.",
+      "field": "spouse_trait_spiritual",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_temperate + spouse_trait_indulgent == 20",
+      "message": "Temperate + Indulgent should total 20.",
+      "field": "spouse_trait_temperate",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_trusting + spouse_trait_suspicious == 20",
+      "message": "Trusting + Suspicious should total 20.",
+      "field": "spouse_trait_trusting",
+      "severity": "error"
+    },
+    {
+      "rule": "spouse_trait_valorous + spouse_trait_cowardly == 20",
+      "message": "Valorous + Cowardly should total 20.",
+      "field": "spouse_trait_valorous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_chaste + squire1_trait_lustful == 20",
+      "message": "Chaste + Lustful should total 20.",
+      "field": "squire1_trait_chaste",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_energetic + squire1_trait_lazy == 20",
+      "message": "Energetic + Lazy should total 20.",
+      "field": "squire1_trait_energetic",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_forgiving + squire1_trait_vengeful == 20",
+      "message": "Forgiving + Vengeful should total 20.",
+      "field": "squire1_trait_forgiving",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_generous + squire1_trait_selfish == 20",
+      "message": "Generous + Selfish should total 20.",
+      "field": "squire1_trait_generous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_honest + squire1_trait_deceitful == 20",
+      "message": "Honest + Deceitful should total 20.",
+      "field": "squire1_trait_honest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_just + squire1_trait_arbitrary == 20",
+      "message": "Just + Arbitrary should total 20.",
+      "field": "squire1_trait_just",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_merciful + squire1_trait_cruel == 20",
+      "message": "Merciful + Cruel should total 20.",
+      "field": "squire1_trait_merciful",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_modest + squire1_trait_proud == 20",
+      "message": "Modest + Proud should total 20.",
+      "field": "squire1_trait_modest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_prudent + squire1_trait_reckless == 20",
+      "message": "Prudent + Reckless should total 20.",
+      "field": "squire1_trait_prudent",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_spiritual + squire1_trait_worldly == 20",
+      "message": "Spiritual + Worldly should total 20.",
+      "field": "squire1_trait_spiritual",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_temperate + squire1_trait_indulgent == 20",
+      "message": "Temperate + Indulgent should total 20.",
+      "field": "squire1_trait_temperate",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_trusting + squire1_trait_suspicious == 20",
+      "message": "Trusting + Suspicious should total 20.",
+      "field": "squire1_trait_trusting",
+      "severity": "error"
+    },
+    {
+      "rule": "squire1_trait_valorous + squire1_trait_cowardly == 20",
+      "message": "Valorous + Cowardly should total 20.",
+      "field": "squire1_trait_valorous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_chaste + squire2_trait_lustful == 20",
+      "message": "Chaste + Lustful should total 20.",
+      "field": "squire2_trait_chaste",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_energetic + squire2_trait_lazy == 20",
+      "message": "Energetic + Lazy should total 20.",
+      "field": "squire2_trait_energetic",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_forgiving + squire2_trait_vengeful == 20",
+      "message": "Forgiving + Vengeful should total 20.",
+      "field": "squire2_trait_forgiving",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_generous + squire2_trait_selfish == 20",
+      "message": "Generous + Selfish should total 20.",
+      "field": "squire2_trait_generous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_honest + squire2_trait_deceitful == 20",
+      "message": "Honest + Deceitful should total 20.",
+      "field": "squire2_trait_honest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_just + squire2_trait_arbitrary == 20",
+      "message": "Just + Arbitrary should total 20.",
+      "field": "squire2_trait_just",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_merciful + squire2_trait_cruel == 20",
+      "message": "Merciful + Cruel should total 20.",
+      "field": "squire2_trait_merciful",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_modest + squire2_trait_proud == 20",
+      "message": "Modest + Proud should total 20.",
+      "field": "squire2_trait_modest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_prudent + squire2_trait_reckless == 20",
+      "message": "Prudent + Reckless should total 20.",
+      "field": "squire2_trait_prudent",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_spiritual + squire2_trait_worldly == 20",
+      "message": "Spiritual + Worldly should total 20.",
+      "field": "squire2_trait_spiritual",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_temperate + squire2_trait_indulgent == 20",
+      "message": "Temperate + Indulgent should total 20.",
+      "field": "squire2_trait_temperate",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_trusting + squire2_trait_suspicious == 20",
+      "message": "Trusting + Suspicious should total 20.",
+      "field": "squire2_trait_trusting",
+      "severity": "error"
+    },
+    {
+      "rule": "squire2_trait_valorous + squire2_trait_cowardly == 20",
+      "message": "Valorous + Cowardly should total 20.",
+      "field": "squire2_trait_valorous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_chaste + squire3_trait_lustful == 20",
+      "message": "Chaste + Lustful should total 20.",
+      "field": "squire3_trait_chaste",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_energetic + squire3_trait_lazy == 20",
+      "message": "Energetic + Lazy should total 20.",
+      "field": "squire3_trait_energetic",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_forgiving + squire3_trait_vengeful == 20",
+      "message": "Forgiving + Vengeful should total 20.",
+      "field": "squire3_trait_forgiving",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_generous + squire3_trait_selfish == 20",
+      "message": "Generous + Selfish should total 20.",
+      "field": "squire3_trait_generous",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_honest + squire3_trait_deceitful == 20",
+      "message": "Honest + Deceitful should total 20.",
+      "field": "squire3_trait_honest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_just + squire3_trait_arbitrary == 20",
+      "message": "Just + Arbitrary should total 20.",
+      "field": "squire3_trait_just",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_merciful + squire3_trait_cruel == 20",
+      "message": "Merciful + Cruel should total 20.",
+      "field": "squire3_trait_merciful",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_modest + squire3_trait_proud == 20",
+      "message": "Modest + Proud should total 20.",
+      "field": "squire3_trait_modest",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_prudent + squire3_trait_reckless == 20",
+      "message": "Prudent + Reckless should total 20.",
+      "field": "squire3_trait_prudent",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_spiritual + squire3_trait_worldly == 20",
+      "message": "Spiritual + Worldly should total 20.",
+      "field": "squire3_trait_spiritual",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_temperate + squire3_trait_indulgent == 20",
+      "message": "Temperate + Indulgent should total 20.",
+      "field": "squire3_trait_temperate",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_trusting + squire3_trait_suspicious == 20",
+      "message": "Trusting + Suspicious should total 20.",
+      "field": "squire3_trait_trusting",
+      "severity": "error"
+    },
+    {
+      "rule": "squire3_trait_valorous + squire3_trait_cowardly == 20",
+      "message": "Valorous + Cowardly should total 20.",
+      "field": "squire3_trait_valorous",
+      "severity": "error"
     }
   ],
   "layout_file": "pendragon-6e.html",
