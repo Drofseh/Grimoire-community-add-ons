@@ -4769,6 +4769,552 @@
       "type": "number",
       "label": "Thrown Weapon",
       "min": 0
+    },
+    "squire1_trait_chaste": {
+      "type": "number",
+      "label": "Chaste",
+      "min": 0
+    },
+    "squire1_trait_lustful": {
+      "type": "number",
+      "label": "Lustful",
+      "min": 0
+    },
+    "squire1_trait_energetic": {
+      "type": "number",
+      "label": "Energetic",
+      "min": 0
+    },
+    "squire1_trait_lazy": {
+      "type": "number",
+      "label": "Lazy",
+      "min": 0
+    },
+    "squire1_trait_forgiving": {
+      "type": "number",
+      "label": "Forgiving",
+      "min": 0
+    },
+    "squire1_trait_vengeful": {
+      "type": "number",
+      "label": "Vengeful",
+      "min": 0
+    },
+    "squire1_trait_generous": {
+      "type": "number",
+      "label": "Generous",
+      "min": 0
+    },
+    "squire1_trait_selfish": {
+      "type": "number",
+      "label": "Selfish",
+      "min": 0
+    },
+    "squire1_trait_honest": {
+      "type": "number",
+      "label": "Honest",
+      "min": 0
+    },
+    "squire1_trait_deceitful": {
+      "type": "number",
+      "label": "Deceitful",
+      "min": 0
+    },
+    "squire1_trait_just": {
+      "type": "number",
+      "label": "Just",
+      "min": 0
+    },
+    "squire1_trait_arbitrary": {
+      "type": "number",
+      "label": "Arbitrary",
+      "min": 0
+    },
+    "squire1_trait_merciful": {
+      "type": "number",
+      "label": "Merciful",
+      "min": 0
+    },
+    "squire1_trait_cruel": {
+      "type": "number",
+      "label": "Cruel",
+      "min": 0
+    },
+    "squire1_trait_modest": {
+      "type": "number",
+      "label": "Modest",
+      "min": 0
+    },
+    "squire1_trait_proud": {
+      "type": "number",
+      "label": "Proud",
+      "min": 0
+    },
+    "squire1_trait_prudent": {
+      "type": "number",
+      "label": "Prudent",
+      "min": 0
+    },
+    "squire1_trait_reckless": {
+      "type": "number",
+      "label": "Reckless",
+      "min": 0
+    },
+    "squire1_trait_spiritual": {
+      "type": "number",
+      "label": "Spiritual",
+      "min": 0
+    },
+    "squire1_trait_worldly": {
+      "type": "number",
+      "label": "Worldly",
+      "min": 0
+    },
+    "squire1_trait_temperate": {
+      "type": "number",
+      "label": "Temperate",
+      "min": 0
+    },
+    "squire1_trait_indulgent": {
+      "type": "number",
+      "label": "Indulgent",
+      "min": 0
+    },
+    "squire1_trait_trusting": {
+      "type": "number",
+      "label": "Trusting",
+      "min": 0
+    },
+    "squire1_trait_suspicious": {
+      "type": "number",
+      "label": "Suspicious",
+      "min": 0
+    },
+    "squire1_trait_valorous": {
+      "type": "number",
+      "label": "Valorous",
+      "min": 0
+    },
+    "squire1_trait_cowardly": {
+      "type": "number",
+      "label": "Cowardly",
+      "min": 0
+    },
+    "squire1_trait_checks": {
+      "type": "multiselect",
+      "label": "Trait Checks",
+      "options": [
+        "Chaste",
+        "Lustful",
+        "Energetic",
+        "Lazy",
+        "Forgiving",
+        "Vengeful",
+        "Generous",
+        "Selfish",
+        "Honest",
+        "Deceitful",
+        "Just",
+        "Arbitrary",
+        "Merciful",
+        "Cruel",
+        "Modest",
+        "Proud",
+        "Prudent",
+        "Reckless",
+        "Spiritual",
+        "Worldly",
+        "Temperate",
+        "Indulgent",
+        "Trusting",
+        "Suspicious",
+        "Valorous",
+        "Cowardly",
+        "Directed Trait 1",
+        "Directed Trait 2"
+      ]
+    },
+    "squire1_directed_1_name": {
+      "type": "text",
+      "label": "Directed Trait 1 name"
+    },
+    "squire1_directed_1": {
+      "type": "number",
+      "label": "Directed Trait 1",
+      "min": 0
+    },
+    "squire1_directed_2_name": {
+      "type": "text",
+      "label": "Directed Trait 2 name"
+    },
+    "squire1_directed_2": {
+      "type": "number",
+      "label": "Directed Trait 2",
+      "min": 0
+    },
+    "squire2_trait_chaste": {
+      "type": "number",
+      "label": "Chaste",
+      "min": 0
+    },
+    "squire2_trait_lustful": {
+      "type": "number",
+      "label": "Lustful",
+      "min": 0
+    },
+    "squire2_trait_energetic": {
+      "type": "number",
+      "label": "Energetic",
+      "min": 0
+    },
+    "squire2_trait_lazy": {
+      "type": "number",
+      "label": "Lazy",
+      "min": 0
+    },
+    "squire2_trait_forgiving": {
+      "type": "number",
+      "label": "Forgiving",
+      "min": 0
+    },
+    "squire2_trait_vengeful": {
+      "type": "number",
+      "label": "Vengeful",
+      "min": 0
+    },
+    "squire2_trait_generous": {
+      "type": "number",
+      "label": "Generous",
+      "min": 0
+    },
+    "squire2_trait_selfish": {
+      "type": "number",
+      "label": "Selfish",
+      "min": 0
+    },
+    "squire2_trait_honest": {
+      "type": "number",
+      "label": "Honest",
+      "min": 0
+    },
+    "squire2_trait_deceitful": {
+      "type": "number",
+      "label": "Deceitful",
+      "min": 0
+    },
+    "squire2_trait_just": {
+      "type": "number",
+      "label": "Just",
+      "min": 0
+    },
+    "squire2_trait_arbitrary": {
+      "type": "number",
+      "label": "Arbitrary",
+      "min": 0
+    },
+    "squire2_trait_merciful": {
+      "type": "number",
+      "label": "Merciful",
+      "min": 0
+    },
+    "squire2_trait_cruel": {
+      "type": "number",
+      "label": "Cruel",
+      "min": 0
+    },
+    "squire2_trait_modest": {
+      "type": "number",
+      "label": "Modest",
+      "min": 0
+    },
+    "squire2_trait_proud": {
+      "type": "number",
+      "label": "Proud",
+      "min": 0
+    },
+    "squire2_trait_prudent": {
+      "type": "number",
+      "label": "Prudent",
+      "min": 0
+    },
+    "squire2_trait_reckless": {
+      "type": "number",
+      "label": "Reckless",
+      "min": 0
+    },
+    "squire2_trait_spiritual": {
+      "type": "number",
+      "label": "Spiritual",
+      "min": 0
+    },
+    "squire2_trait_worldly": {
+      "type": "number",
+      "label": "Worldly",
+      "min": 0
+    },
+    "squire2_trait_temperate": {
+      "type": "number",
+      "label": "Temperate",
+      "min": 0
+    },
+    "squire2_trait_indulgent": {
+      "type": "number",
+      "label": "Indulgent",
+      "min": 0
+    },
+    "squire2_trait_trusting": {
+      "type": "number",
+      "label": "Trusting",
+      "min": 0
+    },
+    "squire2_trait_suspicious": {
+      "type": "number",
+      "label": "Suspicious",
+      "min": 0
+    },
+    "squire2_trait_valorous": {
+      "type": "number",
+      "label": "Valorous",
+      "min": 0
+    },
+    "squire2_trait_cowardly": {
+      "type": "number",
+      "label": "Cowardly",
+      "min": 0
+    },
+    "squire2_trait_checks": {
+      "type": "multiselect",
+      "label": "Trait Checks",
+      "options": [
+        "Chaste",
+        "Lustful",
+        "Energetic",
+        "Lazy",
+        "Forgiving",
+        "Vengeful",
+        "Generous",
+        "Selfish",
+        "Honest",
+        "Deceitful",
+        "Just",
+        "Arbitrary",
+        "Merciful",
+        "Cruel",
+        "Modest",
+        "Proud",
+        "Prudent",
+        "Reckless",
+        "Spiritual",
+        "Worldly",
+        "Temperate",
+        "Indulgent",
+        "Trusting",
+        "Suspicious",
+        "Valorous",
+        "Cowardly",
+        "Directed Trait 1",
+        "Directed Trait 2"
+      ]
+    },
+    "squire2_directed_1_name": {
+      "type": "text",
+      "label": "Directed Trait 1 name"
+    },
+    "squire2_directed_1": {
+      "type": "number",
+      "label": "Directed Trait 1",
+      "min": 0
+    },
+    "squire2_directed_2_name": {
+      "type": "text",
+      "label": "Directed Trait 2 name"
+    },
+    "squire2_directed_2": {
+      "type": "number",
+      "label": "Directed Trait 2",
+      "min": 0
+    },
+    "squire3_trait_chaste": {
+      "type": "number",
+      "label": "Chaste",
+      "min": 0
+    },
+    "squire3_trait_lustful": {
+      "type": "number",
+      "label": "Lustful",
+      "min": 0
+    },
+    "squire3_trait_energetic": {
+      "type": "number",
+      "label": "Energetic",
+      "min": 0
+    },
+    "squire3_trait_lazy": {
+      "type": "number",
+      "label": "Lazy",
+      "min": 0
+    },
+    "squire3_trait_forgiving": {
+      "type": "number",
+      "label": "Forgiving",
+      "min": 0
+    },
+    "squire3_trait_vengeful": {
+      "type": "number",
+      "label": "Vengeful",
+      "min": 0
+    },
+    "squire3_trait_generous": {
+      "type": "number",
+      "label": "Generous",
+      "min": 0
+    },
+    "squire3_trait_selfish": {
+      "type": "number",
+      "label": "Selfish",
+      "min": 0
+    },
+    "squire3_trait_honest": {
+      "type": "number",
+      "label": "Honest",
+      "min": 0
+    },
+    "squire3_trait_deceitful": {
+      "type": "number",
+      "label": "Deceitful",
+      "min": 0
+    },
+    "squire3_trait_just": {
+      "type": "number",
+      "label": "Just",
+      "min": 0
+    },
+    "squire3_trait_arbitrary": {
+      "type": "number",
+      "label": "Arbitrary",
+      "min": 0
+    },
+    "squire3_trait_merciful": {
+      "type": "number",
+      "label": "Merciful",
+      "min": 0
+    },
+    "squire3_trait_cruel": {
+      "type": "number",
+      "label": "Cruel",
+      "min": 0
+    },
+    "squire3_trait_modest": {
+      "type": "number",
+      "label": "Modest",
+      "min": 0
+    },
+    "squire3_trait_proud": {
+      "type": "number",
+      "label": "Proud",
+      "min": 0
+    },
+    "squire3_trait_prudent": {
+      "type": "number",
+      "label": "Prudent",
+      "min": 0
+    },
+    "squire3_trait_reckless": {
+      "type": "number",
+      "label": "Reckless",
+      "min": 0
+    },
+    "squire3_trait_spiritual": {
+      "type": "number",
+      "label": "Spiritual",
+      "min": 0
+    },
+    "squire3_trait_worldly": {
+      "type": "number",
+      "label": "Worldly",
+      "min": 0
+    },
+    "squire3_trait_temperate": {
+      "type": "number",
+      "label": "Temperate",
+      "min": 0
+    },
+    "squire3_trait_indulgent": {
+      "type": "number",
+      "label": "Indulgent",
+      "min": 0
+    },
+    "squire3_trait_trusting": {
+      "type": "number",
+      "label": "Trusting",
+      "min": 0
+    },
+    "squire3_trait_suspicious": {
+      "type": "number",
+      "label": "Suspicious",
+      "min": 0
+    },
+    "squire3_trait_valorous": {
+      "type": "number",
+      "label": "Valorous",
+      "min": 0
+    },
+    "squire3_trait_cowardly": {
+      "type": "number",
+      "label": "Cowardly",
+      "min": 0
+    },
+    "squire3_trait_checks": {
+      "type": "multiselect",
+      "label": "Trait Checks",
+      "options": [
+        "Chaste",
+        "Lustful",
+        "Energetic",
+        "Lazy",
+        "Forgiving",
+        "Vengeful",
+        "Generous",
+        "Selfish",
+        "Honest",
+        "Deceitful",
+        "Just",
+        "Arbitrary",
+        "Merciful",
+        "Cruel",
+        "Modest",
+        "Proud",
+        "Prudent",
+        "Reckless",
+        "Spiritual",
+        "Worldly",
+        "Temperate",
+        "Indulgent",
+        "Trusting",
+        "Suspicious",
+        "Valorous",
+        "Cowardly",
+        "Directed Trait 1",
+        "Directed Trait 2"
+      ]
+    },
+    "squire3_directed_1_name": {
+      "type": "text",
+      "label": "Directed Trait 1 name"
+    },
+    "squire3_directed_1": {
+      "type": "number",
+      "label": "Directed Trait 1",
+      "min": 0
+    },
+    "squire3_directed_2_name": {
+      "type": "text",
+      "label": "Directed Trait 2 name"
+    },
+    "squire3_directed_2": {
+      "type": "number",
+      "label": "Directed Trait 2",
+      "min": 0
     }
   },
   "computed": {
