@@ -786,10 +786,6 @@
       "default": 0,
       "max": 40
     },
-    "religion_name": {
-      "type": "text",
-      "label": "Religion speciality"
-    },
     "sk_extra_1_name": {
       "type": "text",
       "label": "Other skill name"
@@ -4725,6 +4721,51 @@
       "min": 0
     },
     "squire3_sk_thrown": {
+      "type": "number",
+      "label": "Thrown Weapon",
+      "min": 0
+    },
+    "spouse_sk_battle": {
+      "type": "number",
+      "label": "Battle",
+      "min": 0
+    },
+    "spouse_sk_bow": {
+      "type": "number",
+      "label": "Bow",
+      "min": 0
+    },
+    "spouse_sk_charge": {
+      "type": "number",
+      "label": "Charge",
+      "min": 0
+    },
+    "spouse_sk_crossbow": {
+      "type": "number",
+      "label": "Crossbow",
+      "min": 0
+    },
+    "spouse_sk_hafted": {
+      "type": "number",
+      "label": "Hafted",
+      "min": 0
+    },
+    "spouse_sk_hafted_2h": {
+      "type": "number",
+      "label": "2H Hafted",
+      "min": 0
+    },
+    "spouse_sk_spear": {
+      "type": "number",
+      "label": "Spear",
+      "min": 0
+    },
+    "spouse_sk_sword": {
+      "type": "number",
+      "label": "Sword",
+      "min": 0
+    },
+    "spouse_sk_thrown": {
       "type": "number",
       "label": "Thrown Weapon",
       "min": 0

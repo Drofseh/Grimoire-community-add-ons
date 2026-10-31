@@ -30,7 +30,7 @@
 .sheet-pendragon input,
 .sheet-pendragon select,
 .sheet-pendragon textarea {
-  font-size: 16px !important;
+  font-size: 15px !important;
   /* font-weight: 600; */
   line-height: 1.5;
   min-height: 26px;
@@ -85,7 +85,7 @@
 .gc-section > h3 {
   text-align: center;
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-dim);
@@ -96,7 +96,7 @@
 .tiny {
   display: block;
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
   /* text-transform: uppercase; */
   letter-spacing: 0.07em;
@@ -110,7 +110,7 @@
 
 .box-heading {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -122,7 +122,7 @@
 
 .sub-heading {
   margin: 6px 0 0;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -133,7 +133,7 @@
 .hint {
   margin: 0;
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .opt {
@@ -142,7 +142,7 @@
   gap: 6px;
   cursor: pointer;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
@@ -160,14 +160,14 @@
   border: none;
   background: transparent;
   padding: 3px 0;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
 .id-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 8px 16px;
+  gap: 8px 15px;
 }
 
 /* Paired boxes share two equal columns. */
@@ -176,7 +176,7 @@
 }
 
 .id-grid .wide input {
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
@@ -186,7 +186,7 @@
 .header {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr) minmax(0, 0.8fr) minmax(0, 0.7fr) minmax(0, 0.7fr);
-  gap: 8px 16px;
+  gap: 8px 15px;
   align-items: stretch;
 }
 
@@ -331,7 +331,7 @@
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 20px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   padding: 2px 0;
   border-bottom: 1px solid var(--border);
 }
@@ -366,7 +366,7 @@
 .spouse-skill input {
   width: 50px;
   max-width: 50px;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -397,7 +397,7 @@
 
 .c-name {
   /* font-weight: 600; */
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text);
 }
 
@@ -412,7 +412,7 @@
 }
 
 .c-cell {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-dim);
 }
 
@@ -430,7 +430,7 @@
   grid-template-columns: minmax(0, 1fr) 90px;
   gap: 8px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
   padding: 3px 0;
   border-bottom: 1px solid var(--border);
@@ -483,7 +483,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
@@ -511,7 +511,7 @@
   grid-template-columns: minmax(0, 1fr) 90px;
   gap: 8px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
@@ -534,16 +534,16 @@
 .skill {
   display: grid;
   grid-template-columns: 18px minmax(0, 1fr) 52px;
-  gap: 6px;
+  gap: 1px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
-  padding: 3px 0;
+  padding: 1px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .skill input {
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
 }
 
@@ -566,7 +566,7 @@
 }
 
 .slot-name input {
-  font-size: 16px !important;
+  font-size: 15px !important;
   /* font-weight: 600; */
 }
 
@@ -583,7 +583,7 @@
   grid-template-columns: 18px 52px minmax(0, 1fr) minmax(0, 1fr) 52px 18px;
   gap: 6px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   /* font-weight: 600; */
   padding: 4px 0;
   border-bottom: 1px solid var(--border);
@@ -634,7 +634,7 @@
 .trait .shield input {
   width: 100%;
   text-align: center;
-  font-size: 16px !important;
+  font-size: 15px !important;
   /* font-weight: 600; */
   color: var(--text);
   /* Grimoire draws its own bordered, filled box on every control (inline
